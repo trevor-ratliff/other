@@ -1,0 +1,52 @@
+/****
+* @file 
+* @brief 
+* @author 
+* @date 
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+* @endverbatim
+****/
+
+body {
+    font-family: verdana, arial;
+    font-size: 1.5ex;
+}
+
+li {
+    border: 1px solid #9999ff;
+    border-bottom: 0px;
+    display: block;
+    float: left;
+    margin-right: 1px;
+    padding: 3px;
+    padding-bottom: 5px;
+    z-index: 20;
+}
+
+li>a {
+    text-decoration: none;
+}
+
+*.tabpanel {
+    background-color: #bbbbbb;
+    display: block;
+    font-size: 2ex;
+    height: 40ex;
+    left: 2ex;
+    margin-left: 4ex;
+    padding: 2ex;
+    position: absolute;
+    top: 4.5ex;
+    width: 80ex;
+    z-index: 10;
+}
+
+*.tabpanel:target {
+    z-index: 100;
+}
+
+*.active {
+    background-color: #bbbbbb;
+}

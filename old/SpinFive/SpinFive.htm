@@ -1,0 +1,124 @@
+<!DOCTYPE html><!-- HTML 5.0 doctype -->
+
+<!--
+//====
+///
+/// \file 
+/// \brief 
+/// \author 
+/// \date 
+//  
+/// \verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+/// \endverbatim
+//====
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- link rel="alternate stylesheet" type="text/css" href="styles/MY_CSS.css" title="alternate" / -->
+        <link rel="stylesheet" type="text/css" href="styles/SpinFiveMain.css"></link>
+        <link rel="stylesheet" type="text/css" href="styles/SpinFiveDebug.css"></link>
+        
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="scripts/SpinFive.js"></script>
+        
+        <script type="text/javascript">
+            <!--
+            //----
+            // set up some global variables
+            //----
+            var gintQ1Rot, gintQ2Rot, gintQ3Rot, gintQ4Rot, gstrTurn, gblnCanRotate;
+            gintQ1Rot = 0;
+            gintQ2Rot = 0;
+            gintQ3Rot = 0;
+            gintQ4Rot = 0;
+            gstrTurn = 'red';
+            gblnCanRotate = true;
+            
+            //----
+            // initialize mouse location scripts
+            //----
+            jQuery(document).ready(function(){
+                $(document).mousemove(function(e){
+                    $('#mousePos').html(e.pageX +', '+ e.pageY);
+                    $('#debug_message').html(
+                        '<br />Q1 Rotation: ' + $('#Q1')[0].getAttribute('sf_rotation') + 
+                        '<br />Q2 Rotation: ' + $('#Q2')[0].getAttribute('sf_rotation') + 
+                        '<br />Q3 Rotation: ' + $('#Q3')[0].getAttribute('sf_rotation') + 
+                        '<br />Q4 Rotation: ' + $('#Q4')[0].getAttribute('sf_rotation') + 
+                        '<br /><br />Turn: ' + gstrTurn + 
+                        '<br />Can Rotate: ' + gblnCanRotate);
+                });
+            });
+            //-->
+        </script>
+        
+        <noscript>
+            Turning JavaScript on in your browser makes for a much better experience!
+        </noscript>
+    </head>
+    
+    <body>
+        <div id="debug" class="debug">
+            <div id="mousePos">&nbsp;</div>
+            <div id="debug_message">&nbsp;</div>
+        </div>
+        <div id="game_board">
+            <div id="Q1" class="quadrent" sf_rotation="0">
+                <div id="q1RotateClockwise" class="rotate" 
+                    onclick="RotateQuadrent(this.parentNode, true);">
+                    rotate -&gt;
+                </div><br style="clear: both;" />
+                <div id="q1RotateCounterwise" class="rotate turned270" 
+                    onclick="RotateQuadrent(this.parentNode, false);"
+                    style="float: left;">&lt;- rotate</div>
+                <div style="float: right;">
+                    <div id="q1p1" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p2" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p3" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p4" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p5" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p6" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p7" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p8" class="piece" onclick="PlacePiece(this);"></div>
+                    <div id="q1p9" class="piece" onclick="PlacePiece(this);"></div>
+                </div>
+            </div>
+            <div id="Q2" class="quadrent rot0_90" sf_rotation="0">
+                <div id="q2p1" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p2" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p3" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p4" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p5" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p6" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p7" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p8" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q2p9" class="piece" onclick="PlacePiece(this);"></div>
+            </div>
+            <div id="Q3" class="quadrent" sf_rotation="0">
+                <div id="q3p1" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p2" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p3" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p4" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p5" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p6" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p7" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p8" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q3p9" class="piece" onclick="PlacePiece(this);"></div>
+            </div>
+            <div id="Q4" class="quadrent" sf_rotation="0">
+                <div id="q4p1" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p2" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p3" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p4" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p5" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p6" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p7" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p8" class="piece" onclick="PlacePiece(this);"></div>
+                <div id="q4p9" class="piece" onclick="PlacePiece(this);"></div>
+            </div>
+        </div>
+    </body>
+</html>

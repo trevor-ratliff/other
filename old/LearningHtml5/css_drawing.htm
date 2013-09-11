@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<!--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+-->
+
+<!--
+//====
+///
+/// \file css_drawing.htm
+/// \brief tests some ways of drawing with css
+/// \author trevor ratliff
+/// \date 2011-11-04
+/// 
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2011-11-04  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  page
+///         creation  |
+//====
+-->
+
+<html>
+    <head>
+        <style type="text/css">
+            /* ==== FIRST TEST ==== */
+
+            #circle{
+                width: 250px;
+                height: 250px;
+            }
+
+            #circle div{
+                background-color: #cccccc;
+                float: left;
+                height: 0px;
+                width: 0px;
+            }
+
+            .t-r {
+                border-top: 17px solid #6666ff;
+                border-right: 33px solid #666666;
+                border-bottom: 33px solid #bbbbbb;
+                border-left: 17px solid #f666f6;
+                margin: 50px 0px 0px 50px;
+            }
+
+            .t-c {
+                border-top: 45px solid #6666ff;
+                border-right: 25px solid #66ff66;
+                border-bottom: 5px solid #bbbbbb;
+                border-left: 25px solid #f666f6;
+                margin: 0px 0px 50px 0px;
+            }
+
+            .t-l {
+                border-top: 17px solid #6666ff;
+                border-right: 17px solid #66ff66;
+                border-bottom: 33px solid #bbbbbb;
+                border-left: 33px solid #999999;
+                margin: 50px 50px 0px 0px;
+            }
+
+            .m-r {
+                border-top: 25px solid #6666ff;
+                border-right: 5px solid #666666;
+                border-bottom: 25px solid #ffbb66;
+                border-left: 45px solid #f666f6;
+                margin: 0px 50px 0px 0px;
+            }
+
+            .m-c {
+                border-top: 25px solid #333333;
+                border-right: 25px solid #666666;
+                border-bottom: 25px solid #bbbbbb;
+                border-left: 25px solid #999999;
+                margin: 0px 0px 0px 0px;
+            }
+
+            .m-l {
+                border-top: 25px solid #6666ff;
+                border-right: 45px solid #66ff66;
+                border-bottom: 25px solid #ffbb66;
+                border-left: 5px solid #999999;
+                margin: 0px 0px 0px 50px;
+            }
+
+            .b-r {
+                border-top: 33px solid #333333;
+                border-right: 33px solid #666666;
+                border-bottom: 17px solid #ffbb66;
+                border-left: 17px solid #f666f6;
+                margin: 0px 0px 50px 50px;
+            }
+
+            .b-c {
+                border-top: 5px solid #333333;
+                border-right: 25px solid #66ff66;
+                border-bottom: 45px solid #ffbb66;
+                border-left: 25px solid #f666f6;
+                margin: 50px 0px 0px 0px;
+            }
+
+            .b-l {
+                border-top: 33px solid #333333;
+                border-right: 17px solid #66ff66;
+                border-bottom: 17px solid #ffbb66;
+                border-left: 33px solid #999999;
+                margin: 0px 50px 50px 0px;
+            }
+
+
+            /* ==== SECOND TEST ==== */
+
+            .circleToo {
+                margin-top: 25px;
+                width: 160px;
+                height: 160px;
+            }
+
+            .circleToo div {
+                border-top: 25px solid #999999;
+                border-bottom: 25px solid #666666;
+                border-left: 25px solid #888888;
+                border-right: 25px solid #777777;
+                float: left;
+                width: 0px;
+                height: 0px;
+            }
+
+            div.t0 {
+                border-top-width: 0px;
+                border-bottom-width: 4px;
+            }
+
+            div.t1 {
+            }
+
+            div.t2 {
+            }
+
+            div.t3 {
+            }
+
+            div.t4 {
+                border-top-width: 4px;
+                border-bottom-width: 0px;
+            }
+
+            div.l0 {
+                border-left-width: 0px;
+                border-right-width: 4px;
+            }
+
+            div.l1 {
+            }
+
+            div.l2 {
+            }
+
+            div.l3 {
+            }
+
+            div.l4 {
+                border-left-width: 4px;
+                border-right-width: 0px;
+            }
+
+            div.transparent {
+                border-color: transparent;
+            }
+
+            /* ---- edges ---- */
+
+            div[class="t0 l2"], div[class="t4 l2"] {
+                border-left-color: transparent;
+                border-right-color: transparent;
+            }
+
+            div[class="t2 l0"], div[class="t2 l4"] {
+                border-top-color: transparent;
+                border-bottom-color: transparent;
+            }
+
+            /* ---- corners ---- */
+
+            div[class="t1 l1"] {
+                border-top: 17px solid transparent;
+                border-bottom-width: 33px;
+                border-left: 17px solid transparent;
+                border-right-width: 33px;
+            }
+
+            div[class="t1 l3"] {
+                border-top: 17px solid transparent;
+                border-bottom-width: 33px;
+                border-left-width: 33px;
+                border-right: 17px solid transparent;
+            }
+
+            div[class="t3 l1"] {
+                border-top-width: 33px;
+                border-bottom: 17px solid transparent;
+                border-left: 17px solid transparent;
+                border-right-width: 33px;
+            }
+
+            div[class="t3 l3"] {
+                border-top-width: 33px;
+                border-bottom: 17px solid transparent;
+                border-left-width: 33px;
+                border-right: 17px solid transparent;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="circle">
+            <div class="t-r"></div>
+            <div class="t-c"></div>
+            <div class="t-l"></div>
+            <div class="m-r"></div>
+            <div class="m-c"></div>
+            <div class="m-l"></div>
+            <div class="b-r"></div>
+            <div class="b-c"></div>
+            <div class="b-l"></div>
+        </div>
+
+        <div class="circleToo">
+            <div class="t0 l0 transparent"></div>
+            <div class="t0 l1 transparent"></div>
+            <div class="t0 l2"></div>
+            <div class="t0 l3 transparent"></div>
+            <div class="t0 l4 transparent"></div>
+
+            <div class="t1 l0 transparent"></div>
+            <div class="t1 l1"></div>
+            <div class="t1 l2"></div>
+            <div class="t1 l3"></div>
+            <div class="t1 l4 transparent"></div>
+
+            <div class="t2 l0"></div>
+            <div class="t2 l1"></div>
+            <div class="t2 l2"></div>
+            <div class="t2 l3"></div>
+            <div class="t2 l4"></div>
+
+            <div class="t3 l0 transparent"></div>
+            <div class="t3 l1"></div>
+            <div class="t3 l2"></div>
+            <div class="t3 l3"></div>
+            <div class="t3 l4 transparent"></div>
+
+            <div class="t4 l0 transparent"></div>
+            <div class="t4 l1 transparent"></div>
+            <div class="t4 l2"></div>
+            <div class="t4 l3 transparent"></div>
+            <div class="t4 l4 transparent"></div>
+        </div>
+    </body>
+</html>

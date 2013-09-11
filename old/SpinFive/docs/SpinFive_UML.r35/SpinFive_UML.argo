@@ -1,0 +1,51 @@
+<argo version="6">
+  <documentation>
+    <authorname>Trevor Ratliff</authorname>
+    <authoremail>trevor.w.ratliff@uky.edu</authoremail>
+    <version>0.34</version>
+    <description>
+      Sample app used to learn UML best practices
+    </description>
+  </documentation>
+  <settings>
+    <notationlanguage>UML 1.4</notationlanguage>
+    <showboldnames>true</showboldnames>
+    <useguillemots>false</useguillemots>
+    <showassociationnames>true</showassociationnames>
+    <showvisibility>false</showvisibility>
+    <showmultiplicity>true</showmultiplicity>
+    <showinitialvalue>false</showinitialvalue>
+    <showproperties>false</showproperties>
+    <showtypes>true</showtypes>
+    <showstereotypes>false</showstereotypes>
+    <showsingularmultiplicities>true</showsingularmultiplicities>
+    <defaultshadowwidth>0</defaultshadowwidth>
+    <hidebidirectionalarrows>true</hidebidirectionalarrows>    
+    <fontname>Dialog</fontname>
+    <fontsize>12</fontsize>
+    <defaultstereotypeview>0</defaultstereotypeview>
+    <activediagram>Class Diagram</activediagram>
+  </settings>
+  <searchpath href="PROJECT_DIR" />
+  <members>
+    <member type="profile"
+            name="SpinFive_UML.r35_profile.profile" />
+    <member type="xmi"
+            name="SpinFive_UML.r35.xmi" />
+    <member type="pgml"
+            name="SpinFive_UML.r35_ClassDiagram.pgml"
+            diagramclass="org.argouml.uml.diagram.static_structure.ui.UMLClassDiagram"
+            diagramname="Class Diagram" />
+    <member type="pgml"
+            name="SpinFive_UML.r35_playerturn.pgml"
+            diagramclass="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram"
+            diagramname="player turn" />
+    <member type="pgml"
+            name="SpinFive_UML.r35_Win.pgml"
+            diagramclass="org.argouml.uml.diagram.use_case.ui.UMLUseCaseDiagram"
+            diagramname="Win" />
+    <member type="todo"
+            name="SpinFive_UML.r35.todo" />
+  </members>
+  <historyfile name="" />
+</argo>

@@ -1,0 +1,21 @@
+sdk: "C:/Programs/Ruby187/lib/ruby/gems/1.8/gems/rhodes-3.0.2"
+sdkversion: 3.0.1
+name: timer
+version: 1.0
+vendor: rhomobile
+build: debug
+bbver: 4.6
+wmsdk: "Windows Mobile 6 Professional SDK (ARMV4I)"
+applog: rholog.txt
+iphone:
+  configuration: Debug
+  sdk: iphonesimulator4.3
+  provisionprofile:
+  codesignidentity:
+  entitlements:
+  BundleIdentifier: com.rhomobile.timer
+  BundleURLScheme: timer
+wp:
+  productid: '4d809770-808a-012e-ec32-3c305bd2d974'
+
+extensions: ["json", "another-extension"]

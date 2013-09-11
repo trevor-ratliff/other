@@ -1,0 +1,7 @@
+#debug {
+	positon: absolute;
+	top: 2ex;
+	left: 2ex;
+	width: 100ex;
+	border: 0.1ex solid #990000;
+}

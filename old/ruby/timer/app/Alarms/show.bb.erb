@@ -1,0 +1,41 @@
+<div id="pageTitle">
+	<h1><%= @alarms.label%></h1>
+</div>
+
+<div id="toolbar">
+        <%= link_to "Back", :action => :index %>
+        <%= link_to "Edit", :action => :edit, :id => @alarms.object %>
+</div>
+
+
+<div id="content">
+
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">Label</td>
+        <td class="itemValue"><%= @alarms.label%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">StartTime</td>
+        <td class="itemValue"><%= @alarms.start_time%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Duration</td>
+        <td class="itemValue"><%= @alarms.duration%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Sound</td>
+        <td class="itemValue"><%= @alarms.sound%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Repeatable</td>
+        <td class="itemValue"><%= @alarms.repeatable%></td>
+      </tr>
+      
+    </table>
+</div>

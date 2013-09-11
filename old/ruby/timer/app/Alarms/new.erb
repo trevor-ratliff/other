@@ -1,0 +1,49 @@
+<div class="pageTitle">
+  <h1>New <%= @alarms.title %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a class="cancel" href="<%= url_for :action => :index %>">Cancel</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :create %>">
+    <input type="hidden" name="id" value="<%= @alarms.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="alarms[label]" class="fieldLabel">Label</label>
+            <input type="text" name="alarms[label]" <%=
+            placeholder("Label") %> />
+          </li>
+      
+          <li>
+            <label for="alarms[start_time]" class="fieldLabel">Start time</label>
+            <input type="text" name="alarms[start_time]" <%=
+            placeholder("Start time") %> />
+          </li>
+      
+          <li>
+            <label for="alarms[duration]" class="fieldLabel">Duration</label>
+            <input type="text" name="alarms[duration]" <%=
+            placeholder("Duration") %> />
+          </li>
+      
+          <li>
+            <label for="alarms[sound]" class="fieldLabel">Sound</label>
+            <input type="text" name="alarms[sound]" <%=
+            placeholder("Sound") %> />
+          </li>
+      
+          <li>
+            <label for="alarms[repeatable]" class="fieldLabel">Repeatable</label>
+            <input type="text" name="alarms[repeatable]" <%=
+            placeholder("Repeatable") %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Create"/>
+  </form>
+</div>

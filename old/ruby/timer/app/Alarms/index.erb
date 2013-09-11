@@ -1,0 +1,71 @@
+<style type="text/css">
+.column_header {
+  display: inline-table;
+  font-size: inherit;
+  font-weight: inherit;
+  margin-left: 5px;
+}
+.column {
+  display: inline-table;
+  font-size: smaller;
+  font-weight: inherit;
+  margin-left: 5px;
+}
+.x100 {
+  width: 100%;
+}
+.x75 {
+  width: 75%;
+}
+.x60 {
+  width: 60%;
+}
+.x50 {
+  width: 50%;
+}
+.x30 {
+  width: 30%;
+}
+.x25 {
+  width: 25%;
+}
+</style>
+
+<div class="pageTitle">
+  <h1>Alarms</h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem regularButton">
+    <a href="<%= Rho::RhoConfig.start_path %>">Home</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a class="button" href="<%= url_for :action => :new %>">New</a>
+  </div>
+</div>
+
+<div class="content">
+  <div class="x100" style="font-size: 20px; font-weight: 700;">
+    <div class="column_header" style="width: 86%; margin-left: 10px;">
+      <div class="column_header x30">Label</div>
+      <div class="column_header x30">Start</div>
+      <div class="column_header x30">Duration</div>
+    </div>
+  </div>
+  <ul>
+    <% @alarmses.each do |alarms| %>
+    
+      <li>
+        <a href="<%= url_for :action => :show, :id => alarms.object %>">
+          <span class="title">_
+            <div class="column x30"><%= alarms.label %></div>
+            <div class="column x30"><%= alarms.start_time %></div>
+            <div class="column x30"><%= alarms.duration %></div>
+          </span>
+          <span class="disclosure_indicator"></span>
+        </a>
+      </li>
+    
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<!--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+-->
+
+<!--
+//====
+///
+/// \file size_tests.htm
+/// \brief tests of various different sizing functions for css [sizes include em, ex, ch, rem, vw, vh, vm; px, pt, pc, mm, cm, in]
+/// \author Trevor Ratliff
+/// \date 2011-10-21
+/// 
+/// size values are:
+///   relative values - 
+///     ex -- x-hight of element's font
+///     em -- font size of the element
+///     ch -- width of the '0' glyph in the element's font
+///     rem -- font size of the root element
+///     vw -- 1/100th of viewport's width
+///     vh -- 1/100th of viewport's height
+///     vm -- minimum of viewport's width or height
+///   static values - 
+///     px -- one pixel
+///     pt -- 1/72nd of an inch
+///     pc -- 12 pt
+///     mm -- one millimeter
+///     cm -- one centimeter
+///     in -- one inch (2.54cm)
+//  
+//  History:  Date  |  Programmer  |  Contact  |  Description  |
+//      2011-10-21  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  page creation  |
+//====
+-->
+
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        font-size: 1em;
+      }
+      
+      #fontIncrease {
+        border: 1px solid #333399;
+        font-size: 1pc;
+        height: 1pc;
+        left: 90%;
+        position: fixed;
+        top: 1pc;
+        width: 1pc;
+        z-index: 100;
+      }
+      
+      #fontDecrease {
+        border: 1px solid #993333;
+        font-size: 1pc;
+        height: 1pc;
+        left: 98%;
+        position: fixed;
+        top: 1pc;
+        width: 1pc;
+        z-index: 100;
+      }
+      
+      #exSizing {
+        top: 5ex;
+      }
+      
+      #emSizing {
+        top: 110ex;
+      }
+      
+      #ptSizing {
+        top: 344ex;
+      }
+      
+      #pcSizing {
+        top: 368ex;
+      }
+      
+      #mmSizing {
+        top: 602ex;
+      }
+      
+      #pxSizing {
+        top: 660ex;
+      }
+      
+      div>div {
+        border: 0px solid #ffffff;
+        position: absolute;
+        top: inherit;
+      }
+      
+      div>div span {
+        position: relative;
+        top: -3ex;
+      }
+    </style>
+    
+    <!-- script type="text/javascript" src="scripts/MY_SCRIPT.js"></script -->
+    
+    <script type="text/javascript">
+      <!--
+      //----
+      // PUT SCRIPT HERE
+      //----
+      function increaseFont(){
+        // increase the font of the page
+        //document.body.style.cssText = "font-size: "+ val +"em;";
+        var obj = document.getElementById("main");
+        var val = parseFloat(obj.style.fontSize.replace("em", ""));
+        obj.style.fontSize = val + 0.1 +"em";
+      }
+      
+      function decreaseFont(){
+        // decrease the font of the page
+        var obj = document.getElementById("main");
+        var val = parseFloat(obj.style.fontSize.replace("em", ""));
+        obj.style.fontSize = val - 0.1 +"em";
+      }
+      //-->
+    </script>
+    
+    <noscript>
+      Turning JavaScript on in your browser makes for a much better experience!
+    </noscript>
+  </head>
+  
+  <body id="main" style="font-size: 1em;">
+    <div id="fontIncrease" onclick="increaseFont();">+</div>
+    <div id="fontDecrease" onclick="decreaseFont();">-</div>
+    <div id="exSizing">
+      <div style="width: 100ex; height: 100ex; background-color: #0000ff;"></div>
+      <div style="width: 90ex; height: 90ex; background-color: #000044;"></div>
+      <div style="width: 80ex; height: 80ex; background-color: #0000ff;"></div>
+      <div style="width: 70ex; height: 70ex; background-color: #000044;"></div>
+      <div style="width: 60ex; height: 60ex; background-color: #0000ff;"></div>
+      <div style="width: 50ex; height: 50ex; background-color: #000044;"></div>
+      <div style="width: 40ex; height: 40ex; background-color: #0000ff;"></div>
+      <div style="width: 30ex; height: 30ex; background-color: #000044;"></div>
+      <div style="width: 20ex; height: 20ex; background-color: #0000ff;"></div>
+      <div style="width: 10ex; height: 10ex; background-color: #000044;"></div>
+      <div style="width: 9ex; height: 9ex; background-color: #0000ff;"></div>
+      <div style="width: 8ex; height: 8ex; background-color: #000044;"></div>
+      <div style="width: 7ex; height: 7ex; background-color: #0000ff;"></div>
+      <div style="width: 6ex; height: 6ex; background-color: #000044;"></div>
+      <div style="width: 5ex; height: 5ex; background-color: #0000ff;"></div>
+      <div style="width: 4ex; height: 4ex; background-color: #000044;"></div>
+      <div style="width: 3ex; height: 3ex; background-color: #0000ff;"></div>
+      <div style="width: 2ex; height: 2ex; background-color: #000044;"></div>
+      <div style="width: 1ex; height: 1ex; background-color: #0000ff;"><span>ex</span></div>
+    </div>
+
+    <div id="emSizing">
+      <div style="width: 100em; height: 100em; background-color: #440000;"></div>
+      <div style="width: 90em; height: 90em; background-color: #dd0000;"></div>
+      <div style="width: 80em; height: 80em; background-color: #440000;"></div>
+      <div style="width: 70em; height: 70em; background-color: #dd0000;"></div>
+      <div style="width: 60em; height: 60em; background-color: #440000;"></div>
+      <div style="width: 50em; height: 50em; background-color: #dd0000;"></div>
+      <div style="width: 40em; height: 40em; background-color: #440000;"></div>
+      <div style="width: 30em; height: 30em; background-color: #dd0000;"></div>
+      <div style="width: 20em; height: 20em; background-color: #440000;"></div>
+      <div style="width: 10em; height: 10em; background-color: #dd0000;"></div>
+      <div style="width: 9em; height: 9em; background-color: #440000;"></div>
+      <div style="width: 8em; height: 8em; background-color: #dd0000;"></div>
+      <div style="width: 7em; height: 7em; background-color: #440000;"></div>
+      <div style="width: 6em; height: 6em; background-color: #dd0000;"></div>
+      <div style="width: 5em; height: 5em; background-color: #440000;"></div>
+      <div style="width: 4em; height: 4em; background-color: #dd0000;"></div>
+      <div style="width: 3em; height: 3em; background-color: #440000;"></div>
+      <div style="width: 2em; height: 2em; background-color: #dd0000;"></div>
+      <div style="width: 1em; height: 1em; background-color: #440000;"><span>em</span></div>
+    </div>
+
+    <div id="ptSizing">
+      <div style="width: 100pt; height: 100pt; background-color: #004400;"></div>
+      <div style="width: 90pt; height: 90pt; background-color: #00dd00;"></div>
+      <div style="width: 80pt; height: 80pt; background-color: #004400;"></div>
+      <div style="width: 70pt; height: 70pt; background-color: #00dd00;"></div>
+      <div style="width: 60pt; height: 60pt; background-color: #004400;"></div>
+      <div style="width: 50pt; height: 50pt; background-color: #00dd00;"></div>
+      <div style="width: 40pt; height: 40pt; background-color: #004400;"></div>
+      <div style="width: 30pt; height: 30pt; background-color: #00dd00;"></div>
+      <div style="width: 20pt; height: 20pt; background-color: #004400;"></div>
+      <div style="width: 10pt; height: 10pt; background-color: #00dd00;"></div>
+      <div style="width: 9pt; height: 9pt; background-color: #004400;"></div>
+      <div style="width: 8pt; height: 8pt; background-color: #00dd00;"></div>
+      <div style="width: 7pt; height: 7pt; background-color: #004400;"></div>
+      <div style="width: 6pt; height: 6pt; background-color: #00dd00;"></div>
+      <div style="width: 5pt; height: 5pt; background-color: #004400;"></div>
+      <div style="width: 4pt; height: 4pt; background-color: #00dd00;"></div>
+      <div style="width: 3pt; height: 3pt; background-color: #004400;"></div>
+      <div style="width: 2pt; height: 2pt; background-color: #00dd00;"></div>
+      <div style="width: 1pt; height: 1pt; background-color: #004400;"><span>pt</span></div>
+    </div>
+
+    <div id="pcSizing">
+      <div style="width: 100pc; height: 100pc; background-color: #00ff88;"></div>
+      <div style="width: 90pc; height: 90pc; background-color: #00bbff;"></div>
+      <div style="width: 80pc; height: 80pc; background-color: #00ff88;"></div>
+      <div style="width: 70pc; height: 70pc; background-color: #00bbff;"></div>
+      <div style="width: 60pc; height: 60pc; background-color: #00ff88;"></div>
+      <div style="width: 50pc; height: 50pc; background-color: #00bbff;"></div>
+      <div style="width: 40pc; height: 40pc; background-color: #00ff88;"></div>
+      <div style="width: 30pc; height: 30pc; background-color: #00bbff;"></div>
+      <div style="width: 20pc; height: 20pc; background-color: #00ff88;"></div>
+      <div style="width: 10pc; height: 10pc; background-color: #00bbff;"></div>
+      <div style="width: 9pc; height: 9pc; background-color: #00ff88;"></div>
+      <div style="width: 8pc; height: 8pc; background-color: #00bbff;"></div>
+      <div style="width: 7pc; height: 7pc; background-color: #00ff88;"></div>
+      <div style="width: 6pc; height: 6pc; background-color: #00bbff;"></div>
+      <div style="width: 5pc; height: 5pc; background-color: #00ff88;"></div>
+      <div style="width: 4pc; height: 4pc; background-color: #00bbff;"></div>
+      <div style="width: 3pc; height: 3pc; background-color: #00ff88;"></div>
+      <div style="width: 2pc; height: 2pc; background-color: #00bbff;"></div>
+      <div style="width: 1pc; height: 1pc; background-color: #00ff88;"><span>pc</span></div>
+    </div>
+
+    <div id="mmSizing">
+      <div style="width: 100mm; height: 100mm; background-color: #ff6688;"></div>
+      <div style="width: 90mm; height: 90mm; background-color: #ffff00;"></div>
+      <div style="width: 80mm; height: 80mm; background-color: #ff6688;"></div>
+      <div style="width: 70mm; height: 70mm; background-color: #ffff00;"></div>
+      <div style="width: 60mm; height: 60mm; background-color: #ff6688;"></div>
+      <div style="width: 50mm; height: 50mm; background-color: #ffff00;"></div>
+      <div style="width: 40mm; height: 40mm; background-color: #ff6688;"></div>
+      <div style="width: 30mm; height: 30mm; background-color: #ffff00;"></div>
+      <div style="width: 20mm; height: 20mm; background-color: #ff6688;"></div>
+      <div style="width: 10mm; height: 10mm; background-color: #ffff00;"></div>
+      <div style="width: 9mm; height: 9mm; background-color: #ff6688;"></div>
+      <div style="width: 8mm; height: 8mm; background-color: #ffff00;"></div>
+      <div style="width: 7mm; height: 7mm; background-color: #ff6688;"></div>
+      <div style="width: 6mm; height: 6mm; background-color: #ffff00;"></div>
+      <div style="width: 5mm; height: 5mm; background-color: #ff6688;"></div>
+      <div style="width: 4mm; height: 4mm; background-color: #ffff00;"></div>
+      <div style="width: 3mm; height: 3mm; background-color: #ff6688;"></div>
+      <div style="width: 2mm; height: 2mm; background-color: #ffff00;"></div>
+      <div style="width: 1mm; height: 1mm; background-color: #ff6688;"><span>mm</span></div>
+    </div>
+
+    <div id="pxSizing">
+      <div style="width: 100px; height: 100px; background-color: #000000;"></div>
+      <div style="width: 90px; height: 90px; background-color: #220000;"></div>
+      <div style="width: 80px; height: 80px; background-color: #000044;"></div>
+      <div style="width: 70px; height: 70px; background-color: #660000;"></div>
+      <div style="width: 60px; height: 60px; background-color: #000088;"></div>
+      <div style="width: 50px; height: 50px; background-color: #bb0000;"></div>
+      <div style="width: 40px; height: 40px; background-color: #0000dd;"></div>
+      <div style="width: 30px; height: 30px; background-color: #ff0000;"></div>
+      <div style="width: 20px; height: 20px; background-color: #2200ff;"></div>
+      <div style="width: 10px; height: 10px; background-color: #ff0044;"></div>
+      <div style="width: 9px; height: 9px; background-color: #6600ff;"></div>
+      <div style="width: 8px; height: 8px; background-color: #ff0066;"></div>
+      <div style="width: 7px; height: 7px; background-color: #6600ff;"></div>
+      <div style="width: 6px; height: 6px; background-color: #ff0066;"></div>
+      <div style="width: 5px; height: 5px; background-color: #6600ff;"></div>
+      <div style="width: 4px; height: 4px; background-color: #ff0066;"></div>
+      <div style="width: 3px; height: 3px; background-color: #6600ff;"></div>
+      <div style="width: 2px; height: 2px; background-color: #ff0066;"></div>
+      <div style="width: 1px; height: 1px; background-color: #6600ff;"><span>px</span></div>
+    </div>
+    <br style="clear: both" />
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<div class="pageTitle">
+  <h1>Edit <%= @alarms.label %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :show, :id => @alarms.object %>">Cancel</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a class="button" href="<%= url_for :action => :delete, :id => @alarms.object %>">Delete</a>
+  </div>
+</div>
+
+<div class="content">
+  <form method="POST" action="<%= url_for :action => :update %>">
+    <input type="hidden" name="id" value="<%= @alarms.object %>"/>
+    <ul>
+      
+          <li>
+            <label for="alarms[label]" class="fieldLabel">Label</label>
+            <input type="text" name="alarms[label]" value="<%= @alarms.label %>" <%= placeholder( "Label" ) %> />
+          </li>
+      
+          <li>
+            <label for="alarms[start_time]" class="fieldLabel">Start time</label>
+            <input type="text" name="alarms[start_time]" value="<%= @alarms.start_time %>" <%= placeholder( "Start time" ) %> />
+          </li>
+      
+          <li>
+            <label for="alarms[duration]" class="fieldLabel">Duration</label>
+            <input type="text" name="alarms[duration]" value="<%= @alarms.duration %>" <%= placeholder( "Duration" ) %> />
+          </li>
+      
+          <li>
+            <label for="alarms[sound]" class="fieldLabel">Sound</label>
+            <input type="text" name="alarms[sound]" value="<%= @alarms.sound %>" <%= placeholder( "Sound" ) %> />
+          </li>
+      
+          <li>
+            <label for="alarms[repeatable]" class="fieldLabel">Repeatable</label>
+            <input type="text" name="alarms[repeatable]" value="<%= @alarms.repeatable %>" <%= placeholder( "Repeatable" ) %> />
+          </li>
+      
+    </ul>
+    <input type="submit" class="standardButton" value="Update"/>
+  </form>
+</div>

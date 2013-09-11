@@ -1,0 +1,43 @@
+<div class="pageTitle">
+  <h1><%= @alarms.label %></h1>
+</div>
+
+<div class="toolbar">
+  <div class="leftItem backButton">
+    <a href="<%= url_for :action => :index %>">Back</a>
+  </div>
+  <div class="rightItem regularButton">
+    <a href="<%= url_for :action => :edit, :id => @alarms.object %>">Edit</a>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+    
+        <li>
+          <div class="itemLabel">Label</div>
+          <div class="itemValue"><%= @alarms.label %></div>
+        </li>
+    
+        <li>
+          <div class="itemLabel">StartTime</div>
+          <div class="itemValue"><%= @alarms.start_time %></div>
+        </li>
+    
+        <li>
+          <div class="itemLabel">Duration</div>
+          <div class="itemValue"><%= @alarms.duration %></div>
+        </li>
+    
+        <li>
+          <div class="itemLabel">Sound</div>
+          <div class="itemValue"><%= @alarms.sound %></div>
+        </li>
+    
+        <li>
+          <div class="itemLabel">Repeatable</div>
+          <div class="itemValue"><%= @alarms.repeatable %></div>
+        </li>
+    
+  </ul>
+</div>

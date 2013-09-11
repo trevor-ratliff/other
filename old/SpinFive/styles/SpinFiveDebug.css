@@ -1,0 +1,39 @@
+/****
+* @file SpinFiveDebug.css
+* @brief Holds css rules for debug info
+* @author Trevor Ratliff
+* @date 2013-01-17
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+*	2013-01-17  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
+*		file creation  |
+* @endverbatim
+****/
+
+/****
+* Elements
+****/
+
+
+
+/****
+* Classes
+****/
+
+.debug {
+	background-color: #ff9090;
+	color: #330000;
+}
+
+/****
+* IDs
+****/
+
+#debug {
+	position: fixed;
+	top: 2ex;
+	left: 2ex;
+	width: 20ex;
+	border: 1px solid #990000;
+}

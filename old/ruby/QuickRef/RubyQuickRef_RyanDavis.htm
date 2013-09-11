@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://www.zenspider.com/Languages/Ruby/QuickRef.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <title>
+       Ruby QuickRef |  zenspider.com by ryan davis
+    </title>
+
+    <meta name="description" content="Ruby quick reference.">
+    <meta name="keywords" content="Programming, Languages, Ruby, Quick Reference">
+    <meta name="author" content="ryan davis">
+    <meta name="icbm" content="47.61924, -122.32644773">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./RubyQuickRef_RyanDavis_files/page.css">
+    
+    <link rel="stylesheet" type="text/css" href="./RubyQuickRef_RyanDavis_files/syntax.css">
+    
+    
+    <style type="text/css">
+      pre { margin: 1em } ul, ol { margin: 0 } h2 { border-bottom: 3px double black } h3 { border-bottom: 1px dotted black }
+    </style>
+    
+  <script type="text/javascript" async="" id="gauges-tracker" data-site-id="5041508f613f5d2e84000001" src="./RubyQuickRef_RyanDavis_files/track.js"></script><script type="text/javascript" async="" src="./RubyQuickRef_RyanDavis_files/ga.js"></script></head>
+  <body>
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-543579-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ?
+            'https://ssl' : 'http://www') +
+           '.google-analytics.com/ga.js';
+  (document.getElementsByTagName('head')[0] ||
+   document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+</script>
+
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '5041508f613f5d2e84000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+    <h1 id="header">
+  <a href="http://www.zenspider.com/">zenspider.com <span class="by">by ryan davis</span></a>
+</h1>
+
+<h2 class="nav">
+  «
+  <a href="http://www.zenspider.com/Languages/Ruby">ruby</a> |
+  <a href="http://www.zenspider.com/projects">projects</a> |
+  <a href="http://www.zenspider.com/presentations">presentations</a> |
+  <a href="http://www.zenspider.com/RWD">rwd</a> |
+  <a href="http://www.zenspider.com/ZSS">zss</a> |
+  <a href="http://www.zenspider.com/about.html">about</a> |
+  <a href="http://www.zenspider.com/sitemap.html">sitemap</a>
+  »
+</h2>
+
+<div class="nav">
+  <a href="http://www.zenspider.com/">zenspider.com</a> » <a href="http://www.zenspider.com/Languages/">The Language Freak</a> » <a href="http://www.zenspider.com/Languages/Ruby/">Ruby</a> » Ruby QuickRef
+</div>
+
+    <div id="content">
+      <h1 id="ruby-quickref">Ruby QuickRef</h1>
+
+<script><!--
+google_ad_client = "ca-pub-2178088302342288";
+google_ad_slot   = "5986973919";
+google_ad_width  = 468;
+google_ad_height = 60;
+//-->
+</script>
+
+<script src="./RubyQuickRef_RyanDavis_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><ins id="aswift_0_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+<h4 id="table-of-contents">Table of Contents</h4>
+
+<ul id="markdown-toc">
+  <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#table-of-contents">Table of Contents</a></li>
+  <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#language">Language</a>    <ul>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#general-tips">General Tips</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#general-syntax-rules">General Syntax Rules</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#reserved-words">Reserved Words</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#types">Types</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#numbers">Numbers</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#strings">Strings</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#symbols">Symbols</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#ranges">Ranges</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#regexen">Regexen</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#arrays">Arrays</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#hashes">Hashes</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#files">Files</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#variables">Variables</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#pseudo-variables">Pseudo variables</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#pre-defined-variables">Pre-defined variables</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#require-english">require “English”</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#pre-defined-global-constants">Pre-defined global constants</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#expressions">Expressions</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#operators-and-precedence">Operators and Precedence</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#control-expressions">Control Expressions</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#invoking-a-method">Invoking a Method</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#defining-a-class">Defining a Class</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#defining-a-module">Defining a Module</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#defining-a-method">Defining a Method</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#access-restriction">Access Restriction</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#accessors">Accessors</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#aliasing">Aliasing</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#blocks-closures-and-procs">Blocks, Closures, and Procs</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#blocksclosures">Blocks/Closures</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#proc-objects">Proc Objects</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#exceptions-catch-and-throw">Exceptions, Catch, and Throw</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#raising-and-rescuing">Raising and Rescuing</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#catch-and-throw">Catch and Throw</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#standard-library">Standard Library</a>    <ul>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#built-in-library">Built-in Library</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#class-hierarchy">Class Hierarchy</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#modules">Modules</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#standard-library-1">Standard Library</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#minitest">Minitest</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#unit-test-example">Unit Test Example</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#unit-spec-example">Unit Spec Example</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#assertions">Assertions</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#refutations">Refutations</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#expectations">Expectations</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#negative-expectations">Negative Expectations</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#helper-methods">Helper methods</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#tools">Tools</a>    <ul>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#ruby">ruby</a>        <ul>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#command-line-options">Command Line Options</a></li>
+          <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#environment-variables">Environment Variables</a></li>
+        </ul>
+      </li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#irb">irb</a></li>
+      <li><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#debugger">Debugger</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="language">Language</h2>
+
+<h3 id="general-tips">General Tips</h3>
+
+<p>These are tips I’ve given over and over and over and over…</p>
+
+<ul>
+  <li>Use 2 space indent, no tabs.</li>
+  <li>Use [] over Array.new.</li>
+  <li>Use {} over Hash.new.</li>
+  <li>Don’t rescue Exception. EVER. or I will stab you.</li>
+  <li>Don’t call exit inside of a library method.</li>
+  <li>Use whitespace more. In both directions.</li>
+  <li>Use globals less.</li>
+  <li>Use parens to disambiguate, otherwise avoid them.</li>
+  <li>Learn to use Enumerable. You will not be a rubyist until you do.</li>
+  <li>Returning different types is almost always a no-no.</li>
+  <li>dontNameVarsCamelCase, use_readable_variables.</li>
+  <li>Hungarian notation is for Other Languages, not Ruby.</li>
+  <li>Separate ideas with blank lines, just like paragraphs.</li>
+  <li>Align stuff to be cleaner and to optimize for human pattern matching.</li>
+  <li>Don’t use <code>==</code> to compare floats. Also, learn floats.</li>
+</ul>
+
+<p>See <a href="http://github.com/chneukirchen/styleguide/raw/master/RUBY-STYLE">http://github.com/chneukirchen/styleguide/raw/master/RUBY-STYLE</a> for more.</p>
+
+<h3 id="general-syntax-rules">General Syntax Rules</h3>
+
+<ul>
+  <li>Comments start with a pound/sharp (#) character and go to EOL.</li>
+  <li>Ruby programs are a sequence of expressions.</li>
+  <li>Each expression is delimited by semicolons(;) or newlines unless obviously incomplete (e.g. trailing ‘+’).</li>
+  <li>Backslashes at the end of line does not terminate expression.</li>
+</ul>
+
+<h3 id="reserved-words">Reserved Words</h3>
+
+<pre><code>alias   and     BEGIN   begin   break   case    class   def     defined?
+do      else    elsif   END     end     ensure  false   for     if
+in      module  next    nil     not     or      redo    rescue  retry
+return  self    super   then    true    undef   unless  until   when
+while   yield
+</code></pre>
+
+<h3 id="types">Types</h3>
+
+<p>Basic types are numbers, strings, ranges, regexen, symbols, arrays,
+and hashes. Also included are files because they are used so often.</p>
+
+<h4 id="numbers">Numbers</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="integer">123</span>
+<span class="integer">1_234</span>
+<span class="float">123.45</span>
+<span class="float">1.2e-3</span>
+<span class="integer">0xffff</span>   <span class="comment"># hex</span>
+<span class="integer">0b01011</span>  <span class="comment"># binary</span>
+<span class="integer">0377</span>     <span class="comment"># octal</span>
+<span class="integer">?a</span>       <span class="comment"># ASCII character (1.8 only -- 1.9 returns a string "a")</span>
+<span class="integer">?\C-a</span>    <span class="comment"># Control-a</span>
+<span class="integer">?\M-a</span>    <span class="comment"># Meta-a</span>
+<span class="integer">?\M-\C-a</span> <span class="comment"># Meta-Control-a</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="strings">Strings</h4>
+
+<p>In all of the <code>%()</code> cases below, you may use any matching characters or
+any single character for delimiters. <code>%[]</code>, <code>%!!</code>, <code>%@@</code>, etc.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="string"><span class="delimiter">'</span><span class="content">no interpolation</span><span class="delimiter">'</span></span>
+<span class="string"><span class="delimiter">"</span><span class="inline"><span class="inline-delimiter">#{</span>interpolation<span class="inline-delimiter">}</span></span><span class="content">, and backslashes</span><span class="char">\n</span><span class="delimiter">"</span></span>
+<span class="string"><span class="delimiter">%q(</span><span class="content">no interpolation</span><span class="delimiter">)</span></span>
+<span class="string"><span class="delimiter">%Q(</span><span class="content">interpolation and backslashes</span><span class="delimiter">)</span></span>
+<span class="string"><span class="delimiter">%(</span><span class="content">interpolation and backslashes</span><span class="delimiter">)</span></span>
+<span class="shell"><span class="delimiter">`</span><span class="content">echo command interpretation with interpolation and backslashes</span><span class="delimiter">`</span></span>
+<span class="shell"><span class="delimiter">%x(</span><span class="content">echo command interpretation with interpolation and backslashes</span><span class="delimiter">)</span></span>
+</pre></div>
+</div>
+</div>
+
+<h5 id="backslashes">Backslashes:</h5>
+
+<pre><code>\t (tab), \n (newline), \r (carriage return), \f (form feed), \b
+(backspace), \a (bell), \e (escape), \s (whitespace), \nnn (octal),
+\xnn (hexadecimal), \cx (control x), \C-x (control x), \M-x (meta x),
+\M-\C-x (meta control x)
+</code></pre>
+
+<h5 id="here-docs">Here Docs:</h5>
+
+<pre><code>&lt;&lt;identifier   - interpolated, goes until identifier
+&lt;&lt;"identifier" - same thing
+&lt;&lt;'identifier' - no interpolation
+&lt;&lt;-identifier  - you can indent the identifier by using "-" in front
+</code></pre>
+
+<h5 id="encodings">Encodings:</h5>
+
+<p>Waaaay too much to cover here. Try these instead:</p>
+
+<ul>
+  <li><a href="http://nuclearsquid.com/writings/ruby-1-9-encodings/">http://nuclearsquid.com/writings/ruby-1-9-encodings/</a></li>
+  <li><a href="http://blog.grayproductions.net/articles/ruby_19s_three_default_encodings">http://blog.grayproductions.net/articles/ruby_19s_three_default_encodings</a></li>
+</ul>
+
+<h4 id="symbols">Symbols</h4>
+
+<p>Internalized String. Guaranteed to be unique and quickly comparable.
+Ideal for hash keys.</p>
+
+<p>1.8: Symbols may not contain \0 or be empty.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="symbol">:symbol</span>                        == <span class="symbol">:symbol</span>
+<span class="symbol"><span class="symbol">:</span><span class="delimiter">'</span><span class="content">#{"without"} interpolation</span><span class="delimiter">'</span></span>  == <span class="symbol"><span class="symbol">:</span><span class="delimiter">"</span><span class="inline"><span class="inline-delimiter">#{</span><span class="string"><span class="delimiter">"</span><span class="content">without</span><span class="delimiter">"</span></span><span class="inline-delimiter">}</span></span><span class="content"> interpolation</span><span class="delimiter">"</span></span>
+<span class="symbol"><span class="symbol">:</span><span class="delimiter">"</span><span class="inline"><span class="inline-delimiter">#{</span><span class="string"><span class="delimiter">"</span><span class="content">with</span><span class="delimiter">"</span></span><span class="inline-delimiter">}</span></span><span class="content"> interpolation</span><span class="delimiter">"</span></span>     == <span class="symbol"><span class="symbol">:</span><span class="delimiter">"</span><span class="content">with interpolation</span><span class="delimiter">"</span></span>
+<span class="symbol"><span class="delimiter">%s(</span><span class="content">#{"without"} interpolation</span><span class="delimiter">)</span></span> == <span class="symbol"><span class="symbol">:</span><span class="delimiter">"</span><span class="inline"><span class="inline-delimiter">#{</span><span class="string"><span class="delimiter">"</span><span class="content">without</span><span class="delimiter">"</span></span><span class="inline-delimiter">}</span></span><span class="content"> interpolation</span><span class="delimiter">"</span></span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="ranges">Ranges</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="integer">1</span>..<span class="integer">10</span>
+<span class="integer">1</span>...<span class="integer">10</span>
+<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>..<span class="string"><span class="delimiter">'</span><span class="content">z</span><span class="delimiter">'</span></span>
+<span class="string"><span class="delimiter">'</span><span class="content">a</span><span class="delimiter">'</span></span>...<span class="string"><span class="delimiter">'</span><span class="content">z</span><span class="delimiter">'</span></span>
+(<span class="integer">1</span>..<span class="integer">10</span>)  === <span class="integer">5</span>   <span class="comment"># true</span>
+(<span class="integer">1</span>..<span class="integer">10</span>)  === <span class="integer">10</span>  <span class="comment"># true</span>
+(<span class="integer">1</span>...<span class="integer">10</span>) === <span class="integer">10</span>  <span class="comment"># false</span>
+(<span class="integer">1</span>..<span class="integer">10</span>)  === <span class="integer">15</span>  <span class="comment"># false</span>
+</pre></div>
+</div>
+</div>
+
+<p>You can define your own by making them Comparable and implementing <code>#succ</code>.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">class</span> <span class="class">RangeThingy</span>
+  include <span class="constant">Comparable</span>
+
+  <span class="keyword">def</span> <span class="function">&lt;=&gt;</span> rhs
+    <span class="comment"># ...</span>
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">succ</span>
+    <span class="comment"># ...</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+range = <span class="constant">RangeThingy</span>.new(lower_bound)..<span class="constant">RangeThingy</span>.new(upper_bound)
+</pre></div>
+</div>
+</div>
+
+<h4 id="regexen">Regexen</h4>
+
+<p>Test out your regexen in irb or on: <a href="http://www.rubyxp.com/">http://www.rubyxp.com/</a> or <a href="http://rubular.com/">http://rubular.com</a>.</p>
+
+<p>Usual recommended form:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>str =~ <span class="regexp"><span class="delimiter">/</span><span class="content">regex</span><span class="delimiter">/</span></span>
+</pre></div>
+</div>
+</div>
+
+<p>Lexical options:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="regexp"><span class="delimiter">/</span><span class="content">normal regex</span><span class="delimiter">/</span><span class="modifier">iomx</span></span>[neus]
+<span class="regexp"><span class="delimiter">%r{</span><span class="content">alternate form</span><span class="delimiter">}</span></span> <span class="comment"># (where {} can be any character XX or pair () [] etc)</span>
+</pre></div>
+</div>
+</div>
+
+<p>options:</p>
+
+<pre><code>/i         case insensitive
+/o         only interpolate #{} blocks once
+/m         multiline mode - '.' will match newline
+/x         extended mode - whitespace is ignored
+/[neus]    encoding: none, EUC, UTF-8, SJIS, respectively
+</code></pre>
+
+<p>regex characters:</p>
+
+<pre><code>.             any character except newline
+[ ]           any single character of set
+[^ ]          any single character NOT of set
+*             0 or more previous regular expression
+*?            0 or more previous regular expression (non-greedy)
++             1 or more previous regular expression
++?            1 or more previous regular expression (non-greedy)
+?             0 or 1 previous regular expression
+|             alternation
+( )           grouping regular expressions
+^             beginning of a line or string
+$             end of a line or string
+{m,n}         at least m but most n previous regular expression
+{m,n}?        at least m but most n previous regular expression (non-greedy)
+\1-9          nth previous captured group
+\&amp;            whole match
+\`            pre-match
+\'            post-match
+\+            highest group matched
+\A            beginning of a string
+\b            backspace(0x08)(inside[]only)
+\b            word boundary(outside[]only)
+\B            non-word boundary
+\d            digit, same as[0-9]
+\D            non-digit
+\S            non-whitespace character
+\s            whitespace character[ \t\n\r\f]
+\W            non-word character
+\w            word character[0-9A-Za-z_]
+\z            end of a string
+\Z            end of a string, or before newline at the end
+(?#)          comment
+(?:)          grouping without backreferences
+(?=)          zero-width positive look-ahead assertion
+(?!)          zero-width negative look-ahead assertion
+(?&gt;)          nested anchored sub-regexp. stops backtracking.
+(?imx-imx)    turns on/off imx options for rest of regexp.
+(?imx-imx:re) turns on/off imx options, localized in group.
+(?&lt;=)         zero-width positive look-behind assertion.
+(?&lt;!)         zero-width negative look-behind assertion.
+</code></pre>
+
+<p>special character classes:</p>
+
+<pre><code>[:alnum:]   alpha-numeric characters
+[:alpha:]   alphabetic characters
+[:blank:]   whitespace - does not include tabs, carriage returns, etc
+[:cntrl:]   control characters
+[:digit:]   decimal digits
+[:graph:]   graph characters
+[:lower:]   lower case characters
+[:print:]   printable characters
+[:punct:]   punctuation characters
+[:space:]   whitespace, including tabs, carriage returns, etc
+[:upper:]   upper case characters
+[:xdigit:]  hexadecimal digits
+</code></pre>
+
+<h4 id="arrays">Arrays</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>[<span class="integer">1</span>, <span class="integer">2</span>, <span class="integer">3</span>]
+<span class="string"><span class="delimiter">%w(</span><span class="content">foo bar baz</span><span class="delimiter">)</span></span>        == [<span class="string"><span class="delimiter">"</span><span class="content">foo</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">bar</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">baz</span><span class="delimiter">"</span></span>]
+<span class="string"><span class="delimiter">%W(</span><span class="content">foo bar baz </span><span class="inline"><span class="inline-delimiter">#{</span>var<span class="inline-delimiter">}</span></span><span class="delimiter">)</span></span> == [<span class="string"><span class="delimiter">"</span><span class="content">foo</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">bar</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">baz</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="inline"><span class="inline-delimiter">#{</span>var<span class="inline-delimiter">}</span></span><span class="delimiter">"</span></span>]
+</pre></div>
+</div>
+</div>
+
+<p>Indexes may be negative, and they index backwards (eg -1 is last element).</p>
+
+<h4 id="hashes">Hashes</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>{<span class="integer">1</span>=&gt;<span class="integer">2</span>, <span class="integer">2</span>=&gt;<span class="integer">4</span>, <span class="integer">3</span>=&gt;<span class="integer">6</span>}
+{ key: val } == { <span class="symbol">:key</span> =&gt; val } <span class="comment"># 1.9 only.</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="files">Files</h4>
+
+<p>Common methods include:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>path = <span class="constant">File</span>.join(p1, p2, ... pN) <span class="comment"># =&gt; "p1/p2/.../pN"</span>
+
+f = <span class="constant">File</span>.new(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">r</span><span class="delimiter">"</span></span>) <span class="comment"># don't use this. Use the block form</span>
+<span class="constant">File</span>.open(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>)      { |f| f.read }
+<span class="constant">File</span>.open(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">r</span><span class="delimiter">"</span></span>) { |f| f.read }
+<span class="constant">File</span>.open(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">w</span><span class="delimiter">"</span></span>) { |f| f.puts <span class="string"><span class="delimiter">"</span><span class="content">woot</span><span class="delimiter">"</span></span> }
+<span class="constant">File</span>.open(<span class="string"><span class="delimiter">"</span><span class="content">iso-8859-1.txt</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="content">r:iso-8859-1</span><span class="delimiter">"</span></span>) { |f| ... } <span class="comment"># 1.9 open with encoding</span>
+<span class="constant">File</span>.size(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>)  <span class="comment"># =&gt; 42</span>
+<span class="constant">File</span>.mtime(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>) <span class="comment"># =&gt; Yesterday</span>
+
+<span class="constant">IO</span>.foreach(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>) { |line| puts line <span class="keyword">if</span> line =~ <span class="regexp"><span class="delimiter">/</span><span class="content">woot</span><span class="delimiter">/</span></span> }
+lines = <span class="constant">IO</span>.readlines(<span class="string"><span class="delimiter">"</span><span class="content">path</span><span class="delimiter">"</span></span>)
+</pre></div>
+</div>
+</div>
+
+<h5 id="mode-strings">Mode Strings</h5>
+
+<dl>
+  <dt><code>"r"</code></dt>
+  <dd>R/O, start of file (default mode).</dd>
+  <dt><code>"r+"</code></dt>
+  <dd>R/W, start of file.</dd>
+  <dt><code>"w"</code></dt>
+  <dd>W/O, truncates or creates.</dd>
+  <dt><code>"w+"</code></dt>
+  <dd>R/W, truncates or creates.</dd>
+  <dt><code>"a"</code></dt>
+  <dd>W/O, end of file or creates.</dd>
+  <dt><code>"a+"</code></dt>
+  <dd>R/W, end of file or creates.</dd>
+  <dt><code>"b"</code></dt>
+  <dd>Binary file mode, in addition to above. DOS/Windows only.</dd>
+</dl>
+
+<h3 id="variables">Variables</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="global-variable">$global_variable</span>
+<span class="class-variable">@@class_variable</span>
+<span class="instance-variable">@instance_variable</span>
+<span class="constant">CONSTANT</span>
+::<span class="constant">TOP_LEVEL_CONSTANT</span>
+<span class="constant">OtherClass</span>::<span class="constant">CONSTANT</span>
+local_variable
+</pre></div>
+</div>
+</div>
+
+<h3 id="pseudo-variables">Pseudo variables</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="predefined-constant">self</span>     <span class="comment"># the receiver of the current method</span>
+<span class="predefined-constant">nil</span>      <span class="comment"># the sole instance of the Class NilClass (falsey)</span>
+<span class="predefined-constant">true</span>     <span class="comment"># the sole instance of the Class TrueClass</span>
+<span class="predefined-constant">false</span>    <span class="comment"># the sole instance of the Class FalseClass</span>
+<span class="predefined-constant">__FILE__</span> <span class="comment"># the current source file name.</span>
+<span class="predefined-constant">__LINE__</span> <span class="comment"># the current line number in the source file.</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="pre-defined-variables">Pre-defined variables</h3>
+
+<p>Some globals have actual readable names:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="global-variable">$DEBUG</span>     <span class="comment"># The boolean status of the -d switch.</span>
+<span class="global-variable">$FILENAME</span>  <span class="comment"># Current input file from ARGF. Same as ARGF.filename.</span>
+<span class="global-variable">$LOAD_PATH</span> <span class="comment"># Load path for scripts and binary modules by load or require.</span>
+<span class="global-variable">$stderr</span>    <span class="comment"># The current standard error output.</span>
+<span class="global-variable">$stdin</span>     <span class="comment"># The current standard input.</span>
+<span class="global-variable">$stdout</span>    <span class="comment"># The current standard output.</span>
+<span class="global-variable">$VERBOSE</span>   <span class="comment"># The verbose flag, which is set by the -v switch.</span>
+</pre></div>
+</div>
+</div>
+
+<p>But most don’t:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="global-variable">$!</span>  <span class="comment"># The exception object passed to #raise.</span>
+<span class="global-variable">$@</span>  <span class="comment"># The stack backtrace generated by the last exception raised.</span>
+<span class="global-variable">$&amp;</span>  <span class="comment"># Depends on $~. The string matched by the last successful match.</span>
+<span class="global-variable">$`</span>  <span class="comment"># Depends on $~. The string to the left of the last successful match.</span>
+<span class="global-variable">$'</span>  <span class="comment"># Depends on $~. The string to the right of the last successful match.</span>
+<span class="global-variable">$+</span>  <span class="comment"># Depends on $~. The highest group matched by the last successful match.</span>
+<span class="global-variable">$1</span>  <span class="comment"># Depends on $~. The Nth group of the last successful match. May be &gt; 1.</span>
+<span class="global-variable">$~</span>  <span class="comment"># The MatchData instance of the last match. Thread and scope local. MAGIC</span>
+<span class="global-variable">$=</span>  <span class="comment"># The flag for case insensitive. Defaults to nil. Deprecated.</span>
+<span class="global-variable">$/</span>  <span class="comment"># The input record separator (eg #gets). Defaults to newline.</span>
+<span class="global-variable">$\</span>  <span class="comment"># The output record separator (eg #print and IO#write). Default is nil.</span>
+<span class="global-variable">$,</span>  <span class="comment"># The output field separator for the print and Array#join. Defaults to nil.</span>
+<span class="global-variable">$;</span>  <span class="comment"># The default separator for String#split. See -F flag.</span>
+<span class="global-variable">$.</span>  <span class="comment"># The current line number of the last file from input.</span>
+<span class="global-variable">$&lt;</span>  <span class="comment"># See ARGF.</span>
+<span class="global-variable">$&gt;</span>  <span class="comment"># The default output for print, printf. Defaults to $stdout.</span>
+<span class="global-variable">$_</span>  <span class="comment"># The last input line of string by gets or readline. Thread and scope local.</span>
+<span class="global-variable">$0</span>  <span class="comment"># Contains the name of the script being executed. May be assignable.</span>
+<span class="global-variable">$*</span>  <span class="comment"># See ARGV.</span>
+<span class="global-variable">$$</span>  <span class="comment"># The process number of the Ruby running this script. Read only.</span>
+<span class="global-variable">$?</span>  <span class="comment"># The status of the last executed child process. Read only. Thread local.</span>
+<span class="global-variable">$:</span>  <span class="comment"># See $LOAD_PATH.</span>
+<span class="global-variable">$"</span>  <span class="comment"># The array contains the module names loaded by require.</span>
+</pre></div>
+</div>
+</div>
+
+<p>Many command line arguments have an associated global, which is
+usually just an alias to a real global:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="global-variable">$-0</span>  <span class="comment"># See $/.</span>
+<span class="global-variable">$-a</span>  <span class="comment"># Autosplit mode. True if option -a is set. Read-only variable.</span>
+<span class="global-variable">$-d</span>  <span class="comment"># See $DEBUG.</span>
+<span class="global-variable">$-F</span>  <span class="comment"># See $;.</span>
+<span class="global-variable">$-i</span>  <span class="comment"># In in-place-edit mode, this variable holds the extension, otherwise nil.</span>
+<span class="global-variable">$-I</span>  <span class="comment"># See $LOAD_PATH.</span>
+<span class="global-variable">$-l</span>  <span class="comment"># True if option -l is set. Read-only.</span>
+<span class="global-variable">$-p</span>  <span class="comment"># True if option -p is set. Read-only.</span>
+<span class="global-variable">$-v</span>  <span class="comment"># See $VERBOSE.</span>
+<span class="global-variable">$-w</span>  <span class="comment"># True if option -w is set.</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="require-english">require “English”</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="comment"># Small Medium Large</span>
+
+  <span class="global-variable">$!</span>           <span class="global-variable">$ERROR_INFO</span>
+  <span class="global-variable">$@</span>           <span class="global-variable">$ERROR_POSITION</span>
+  <span class="global-variable">$;</span>    <span class="global-variable">$FS</span>    <span class="global-variable">$FIELD_SEPARATOR</span>
+  <span class="global-variable">$,</span>    <span class="global-variable">$OFS</span>   <span class="global-variable">$OUTPUT_FIELD_SEPARATOR</span>
+  <span class="global-variable">$/</span>    <span class="global-variable">$RS</span>    <span class="global-variable">$INPUT_RECORD_SEPARATOR</span>
+  <span class="global-variable">$\</span>    <span class="global-variable">$ORS</span>   <span class="global-variable">$OUTPUT_RECORD_SEPARATOR</span>
+  <span class="global-variable">$.</span>    <span class="global-variable">$NR</span>    <span class="global-variable">$INPUT_LINE_NUMBER</span>
+  <span class="global-variable">$_</span>           <span class="global-variable">$LAST_READ_LINE</span>
+  <span class="global-variable">$&gt;</span>           <span class="global-variable">$DEFAULT_OUTPUT</span>
+  <span class="global-variable">$&lt;</span>           <span class="global-variable">$DEFAULT_INPUT</span>
+  <span class="global-variable">$$</span>    <span class="global-variable">$PID</span>   <span class="global-variable">$PROCESS_ID</span>
+  <span class="global-variable">$?</span>           <span class="global-variable">$CHILD_STATUS</span>
+  <span class="global-variable">$~</span>           <span class="global-variable">$LAST_MATCH_INFO</span>
+  <span class="global-variable">$=</span>           <span class="global-variable">$IGNORECASE</span>
+  <span class="global-variable">$*</span>           <span class="global-variable">$ARGV</span>
+  <span class="global-variable">$&amp;</span>           <span class="global-variable">$MATCH</span>
+  <span class="global-variable">$`</span>           <span class="global-variable">$PREMATCH</span>
+  <span class="global-variable">$'</span>           <span class="global-variable">$POSTMATCH</span>
+  <span class="global-variable">$+</span>           <span class="global-variable">$LAST_PAREN_MATCH</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="pre-defined-global-constants">Pre-defined global constants</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="predefined-constant">STDIN</span>             <span class="comment"># The standard input. The default value for $stdin.</span>
+<span class="predefined-constant">STDOUT</span>            <span class="comment"># The standard output. The default value for $stdout.</span>
+<span class="predefined-constant">STDERR</span>            <span class="comment"># The standard error output. The default value for $stderr.</span>
+<span class="predefined-constant">ENV</span>               <span class="comment"># The hash contains current environment variables. Writable.</span>
+<span class="predefined-constant">ARGF</span>              <span class="comment"># A meta-IO across all files in ARGV. (eg ARGF.each_line...)</span>
+<span class="predefined-constant">ARGV</span>              <span class="comment"># An array of all the arguments given on run.</span>
+<span class="predefined-constant">DATA</span>              <span class="comment"># An IO pointing just after __END__ of the running script.</span>
+<span class="predefined-constant">RUBY_ENGINE</span>       <span class="comment"># The ruby implementation you're running (eg ruby, rubinius, etc)</span>
+<span class="predefined-constant">RUBY_PLATFORM</span>     <span class="comment"># The platform identifier.</span>
+<span class="predefined-constant">RUBY_VERSION</span>      <span class="comment"># The ruby version string (VERSION was deprecated).</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="expressions">Expressions</h3>
+
+<h4 id="operators-and-precedence">Operators and Precedence</h4>
+
+<pre><code>(Top to bottom)
+:: .
+[]
+**
+-(unary) +(unary) ! ~
+*  /  %
++  -
+&lt;&lt;  &gt;&gt;
+&amp;
+|  ^
+&gt;  &gt;=  &lt;  &lt;=
+&lt;=&gt; == === != =~ !~
+&amp;&amp;
+||
+.. ...
+=(+=, -=...)
+not
+and or
+</code></pre>
+
+<table>
+  <tbody>
+    <tr>
+      <td>TODO: add</td>
+      <td>&nbsp;</td>
+      <td>= and others</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>All of the above are just methods except these:</p>
+
+<pre><code>=, ::, ., .., ..., !, not, &amp;&amp;, and, ||, or, !=, !~
+</code></pre>
+
+<p>In addition, assignment operators(+= etc.) are not user-definable.</p>
+
+<p>NOTE: 1.9 has a <em>horrible</em> extension to allow you to define != and !~. A special place in hell is reserved for you if you define those.</p>
+
+<h4 id="control-expressions">Control Expressions</h4>
+
+<div style="float:right">
+<script><!--
+google_ad_client = "ca-pub-2178088302342288";
+google_ad_slot   = "5449985528";
+google_ad_width  = 120;
+google_ad_height = 600;
+//-->
+</script>
+<script src="./RubyQuickRef_RyanDavis_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><ins id="aswift_1_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:120px"><iframe width="120" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+</div>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">if</span> bool-expr [<span class="keyword">then</span>]
+  body
+<span class="keyword">elsif</span> bool-expr [<span class="keyword">then</span>]
+  body
+<span class="keyword">else</span>
+  body
+<span class="keyword">end</span>
+
+<span class="keyword">unless</span> bool-expr [<span class="keyword">then</span>]
+  body
+<span class="keyword">else</span>
+  body
+<span class="keyword">end</span>
+
+expr <span class="keyword">if</span>     bool-expr
+expr <span class="keyword">unless</span> bool-expr
+
+bool-expr ? <span class="predefined-constant">true</span>-expr : <span class="predefined-constant">false</span>-expr
+
+<span class="keyword">case</span> target-expr
+<span class="keyword">when</span> comparison [, comparison]... [<span class="keyword">then</span>]
+  body
+<span class="keyword">when</span> comparison [, comparison]... [<span class="keyword">then</span>]
+  body
+<span class="comment"># ...</span>
+<span class="keyword">else</span> <span class="comment"># optional else</span>
+  body
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<p>Case comparisons may be regexen, classes, whatever. Uses #===.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>loop <span class="keyword">do</span>
+  body
+<span class="keyword">end</span>
+
+<span class="keyword">while</span> bool-expr [<span class="keyword">do</span>]
+  body
+<span class="keyword">end</span>
+
+<span class="keyword">until</span> bool-expr [<span class="keyword">do</span>]
+  body
+<span class="keyword">end</span>
+
+<span class="keyword">begin</span>
+  body
+<span class="keyword">end</span> <span class="keyword">while</span> bool-expr
+
+<span class="keyword">begin</span>
+  body
+<span class="keyword">end</span> <span class="keyword">until</span> bool-expr
+
+<span class="keyword">for</span> name [, name]... <span class="keyword">in</span> expr [<span class="keyword">do</span>]
+  body
+<span class="keyword">end</span>
+
+expr.each <span class="keyword">do</span> | name [, name]... | <span class="comment"># preferred form over `for`</span>
+  body
+<span class="keyword">end</span>
+
+expr <span class="keyword">while</span> bool-expr
+expr <span class="keyword">until</span> bool-expr
+
+<span class="keyword">break</span> <span class="comment"># terminates loop immediately.</span>
+<span class="keyword">redo</span>  <span class="comment"># immediately repeats w/o rerunning the condition.</span>
+<span class="keyword">next</span>  <span class="comment"># starts the next iteration through the loop.</span>
+<span class="keyword">retry</span> <span class="comment"># restarts the loop, rerunning the condition.</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="invoking-a-method">Invoking a Method</h3>
+
+<p>Nearly everything available in a method invocation is optional,
+consequently the syntax is very difficult to follow. Here are some
+examples:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>method
+obj.method
+<span class="constant">Class</span>::method <span class="comment"># don't use this</span>
+<span class="constant">Class</span>.method
+
+method(key1 =&gt; val1, key2 =&gt; val2) <span class="comment"># one hash arg, not 2</span>
+
+method(arg1, *[arg2, arg3]) == method(arg1, arg2, arg3)
+
+<span class="comment"># As ugly as you want it to be:</span>
+method(arg1, key1 =&gt; val1, key2 =&gt; val2, *splat_arg) <span class="comment">#{ block }</span>
+</pre></div>
+</div>
+</div>
+
+<p>The argument syntax is fairly complex:</p>
+
+<pre><code>invocation := [receiver ('::' | '.')] name [ parameters ] [ block ]
+parameters := ( [param]* [',' hashlist] ['*' array] [&amp;aProc] )
+block      := '{' blockbody '}' | 'do' blockbody 'end'
+</code></pre>
+
+<h3 id="defining-a-class">Defining a Class</h3>
+
+<p>Class names begin w/ capital character.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">class</span> <span class="class">Identifier</span> [&lt; superclass ]
+  expr..
+<span class="keyword">end</span>
+
+<span class="comment"># singleton classes, add methods to a single instance</span>
+<span class="keyword">class</span> &lt;&lt; <span class="class">obj</span>
+  expr..
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="defining-a-module">Defining a Module</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">module</span> <span class="class">Identifier</span>
+  expr..
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="defining-a-method">Defining a Method</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">def</span> <span class="function">method_name</span>(arg_list, *list_expr, &amp;block_expr)
+  expr..
+<span class="keyword">end</span>
+
+<span class="comment"># singleton method</span>
+<span class="keyword">def</span> expr.<span class="function">identifier</span>(arg_list, *list_expr, &amp;block_expr)
+  expr..
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<ul>
+  <li>All items of the arg list, including parens, are optional.</li>
+  <li>Arguments may have default values (name=expr).</li>
+  <li>Method_name may be operators (see above).</li>
+  <li>The method definitions can not be nested.</li>
+  <li>Methods may override operators: <code>|</code>, <code>^</code>, <code>&amp;</code>, <code>&lt;=&gt;</code>, <code>==</code>, <code>===</code>, <code>=~</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>**</code>, <code>&lt;&lt;</code>, <code>&gt;&gt;</code>, <code>~</code>, <code>+@</code>, <code>-@</code>, <code>[]</code>, <code>[]=</code> (2 args)</li>
+</ul>
+
+<h4 id="access-restriction">Access Restriction</h4>
+
+<dl>
+  <dt><code>public</code></dt>
+  <dd>totally accessible.</dd>
+  <dt><code>protected</code></dt>
+  <dd>accessible only by instances of class and direct descendants. Even through hasA relationships. (see below)</dd>
+  <dt><code>private</code></dt>
+  <dd>accessible only by instances of class (must be called nekkid no “self.” or anything else).</dd>
+</dl>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">class</span> <span class="class">A</span>
+  <span class="comment"># Restriction used w/o arguments set the default access control.</span>
+  protected
+
+  <span class="keyword">def</span> <span class="function">protected_method</span>
+    <span class="comment"># nothing</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="keyword">class</span> <span class="class">B</span> &lt; <span class="constant">A</span>
+  <span class="keyword">def</span> <span class="function">test_protected</span>
+    myA = <span class="constant">A</span>.new
+    myA.protected_method
+  <span class="keyword">end</span>
+
+  <span class="comment"># Used with arguments, sets the access of the named methods and constants.</span>
+  public <span class="symbol">:test_protected</span>
+<span class="keyword">end</span>
+
+b = <span class="constant">B</span>.new.test_protected
+</pre></div>
+</div>
+</div>
+
+<h4 id="accessors">Accessors</h4>
+
+<p>Class Module provides the following utility methods:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>attr_reader   <span class="symbol">:attribute</span> [, <span class="symbol">:attribute</span>]...  <span class="comment"># Creates reader methods</span>
+attr_writer   <span class="symbol">:attribute</span> [, <span class="symbol">:attribute</span>]...  <span class="comment"># Creates setter methods</span>
+attr_accessor <span class="symbol">:attribute</span> [, <span class="symbol">:attribute</span>]...  <span class="comment"># Creates both readers and writers</span>
+</pre></div>
+</div>
+</div>
+
+<h3 id="aliasing">Aliasing</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre><span class="keyword">alias</span>         <span class="function">new</span>   <span class="function">old</span> <span class="comment"># symbol syntax not needed... bewilderingly</span>
+<span class="keyword">alias</span>        <span class="symbol">:new</span>  <span class="symbol">:old</span> <span class="comment"># comma not needed either... go figure</span>
+alias_method <span class="symbol">:new</span>, <span class="symbol">:old</span>
+</pre></div>
+</div>
+</div>
+
+<p>Creates a new reference to whatever old referred to. old can be any
+existing method, operator, global. It may not be a local, instance,
+constant, or class variable.</p>
+
+<h3 id="blocks-closures-and-procs">Blocks, Closures, and Procs</h3>
+
+<h4 id="blocksclosures">Blocks/Closures</h4>
+
+<ul>
+  <li>blocks must follow a method invocation:</li>
+</ul>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>      invocation <span class="keyword">do</span> ... <span class="keyword">end</span>
+      invocation { ... }
+</pre></div>
+</div>
+</div>
+
+<ul>
+  <li>Blocks remember their variable context, and are full closures.</li>
+  <li>Blocks are invoked via yield and may be passed arguments.</li>
+  <li>Brace form has higher precedence and will bind to the last parameter if invocation made w/o parens.</li>
+  <li>do/end form has lower precedence and will bind to the invocation even without parens.</li>
+</ul>
+
+<h4 id="proc-objects">Proc Objects</h4>
+
+<p>Created via:</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>proc      { |args| ... } <span class="comment"># {} or do/end</span>
+<span class="constant">Proc</span>.new  { |args| ... }
+lambda    { |args| ... }
+-&gt; (args) { ... } <span class="comment"># 1.9+ only</span>
+&amp;<span class="symbol">:method_name</span>  <span class="comment"># calls Symbol#to_proc which creates proc { |o| o.method_name }</span>
+
+<span class="comment"># or by invoking a method w/ a block argument and catching it on the</span>
+<span class="comment"># calling side with a &amp;block_arg:</span>
+
+<span class="keyword">def</span> <span class="function">my_method</span> &amp;block
+  block.call <span class="integer">42</span>
+<span class="keyword">end</span>
+
+obj.my_method { |o| ... }
+
+<span class="comment"># in 1.9, Proc aliases #=== to #call so you can use them as case conditions:</span>
+
+<span class="keyword">case</span> obj
+<span class="keyword">when</span> &amp;<span class="symbol">:empty?</span> <span class="keyword">then</span>
+  <span class="comment"># ...</span>
+<span class="keyword">when</span> -&gt; (o) { o &gt; <span class="integer">42</span> &amp;&amp; o.prime? } <span class="keyword">then</span>
+  <span class="comment"># ...</span>
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<p>See class Proc for more information.</p>
+
+<h3 id="exceptions-catch-and-throw">Exceptions, Catch, and Throw</h3>
+
+<ul>
+  <li>Exception
+    <ul>
+      <li>NoMemoryError</li>
+      <li>ScriptError
+        <ul>
+          <li>LoadError</li>
+          <li>NotImplementedError</li>
+          <li>SyntaxError</li>
+        </ul>
+      </li>
+      <li>SecurityError (1.9: move!)</li>
+      <li>SignalException
+        <ul>
+          <li>Interrupt</li>
+        </ul>
+      </li>
+      <li>StandardError
+        <ul>
+          <li>ArgumentError</li>
+          <li>EncodingError (1.9)
+            <ul>
+              <li>Encoding::CompatibilityError (1.9)</li>
+              <li>Encoding::ConverterNotFoundError (1.9)</li>
+              <li>Encoding::InvalidByteSequenceError (1.9)</li>
+              <li>Encoding::UndefinedConversionError (1.9)</li>
+            </ul>
+          </li>
+          <li>FiberError (1.9)</li>
+          <li>IOError
+            <ul>
+              <li>EOFError</li>
+            </ul>
+          </li>
+          <li>IndexError
+            <ul>
+              <li>KeyError (1.9)</li>
+              <li>StopIteration</li>
+            </ul>
+          </li>
+          <li>LocalJumpError</li>
+          <li>Math::DomainError (1.9)</li>
+          <li>NameError
+            <ul>
+              <li>NoMethodError</li>
+            </ul>
+          </li>
+          <li>RangeError
+            <ul>
+              <li>FloatDomainError</li>
+            </ul>
+          </li>
+          <li>RegexpError</li>
+          <li>RuntimeError</li>
+          <li>SecurityError (1.8: move!)</li>
+          <li>SystemCallError
+            <ul>
+              <li>Errno::*</li>
+            </ul>
+          </li>
+          <li>SystemStackError (1.8: move!)</li>
+          <li>ThreadError</li>
+          <li>TypeError</li>
+          <li>ZeroDivisionError</li>
+        </ul>
+      </li>
+      <li>SystemExit</li>
+      <li>SystemStackError (1.9: move!)</li>
+      <li>fatal</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="raising-and-rescuing">Raising and Rescuing</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>raise <span class="constant">ExceptionClass</span>[, <span class="string"><span class="delimiter">"</span><span class="content">message</span><span class="delimiter">"</span></span>]
+
+<span class="keyword">begin</span>
+  expr...
+[<span class="keyword">rescue</span> [error_type [=&gt; var],...]
+  expr...] ...
+[<span class="keyword">else</span>
+  expr...]
+[<span class="keyword">ensure</span>
+  expr...]
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="catch-and-throw">Catch and Throw</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>catch <span class="symbol">:label</span> <span class="keyword">do</span>
+  do_stuff
+  throw <span class="symbol">:label</span> <span class="keyword">if</span> condition?
+  do_other_stuff
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<ul>
+  <li><code>throw :label</code> jumps back to matching catch and terminates the block.
+    <ul>
+      <li>can be external to catch, but has to be reached via calling scope.</li>
+      <li>Hardly ever needed.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="standard-library">Standard Library</h2>
+
+<p>Ruby comes with an extensive library of classes and modules. Some are
+built-in, and some are part of the standard library. You can
+distinguish the two by the fact that the built-in classes are in fact,
+built-in. There are no dot-rb files for them.</p>
+
+<p>This list is not comprehensive. Use <code>ri Class_and/or_method</code> to look
+up documentation or try <a href="http://ruby-doc.org/">http://ruby-doc.org</a>.</p>
+
+<h3 id="built-in-library">Built-in Library</h3>
+
+<h4 id="class-hierarchy">Class Hierarchy</h4>
+
+<ul>
+  <li>Object
+    <ul>
+      <li>ARGF.class (1.9)</li>
+      <li>Array</li>
+      <li>Binding</li>
+      <li>1.8: Continuation</li>
+      <li>Data
+        <ul>
+          <li>Encoding::Converter (1.9)</li>
+          <li>NameError::message</li>
+        </ul>
+      </li>
+      <li>Dir</li>
+      <li>Encoding (1.9)</li>
+      <li>Enumerator (1.9)</li>
+      <li>1.8: Enumerable::Enumerator</li>
+      <li>Enumerator::Generator (1.9)</li>
+      <li>Enumerator::Yielder (1.9)</li>
+      <li>Exception (see above for full tree)</li>
+      <li>FalseClass</li>
+      <li>Fiber (1.9)</li>
+      <li>File::Stat</li>
+      <li>Hash</li>
+      <li>IO
+        <ul>
+          <li>File</li>
+        </ul>
+      </li>
+      <li>MatchData</li>
+      <li>Method</li>
+      <li>Module
+        <ul>
+          <li>Class</li>
+        </ul>
+      </li>
+      <li>Mutex (1.9: built-in, 1.8: <code>require "thread"</code>)</li>
+      <li>NilClass</li>
+      <li>Numeric
+        <ul>
+          <li>Complex (1.9: built-in, 1.8: <code>require "complex"</code>)</li>
+          <li>Float</li>
+          <li>Integer
+            <ul>
+              <li>Bignum</li>
+              <li>Fixnum</li>
+            </ul>
+          </li>
+          <li>Rational (1.9: built-in, 1.8: <code>require "rational"</code>)</li>
+        </ul>
+      </li>
+      <li>Proc</li>
+      <li>Process::Status</li>
+      <li>Random (1.9)</li>
+      <li>Range</li>
+      <li>Regexp</li>
+      <li>RubyVM (1.9)</li>
+      <li>RubyVM::Env (1.9)</li>
+      <li>RubyVM::InstructionSequence (1.9)</li>
+      <li>String</li>
+      <li>Struct
+        <ul>
+          <li>Struct::Tms</li>
+        </ul>
+      </li>
+      <li>Symbol</li>
+      <li>Thread</li>
+      <li>ThreadGroup</li>
+      <li>Time</li>
+      <li>TrueClass</li>
+      <li>UnboundMethod</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="modules">Modules</h4>
+
+<ul>
+  <li>Comparable</li>
+  <li>Enumerable</li>
+  <li>Errno</li>
+  <li>FileTest</li>
+  <li>GC</li>
+  <li>Kernel</li>
+  <li>Marshal</li>
+  <li>Math</li>
+  <li>ObjectSpace</li>
+  <li>Precision</li>
+  <li>Process</li>
+</ul>
+
+<h3 id="standard-library-1">Standard Library</h3>
+
+<p>The essentials:</p>
+
+<dl>
+  <dt>benchmark.rb</dt>
+  <dd>a simple benchmarking utility</dd>
+  <dt>cgi-lib.rb</dt>
+  <dd>CGI data - simpler than cgi.rb</dd>
+  <dt>cgi.rb</dt>
+  <dd>CGI interaction</dd>
+  <dt>date.rb</dt>
+  <dd>date object (compatible)</dd>
+  <dt>debug.rb</dt>
+  <dd>ruby debugger</dd>
+  <dt>delegate.rb</dt>
+  <dd>delegate messages to other object</dd>
+  <dt>English.rb</dt>
+  <dd>access global variables by english names</dd>
+  <dt>fileutils.rb</dt>
+  <dd>file utility methods for copying, moving, removing, etc.</dd>
+  <dt>find.rb</dt>
+  <dd>traverse directory tree</dd>
+  <dt>jcode.rb</dt>
+  <dd>UTF-8 and Japanese String helpers (replaces String methods)</dd>
+  <dt>net/*</dt>
+  <dd>Networking classes of all kinds</dd>
+  <dt>observer.rb</dt>
+  <dd>observer design pattern library (provides Observable)</dd>
+  <dt>open-uri.rb</dt>
+  <dd>good wrapper for net/http, net/https and net/ftp</dd>
+  <dt>open3.rb</dt>
+  <dd>open subprocess connection stdin/stdout/stderr</dd>
+  <dt>ostruct.rb</dt>
+  <dd>python style object (freeform assignment to instance vars)</dd>
+  <dt>parsearg.rb</dt>
+  <dd>argument parser using getopts</dd>
+  <dt>pp</dt>
+  <dd>prettier debugging output, ‘p’ on steroids.</dd>
+  <dt>profile.rb</dt>
+  <dd>ruby profiler - find that slow code!</dd>
+  <dt>pstore.rb</dt>
+  <dd>persistent object strage using marshal</dd>
+  <dt>singleton.rb</dt>
+  <dd>singleton design pattern library</dd>
+  <dt>stringio</dt>
+  <dd>lets you use an IO attached to a string.</dd>
+  <dt>tempfile.rb</dt>
+  <dd>temporary file that automatically removed</dd>
+  <dt>minitest/*</dt>
+  <dd>1.9: unit testing framework. (see below)</dd>
+  <dt>test/unit</dt>
+  <dd>unit testing framework (1.9: compat library built on top of minitest)</dd>
+  <dt>time.rb</dt>
+  <dd>extension to Time class with a lot of converters</dd>
+  <dt>tracer.rb</dt>
+  <dd>execution tracer</dd>
+  <dt>webrick</dt>
+  <dd>Fairly spiffy web server</dd>
+  <dt>yaml</dt>
+  <dd>alternative readable serialization format</dd>
+</dl>
+
+<h3 id="minitest">Minitest</h3>
+
+<p>Minitest ships with 1.9 by default. You can ensure you have the latest
+code by installing the latest <code>minitest</code> gem. Minitest will
+automatically look for the latest minitest gem if you have any
+installed.</p>
+
+<h4 id="unit-test-example">Unit Test Example</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>require <span class="string"><span class="delimiter">"</span><span class="content">minitest/autorun</span><span class="delimiter">"</span></span>
+require <span class="string"><span class="delimiter">"</span><span class="content">noun</span><span class="delimiter">"</span></span>
+
+<span class="keyword">class</span> <span class="class">TestNoun</span> &lt; <span class="constant">MiniTest</span>::<span class="constant">Unit</span>::<span class="constant">TestCase</span>
+  <span class="keyword">def</span> <span class="function">setup</span>
+    <span class="instance-variable">@noun</span> = <span class="constant">Noun</span>.new
+  <span class="keyword">end</span>
+
+  <span class="keyword">def</span> <span class="function">test_verb</span>
+    assert_equal <span class="integer">42</span>, <span class="instance-variable">@noun</span>.verb
+  <span class="keyword">end</span>
+
+  <span class="comment"># ... more tests ...</span>
+<span class="keyword">end</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="unit-spec-example">Unit Spec Example</h4>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>require <span class="string"><span class="delimiter">"</span><span class="content">minitest/autorun</span><span class="delimiter">"</span></span>
+require <span class="string"><span class="delimiter">"</span><span class="content">noun</span><span class="delimiter">"</span></span>
+
+describe <span class="constant">Noun</span> <span class="keyword">do</span>
+  before <span class="keyword">do</span>
+    <span class="instance-variable">@noun</span> = <span class="constant">Noun</span>.new
+  <span class="keyword">end</span>
+
+  it <span class="string"><span class="delimiter">"</span><span class="content">verbs the noun</span><span class="delimiter">"</span></span> <span class="keyword">do</span>
+    <span class="instance-variable">@noun</span>.verb.must_equal <span class="integer">42</span>
+  <span class="keyword">end</span>
+
+  describe <span class="string"><span class="delimiter">"</span><span class="content">is nestable noun</span><span class="delimiter">"</span></span> <span class="keyword">do</span>
+    <span class="comment"># ...</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+</pre></div>
+</div>
+</div>
+
+<h4 id="assertions">Assertions</h4>
+
+<p>Every assertion (except assert_silent) takes an optional message
+argument at the end. But they also build their own messages on
+failure, so you really don’t need to provide one except to
+disambiguate things.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>assert truthiness
+
+assert_equal <span class="symbol">:expected_value</span>, object.result
+assert_same expected, object.result
+assert_nil object.result
+assert_in_delta <span class="float">42.0</span>, object.number
+assert_in_epsilon <span class="float">42.0</span>, object.number
+
+assert_match(<span class="regexp"><span class="delimiter">/</span><span class="content">matcher</span><span class="delimiter">/</span></span>, any_obj_not_just_strings) <span class="comment"># uses =~</span>
+assert_empty collection_or_string
+assert_includes object.collection_or_string, <span class="symbol">:expected_element</span>
+
+assert_instance_of <span class="constant">Array</span>, collection
+assert_kind_of <span class="constant">Enumerable</span>, collection
+assert_respond_to object, <span class="symbol">:method</span>
+
+assert_operator object.result, <span class="symbol">:truthy?</span>
+assert_operator object.result, <span class="symbol">:&lt;=</span>, <span class="integer">42</span>
+assert_predicate object.result, <span class="symbol">:truthy?</span>
+assert_send [recv, msg, arg1, arg2]
+
+assert_output(<span class="string"><span class="delimiter">"</span><span class="content">did something</span><span class="delimiter">"</span></span>, <span class="string"><span class="delimiter">"</span><span class="delimiter">"</span></span>) { object.do_something_talky }
+assert_silent { object.do_something_quiet }
+
+assert_raises(<span class="constant">MyException</span>) { object.do_something_bad }
+assert_throws(<span class="symbol">:my_throw</span>) { object.do_something_throwy }
+</pre></div>
+</div>
+</div>
+
+<h4 id="refutations">Refutations</h4>
+
+<p>Not every assertion has a corresponding refutation. Some simply don’t
+make sense (eg refute_raises – any unexpected exception is
+automatically an error) or don’t lend any value because they don’t
+actually validate behavior / side effects (refute_silent – great…
+it output <em>something</em>… but what?).</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>refute falsiness
+
+refute_equal <span class="symbol">:unexpected_value</span>, object.result
+refute_same expected, object.result
+refute_nil object.result
+refute_in_delta <span class="float">42.0</span>, object.number
+refute_in_epsilon <span class="float">42.0</span>, object.number
+
+refute_match(<span class="regexp"><span class="delimiter">/</span><span class="content">matcher</span><span class="delimiter">/</span></span>, any_obj_not_just_strings) <span class="comment"># still uses =~</span>
+refute_empty collection_or_string
+refute_includes collection, <span class="symbol">:unexpected_element</span>
+
+refute_instance_of <span class="constant">Array</span>, not_a_collection
+refute_kind_of <span class="constant">Enumerable</span>, not_a_collection
+refute_respond_to object, <span class="symbol">:method</span>
+
+refute_operator object.result, <span class="symbol">:falsey?</span>
+refute_operator object.result, <span class="symbol">:&lt;=</span>, <span class="integer">42</span>
+refute_predicate object.result, <span class="symbol">:falsey?</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="expectations">Expectations</h4>
+
+<p>All expectations (positive or otherwise) map to their corresponding
+assertion/refutation above.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>object.result.must_equal <span class="integer">42</span>
+object.result.must_be_same_as expected_object
+object.result.must_be_nil
+object.number.must_be_close_to <span class="float">42.0</span>
+object.number.must_be_within_epsilon <span class="float">42.0</span>
+
+object.collection.must_be_empty
+object.collection.must_include <span class="symbol">:expected_element</span>
+object.any_obj_not_just_strings.must_match matcher
+
+object.result.must_be_instance_of <span class="constant">Array</span>
+object.collection.must_be_kind_of <span class="constant">Enumerable</span>
+object.must_respond_to <span class="symbol">:message</span>
+
+object.result.must_be <span class="symbol">:&lt;=</span>, <span class="integer">42</span>
+object.collection_or_string.must_be <span class="symbol">:empty?</span>
+
+proc { object.do_something_bad }.must_raise exception
+proc { object.do_something_throwy }.must_throw <span class="symbol">:my_throw</span>
+
+proc { object.do_something_talky }.must_output <span class="string"><span class="delimiter">"</span><span class="content">something</span><span class="delimiter">"</span></span>
+proc { object.do_something_quiet }.must_be_silent
+</pre></div>
+</div>
+</div>
+
+<h3 id="negative-expectations">Negative Expectations</h3>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>object.result.wont_equal <span class="integer">42</span>
+object.result.wont_be_same_as unexpected_object
+object.result.wont_be_nil
+object.number.wont_be_close_to <span class="float">42.0</span>
+object.number.wont_be_within_epsilon <span class="float">42.0</span>
+
+object.collection.wont_be_empty
+collection.wont_include <span class="symbol">:unexpected_element</span>
+object.any_obj_not_just_strings.wont_match matcher
+
+object.result.wont_be_instance_of <span class="constant">Array</span>
+object.not_a_collection.wont_be_kind_of <span class="constant">Enumerable</span>
+
+object.result.wont_be <span class="symbol">:&lt;=</span>, <span class="integer">42</span>
+object.collection_or_string.wont_be <span class="symbol">:empty?</span>
+object.wont_respond_to <span class="symbol">:message</span>
+</pre></div>
+</div>
+</div>
+
+<h4 id="helper-methods">Helper methods</h4>
+
+<p>Usable in tests or specs.</p>
+
+<div><div class="CodeRay">
+  <div class="code"><pre>out, err = capture_io { object.do_something_talky }
+out, err = capture_subprocess_io { <span class="shell"><span class="delimiter">`</span><span class="content">cmd arg</span><span class="delimiter">`</span></span> }
+flunk <span class="string"><span class="delimiter">"</span><span class="content">This totally fails</span><span class="delimiter">"</span></span>
+pass <span class="string"><span class="delimiter">"</span><span class="content">OCD people need assertion counts to rise</span><span class="delimiter">"</span></span>
+</pre></div>
+</div>
+</div>
+
+<h2 id="tools">Tools</h2>
+
+<h3 id="ruby">ruby</h3>
+
+<h4 id="command-line-options">Command Line Options</h4>
+
+<pre><code>-0[octal]       specify record separator (\0, if no argument).
+-a              autosplit mode with -n or -p (splits $_ into $F).
+-c              check syntax only.
+-Cdirectory     cd to directory, before executing your script.
+--copyright     print the copyright and exit.
+-d              set debugging flags (set $DEBUG to true).
+-e 'command'    one line of script. Several -e's allowed.
+-F regexp       split() pattern for autosplit (-a).
+-h		  prints summary of the options.
+-i[extension]   edit ARGV files in place (make backup if extension supplied).
+-Idirectory     specify $LOAD_PATH directory (may be used more than once).
+-Kkcode         specifies KANJI (Japanese) code-set.
+-l              enable line ending processing.
+-n              assume 'while gets(); ... end' loop around your script.
+-p              assume loop like -n but print line also like sed.
+-rlibrary       require the library, before executing your script.
+-s              enable some switch parsing for switches after script name.
+-S              look for the script using PATH environment variable.
+-T[level]       turn on tainting checks.
+-v              print version number, then turn on verbose mode.
+--version       print the version and exit.
+-w              turn warnings on for your script.
+-x[directory]   strip off text before #! line and perhaps cd to directory.
+-X directory    causes Ruby to switch to the directory.
+-y              turns on compiler debug mode.
+</code></pre>
+
+<h4 id="environment-variables">Environment Variables</h4>
+
+<pre><code>DLN_LIBRARY_PATH Search path for dynamically loaded modules.
+RUBYLIB          Additional search paths.
+RUBYLIB_PREFIX   Add this prefix to each item in RUBYLIB. Windows only.
+RUBYOPT          Additional command line options.
+RUBYPATH         With -S, searches PATH, or this value for ruby programs.
+RUBYSHELL        Shell to use when spawning. (Windows (and OS/2!) only)
+</code></pre>
+
+<h3 id="irb">irb</h3>
+
+<pre><code>irb [options] [script [args]]
+</code></pre>
+
+<p>The essential options are:</p>
+
+<pre><code>-d              Sets $DEBUG to true. Same as "ruby -d ..."
+-f              Prevents the loading of ~/.irb.rc.
+-h              Get a full list of options.
+-m              Math mode. Overrides --inspect. Loads "mathn.rb".
+-r module       Loads a module. Same as "ruby -r module ..."
+-v              Prints the version and exits.
+--inf-ruby-mode Turns on emacs support and turns off readline.
+--inspect       Turns on inspect mode. Default.
+--noinspect     Turns off inspect mode.
+--noprompt      Turns off the prompt.
+--noreadline    Turns off readline support.
+--prompt        Sets to one of 'default', 'xmp', 'simple', or 'inf-ruby'.
+--readline      Turns on readline support. Default.
+--tracer        Turns on trace mode.
+</code></pre>
+
+<p>Besides arbitrary ruby commands, the special commands are:</p>
+
+<pre><code>exit                  exits the current session, or the program
+fork block            forks and runs the given block
+cb args               changes to a secified binding
+source file           loads a ruby file into the session
+irb [obj]             starts a new session, with obj as self, if specified
+conf[.key[= val]]     access the configuration of the session
+jobs                  lists the known sessions
+fg session            switches to the specifed session
+kill session          kills a specified session
+</code></pre>
+
+<p>Session may be specified via session#, thread-id, obj, or self.</p>
+
+<h3 id="debugger">Debugger</h3>
+
+<p>To invoke the debugger:</p>
+
+<pre><code>ruby -r debug ...
+</code></pre>
+
+<p>To use the debugger:</p>
+
+<pre><code>b[reak] [file:|class:]&lt;line|method
+b[reak] [class.]&lt;line|method
+                           set breakpoint to some position
+wat[ch] expression         set watchpoint to some expression
+cat[ch] exception          set catchpoint to an exception
+b[reak]                    list breakpoints
+cat[ch]                    show catchpoint
+del[ete][ nnn]             delete some or all breakpoints
+disp[lay] expression       add expression into display expression list
+undisp[lay][ nnn]          delete one particular or all display expressions
+c[ont]                     run until program ends or hit breakpoint
+s[tep][ nnn]               step (into methods) one line or till line nnn
+n[ext][ nnn]               go over one line or till line nnn
+w[here]                    display frames
+f[rame]                    alias for where
+l[ist][ (-|nn-mm)]         list program, - lists backwards
+                           nn-mm lists given lines
+up[ nn]                    move to higher frame
+down[ nn]                  move to lower frame
+fin[ish]                   return to outer frame
+tr[ace] (on|off)           set trace mode of current thread
+tr[ace] (on|off) all       set trace mode of all threads
+q[uit]                     exit from debugger
+v[ar] g[lobal]             show global variables
+v[ar] l[ocal]              show local variables
+v[ar] i[nstance] object    show instance variables of object
+v[ar] c[onst] object       show constants of object
+m[ethod] i[nstance] obj    show methods of object
+m[ethod] class|module      show instance methods of class or module
+th[read] l[ist]            list all threads
+th[read] c[ur[rent]]       show current thread
+th[read] [sw[itch]] nnn    switch thread context to nnn
+th[read] stop nnn          stop thread nnn
+th[read] resume nnn        resume thread nnn
+p expression               evaluate expression and print its value
+h[elp]                     print this help
+everything else            evaluate
+empty                      repeats the last command
+</code></pre>
+
+<script><!--
+google_ad_client = "ca-pub-2178088302342288";
+google_ad_slot   = "2897496820";
+google_ad_width  = 468;
+google_ad_height = 60;
+//-->
+</script>
+
+<script src="./RubyQuickRef_RyanDavis_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><ins id="aswift_2_anchor" style="display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><iframe width="468" height="60" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+
+<hr>
+
+<pre><code>Original URL: www.zenspider.com/Languages/Ruby/QuickRef.html
+$Author: ryand $
+$Date: 2013/04/09 $
+$Revision: #6 $
+</code></pre>
+
+    </div><!-- #content -->
+
+    <div class="footer">
+  <blockquote><em>"More matter, with less art"</em> - Gertrude, Hamlet.</blockquote>
+</div>
+  
+
+<div id="window-resizer-tooltip"><a href="http://www.zenspider.com/Languages/Ruby/QuickRef.html#" title="Edit settings" style="background-image: url(chrome-extension://kkelicaakdanhinjdeammmilcgefonfh/images/icon_19.png);"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div></body></html>
