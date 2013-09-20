@@ -3,3 +3,8 @@
 ######
 *.exe
 *.o
+
+######
+## blender temp files
+######
+*.blend[1-9]
