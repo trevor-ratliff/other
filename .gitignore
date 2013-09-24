@@ -8,12 +8,20 @@
 *.o
 *.so
 
+
 ######
 ## blender temp files
 ######
 *.blend[1-9]
-*/render/*.jpg
-*/render/*.png
+**/[Rr]ender/*
+# !**/[Rr]ender/*ico
+# !**/[Rr]ender/*xcf
+# ![Rr]ender/**/*.ico
+# ![Rr]ender/**/*.xcf
+# [Bb]lender/**/[Rr]ender/*.jpg
+# [Bb]lender/**/[Rr]ender/*.gif
+# [Bb]lender/**/[Rr]ender/*.png
+
 
 ######
 ## OS generated files
@@ -25,3 +33,10 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
+######
+## always add .ico or .xcf files
+######
+!*.ico
+!*.xcf
