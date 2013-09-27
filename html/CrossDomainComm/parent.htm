@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Test event listener</title>
+    <script type="text/javascript">
+        window.onmessage = function(e) { alert("data received from frame: " + e.data); };
+        
+        function SendMsgToIFrame() {
+            alert("In Parent window ");
+            var myiframe = document.getElementById('myIframe');
+            if (typeof myiframe.contentWindow.postMessage == 'function') {
+                myiframe.contentWindow.postMessage('Post Message from Parent', '*');
+            } else {
+                alert("something didn't work");
+            }
+        }
+    </script>
+</head>
+<body>
+<button type="button" onclick="SendMsgToIFrame()">Push to iframe</button>
+<div id="iframeDiv">
+<iframe id="myIframe" src="iframe.htm" width="500" height="200" frameborder=10> 
+</iframe>
+</div>
+</body>
+</html>

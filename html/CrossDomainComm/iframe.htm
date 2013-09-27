@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Got Text</title>
+    <script type="text/javascript">
+        window.onmessage = myhandler;
+
+        function myhandler(vobjMessage) {
+            alert("I am in iFrame");
+            var message = vobjMessage.data;
+
+            document.getElementById("text1").value = "data: " + message;
+            window.parent.postMessage("yahoo", "*");
+        }
+    </script>
+</head>
+<body>
+<input type="text" name="text1" id="text1" value="text here" /> 
+</body>
+</html>
