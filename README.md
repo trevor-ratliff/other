@@ -16,7 +16,7 @@ blender
 Blender 3D files
 
 
-CodeSnippets
+codeSnippets
 ------------
 
 Code snippets for use in various IDEs
