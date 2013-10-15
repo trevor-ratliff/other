@@ -19,7 +19,7 @@
         </Literal>
 
         <Literal>
-          <ID>FuncitonName</ID>
+          <ID>FunctionName</ID>
           <Default>functionName</Default>
         </Literal>
 
@@ -57,31 +57,34 @@
           <ID>Return</ID>
           <Default>int</Default>
         </Literal>
+
+        <Literal>
+          <ID>Email</ID>
+          <Default>_</Default>
+        </Literal>
       </Declarations>
       <Code Language="CSharp">
-        <![CDATA[
-          //====
-          /// @fn $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
-          /// @brief $Brief$
-          /// @author $Author$
-          /// @date $Date$
-          /// @param $ParamType$ $Param$ -- $ParamDescription$
-          /// @return $Return$
-          //  
-          //  Definitions:
-          //    
-          //  
-          /// @verbatim
-          /// History:  Date  |  Programmer  |  Contact  |  Description  |
-          ///   $Date$  |  $Author$  |  $Email$  |
-          ///     class creation  |
-          /// @endverbatim
-          //====
-          $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
-          {
+        <![CDATA[//====
+        /// @fn $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
+        /// @brief $Brief$
+        /// @author $Author$
+        /// @date $Date$
+        /// @param $ParamType$ $Param$ -- $ParamDescription$
+        /// @return $Return$
+        //  
+        //  Definitions:
+        //    
+        //  
+        /// @verbatim
+        /// History:  Date  |  Programmer  |  Contact  |  Description  |
+        ///     $Date$  |  $Author$  |  $Email$  |
+        ///         function creation  |
+        /// @endverbatim
+        //====
+        $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
+        {
             return $Return$;
-          }
-        ]]>
+        }]]>
       </Code>
     </Snippet>
   </CodeSnippet>
