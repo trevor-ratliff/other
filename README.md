@@ -14,20 +14,28 @@ various art projects I want to keep accessible
 
 Blender 3D files
 
+---
+
 
 ## codeSnippets ##
 
 Code snippets for use in various IDEs
+
+---
 
 
 ## cpp ##
 
 different c and c++ tests
 
+---
+
 
 ## fonts ##
 
 various fonts I've created
+
+---
 
 
 ## html ##
@@ -43,6 +51,8 @@ a test of communicating over domains
 ### json ###
 
 an area for playing with JSON
+
+---
 
 
 ## knitting ##
