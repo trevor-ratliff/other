@@ -7,6 +7,8 @@ various other tests/trials/experiments
 
 various art projects I want to keep accessible
 
+---
+
 
 ## blender ##
 
@@ -31,6 +33,16 @@ various fonts I've created
 ## html ##
 
 area for learning about various html techniques
+
+
+### CrossDomainComm ###
+
+a test of communicating over domains
+
+
+### json ###
+
+an area for playing with JSON
 
 
 ## knitting ##
