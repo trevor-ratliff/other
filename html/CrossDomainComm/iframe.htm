@@ -12,7 +12,7 @@
             document.getElementById("text1").value = "data: " + message;
             
             var lobjReturn = { message: "yahoo", success: true };
-            window.parent.postMessage(lobjReturn, "*");
+            window.parent.postMessage(JSON.stringify(lobjReturn), "*");
         }
     </script>
 </head>

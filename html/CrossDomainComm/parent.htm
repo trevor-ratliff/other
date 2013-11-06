@@ -4,10 +4,11 @@
     <title>Test event listener</title>
     <script type="text/javascript">
         window.onmessage = function(e) { 
+            lobjData = JSON.parse(e.data);
             alert("data received from frame: " + e.data); 
-            document.getElementById('blnSuccess').value = e.data.success;
-            document.getElementById('blnSuccess').checked = e.data.success;
-            document.getElementById('txtMessage').value = e.data.message;
+            document.getElementById('blnSuccess').value = lobjData.success;
+            document.getElementById('blnSuccess').checked = lobjData.success;
+            document.getElementById('txtMessage').value = lobjData.message;
         };
         
         function SendMsgToIFrame() {
