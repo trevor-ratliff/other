@@ -45,14 +45,14 @@ various fonts I've created
 area for learning about various html techniques
 
 
- ### CrossDomainComm ###
+### CrossDomainComm ###
 
- a test of communicating over domains
+a test of communicating over domains
 
 
- ### json ###
+### json ###
 
- an area for playing with JSON
+an area for playing with JSON
 
 ---
 
