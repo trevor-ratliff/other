@@ -10,7 +10,9 @@
             var message = vobjMessage.data;
 
             document.getElementById("text1").value = "data: " + message;
-            window.parent.postMessage("yahoo", "*");
+            
+            var lobjReturn = { message: "yahoo", success: true };
+            window.parent.postMessage(lobjReturn, "*");
         }
     </script>
 </head>

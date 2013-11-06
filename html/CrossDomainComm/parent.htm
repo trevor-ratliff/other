@@ -3,7 +3,12 @@
 <head>
     <title>Test event listener</title>
     <script type="text/javascript">
-        window.onmessage = function(e) { alert("data received from frame: " + e.data); };
+        window.onmessage = function(e) { 
+            alert("data received from frame: " + e.data); 
+            document.getElementById('blnSuccess').value = e.data.success;
+            document.getElementById('blnSuccess').checked = e.data.success;
+            document.getElementById('txtMessage').value = e.data.message;
+        };
         
         function SendMsgToIFrame() {
             alert("In Parent window ");
@@ -21,6 +26,13 @@
 <div id="iframeDiv">
 <iframe id="myIframe" src="iframe.htm" width="500" height="200" frameborder=10> 
 </iframe>
+</div>
+<div id="results">
+    <label for="blnSuccess">Success:</label>
+    <input type="checkbox" id="blnSuccess" value="" />
+    <br>
+    <label for="txtMessage">Message</label>
+    <input type="text" id="txtMessage" value="" />
 </div>
 </body>
 </html>
