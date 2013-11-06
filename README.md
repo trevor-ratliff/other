@@ -1,38 +1,38 @@
-= other =
+# other #
 
 various other tests/trials/experiments
 
 
-== art ==
+## art ##
 
 various art projects I want to keep accessible
 
 
-== blender ==
+## blender ##
 
 Blender 3D files
 
 
-== codeSnippets ==
+## codeSnippets ##
 
 Code snippets for use in various IDEs
 
 
-== cpp ==
+## cpp ##
 
 different c and c++ tests
 
 
-== fonts ==
+## fonts ##
 
 various fonts I've created
 
 
-== html ==
+## html ##
 
 area for learning about various html techniques
 
 
-== knitting ==
+## knitting ##
 
 various knitting tests
