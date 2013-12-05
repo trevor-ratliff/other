@@ -1,11 +1,11 @@
 ---
-title: Home
+title: Web
 ---
 <!DOCTYPE html>
 <!--
 //====
 /// @file index.html
-/// @brief this file is the root site for the github pages for my other repository
+/// @brief this file is a subject page for the github pages for my other repository
 /// @author Trevor Ratliff
 /// @date 2013-12-04
 //  
@@ -14,7 +14,7 @@ title: Home
 /// @verbatim
 /// History:  Date  |  Programmer  |  Contact  |  Description  |
 ///		2013-12-04  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
-///			page creation for http://trevor-ratliff.github.io/other/
+///			page creation for http://trevor-ratliff.github.io/other/web/
 /// @endverbatim
 //====
 -->
@@ -22,7 +22,7 @@ title: Home
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Home</title>
+		<title>{{ page.title }}</title>
 		{% include head_matter.ext %}
 		
 		<noscript>
@@ -33,13 +33,12 @@ title: Home
 	<body>
 		<nav id="breadcrumbs"></nav>
 		<div id="welcome">
-			<h1>Welcome to my 'other' repository!</h1>
-			<h3>here you will find a bunch of stuff I've created</h3>
+			<h2>{{ page.title }}</h2>
 		</div>
 		<!-- <nav id="nav">{% include navigation.ext %}</nav> -->
 		<section id="content-container">
 			<article id="content">
-				{% include navigation.ext %}
+            {% include navigation.ext %}
 			</article>
 		</section>
 	</body>

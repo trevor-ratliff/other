@@ -1,0 +1,14 @@
+		<link rel="alternate stylesheet" type="text/css" href="/styles/alt1.css" title="alternate" />
+		<link rel="stylesheet" type="text/css" href="/styles/other.css" title="main" />
+		
+		<script type="text/javascript" src="/libs/BreadCrumb.js"></script>
+		<script type="text/javascript" src="/scripts/other.js"></script>
+		
+		<!-- <script type="text/javascript">
+			<!--
+			//----
+			// PUT SCRIPT HERE
+			//----
+			
+			//->
+		</script> -->
