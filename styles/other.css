@@ -5,7 +5,20 @@
 *****/
 
 body {
-	background: #000000;
+	background: 
+		linear-gradient(90deg, #2d2d2d 25%, #3f3f3f 50%, transparent 50%, transparent 75%, #191919 75%, #2d2d2d), 
+		linear-gradient( 90deg, #000000 25%, transparent 30%, transparent 50%, #000000), 
+		linear-gradient(180deg, #1d1d1d 25%, #1d1d1d 50%, transparent 50%, transparent 50%, #1d1d1d 75%, #1d1d1d);
+	/* background: 
+		linear-gradient(90deg, #8d8d8d 25%, #bababa 50%, transparent 50%, transparent 75%, #797979 75%, #8d8d8d), 
+		linear-gradient( 90deg, #000000 25%, transparent 30%, transparent 50%, #000000), 
+		linear-gradient(180deg, #8d8d8d 25%, #8d8d8d 50%, transparent 50%, transparent 50%, #8d8d8d 75%, #8d8d8d);
+	background:
+		linear-gradient(90deg, #8d8d8d 25%, #bababa 50%, transparent 50%, transparent 75%, #797979 75%, #8d8d8d),
+		linear-gradient( 90deg, #000000 25%, transparent 30%, transparent 50%, #000000),
+		linear-gradient(180deg, #8d8d8d 25%, #8d8d8d 50%, transparent 50%, transparent 75%, #8d8d8d 75%, #8d8d8d); */
+	background-color: #000000;
+	background-size: 40px 20px;
 	overflow: auto;
 	position: relative;
 }
@@ -40,24 +53,39 @@ html, body {
 
 
 #content-container {
-	background: linear-gradient(
+	/* background: linear-gradient(
 		0deg, 
 		hsla(160,100%,10%,1), 
 		hsla(160,100%,30%,1) 30%, 
 		hsla(160,100%,40%,1) 50%, 
 		hsla(160,100%,90%,1)
 	);
-	border: 2px solid hsla(160,50%,30%,1);
+	border: 2px solid hsla(160,50%,30%,1); */
+	background: linear-gradient( 
+		0deg, 
+		hsla(55, 25%, 60%, 1), 
+		hsla(55, 50%, 80%, 1) 30%, 
+		hsla(55, 75%, 90%, 1) 50%, 
+		hsla(55, 50%, 98%, 1) 
+	);
+	border: 2px solid hsla(55,100%,40%,1);
 	border-radius: 40px 20px 30px 10px;
 	/* border-width: 3px 6px 9px 12px; */
-	box-shadow: 10px 10px 5px #888888;
+	box-shadow: 10px 10px 5px rgba(64,64,64,0.8);
 	height: 70%;
 	left: 10em;
 	margin-top: 1em;
 	padding: 1em;
 	position: absolute;
 	right: 3em;
-	top: 21%;
+	top: 16%;
+}
+
+
+#content-container article {
+	height: 100%;
+	overflow: auto;
+	width: 100%;
 }
 
 
@@ -75,11 +103,11 @@ html, body {
 		rgba(160,160,160,1) 50%, 
 		rgba(240,240,240,1)
 	);
-	border: 2px solid #ffffff;
+	border: 2px solid #e0e0e0;
 	border-radius: 40px 20px 30px 10px;
 	/* border-width: 3px 6px 9px 12px; */
-	bottom: 80%;
-	box-shadow: 10px 10px 5px #888888;
+	bottom: 85%;
+	box-shadow: 10px 10px 5px rgba(128,128,128,0.8);
 	left: 10em;
 	position: absolute;
 	right: 3em;

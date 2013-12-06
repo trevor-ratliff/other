@@ -1,4 +1,5 @@
 ---
 exclude: [Gemfile, Gemfile.lock]
+url: http://localhost:4000/
 url: http://trevor-ratliff.github.io/other/
 ...
