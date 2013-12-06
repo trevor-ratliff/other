@@ -19,6 +19,7 @@ body {
 		linear-gradient(180deg, #8d8d8d 25%, #8d8d8d 50%, transparent 50%, transparent 75%, #8d8d8d 75%, #8d8d8d); */
 	background-color: #000000;
 	background-size: 40px 20px;
+	font-family: verdana, arial;
 	overflow: auto;
 	position: relative;
 }
@@ -71,7 +72,7 @@ html, body {
 	border: 2px solid hsla(55,100%,40%,1);
 	border-radius: 40px 20px 30px 10px;
 	/* border-width: 3px 6px 9px 12px; */
-	box-shadow: 10px 10px 5px rgba(64,64,64,0.8);
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.4);
 	height: 70%;
 	left: 10em;
 	margin-top: 1em;
@@ -107,7 +108,7 @@ html, body {
 	border-radius: 40px 20px 30px 10px;
 	/* border-width: 3px 6px 9px 12px; */
 	bottom: 85%;
-	box-shadow: 10px 10px 5px rgba(128,128,128,0.8);
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.4);
 	left: 10em;
 	position: absolute;
 	right: 3em;
@@ -140,13 +141,16 @@ html, body {
 
 
 .crumb-link {
-	text-decoration: none;
 	color: #e0e0e0;
+	font-weight: 600;
+	text-decoration: none;
 }
 
 
 .crumb-separator {
 	color: #338fdd;
+	font-size: 2.1ex;
+	font-weight: 700;
 }
 
 
@@ -168,12 +172,12 @@ html, body {
 
 
 .nav-holder:hover .nav-link {
-	text-decoration: none;
 	color: #e0e0e0;
 }
 
 
 .nav-link {
-	text-decoration: none;
 	color: #005daa;
+	font-weight: 600;
+	text-decoration: none;
 }

@@ -14,7 +14,7 @@
 //----
 // setup breadcrumbs
 //----
-var objCrumbs = new BreadCrumb({});
+var objCrumbs = new BreadCrumb({Separator: '&nbsp;>&nbsp;'});
 objCrumbs.Add(window.location.toString(), document.title);
 
 
