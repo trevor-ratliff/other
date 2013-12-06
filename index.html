@@ -38,6 +38,19 @@ title: Home
 		</div>
 		<!-- <nav id="nav">{% include navigation.ext %}</nav> -->
 		<section id="content-container">
+			<article id="variables">
+				site.url: {{ site.url }}<br>
+				site.time: {{ site.time }}<br>
+				site.pages: <br>
+				{% for lobjPage in site.pages %}
+					&nbsp; &nbsp; {{ lobjPage.title }}<br>
+				{% endfor %}<br>
+				
+				page.id: {{ page.id }}<br>
+				page.title: {{ page.title }}<br>
+				page.url: {{ page.url }}<br>
+				page.path: {{ page.path }}<br>
+			</div>
 			<article id="content">
 				{% include navigation.ext %}
 			</article>

@@ -1,38 +1,38 @@
 ---
 - name: Home
-  url: '/'
+  url: ''
 - name: About
-  url: '/about/'
+  url: 'about/'
 - name: Contact
-  url: '/contact/'
+  url: 'contact/'
 - name: Art
-  url: '/art/'
+  url: 'art/'
   description: all of the artistic work that I've done
   subpages: 
     - name: 'art1'
-      url: '/art/art1/'
+      url: 'art/art1/'
       description: 'art 1'
     - name: 'art2'
-      url: '/art/art2/'
+      url: 'art/art2/'
       description: 'art 2'
 - name: Code Snippets
-  url: '/codeSnippets/'
+  url: 'codeSnippets/'
   description: 'a bunch of code snippet files for Visual Studio and SciTE'
   subpages: []
 - name: Fonts
-  url: '/fonts/'
+  url: 'fonts/'
   description: "some fonts I've created"
   subpages: []
 - name: Knitting
-  url: '/knitting/'
+  url: 'knitting/'
   description: 'a few knitting ideas that I have played with'
   subpages: []
 - name: Programming
-  url: '/programming/'
+  url: 'programming/'
   description: 'some programming samples'
   subpages: []
 - name: Web
-  url: '/web/'
+  url: 'web/'
   description: 'a few samples of my web code'
   subpages: []
 ...
