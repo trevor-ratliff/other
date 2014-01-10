@@ -1,0 +1,82 @@
+/****
+* @file ChainReaction.css
+* @brief css for Chain Reaction game clone
+* @author Trevor Ratliff
+* @date 2014-01-10
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+* @endverbatim
+****/
+
+/****
+* tags
+****/
+
+html, body {
+	border: 0px;
+	height: 100%;
+	margin: 0px;
+	overflow: auto;
+	padding: 0px;
+}
+
+
+body {
+	background-color: hsla(0, 100%, 50%, 1);
+	font-family: verdana;
+	font-size: 2em;
+}
+
+
+/****
+* ids
+****/
+
+#board {
+	background-color: hsla(60, 100%, 50%, 1);
+	border: 7px double hsla(120, 100%, 50%, 1);
+	box-sizing: border-box;
+	height: calc(90% - 80px);
+	/* margin-top: 5%; */
+	margin-left: calc(20% + 80px);
+	position: relative;
+	width: calc(80% - 120px);
+	top: calc(5% + 40px);
+}
+
+
+#controls {
+	background-color: hsla(300, 100%, 50%, 1);
+	border: 7px double hsla(360, 100%, 0%, 1);
+	box-sizing: border-box;
+	float: left;
+	/* margin-top: -25%; */
+	position: relative;
+	width: 20%;
+	top: calc(5% + 40px);
+	left: 40px;
+}
+
+
+/****
+* classes
+****/
+
+.active {
+	display: block;
+}
+
+
+.cell {
+	background-color: hsla(180, 100%, 50%, 1);
+	border: 1px solid hsla(240, 100%, 50%, 1);
+	height: 2em;
+	width: 2em;
+	float: left;
+}
+
+
+.last-in-row {
+	clear: left;
+}

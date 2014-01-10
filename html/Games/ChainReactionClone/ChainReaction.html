@@ -1,0 +1,44 @@
+<!DOCTYPE html>    <!-- HTML 5.0 doctype -->
+
+<!--
+//====
+/// @file ChainReaction.html
+/// @brief A clone of a game I used to play on a Texas Instruments Pegesus Computer
+/// @author Trevor Ratliff
+/// @date 2014-01-10
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-10  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  | 
+///         file creation  |
+/// @endverbatim
+//====
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- <link rel="alternate stylesheet" type="text/css" href="styles/ChainReactionLight.css" title="alternate" /> -->
+        <link rel="stylesheet" type="text/css" href="styles/ChainReaction.css" title="main" />
+        
+        <script type="text/javascript" src="scripts/ChainReaction.js"></script>
+        
+        <noscript>
+            Turning JavaScript on in your browser makes for a much better experience!
+        </noscript>
+    </head>
+    
+    <body>
+        <div id="controls">
+            <label for="selBoardSize">Board Size</label>
+            <select id="selBoardSize">
+                <option value="6">6x6</option>
+                <option value="8" selected>8x8</option>
+                <option value="12">12x12</option>
+            </select>
+        </div>
+        <div id="board"></div>
+    </body>
+</html>
