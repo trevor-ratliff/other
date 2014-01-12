@@ -31,14 +31,21 @@
     </head>
     
     <body>
-        <div id="controls">
-            <label for="selBoardSize">Board Size</label>
-            <select id="selBoardSize">
-                <option value="6">6x6</option>
-                <option value="8" selected>8x8</option>
-                <option value="12">12x12</option>
-            </select>
-        </div>
         <div id="board"></div>
+        <div id="controls">
+            <div>
+                <label for="selBoardSize">Board Size</label>
+                <select id="selBoardSize">
+                    <option value="6">6x6</option>
+                    <option value="8" selected>8x8</option>
+                    <option value="12">12x12</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <span id="txtTurn">A</span><label for="txtTurn">'s Turn</label>
+                
+            </div>
+        </div>
     </body>
 </html>

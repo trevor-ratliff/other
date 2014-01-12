@@ -54,9 +54,45 @@ function $( vstrPath ) {
 /// @endverbatim
 //====
 function CellClick() {
-    alert( 'first players turn = "' + gblnFirstPlayersTurn + 
-        '"\ncell id = "' + this.id + '"' );
+    //~ alert( 'first players turn = "' + gblnFirstPlayersTurn + 
+        //~ '"\ncell id = "' + this.id + '"' );
+    
+    //----
+    // set player turn and toggle player label
+    //----
     gblnFirstPlayersTurn = !gblnFirstPlayersTurn;
+    
+    if (gblnFirstPlayersTurn) {
+        $('#txtTurn')[0].innerHTML = 'A';
+    } else {
+        $('#txtTurn')[0].innerHTML = 'B';
+    }
+    
+    //----
+    // call PlacePiece() to add player's piece to the board
+    //----
+    PlacePiece(this)
+}
+
+
+//====
+/// @fn ChainReaction()
+/// @brief 
+/// @author Trevor Ratliff
+/// @date 
+/// @param 
+/// @return 
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     _  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function ChainReaction() {
+    alert('chain reaction started');
 }
 
 
@@ -75,7 +111,7 @@ function CellClick() {
 /// @endverbatim
 //====
 function GameInit() {
-    alert('init');
+    //~ alert('init');
     if (gblnFirstPlayersTurn) return;
     //----
     // generate board
@@ -94,11 +130,44 @@ function GameInit() {
             var lobjCell = document.createElement('div');
             lobjCell.id = 'r' + lintII + 'c' + lintNN;
             lobjCell.className = 'cell active';
+            lobjCell.setAttribute('pieces', 0);
             
             //----
-            // if this is the last in the row mark it as such
+            // if this is the first in the row mark it as such
             //----
-            if (lintNN == 0) lobjCell.className += ' last-in-row';
+            if (lintNN == 0) lobjCell.className += ' first-in-row';
+            
+            //----
+            // set max pieces
+            //----
+            // corners
+            //----
+            if (lintII == 0 || lintII == (lintBoardSize - 1)) {
+                if (lintNN == 0 || lintNN == (lintBoardSize - 1)) {
+                    lobjCell.setAttribute('maxPieces', 2);
+                }
+                
+                //----
+                // top and bottom edges
+                //----
+                if (lintNN > 0 && lintNN < (lintBoardSize - 1)) {
+                    lobjCell.setAttribute('maxPieces', 3);
+                }
+                
+            } else {
+                //----
+                // left and right edges
+                //----
+                if (lintNN == 0 || lintNN == (lintBoardSize - 1)) {
+                    lobjCell.setAttribute('maxPieces', 3);
+                    
+                } else {
+                    //----
+                    // centers
+                    //----
+                    lobjCell.setAttribute('maxPieces', 4);
+                }
+            }
             
             //----
             // add cell to board
@@ -122,6 +191,56 @@ function GameInit() {
 
 
 //====
+/// @fn PlacePiece(vobjCell)
+/// @brief places a game piece on the board
+/// @author Trevor Ratliff
+/// @date 2014-01-12
+/// @param vobjCell -- reference to the game board cell to modify
+/// @return bool
+//  
+//  Definitions:
+//      lblnReturn -- return flag (true = success; false = failure)
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-12  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function PlacePiece(vobjCell) {
+    var lblnReturn = true;
+    var lintPieces = 0;
+    
+    try {
+        //----
+        // add the player's piece to the board
+        //----
+        lintPieces += parseInt(vobjCell.getAttribute('pieces')) + 1;
+        vobjCell.setAttribute('pieces', lintPieces);
+        
+        //----
+        // check for chain reaction
+        //----
+        if (vobjCell.getAttribute('maxPieces') == lintPieces) {
+            //----
+            // start chain reaction
+            //----
+            ChainReaction();
+        }
+        
+    } catch (err) {
+        //----
+        // process the error
+        //----
+        lblnReturn = false;
+        alert('failure: ' + err.toString());
+    }
+    
+    return lblnReturn;
+}
+
+
+//====
 /// @fn onload()
 /// @brief hook into onload event to initialize the page
 /// @author Trevor Ratliff
@@ -140,7 +259,7 @@ function GameInit() {
 document.addEventListener(
     'load', 
     function () {
-        alert('load');
+        //~ alert('load');
         //----
         // run init code
         //----
