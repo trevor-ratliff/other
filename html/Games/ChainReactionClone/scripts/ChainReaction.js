@@ -122,6 +122,7 @@ function GameInit() {
     //----
     // loop through board size to create each cell
     //----
+    lobjBoard.innerHTML = '';
     for (var lintII = 0; lintII < lintBoardSize; lintII++) {
         for (var lintNN = 0; lintNN < lintBoardSize; lintNN++) {
             //----
@@ -182,6 +183,12 @@ function GameInit() {
     }
     
     //----
+    // fix board width and height
+    //----
+    $('#board')[0].style.height = 'calc(' + lintBoardSize + '*2em + 1ex)';
+    $('#board')[0].style.width = 'calc(' + lintBoardSize + '*2em + 1ex)';
+    
+    //----
     // set up players
     //----
     gblnFirstPlayersTurn = true;
@@ -226,6 +233,11 @@ function PlacePiece(vobjCell) {
             // start chain reaction
             //----
             ChainReaction();
+            
+            //----
+            // reset cell
+            //----
+            vobjCell.setAttribute('pieces', 0);
         }
         
     } catch (err) {
@@ -263,8 +275,21 @@ document.addEventListener(
         //----
         // run init code
         //----
-        GameInit();
+        if (typeof $('#board')[0] != 'undefined') {
+            GameInit();
+            
+            var lobjBoardSize = $('#selBoardSize')[0];
+            lobjBoardSize.addEventListener(
+                'change',
+                function () {
+                    gblnFirstPlayersTurn = false;
+                    GameInit();
+                },
+                true
+            );
+        }
     },
     //~ GameInit,
     true
 );
+

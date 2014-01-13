@@ -37,11 +37,11 @@ body {
 	background-color: hsla(60, 100%, 50%, 1);
 	border: 7px double hsla(120, 100%, 50%, 1);
 	box-sizing: border-box;
-	height: calc(90% - 80px);
+	height: calc(8*2em + 1em); /* calc(90% - 80px); */
 	/* margin-top: 5%; */
 	margin-left: calc(20% + 80px);
 	position: relative;
-	width: calc(80% - 120px);
+	width: calc(8*2em + 1em); /* calc(80% - 120px); */
 	top: calc(5% + 40px);
 }
 
@@ -72,6 +72,7 @@ body {
 .cell {
 	background-color: hsla(180, 100%, 50%, 1);
 	border: 1px solid hsla(240, 100%, 50%, 1);
+	box-sizing: border-box;
 	height: 2em;
 	width: 2em;
 	float: left;
