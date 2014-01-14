@@ -6,6 +6,7 @@
 //  
 //  Definitions:
 //      gblnFirstPlayersTurn -- flag for player's turn
+//      gintPlayCount -- counter for number of plays
 //      $() -- alias for document.querySelectorAll()
 //      CellClick() -- handles a cell being clicked
 //      GameInit() -- initializes the game
@@ -16,6 +17,7 @@
 //====
 
 var gblnFirstPlayersTurn = false;
+var gintPlayCount = 0;
 
 
 //====
@@ -58,6 +60,11 @@ function CellClick() {
         //~ '"\ncell id = "' + this.id + '"' );
     
     //----
+    // call PlacePiece() to add player's piece to the board
+    //----
+    PlacePiece(this)
+    
+    //----
     // set player turn and toggle player label
     //----
     gblnFirstPlayersTurn = !gblnFirstPlayersTurn;
@@ -67,11 +74,6 @@ function CellClick() {
     } else {
         $('#txtTurn')[0].innerHTML = 'B';
     }
-    
-    //----
-    // call PlacePiece() to add player's piece to the board
-    //----
-    PlacePiece(this)
 }
 
 
@@ -217,6 +219,8 @@ function GameInit() {
 function PlacePiece(vobjCell) {
     var lblnReturn = true;
     var lintPieces = 0;
+    var lobjNewPiece = $('#svgPlayer' + 
+        (gblnFirstPlayersTurn ? 'A' : 'B'))[0].cloneNode();
     
     try {
         //----
@@ -224,6 +228,8 @@ function PlacePiece(vobjCell) {
         //----
         lintPieces += parseInt(vobjCell.getAttribute('pieces')) + 1;
         vobjCell.setAttribute('pieces', lintPieces);
+        lobjNewPiece.id = 'piece_' + gintPlayCount;
+        vobjCell.appendChild(lobjNewPiece);
         
         //----
         // check for chain reaction
@@ -239,6 +245,8 @@ function PlacePiece(vobjCell) {
             //----
             vobjCell.setAttribute('pieces', 0);
         }
+        
+        gintPlayCount ++;
         
     } catch (err) {
         //----
@@ -268,14 +276,14 @@ function PlacePiece(vobjCell) {
 ///         function creation  |
 /// @endverbatim
 //====
-document.addEventListener(
+window.addEventListener(
     'load', 
     function () {
         //~ alert('load');
         //----
         // run init code
         //----
-        if (typeof $('#board')[0] != 'undefined') {
+        //~ if (typeof $('#board')[0] != 'undefined') {
             GameInit();
             
             var lobjBoardSize = $('#selBoardSize')[0];
@@ -287,7 +295,7 @@ document.addEventListener(
                 },
                 true
             );
-        }
+        //~ }
     },
     //~ GameInit,
     true

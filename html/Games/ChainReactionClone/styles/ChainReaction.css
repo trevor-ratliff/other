@@ -60,6 +60,15 @@ body {
 }
 
 
+#resources {
+	background-color: hsla(31, 100%, 95%, 1);
+}
+
+#resources .piece {
+	float: none;
+}
+
+
 /****
 * classes
 ****/
@@ -81,4 +90,11 @@ body {
 
 .first-in-row {
 	clear: left;
+}
+
+
+.piece {
+	float: left;
+	height: 1.5ex;
+	width: 1.5ex;
 }
