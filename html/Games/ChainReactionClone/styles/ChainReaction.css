@@ -79,7 +79,7 @@ body {
 
 
 .cell {
-	background-color: hsla(180, 100%, 50%, 1);
+	background-color: hsla(180, 100%, 98%, 1);
 	border: 1px solid hsla(240, 100%, 50%, 1);
 	box-sizing: border-box;
 	height: 2em;
