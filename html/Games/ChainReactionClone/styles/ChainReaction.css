@@ -66,6 +66,7 @@ body {
 
 #resources .piece {
 	float: none;
+	position: relative;
 }
 
 

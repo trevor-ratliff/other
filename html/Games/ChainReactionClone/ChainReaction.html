@@ -46,7 +46,7 @@
                 <label for="txtTurn">Player Turn = </label><span id="txtTurn">A</span>
                 
             </div>
-            
+            <br>
             <div id="resources">
                 <label for="svgPlayerA">Player A = </label>
                 <!-- <svg id="svgPlayerA" class="piece" height="1em" width="1em">
@@ -59,7 +59,8 @@
                   <ellipse cx="50%" cy="50%" rx="44%" ry="44%" fill="url(#gradPlayerA)" stroke="#333399" />
                   Sorry, your browser does not support inline SVG.
                 </svg> -->
-                <object id="svgPlayerA" type="image/svg+xml" data="resources/PlayerA_small.svg" class="piece"></object>
+                <object id="svgPlayerA" type="image/svg+xml" data="resources/PlayerA_small.svg" class="piece player-a"></object>
+                x <span id="playerScoreA">0</span>
                 <br />
                 <label for="svgPlayerB">Player B = </label>
                 <!-- <svg id="svgPlayerB" class="piece" height="1em" width="1em">
@@ -72,7 +73,8 @@
                   <ellipse cx="50%" cy="50%" rx="44%" ry="44%" fill="url(#gradPlayerB)" stroke="#993333" />
                   Sorry, your browser does not support inline SVG.
                 </svg> -->
-                <object id="svgPlayerB" type="image/svg+xml" data="resources/PlayerB_small.svg" class="piece"></object>
+                <object id="svgPlayerB" type="image/svg+xml" data="resources/PlayerB_small.svg" class="piece player-b"></object>
+                 x <span id="playerScoreB">0</span>
             </div>
         </div>
     </body>
