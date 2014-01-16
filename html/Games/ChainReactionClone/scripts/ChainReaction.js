@@ -16,7 +16,9 @@
 /// @endverbatim
 //====
 
+var gblnCanPlay = true;
 var gblnFirstPlayersTurn = false;
+var gblnWon = false;
 var gintPlayCount = 0;
 
 
@@ -59,20 +61,29 @@ function CellClick() {
     //~ alert( 'first players turn = "' + gblnFirstPlayersTurn + 
         //~ '"\ncell id = "' + this.id + '"' );
     var lstrPlayer = gblnFirstPlayersTurn ? 'A' : 'B';
+    var lobjCell = this.parentNode;
     
     try {
         //----
         // check to see if the player can go here
         //----
-        if (this.getAttribute('player') != '' && 
-            this.getAttribute('player') != lstrPlayer) {
+        if (gblnWon) {
+            throw 'The game has been won';
+        }
+        
+        if (lobjCell.getAttribute('player') != '' && 
+            lobjCell.getAttribute('player') != lstrPlayer) {
             throw 'You can not play here';
+        }
+        
+        if (!gblnCanPlay) {
+            throw 'You need to wait for your turn';
         }
         
         //----
         // call PlacePiece() to add player's piece to the board
         //----
-        PlacePiece(this)
+        PlacePiece(lobjCell)
         
         //----
         // set player turn and toggle player label
@@ -112,18 +123,22 @@ function CellClick() {
 //====
 function ChainReaction() {
     //~ alert('chain reaction started');
-    
-    //----
-    // setup reaction 'animation'
-    //----
-    window.setTimeout(PieceAnimate, 50);
-    //~ PieceAnimate();
-    
-    //----
-    // set up reaction
-    //----
-    window.setTimeout(Reaction, 1500);
-    //~ Reaction();
+    if (!gblnWon) {
+        //----
+        // setup reaction 'animation'
+        //----
+        window.setTimeout(PieceAnimate, 50);
+        //~ PieceAnimate();
+        
+        //----
+        // set up reaction
+        //----
+        window.setTimeout(Reaction, 1500);
+        //~ Reaction();
+        
+    } else {
+        UpdateScores();
+    }
 }
 
 
@@ -143,7 +158,15 @@ function ChainReaction() {
 //====
 function GameInit() {
     //~ alert('init');
-    if (gblnFirstPlayersTurn) return;
+    
+    //----
+    // set values
+    //----
+    gblnCanPlay = true;
+    gblnFirstPlayersTurn = true;
+    gblnWon = false;
+    gintPlayCount = 0;
+    
     //----
     // generate board
     //----
@@ -208,9 +231,17 @@ function GameInit() {
             lobjBoard.appendChild(lobjCell);
             
             //----
+            // create and add a cell cover to attach click events so the pieces don't get in the way
+            //----
+            var lobjClickCover = document.createElement('div');
+            lobjClickCover.className = 'click-cover';
+            lobjCell.appendChild(lobjClickCover);
+            
+            //----
             // register events for this cell
             //----
-            lobjCell.addEventListener('click', CellClick, false);
+            //~ lobjCell.addEventListener('click', CellClick, false);
+            lobjClickCover.addEventListener('click', CellClick, false);
         }
     }
     
@@ -224,8 +255,41 @@ function GameInit() {
     // set up players
     //----
     gblnFirstPlayersTurn = true;
+    UpdateScores();
     
     return;
+}
+
+
+//====
+/// @fn GetReactingCells()
+/// @brief gets all cells that need to react
+/// @author Trevor Ratliff
+/// @date 2014-01-16
+/// @return a node list
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function GetReactingCells() {
+    return $(
+        '.cell[pieces="6"][maxpieces="4"], ' + 
+        '.cell[pieces="5"][maxpieces="4"], ' + 
+        '.cell[pieces="4"][maxpieces="4"], ' + 
+    
+        '.cell[pieces="5"][maxpieces="3"], ' + 
+        '.cell[pieces="4"][maxpieces="3"], ' + 
+        '.cell[pieces="3"][maxpieces="3"], ' + 
+        
+        '.cell[pieces="4"][maxpieces="2"], ' + 
+        '.cell[pieces="3"][maxpieces="2"], ' + 
+        '.cell[pieces="2"][maxpieces="2"]'
+    );
 }
 
 
@@ -244,9 +308,7 @@ function GameInit() {
 /// @endverbatim
 //====
 function PieceAnimate() {
-    var larrCells = $('.cell[pieces="4"][maxpieces="4"], ' + 
-        '.cell[pieces="3"][maxpieces="3"], ' + 
-        '.cell[pieces="2"][maxpieces="2"]');
+    var larrCells = GetReactingCells();
     
     //----
     // loop through node list
@@ -275,7 +337,7 @@ function PieceAnimate() {
                 //~ 10
             //~ );
         //~ }
-        larrCells[lintII].style.backgroundColor = '#ffff99';
+        larrCells[lintII].className += ' reacting';
     }
 }
 
@@ -306,6 +368,13 @@ function PlacePiece(vobjCell) {
     
     try {
         //----
+        // error out if game is won
+        //----
+        if (gblnWon) {
+            throw 'Game has been won';
+        }
+        
+        //----
         // add the player's piece to the board
         //----
         lintPieces += parseInt(vobjCell.getAttribute('pieces')) + 1;
@@ -313,6 +382,7 @@ function PlacePiece(vobjCell) {
         vobjCell.setAttribute('player', lstrPlayer);
         
         lobjNewPiece.id = 'piece_' + gintPlayCount;
+        lobjNewPiece.className += ' player-' + lstrPlayer.toLowerCase();
         vobjCell.appendChild(lobjNewPiece);
         
         //----
@@ -322,6 +392,7 @@ function PlacePiece(vobjCell) {
             //----
             // start chain reaction
             //----
+            gblnCanPlay = false;
             ChainReaction();
         }
         
@@ -336,7 +407,7 @@ function PlacePiece(vobjCell) {
         // process the error
         //----
         lblnReturn = false;
-        alert('failure: ' + err.toString());
+        alert(err.toString());
     }
     
     return lblnReturn;
@@ -361,9 +432,7 @@ function Reaction() {
     //----
     // get reacting cells
     //----
-    var larrCells = $('.cell[pieces="4"][maxpieces="4"], ' + 
-        '.cell[pieces="3"][maxpieces="3"], ' + 
-        '.cell[pieces="2"][maxpieces="2"]');
+    var larrCells = GetReactingCells();
     
     for (var lintII = 0; lintII < larrCells.length; lintII++) {
         var lintCount = 0;
@@ -392,6 +461,7 @@ function Reaction() {
                 if (lobjCell) { 
                     lobjCell.appendChild(larrPieces[lintCount]);
                     lobjCell.setAttribute('pieces', parseInt(lobjCell.getAttribute('pieces')) + 1);
+                    SwapPieces(lobjCell);
                 }
                 
                 lintCount++;
@@ -409,6 +479,7 @@ function Reaction() {
                 if (lobjCell) {
                     lobjCell.appendChild(larrPieces[lintCount]);
                     lobjCell.setAttribute('pieces', parseInt(lobjCell.getAttribute('pieces')) + 1);
+                    SwapPieces(lobjCell);
                 }
                 
                 lintCount++;
@@ -426,6 +497,7 @@ function Reaction() {
                 if (lobjCell) {
                     lobjCell.appendChild(larrPieces[lintCount]);
                     lobjCell.setAttribute('pieces', parseInt(lobjCell.getAttribute('pieces')) + 1);
+                    SwapPieces(lobjCell);
                 }
                 
                 lintCount++;
@@ -443,6 +515,7 @@ function Reaction() {
                 if (lobjCell) {
                     lobjCell.appendChild(larrPieces[lintCount]);
                     lobjCell.setAttribute('pieces', parseInt(lobjCell.getAttribute('pieces')) + 1);
+                    SwapPieces(lobjCell);
                 }
                 
                 lintCount++;
@@ -454,17 +527,87 @@ function Reaction() {
         //----
         larrCells[lintII].setAttribute('pieces', 0);    // larrCells[lintII].querySelectorAll('.piece').length);
         larrCells[lintII].setAttribute('player', '');
-        larrCells[lintII].style.backgroundColor = 'hsla(180, 100%, 98%, 1)';
+        larrCells[lintII].className = larrCells[lintII].className.replace(' reacting', '');
         
         //----
         // check to see if we need to run Reaction again
         //----
-        larrCells = $('.cell[pieces="4"][maxpieces="4"], ' + 
-        '.cell[pieces="3"][maxpieces="3"], ' + 
-        '.cell[pieces="2"][maxpieces="2"]');
+        var larrCells = GetReactingCells();
         
-        if (larrCells.length > 0) ChainReaction();
+        if (larrCells.length > 0) {
+            ChainReaction();
+        } else {
+            gblnCanPlay = true;
+        }
     }
+}
+
+
+//====
+/// @fn SwapPieces(vobjCell)
+/// @brief sets all the color's in a cell to the same one
+/// @author Trevor Ratliff
+/// @date 2014-01-16
+/// @param vobjCell -- the cell in which pieces are to be swapped
+/// @return boolean
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function SwapPieces(vobjCell) {
+    var lblnReturn = true;
+    
+    try {
+        //----
+        // get new piece and opposite pieces
+        //----
+        var lstrPlayer = (!gblnFirstPlayersTurn ? 'A' : 'B')
+        var lobjPiece = $('#svgPlayer' + lstrPlayer)[0];
+        var larrPieces = vobjCell.querySelectorAll('.piece.player-' + 
+            (gblnFirstPlayersTurn ? 'a' : 'b'));
+        
+        //----
+        // set cell player attribute
+        //----
+        vobjCell.setAttribute('player', (!gblnFirstPlayersTurn ? 'A' : 'B'));
+        
+        //----
+        // loop through opposite pieces and change them to the new piece
+        //----
+        for (var lintII = 0; lintII < larrPieces.length; lintII++) {
+            //----
+            // clone and adjust properties of new piece
+            //----
+            var lobjNew = lobjPiece.cloneNode()
+            lobjNew.id = larrPieces[lintII].id;
+            lobjNew.className += ' player-' + lstrPlayer.toLowerCase();
+            
+            //----
+            // remove old and attach new piece
+            //----
+            vobjCell.removeChild(larrPieces[lintII]);
+            vobjCell.appendChild(lobjNew);
+        }
+        
+        //----
+        // update scores
+        //----
+        UpdateScores();
+        
+    } catch (err) {
+        //----
+        // handle the error
+        //----
+        alert(err.toString());
+        lblnReturn = false;
+    }
+    
+    return lblnReturn;
 }
 
 
@@ -486,8 +629,17 @@ function UpdateScores() {
     var lobjPlayerA = $('.player-a');
     var lobjPlayerB = $('.player-b');
     
-    $('#playerScoreA')[0].innerHTML = lobjPlayerA.length - 1;
-    $('#playerScoreB')[0].innerHTML = lobjPlayerB.length - 1;
+    //----
+    // check to see if a player has a score of 0
+    //----
+    if ((lobjPlayerA.length < 1 || lobjPlayerB.length < 1) && gintPlayCount > 2) {
+        gblnCanPlay = false;
+        gblnWon = true;
+        //~ throw 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
+    }
+    
+    $('#playerScoreA')[0].innerHTML = lobjPlayerA.length;
+    $('#playerScoreB')[0].innerHTML = lobjPlayerB.length;
 }
 
 
@@ -516,19 +668,23 @@ window.addEventListener(
         //----
         // run init code
         //----
-        //~ if (typeof $('#board')[0] != 'undefined') {
-            GameInit();
-            
-            var lobjBoardSize = $('#selBoardSize')[0];
-            lobjBoardSize.addEventListener(
-                'change',
-                function () {
-                    gblnFirstPlayersTurn = false;
-                    GameInit();
-                },
-                true
-            );
-        //~ }
+        GameInit();
+        
+        //----
+        // add event listeners
+        //----
+        var lobjBoardSize = $('#selBoardSize')[0];
+        lobjBoardSize.addEventListener(
+            'change',
+            function () {
+                gblnFirstPlayersTurn = false;
+                GameInit();
+            },
+            true
+        );
+        
+        var lobjReset = $('#reset')[0];
+        lobjReset.addEventListener('click', GameInit, true);
     },
     //~ GameInit,
     true
