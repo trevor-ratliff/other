@@ -117,11 +117,13 @@ function ChainReaction() {
     // setup reaction 'animation'
     //----
     window.setTimeout(PieceAnimate, 50);
+    //~ PieceAnimate();
     
     //----
     // set up reaction
     //----
     window.setTimeout(Reaction, 1500);
+    //~ Reaction();
 }
 
 
