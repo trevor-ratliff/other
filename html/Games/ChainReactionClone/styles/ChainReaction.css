@@ -37,30 +37,39 @@ body {
 	/* background-color: hsla(60, 100%, 50%, 1); */
 	/* border: 7px double hsla(120, 100%, 50%, 1); */
 	box-sizing: border-box;
-	/* height: calc(8*2em + 1em); */ /* calc(90% - 80px); */
-	/* margin-top: 5%; */
-	margin-left: calc(20% + 80px);
+	left: calc(10% + 2.4ex);
+	margin: 0% auto;
 	position: relative;
-	/* width: calc(8*2em + 1em); */ /* calc(80% - 120px); */
-	top: calc(5% + 40px);
+	top: 5%;
 }
 
 
 #controls {
 	background-color: hsla(175, 100%, 80%, 1);
+	background: linear-gradient(hsla(175, 100%, 80%, 1) 45%, hsla(175, 100%, 60%, 1));
 	border: 7px double hsla(360, 100%, 0%, 1);
 	border-radius: 8px;
 	box-sizing: border-box;
 	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
 	/* float: left; */
-	font-size: 0.5em;
+	font-size: 0.4em;
 	font-weight: 600;
 	/* margin-top: -25%; */
-	padding: 2px;
+	left: 5%;
+	max-height: 400px;
+	max-width: 20%;
+	min-width: 12em;
+	overflow: auto;
+	padding: 5px;
 	position: absolute;
-	width: 20%;
-	top: calc(5% + 40px);
-	left: 40px;
+	top: 5%;
+	/* width: 30%; */
+	z-index: 100;
+}
+
+
+#controls h1, #controls h3 {
+	text-align: center;
 }
 
 
@@ -76,7 +85,9 @@ body {
 
 #resources .piece {
 	float: none;
+	height: 2.5ex;
 	position: relative;
+	width: 2.5ex;
 }
 
 
@@ -99,6 +110,7 @@ body {
 	border: 1px solid hsla(240, 0%, 15%, 1);
 	border-radius: 9px;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	height: 2em;
 	float: left;
 	position: relative;
@@ -121,11 +133,49 @@ body {
 
 .piece {
 	float: left;
-	height: 1.5ex;
-	width: 1.5ex;
+	height: 45%;
+	width: 45%;
+	z-index: 10;
 }
 
 
 div.reacting {
-	background-color: hsla(48, 100%, 65%, 1);
+	background-color: hsla(48, 100%, 65%, 0.5);
+	z-index: 0;
+}
+
+
+.s6 {
+	height: calc(100%/6);
+	width: calc(100%/6);
+}
+
+
+.s8 {
+	height: calc(100%/8);
+	width: calc(100%/8);
+}
+
+
+.s10 {
+	height: calc(100%/10);
+	width: calc(100%/10);
+}
+
+
+/****
+* Screen adjustments based on size
+****/
+@media all and (max-width: 480px) {
+	#controls {
+		left: initial;
+		margin: 0px auto;
+		max-width: initial;
+		position: relative;
+		width: 90%;
+	}
+	
+	#board {
+		left: initial;
+	}
 }

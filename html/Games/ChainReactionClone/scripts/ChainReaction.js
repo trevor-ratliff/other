@@ -143,6 +143,37 @@ function ChainReaction() {
 
 
 //====
+/// @fn FixBoardSize()
+/// @brief adjusts the board size to make it fit the screen
+/// @author Trevor Ratliff
+/// @date 2014-01-17
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-17  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function FixBoardSize() {
+    var lstrDimention = '';
+    
+    //----
+    // fix board width and height
+    //----
+    if (document.body.clientHeight < document.body.clientWidth) {
+        lstrDimention = (document.body.clientHeight * 0.9).toString() + 'px';
+    } else {
+        lstrDimention = (document.body.clientWidth * 0.9).toString() + 'px';
+    }
+    
+    $('#board')[0].style.height = lstrDimention;     // 'calc(' + lintBoardSize + '*2em + 1ex)';
+    $('#board')[0].style.width = lstrDimention;      //'calc(' + lintBoardSize + '*2em + 1ex)';
+}
+
+
+//====
 /// @fn GameInit()
 /// @brief Initalizes the game
 /// @author Trevor Ratliff
@@ -158,6 +189,7 @@ function ChainReaction() {
 //====
 function GameInit() {
     //~ alert('init');
+    var lstrDimention = "";
     
     //----
     // set values
@@ -184,7 +216,7 @@ function GameInit() {
             //----
             var lobjCell = document.createElement('div');
             lobjCell.id = 'r' + lintII + 'c' + lintNN;
-            lobjCell.className = 'cell active';
+            lobjCell.className = 'cell active s' + lintBoardSize;
             lobjCell.setAttribute('pieces', 0);
             lobjCell.setAttribute('player', '');
             
@@ -248,8 +280,7 @@ function GameInit() {
     //----
     // fix board width and height
     //----
-    $('#board')[0].style.height = 'calc(' + lintBoardSize + '*2em + 1ex)';
-    $('#board')[0].style.width = 'calc(' + lintBoardSize + '*2em + 1ex)';
+    FixBoardSize();
     
     //----
     // set up players
@@ -337,7 +368,8 @@ function PieceAnimate() {
                 //~ 10
             //~ );
         //~ }
-        larrCells[lintII].className += ' reacting';
+        //~ larrCells[lintII].className += ' reacting';
+        larrCells[lintII].querySelector('.click-cover').className += ' reacting';
     }
 }
 
@@ -527,7 +559,9 @@ function Reaction() {
         //----
         larrCells[lintII].setAttribute('pieces', 0);    // larrCells[lintII].querySelectorAll('.piece').length);
         larrCells[lintII].setAttribute('player', '');
-        larrCells[lintII].className = larrCells[lintII].className.replace(' reacting', '');
+        //~ larrCells[lintII].className = larrCells[lintII].className.replace(' reacting', '');
+        var lobjClickCover = larrCells[lintII].querySelector('.click-cover');
+        lobjClickCover.className = lobjClickCover.className.replace(' reacting', '');
         
         //----
         // check to see if we need to run Reaction again
@@ -687,5 +721,15 @@ window.addEventListener(
         lobjReset.addEventListener('click', GameInit, true);
     },
     //~ GameInit,
+    true
+);
+
+
+//----
+// add FixBoardSize to the window resize event listener
+//----
+window.addEventListener (
+    'resize',
+    FixBoardSize,
     true
 );
