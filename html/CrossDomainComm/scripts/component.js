@@ -1,3 +1,7 @@
+/*
+ * This is not my code ... unfortunately I don't remember where I got it from
+ */
+
 (function(){
 
 // mini json.

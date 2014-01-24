@@ -1,3 +1,7 @@
+/*
+ * This is not my code ... unfortunately I don't remember where I got it from
+ */
+
 /** @contructor */
 // The messenger object handles bi-directional communication between the main
 // window and an iframe. It will also queue messages until the iframe has
