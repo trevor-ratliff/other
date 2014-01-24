@@ -36,18 +36,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="375"
+     inkscape:zoom="0.49450749"
+     inkscape:cx="426.81352"
      inkscape:cy="520"
      inkscape:document-units="px"
      inkscape:current-layer="layer2"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1007"
+     inkscape:window-width="1008"
      inkscape:window-height="780"
-     inkscape:window-x="103"
-     inkscape:window-y="144"
+     inkscape:window-x="2156"
+     inkscape:window-y="138"
      inkscape:window-maximized="0">
     <sodipodi:guide
        orientation="1,0"
@@ -63,7 +63,7 @@
        id="guide2991" />
     <sodipodi:guide
        orientation="1,0"
-       position="551.42857,-120"
+       position="606.66422,1098.0622"
        id="guide2993" />
     <sodipodi:guide
        orientation="1,0"
@@ -85,30 +85,6 @@
        orientation="1,0"
        position="51.428571,562.85714"
        id="guide3005" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="0,594"
-       id="guide5422" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="-2,512"
-       id="guide5424" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="0,728"
-       id="guide5426" />
-    <sodipodi:guide
-       orientation="0,1"
-       position="0,366"
-       id="guide5428" />
-    <sodipodi:guide
-       orientation="1,0"
-       position="352,1050"
-       id="guide5430" />
-    <sodipodi:guide
-       orientation="1,0"
-       position="728,1048"
-       id="guide5432" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -119,7 +95,28 @@
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <dc:title>add journal entry</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Trevor Ratliff</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:date>2014-01-10</dc:date>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
       </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by/3.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
     </rdf:RDF>
   </metadata>
   <g
@@ -128,20 +125,22 @@
      id="layer1"
      style="display:inline">
     <path
-       style="fill:none;stroke:#0000a3;stroke-width:15;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
-       d="m 51.428571,169.50504 0,766 c 0,51.14286 57.428569,51.14286 57.428569,51.14286 l 391.71429,0 0,-817.14286 -393.71429,0 c 0,0 -55.428569,-4 -55.428569,-54 0,-45.999997 55.428569,-45.999997 55.428569,-45.999997 l 444.57143,0 0,819.999997 -28.85714,0"
-       id="path3003"
+       style="fill:none;stroke:#0000a3;stroke-width:35;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:none"
+       d="m 51.428571,193.50504 0,742 c 0,51.14286 57.428569,51.14286 57.428569,51.14286 l 391.71429,0 0,-817.14286 -393.71429,0 c 0,0 -55.428569,-4 -55.428569,-54 0,-45.999997 55.428569,-45.999997 55.428569,-45.999997 l 498.57143,0 0,819.999997 -62.85714,0"
+       id="pathBook"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csccccscccc" />
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="plus">
+     inkscape:label="plus"
+     style="display:inline">
     <path
-       style="fill:#000078;fill-opacity:1;stroke:#ffffff;stroke-width:15;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       d="m 354,460.36218 164,0 0,-134 71.42857,0 0,134 140.57143,0 0,82 -140.57143,0 0,146 -71.42857,0 0,-146 -164,0 z"
-       id="path5434"
-       inkscape:connector-curvature="0" />
+       style="fill:#000078;fill-opacity:1;stroke:#ffffff;stroke-width:11.429142;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 434.61442,470.90912 91.47726,0 0,-89.86587 55.37365,0 0,89.86587 91.92025,0 0,61.40835 -91.92025,0 0,91.36364 -55.37365,0 0,-91.36364 -91.47726,0 z"
+       id="pathPlus"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccc" />
   </g>
 </svg>
