@@ -345,29 +345,34 @@ function PieceAnimate() {
     // loop through node list
     //----
     for (var lintII = 0; lintII < larrCells.length; lintII++) {
-        //~ var larrPieces = larrCells[lintII].querySelectorAll('.piece');
+        var larrPieces = larrCells[lintII].querySelectorAll('.piece');
         
-        //~ //----
-        //~ // loop through pieces
-        //~ //----
-        //~ for (var lintNN = 0; lintNN < larrPieces.length; lintNN++) {
-            //~ //----
-            //~ // shake them
-            //~ //----
+        //----
+        // loop through pieces
+        //----
+        for (var lintNN = 0; lintNN < larrPieces.length; lintNN++) {
+            //----
+            // shake them
+            //----
             //~ window.setTimeout(
                 //~ function () {
-                    //----
-                    // use css transform
-                    //----
-                    //~ larrPieces[lintNN].style.transform = 'translate(-3,0)';
-                    //~ larrPieces[lintNN].style.transform = 'translate(0,-3)';
-                    //~ larrPieces[lintNN].style.transform = 'translate(3,0)';
-                    //~ larrPieces[lintNN].style.transform = 'translate(0,3)';
-                    //~ larrPieces[lintNN].style.transform = 'translate(0,0)';
+                    //~ //----
+                    //~ // use css transform
+                    //~ //----
+                    larrPieces[lintNN].style.top = '-3px';
+                    larrPieces[lintNN].style.left = '0px';
+                    larrPieces[lintNN].style.top = '0px';
+                    larrPieces[lintNN].style.left = '3px';
+                    larrPieces[lintNN].style.top = '3px';
+                    larrPieces[lintNN].style.left = '0px';
+                    larrPieces[lintNN].style.top = '0px';
+                    larrPieces[lintNN].style.left = '-3px';
+                    larrPieces[lintNN].style.top = '0px';
+                    larrPieces[lintNN].style.left = '0px';
                 //~ }, 
                 //~ 10
             //~ );
-        //~ }
+        }
         //~ larrCells[lintII].className += ' reacting';
         larrCells[lintII].querySelector('.click-cover').className += ' reacting';
     }
