@@ -1,8 +1,8 @@
 //====
-/// @file 
-/// @brief 
-/// @author 
-/// @date 
+/// @file ChainReaction.js
+/// @brief This file holds the interface for the Chain Reaction game
+/// @author Trevor Ratliff
+/// @date 2014-01-10
 //  
 //  Definitions:
 //      gblnFirstPlayersTurn -- flag for player's turn
@@ -13,6 +13,8 @@
 //  
 /// @verbatim
 /// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-10  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  | 
+///         file creation  |
 /// @endverbatim
 //====
 
@@ -359,23 +361,100 @@ function PieceAnimate() {
                     //~ //----
                     //~ // use css transform
                     //~ //----
-                    larrPieces[lintNN].style.top = '-3px';
-                    larrPieces[lintNN].style.left = '0px';
-                    larrPieces[lintNN].style.top = '0px';
-                    larrPieces[lintNN].style.left = '3px';
-                    larrPieces[lintNN].style.top = '3px';
-                    larrPieces[lintNN].style.left = '0px';
-                    larrPieces[lintNN].style.top = '0px';
-                    larrPieces[lintNN].style.left = '-3px';
-                    larrPieces[lintNN].style.top = '0px';
-                    larrPieces[lintNN].style.left = '0px';
+                    //~ larrPieces[lintNN].style.top = '-3px';
+                    //~ larrPieces[lintNN].style.left = '0px';
+                    //~ larrPieces[lintNN].style.top = '0px';
+                    //~ larrPieces[lintNN].style.left = '3px';
+                    //~ larrPieces[lintNN].style.top = '3px';
+                    //~ larrPieces[lintNN].style.left = '0px';
+                    //~ larrPieces[lintNN].style.top = '0px';
+                    //~ larrPieces[lintNN].style.left = '-3px';
+                    //~ larrPieces[lintNN].style.top = '0px';
+                    //~ larrPieces[lintNN].style.left = '0px';
                 //~ }, 
                 //~ 10
             //~ );
+            
+            MoveDelay(larrPieces[lintNN], 10, 'up');
         }
         //~ larrCells[lintII].className += ' reacting';
         larrCells[lintII].querySelector('.click-cover').className += ' reacting';
     }
+}
+
+
+//====
+/// @fn MoveDelay(vobjPiece, vintDelay)
+/// @brief shakes the pieces prior to moving them
+/// @author Trevor Ratliff
+/// @date 2014-01-25
+/// @param robjPiece -- reference to the piece to move
+/// @param vintDelay -- base time to wait to start the animation
+/// @return 
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-25  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
+    //----
+    // move up
+    //----
+    window.setTimeout(
+        function() {
+            lobjPiece.style.top  = '-3px';
+            lobjpiece.style.left = '0px';
+        },
+        lintDelay
+    );
+    
+    //----
+    // move left
+    //----
+    window.setTimeout(
+        function() {
+            lobjPiece.style.top  = '0px';
+            lobjpiece.style.left = '3px';
+        },
+        lintDelay + 250
+    );
+    
+    //----
+    // move down
+    //----
+    window.setTimeout(
+        function() {
+            lobjPiece.style.top  = '3px';
+            lobjpiece.style.left = '0px';
+        },
+        lintDelay + 500
+    );
+    
+    //----
+    // move right
+    //----
+    window.setTimeout(
+        function() {
+            lobjPiece.style.top  = '0px';
+            lobjpiece.style.left = '-3px';
+        },
+        lintDelay + 750
+    );
+    
+    //----
+    // move back to origin
+    //----
+    window.setTimeout(
+        function() {
+            lobjPiece.style.top  = '0px';
+            lobjpiece.style.left = '0px';
+        },
+        lintDelay + 1000
+    );
 }
 
 
