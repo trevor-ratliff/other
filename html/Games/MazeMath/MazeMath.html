@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maze Math</title>
+  <link rel="stylesheet" media="screen" href="styles/MazeMath.css" />
+  <script src="lib/crafty.js"></script>
+  <script src="lib/seedrandom.js"></script>
+  <script src="lib/MazeGen.js"></script>
+  <script src="src/game.js"></script>
+  <script src="src/components.js"></script>
+  <script src="src/scenes.js"></script>
+  <script>
+    window.addEventListener('load', Game.start);
+  </script>
+</head>
+<body>
+  <h2>Math Maze</h2>
+
+  <p>Solve the Math problems to collect all the treasure.</p>
+
+  <p class="controls">Controls: Use W, A, S, and D or arrow keys to move around.</p>
+  
+  <section id="Stats">
+    <label id="lblMathType" for="selMathType">Type of Math:</label>
+    <select id="selMathType" name="selMathType">
+      <option value="add">Addition</option>
+      <option value="sub">Subtraction</option>
+      <option value="mult">Multiplication</option>
+      <option value="div">Division</option>
+      <option value="mix">Mix</option>
+    </select><br>
+    
+    <label id="lblProblems" for="nmbProblems">Number of Problems:</label>
+    <!-- <input id="nmbProblems" name="nmbProblems"
+      type="range" min="10" max="50" /> -->
+    <input id="nmbProblems" name="nmbProblems" type="number" min="10" max="50" value="10" />
+    <br> <br>
+    
+    <label id="lblBestTime" for="txtBestTime">Best Time:</label>
+    <input id="txtBestTime" name="txtBestTime" type="text" />
+    <br> <br>
+    
+    <label id="lblCurrentTime" for="txtCurrentTime">Current Time:</label>
+    <input id="txtCurrentTime" name="txtCurrentTime" type="text" />
+    &nbsp;
+  </section>
+
+  <div id="cr-stage"></div>
+
+  <p class="bottom">Adapted from the "Introduction to Crafty Game Engine" tutorial on <a href="http://buildnewgames.com" target="_blank">Build New Games</a>.</p>
+
+  <div id="cover">
+    <section id="MathBoard">
+    </section>
+  </div>
+</body>
+</html>

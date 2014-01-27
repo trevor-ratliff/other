@@ -1,0 +1,77 @@
+/****
+* @file MathMaze.css
+* @author Trevor Ratliff
+* @date 2013-07-04
+* 
+* @verbatim
+* @endverbatim
+****/
+
+/****
+* elements
+****/
+html {
+	height: 100%;
+	margin: 0px;
+	overflow: auto;
+	padding: 0px;
+	width: 100%;
+}
+
+body, div {
+	height: 97%;
+	margin: 0px;
+	overflow: visible;
+	padding: 0px;
+	width: 100%;
+}
+
+body {
+  background: black;
+  text-align: center;
+  color: #DDDDDD;
+  font-family: Arial;
+}
+
+/****
+* classes
+****/
+.bottom {
+  font-size: 12px;
+  color: #888888;
+  margin-top: 50px;
+}
+
+.bottom a {
+  color: #AAAAAA;
+}
+
+.controls {
+  color: #BBBBBB;
+}
+
+.show {
+	display: block;
+}
+
+/****
+* ids
+****/
+#cover {
+	background-color: rbga(100, 100, 100, 0.6);
+	display: none;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+}
+
+#cr-stage {
+	margin: 20px auto 0;
+}
+
+#Stats {
+	background-color: #666666;
+	float: right;
+	width: 250px;
+	height: 370px;
+}
