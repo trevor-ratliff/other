@@ -5,9 +5,12 @@
 /// @date 2014-01-10
 //  
 //  Definitions:
+//      gblnCanPlay -- flag to let user know he/she can play
 //      gblnFirstPlayersTurn -- flag for player's turn
+//      gblnLog -- flag for if console.log() is available
+//      gblnWon -- flag for end of game
 //      gintPlayCount -- counter for number of plays
-//      $() -- alias for document.querySelectorAll()
+//      $() -- wraper for document.querySelectorAll()
 //      CellClick() -- handles a cell being clicked
 //      GameInit() -- initializes the game
 //  
@@ -20,6 +23,7 @@
 
 var gblnCanPlay = true;
 var gblnFirstPlayersTurn = false;
+var gblnLog = false;
 var gblnWon = false;
 var gintPlayCount = 0;
 
@@ -60,6 +64,7 @@ function $( vstrPath ) {
 /// @endverbatim
 //====
 function CellClick() {
+    Log('CellClick');
     //~ alert( 'first players turn = "' + gblnFirstPlayersTurn + 
         //~ '"\ncell id = "' + this.id + '"' );
     var lstrPlayer = gblnFirstPlayersTurn ? 'A' : 'B';
@@ -124,13 +129,14 @@ function CellClick() {
 /// @endverbatim
 //====
 function ChainReaction() {
+    Log('ChainReaction');
     //~ alert('chain reaction started');
     if (!gblnWon) {
         //----
         // setup reaction 'animation'
         //----
-        window.setTimeout(PieceAnimate, 50);
-        //~ PieceAnimate();
+        window.setTimeout(PieceAnimateStart, 50);
+        //~ PieceAnimateStart();
         
         //----
         // set up reaction
@@ -151,6 +157,9 @@ function ChainReaction() {
 /// @date 2014-01-17
 //  
 //  Definitions:
+//      lintDimension -- integer representation of shortest Dimension of client screen
+//      lstrDimension -- Dimension in css pixel notation
+//      lobjBoard -- reference to the element with id of 'board'
 //  
 /// @verbatim
 /// History:  Date  |  Programmer  |  Contact  |  Description  |
@@ -159,19 +168,37 @@ function ChainReaction() {
 /// @endverbatim
 //====
 function FixBoardSize() {
-    var lstrDimention = '';
+    Log('FixBoardSize');
+    var lintDimension = 0;
+    var lstrDimension = '';
+    var lobjBoard = $('#board')[0];
     
     //----
-    // fix board width and height
+    // fix board width and height to 90% of client height or width
     //----
     if (document.body.clientHeight < document.body.clientWidth) {
-        lstrDimention = (document.body.clientHeight * 0.9).toString() + 'px';
+        lintDimension = (document.body.clientHeight * 0.9);
     } else {
-        lstrDimention = (document.body.clientWidth * 0.9).toString() + 'px';
+        lintDimension = (document.body.clientWidth * 0.9);
     }
     
-    $('#board')[0].style.height = lstrDimention;     // 'calc(' + lintBoardSize + '*2em + 1ex)';
-    $('#board')[0].style.width = lstrDimention;      //'calc(' + lintBoardSize + '*2em + 1ex)';
+    //----
+    // adjust the pixel dimension to be odd to make IE happier
+    //----
+    if (lintDimension % 2 == 0) {
+        lintDimension += 1;
+    }
+    
+    //----
+    // set dimension to pixels
+    //----
+    lstrDimension = lintDimension.toString() + 'px';
+    
+    //----
+    // set boad size
+    //----
+    lobjBoard.style.height = lstrDimension;     // 'calc(' + lintBoardSize + '*2em + 1ex)';
+    lobjBoard.style.width = lstrDimension;      //'calc(' + lintBoardSize + '*2em + 1ex)';
 }
 
 
@@ -190,8 +217,9 @@ function FixBoardSize() {
 /// @endverbatim
 //====
 function GameInit() {
+    Log('GameInit');
     //~ alert('init');
-    var lstrDimention = "";
+    var lstrDimension = "";
     
     //----
     // set values
@@ -310,6 +338,7 @@ function GameInit() {
 /// @endverbatim
 //====
 function GetReactingCells() {
+    Log('GetReactingCells');
     return $(
         '.cell[pieces="6"][maxpieces="4"], ' + 
         '.cell[pieces="5"][maxpieces="4"], ' + 
@@ -327,59 +356,34 @@ function GetReactingCells() {
 
 
 //====
-/// @fn PieceAnimate()
-/// @brief makes the pieces wiggle prior to reaction
+/// @fn Log(vstrMessage)
+/// @brief prints vstressage to the console.log() if available
 /// @author Trevor Ratliff
-/// @date 2014-01-15
+/// @date 2014-01-26
+/// @param vstrMessage -- the message to put in the log
+/// @return bool
 //  
 //  Definitions:
+//      lblnReturn -- success flag
 //  
 /// @verbatim
 /// History:  Date  |  Programmer  |  Contact  |  Description  |
-///     2014-01-15  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///     2014-01-26  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
 ///         function creation  |
 /// @endverbatim
 //====
-function PieceAnimate() {
-    var larrCells = GetReactingCells();
+function Log(vstrMessage) {
+    var lblnReturn = true;
     
-    //----
-    // loop through node list
-    //----
-    for (var lintII = 0; lintII < larrCells.length; lintII++) {
-        var larrPieces = larrCells[lintII].querySelectorAll('.piece');
-        
-        //----
-        // loop through pieces
-        //----
-        for (var lintNN = 0; lintNN < larrPieces.length; lintNN++) {
-            //----
-            // shake them
-            //----
-            //~ window.setTimeout(
-                //~ function () {
-                    //~ //----
-                    //~ // use css transform
-                    //~ //----
-                    //~ larrPieces[lintNN].style.top = '-3px';
-                    //~ larrPieces[lintNN].style.left = '0px';
-                    //~ larrPieces[lintNN].style.top = '0px';
-                    //~ larrPieces[lintNN].style.left = '3px';
-                    //~ larrPieces[lintNN].style.top = '3px';
-                    //~ larrPieces[lintNN].style.left = '0px';
-                    //~ larrPieces[lintNN].style.top = '0px';
-                    //~ larrPieces[lintNN].style.left = '-3px';
-                    //~ larrPieces[lintNN].style.top = '0px';
-                    //~ larrPieces[lintNN].style.left = '0px';
-                //~ }, 
-                //~ 10
-            //~ );
-            
-            MoveDelay(larrPieces[lintNN], 10, 'up');
+    try {
+        if (gblnLog) {
+            console.log(vstrMessage + ': ' + new Date().toISOString());
         }
-        //~ larrCells[lintII].className += ' reacting';
-        larrCells[lintII].querySelector('.click-cover').className += ' reacting';
+    } catch (err) {
+        lblnReturn = false;
     }
+    
+    return lblnReturn;
 }
 
 
@@ -401,13 +405,14 @@ function PieceAnimate() {
 /// @endverbatim
 //====
 function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
+    Log('MoveDelay');
     //----
     // move up
     //----
     window.setTimeout(
         function() {
-            lobjPiece.style.top  = '-3px';
-            lobjpiece.style.left = '0px';
+            lobjPiece.style.top  = '-' + RandMinMax(1, 5).toString() + 'px';
+            lobjPiece.style.left = '0px';
         },
         lintDelay
     );
@@ -418,7 +423,7 @@ function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
     window.setTimeout(
         function() {
             lobjPiece.style.top  = '0px';
-            lobjpiece.style.left = '3px';
+            lobjPiece.style.left = RandMinMax(1, 5).toString() + 'px';
         },
         lintDelay + 250
     );
@@ -428,8 +433,8 @@ function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
     //----
     window.setTimeout(
         function() {
-            lobjPiece.style.top  = '3px';
-            lobjpiece.style.left = '0px';
+            lobjPiece.style.top  = RandMinMax(1, 5).toString() + 'px';
+            lobjPiece.style.left = '0px';
         },
         lintDelay + 500
     );
@@ -440,7 +445,7 @@ function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
     window.setTimeout(
         function() {
             lobjPiece.style.top  = '0px';
-            lobjpiece.style.left = '-3px';
+            lobjPiece.style.left = '-' + RandMinMax(1, 5).toString() + 'px';
         },
         lintDelay + 750
     );
@@ -451,10 +456,54 @@ function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
     window.setTimeout(
         function() {
             lobjPiece.style.top  = '0px';
-            lobjpiece.style.left = '0px';
+            lobjPiece.style.left = '0px';
+            
+            //----
+            // call reaction ???
+            //----
+            //~ window.setTimeout(Reaction, 10);
         },
         lintDelay + 1000
     );
+}
+
+
+//====
+/// @fn PieceAnimateStart()
+/// @brief makes the pieces wiggle prior to reaction
+/// @author Trevor Ratliff
+/// @date 2014-01-15
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-15  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function PieceAnimateStart() {
+    Log('PieceAnimateStart');
+    var larrCells = GetReactingCells();
+    
+    //----
+    // loop through node list
+    //----
+    for (var lintII = 0; lintII < larrCells.length; lintII++) {
+        var larrPieces = larrCells[lintII].querySelectorAll('.piece');
+        
+        //----
+        // loop through pieces
+        //----
+        for (var lintNN = 0; lintNN < larrPieces.length; lintNN++) {
+            //----
+            // shake them
+            //----
+            MoveDelay(larrPieces[lintNN], 10);
+        }
+        //~ larrCells[lintII].className += ' reacting';
+        larrCells[lintII].querySelector('.click-cover').className += ' reacting';
+    }
 }
 
 
@@ -476,6 +525,7 @@ function MoveDelay(lobjPiece, lintDelay, lstrDirection) {
 /// @endverbatim
 //====
 function PlacePiece(vobjCell) {
+    Log('PlacePiece');
     var lblnReturn = true;
     var lintPieces = 0;
     var lstrPlayer = gblnFirstPlayersTurn ? 'A' : 'B';
@@ -531,6 +581,29 @@ function PlacePiece(vobjCell) {
 
 
 //====
+/// @fn RandMinMax(vintMin, vintMax)
+/// @brief gets a random value between the min and max
+/// @author Trevor Ratliff
+/// @date 2014-01-26
+/// @param vintMin -- minimum value
+/// @param vintMax -- maximum value
+/// @return int
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-26  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function RandMinMax(vintMin, vintMax)
+{
+    return Math.floor(Math.random()*(vintMax - vintMin + 1) + vintMin);
+}
+
+
+//====
 /// @fn Reaction()
 /// @brief moves the pieces involved in a chain reaction
 /// @author Trevor Ratliff
@@ -545,6 +618,7 @@ function PlacePiece(vobjCell) {
 /// @endverbatim
 //====
 function Reaction() {
+    Log('Reaction');
     //----
     // get reacting cells
     //----
@@ -678,6 +752,7 @@ function Reaction() {
 /// @endverbatim
 //====
 function SwapPieces(vobjCell) {
+    Log('SwapPieces');
     var lblnReturn = true;
     
     try {
@@ -744,6 +819,7 @@ function SwapPieces(vobjCell) {
 /// @endverbatim
 //====
 function UpdateScores() {
+    Log('UpdateScores');
     var lobjPlayerA = $('.player-a');
     var lobjPlayerB = $('.player-b');
     
@@ -783,6 +859,13 @@ window.addEventListener(
     'load', 
     function () {
         //~ alert('load');
+        //----
+        // set some flags
+        //----
+        gblnLog = typeof console == 'object' ? (
+                typeof console.log == 'function' ? true : false
+            ) : false;
+        
         //----
         // run init code
         //----
