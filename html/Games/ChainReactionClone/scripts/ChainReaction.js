@@ -6,6 +6,7 @@
 //  
 //  Definitions:
 //      gblnCanPlay -- flag to let user know he/she can play
+//      gblnDebug -- flag for displaying debug info
 //      gblnFirstPlayersTurn -- flag for player's turn
 //      gblnLog -- flag for if console.log() is available
 //      gblnWon -- flag for end of game
@@ -22,6 +23,7 @@
 //====
 
 var gblnCanPlay = true;
+var gblnDebug = false;
 var gblnFirstPlayersTurn = false;
 var gblnLog = false;
 var gblnWon = false;
@@ -376,7 +378,7 @@ function Log(vstrMessage) {
     var lblnReturn = true;
     
     try {
-        if (gblnLog) {
+        if (gblnLog && gblnDebug) {
             console.log(vstrMessage + ': ' + new Date().toISOString());
         }
     } catch (err) {
@@ -502,7 +504,7 @@ function PieceAnimateStart() {
             MoveDelay(larrPieces[lintNN], 10);
         }
         //~ larrCells[lintII].className += ' reacting';
-        larrCells[lintII].querySelector('.click-cover').className += ' reacting';
+        //~ larrCells[lintII].querySelector('.click-cover').className += ' reacting';
     }
 }
 
@@ -660,7 +662,7 @@ function Reaction() {
             //----
             // move one right
             //----
-            if (lstrCol != ('c' + $('#selBoardSize')[0].value) && 
+            if (lstrCol != ('c' + (Number($('#selBoardSize')[0].value) - 1)) && 
                 lintCount < larrPieces.length) 
             {
                 var lintNewCol = parseInt(lstrCol.substring(1)) + 1;
@@ -678,7 +680,7 @@ function Reaction() {
             //----
             // move one down
             //----
-            if (lstrRow != ('r' + $('#selBoardSize')[0].value) && 
+            if (lstrRow != ('r' + (Number($('#selBoardSize')[0].value) - 1)) && 
                 lintCount < larrPieces.length) 
             {
                 var lintNewRow = parseInt(lstrRow.substring(1)) + 1;
@@ -862,6 +864,7 @@ window.addEventListener(
         //----
         // set some flags
         //----
+        gblnDebug = window.location.search.indexOf('debug') > 0 ? true : false;
         gblnLog = typeof console == 'object' ? (
                 typeof console.log == 'function' ? true : false
             ) : false;
