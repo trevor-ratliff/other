@@ -205,6 +205,35 @@ function FixBoardSize() {
 
 
 //====
+/// @fn FixCells()
+/// @brief fixes the board cells of any errors
+/// @author Trevor Ratliff
+/// @date 2014-01-27
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-01-27  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function FixCells() {
+    //----
+    // get any cells with a '.reacting' class
+    //----
+    larrCells = $('.reacting');
+    
+    //----
+    // loop through and remove the .reacting class
+    //----
+    for(var lintII = 0; lintII < larrCells.length; lintII++) {
+        larrCells[lintII].className = larrCells[lintII].className.replace(/ reacting/g, '');
+    }
+}
+
+
+//====
 /// @fn GameInit()
 /// @brief Initalizes the game
 /// @author Trevor Ratliff
@@ -342,14 +371,17 @@ function GameInit() {
 function GetReactingCells() {
     Log('GetReactingCells');
     return $(
+        '.cell[pieces="7"][maxpieces="4"], ' + 
         '.cell[pieces="6"][maxpieces="4"], ' + 
         '.cell[pieces="5"][maxpieces="4"], ' + 
         '.cell[pieces="4"][maxpieces="4"], ' + 
     
+        '.cell[pieces="6"][maxpieces="3"], ' + 
         '.cell[pieces="5"][maxpieces="3"], ' + 
         '.cell[pieces="4"][maxpieces="3"], ' + 
         '.cell[pieces="3"][maxpieces="3"], ' + 
         
+        '.cell[pieces="5"][maxpieces="2"], ' + 
         '.cell[pieces="4"][maxpieces="2"], ' + 
         '.cell[pieces="3"][maxpieces="2"], ' + 
         '.cell[pieces="2"][maxpieces="2"]'
@@ -504,7 +536,7 @@ function PieceAnimateStart() {
             MoveDelay(larrPieces[lintNN], 10);
         }
         //~ larrCells[lintII].className += ' reacting';
-        //~ larrCells[lintII].querySelector('.click-cover').className += ' reacting';
+        larrCells[lintII].querySelector('.click-cover').className += ' reacting';
     }
 }
 
@@ -721,7 +753,7 @@ function Reaction() {
         larrCells[lintII].setAttribute('player', '');
         //~ larrCells[lintII].className = larrCells[lintII].className.replace(' reacting', '');
         var lobjClickCover = larrCells[lintII].querySelector('.click-cover');
-        lobjClickCover.className = lobjClickCover.className.replace(' reacting', '');
+        //~ lobjClickCover.className = lobjClickCover.className.replace(/ reacting/g, '');
         
         //----
         // check to see if we need to run Reaction again
@@ -729,8 +761,9 @@ function Reaction() {
         var larrCells = GetReactingCells();
         
         if (larrCells.length > 0) {
-            ChainReaction();
+            window.setTimeout(ChainReaction, 900);
         } else {
+            FixCells();
             gblnCanPlay = true;
         }
     }
