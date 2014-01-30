@@ -45,26 +45,13 @@ body {
 
 
 #controls {
-	background-color: hsla(175, 100%, 80%, 1);
-	background: linear-gradient(hsla(175, 100%, 80%, 1) 45%, hsla(175, 100%, 60%, 1));
-	border: 7px double hsla(360, 100%, 0%, 1);
-	border-radius: 8px;
-	box-sizing: border-box;
-	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
-	/* float: left; */
-	font-size: 0.4em;
-	font-weight: 600;
-	/* margin-top: -25%; */
 	left: 5%;
 	max-height: 400px;
 	max-width: 20%;
 	min-width: 12em;
-	overflow: auto;
-	padding: 5px;
 	position: absolute;
 	top: 5%;
 	/* width: 30%; */
-	z-index: 100;
 }
 
 
@@ -72,6 +59,20 @@ body {
 	text-align: center;
 }
 
+
+#info {
+	left: 5%;
+	/* max-height: 10ex; */
+	max-width: 20%;
+	min-width: 12em;
+	position: absolute;
+	top: 30%;
+}
+
+
+#controls *, #info * {
+	font-size: 0.8em;
+}
 
 #resources {
 	background-color: hsla(31, 100%, 95%, 1);
@@ -113,8 +114,26 @@ body {
 	-moz-box-sizing: border-box;
 	height: 2em;
 	float: left;
+	line-height: 5%;
 	position: relative;
 	width: 2em;
+}
+
+
+.controls {
+	background-color: hsla(175, 100%, 80%, 1);
+	background: linear-gradient(hsla(175, 100%, 80%, 1) 45%, hsla(175, 100%, 60%, 1));
+	border: 7px double hsla(360, 100%, 0%, 1);
+	border-radius: 8px;
+	box-sizing: border-box;
+	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
+	/* float: left; */
+	/* font-size: 0.4em; */
+	font-weight: 600;
+	/* margin-top: -25%; */
+	overflow: auto;
+	padding: 5px;
+	z-index: 100;
 }
 
 
@@ -170,14 +189,32 @@ div.reacting {
 ****/
 @media all and (max-width: 480px) {
 	#controls {
+		box-shadow: none;
 		left: initial;
-		margin: 0px auto;
+		margin: 2ex auto 0px;
 		max-width: initial;
 		position: relative;
+		top: initial;
 		width: 90%;
+	}
+	
+	#info {
+		box-shadow: none;
+		left: initial;
+		margin: 2ex auto 0px;
+		max-width: initial;
+		position: relative;
+		top: initial;
+		width: 90%;
+	}
+	
+	#controls *, #info * {
+		font-size: 0.6em;
 	}
 	
 	#board {
 		left: initial;
+		margin: 2ex auto 0px;
+		top: initial;
 	}
 }

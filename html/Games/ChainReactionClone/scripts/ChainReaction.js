@@ -559,7 +559,7 @@ function PlacePiece(vobjCell) {
     var lintPieces = 0;
     var lstrPlayer = gblnFirstPlayersTurn ? 'A' : 'B';
     var lobjNewPiece = $('#svgPlayer' + 
-        lstrPlayer)[0].cloneNode();
+        lstrPlayer)[0].cloneNode(true);
     
     try {
         //----
@@ -752,8 +752,19 @@ function Reaction() {
         //----
         var larrCells = GetReactingCells();
         
-        if (larrCells.length > 0) {
-            window.setTimeout(ChainReaction, 500);
+        if (larrCells.length > 0 &&
+            $('.player-' + (gblnFirstPlayersTurn ? 'a' : 'b')).length > 0) 
+        {
+            //----
+            // test for pieces of opposite team (player has already switched ... I may need to adjust this)
+            //----
+            //~ if ($('.player-' + (gblnFirstPlayersTurn ? 'b' : 'a')).length > 0) {
+            //~ if ($('.player-' + (gblnFirstPlayersTurn ? 'a' : 'b')).length > 0) {
+                window.setTimeout(ChainReaction, 50);
+            //~ } else {
+                //~ gblnWon = true;
+            //~ }
+            
         } else {
             FixCells();
             UpdateScores();
@@ -804,7 +815,7 @@ function SwapPieces(vobjCell) {
             //----
             // clone and adjust properties of new piece
             //----
-            var lobjNew = lobjPiece.cloneNode()
+            var lobjNew = lobjPiece.cloneNode(true)
             lobjNew.id = larrPieces[lintII].id;
             lobjNew.className += ' player-' + lstrPlayer.toLowerCase();
             
@@ -848,6 +859,7 @@ function SwapPieces(vobjCell) {
 //====
 function UpdateScores() {
     Log('UpdateScores');
+    if (!gblnWon)
     var lobjPlayerA = $('.player-a');
     var lobjPlayerB = $('.player-b');
     
