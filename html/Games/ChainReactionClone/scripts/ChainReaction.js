@@ -589,6 +589,8 @@ function PlacePiece(vobjCell) {
             //----
             gblnCanPlay = false;
             ChainReaction();
+        } else {
+            UpdateScores();
         }
         
         //----
@@ -653,7 +655,8 @@ function Reaction() {
     //----
     var larrCells = GetReactingCells();
     
-    for (var lintII = 0; lintII < larrCells.length; lintII++) {
+    for (var lintII = 0; lintII < 4; lintII++) {
+    //~ for (var lintII = 0; lintII < larrCells.length; lintII++) {
         var lintCount = 0;
         var lstrRow = larrCells[lintII].id.substring(0,2);
         var lstrCol = larrCells[lintII].id.substring(2);
@@ -687,13 +690,13 @@ function Reaction() {
             }
             
             //----
-            // move one right
+            // move one down
             //----
-            if (lstrCol != ('c' + (Number($('#selBoardSize')[0].value) - 1)) && 
+            if (lstrRow != ('r' + (Number($('#selBoardSize')[0].value) - 1)) && 
                 lintCount < larrPieces.length) 
             {
-                var lintNewCol = parseInt(lstrCol.substring(1)) + 1;
-                var lobjCell = $('#'+ lstrRow + 'c' + lintNewCol)[0];
+                var lintNewRow = parseInt(lstrRow.substring(1)) + 1;
+                var lobjCell = $('#r'+ lintNewRow + lstrCol)[0];
                 
                 if (lobjCell) {
                     lobjCell.appendChild(larrPieces[lintCount]);
@@ -705,13 +708,13 @@ function Reaction() {
             }
             
             //----
-            // move one down
+            // move one right
             //----
-            if (lstrRow != ('r' + (Number($('#selBoardSize')[0].value) - 1)) && 
+            if (lstrCol != ('c' + (Number($('#selBoardSize')[0].value) - 1)) && 
                 lintCount < larrPieces.length) 
             {
-                var lintNewRow = parseInt(lstrRow.substring(1)) + 1;
-                var lobjCell = $('#r'+ lintNewRow + lstrCol)[0];
+                var lintNewCol = parseInt(lstrCol.substring(1)) + 1;
+                var lobjCell = $('#'+ lstrRow + 'c' + lintNewCol)[0];
                 
                 if (lobjCell) {
                     lobjCell.appendChild(larrPieces[lintCount]);
