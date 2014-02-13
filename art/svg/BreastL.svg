@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="BreastL" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" style="stroke: #000; stroke-width: 5px;">
+	<title id="title3842">Left Breast</title>
+	<metadata id="metadata7">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title>Left Breast</dc:title>
+				<dc:date>2014-02-13</dc:date>
+				<dc:creator>
+					<cc:Agent>
+						<dc:title>Trevor Ratliff</dc:title>
+					</cc:Agent>
+				</dc:creator>
+				<dc:description>mirror view of left breast</dc:description>
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/3.0/"/>
+			</cc:Work>
+			<cc:License rdf:about="http://creativecommons.org/licenses/by-nc-sa/3.0/">
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+				<cc:prohibits rdf:resource="http://creativecommons.org/ns#CommercialUse"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+			</cc:License>
+		</rdf:RDF>
+	</metadata>
+	<g id="gBreastL" stroke-linejoin="round" transform="translate(0,0)" stroke-linecap="round" stroke-miterlimit="4" stroke-dasharray="none" fill="none">
+		<path id="pUpperBreast" d="m-8.9922,67.8378c-7.2713-20.682,6.0459-31.426,11.975-36.266,11.851-9.672,16.65-15.155,16.863-21.559"/>		<path id="pNipple" d="m3.2915,66.4378c-3.9627,4.0962-11.937,9.9531-6.5718,15.318,5.3653,5.3653,10.96-3.231,15.217-6.6734"/>		<path id="pAreola" d="m-3.207,62.8378c0-6.4704,8.3308-13.47,20.514-1.287s4.9593,20.638-2.4438,20.638"/>		<path id="pLowerBreast" d="m9.2453,87.6378c10.246,6.6172,23.835-0.5745,32.16-9.1129"/>
+	</g>
+</svg>
