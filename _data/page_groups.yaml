@@ -29,7 +29,7 @@
   url: 'web/'
   description: 'a few samples of my web code'
   subpages: 
-    - name: Fashion Pallette Explorer
+    - name: Fashion Palette Explorer
       url: 'web/ColorFinder/ColorFinder.html'
       description: "Things I've created using Blender - a 3d creation suite"
 #- name: Home
