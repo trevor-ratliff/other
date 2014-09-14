@@ -1,0 +1,134 @@
+/****
+* @file ColorFinder.css
+* @brief holds the css for ColorFinder
+* @author Trevor Ratliff
+* @date 2014-09-09
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+*	2014-09-09  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+*		file creation  |
+* @endverbatim
+****/
+
+/****
+* elements
+****/
+html {
+	height: 100%;
+}
+
+body {
+	box-sizing: border-box;
+	font-family: verdana, arial;
+	font-size: 0.5cm;
+	height: 100%;
+	padding: 2ex;
+	margin: 0ex auto;
+}
+
+article {
+	margin-left: 21ex;
+	/* height: 100%; */
+	width: 74ex;
+}
+
+aside {
+	float: left;
+	/* height: 100%; */
+	width: 20ex;
+}
+
+
+/****
+* ids
+****/
+#color {
+	color: hsla(120, 90%, 10%, 1.0);
+	font-size: 0.95ex;
+	margin-top: 2rem;
+}
+
+#color .tile {
+	color: hsla(120, 90%, 10%, 1.0);
+}
+
+#hue .controls {
+	width: 360px;
+}
+
+#title {
+	margin: 2ex auto;
+}
+
+#title h3 {
+	margin-top: 0ex;
+}
+
+/****
+* classes
+****/
+.color {
+	background-color: hsla(60, 10%, 90%, 1.0);
+	border: 1px solid hsla(60, 50%, 50%, 1.0);
+	border-radius: 3px;
+	color: hsla(60, 50%, 50%, 1.0);
+	height: 18ex;
+	margin-bottom: 0.4ex;
+	width: 18ex;
+}
+
+.controls {
+	background-color: hsla(0, 10%, 90%, 1.0);
+	border: 1px solid hsla(0, 50%, 50%, 1.0);
+	border-radius: 3px;
+	color: hsla(0, 50%, 50%, 1.0);
+	height: 2ex;
+	width: calc(100px * 1);
+}
+
+.display {
+	background-color: hsla(180, 10%, 90%, 1.0);
+	border: 1px solid hsla(180, 50%, 50%, 1.0);
+	border-radius: 3px;
+	color: hsla(180, 0%, 0%, 1.0);
+	float: right;
+	height: 18ex;
+	margin-bottom: 0.4ex;
+	width: 16ex;
+}
+
+.mark {
+	border-bottom: 2.6ex solid hsla(0, 50%, 50%, 1.0);
+	border-left: 0.5ex solid hsla(0, 50%, 50%, 0.0);
+	border-right: 0.5ex solid hsla(0, 50%, 50%, 0.0);
+	border-top: 0ex solid hsla(0, 50%, 50%, 0.0);
+	height: 0ex;
+	left: -5px;
+	position: relative;
+	width: 0ex;
+	z-index: 10;
+}
+
+.mark:hover {
+	border-bottom: 2.6ex solid hsla(210, 50%, 50%, 1.0);
+	border-left: 0.5ex solid hsla(210, 50%, 50%, 0.0);
+	border-right: 0.5ex solid hsla(210, 50%, 50%, 0.0);
+	border-top: 0ex solid hsla(210, 50%, 50%, 0.0);
+}
+
+.tile {
+	background-color: hsla(120, 10%, 90%, 1.0);
+	border: 1px solid hsla(120, 50%, 50%, 1.0);
+	border-radius: 3px;
+	color: hsla(120, 50%, 50%, 1.0);
+	float: left;
+	height: 21ex;
+	margin: 0ex 1ex 1ex 0ex;
+	padding: 0.4ex;
+	width: 35ex;
+}
+
+.value {
+	width: 13ex;
+}
