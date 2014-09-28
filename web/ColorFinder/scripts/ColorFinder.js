@@ -20,7 +20,7 @@
 //====
 var gintMouseX = 0;
 var gintMouseY = 0;
-var gintMarkerOffset = -5;
+var gintMarkerOffset = -2;
 
 //====
 /// @class ColorObject
@@ -56,6 +56,7 @@ var gintMarkerOffset = -5;
 var ColorObject = function (vstrID) {
 	var self = this;
 	var lobjHueMark = document.getElementById('hueMark');
+	var lobjHueValue = document.getElementById('txtHueValue');
 	var lobjContrastOffset = document.getElementById('txtContrastOffset');
 	
 	//----
@@ -63,8 +64,9 @@ var ColorObject = function (vstrID) {
 	//----
 	this.Alpha = 1.0;
 	this.Blue = null;
-	this.Hue = lobjHueMark.style.left != "" ? 
-		parseInt(lobjHueMark.style.left) - gintMarkerOffset : 0;
+	//~ this.Hue = lobjHueMark.style.left != "" ? 
+		//~ parseInt(lobjHueMark.style.left) - gintMarkerOffset : 0;
+	this.Hue = parseInt(lobjHueValue.value);
 	this.Green = null;
 	this.Id = vstrID;
 	this.Level = null;
@@ -108,18 +110,18 @@ var ColorObject = function (vstrID) {
 			break;
 		
 		case 'shade':			// Pure color mixed with black (level < 50%)
-			this.Level = ((parseInt(this.Mark.style.left) % 50) - gintMarkerOffset) + '%';
+			this.Level = parseInt(document.getElementById('txtShadeValue').value) + '%';
 			this.Saturation = '100%';
 			break;
 		
 		case 'tint':			// Pure color mixed with white (level > 50%)
-			this.Level = ((parseInt(this.Mark.style.left) - gintMarkerOffset) % 50 + 50) + '%';
+			this.Level = parseInt(document.getElementById('txtTintValue').value) + '%';
 			this.Saturation = '100%';
 			break;
 		
 		case 'tone':			// Pure color desaturated (saturation < 100%)
-			this.Level = '50%';
-			this.Saturation = (parseInt(this.Mark.style.left) - gintMarkerOffset) + '%';
+			this.Level = parseInt(document.getElementById('txtToneLevel').value) + '%';
+			this.Saturation = parseInt(document.getElementById('txtToneValue').value) + '%';
 			break;
 	}
 	
@@ -294,7 +296,7 @@ ColorObject.prototype.HueToRGB = function (vdblAdjLevel, vdblAdjSaturation, vdbl
 		ldblAdjHue = vdblAdjHue + 1;
 	}
 	
-	if (vdblAdjHue > 0) {
+	if (vdblAdjHue > 1) {
 		ldblAdjHue = vdblAdjHue - 1;
 	}
 	
@@ -357,6 +359,36 @@ ColorObject.prototype.Pad = function (vstrValue, vintPlaces, vstrCharacter, vbln
 	
 	return lstrReturn;
 };
+
+
+function ColorClick (event) {
+    var lobjDisplay = event.currentTarget.parentNode.querySelector('.display');
+    lobjDisplay.style.zIndex = 10;
+    event.currentTarget.style.zIndex = 1;
+}
+
+
+function ColorTouchStart(event) {
+}
+
+
+function ColorTouchEnd  (event) {
+}
+
+
+function DisplayClick  (event) {
+    var lobjColor = event.currentTarget.parentNode.querySelector('.color');
+    lobjColor.style.zIndex = 10;
+    event.currentTarget.style.zIndex = 1;
+}
+
+
+function DisplayTouchStart(event) {
+}
+
+
+function DisplayTouchEnd  (event) {
+}
 
 
 //====
@@ -454,15 +486,16 @@ function MarkerRemoveMouseMove() {
 //====
 function MoveMarker(){
 	var event = (typeof(event) == "undefined") ? arguments[0] : event;
+	event.preventDefault();
 	var lobjE = this.querySelector('.mark');
 	
-    //----
-    // check for clientX & touch event
-    //----
-    if (!event.clientX && event.type == "touchmove") {
-        event.clientX = event.touches[0].clientX;
-        event.clientY = event.touches[0].clientY;
-    }
+	//----
+	// check for clientX & touch event
+	//----
+	if (!event.clientX && event.type == "touchmove") {
+		event.clientX = event.touches[0].clientX;
+		event.clientY = event.touches[0].clientY;
+	}
 	
 	var lintMin = parseInt(lobjE.getAttribute('markmin'));
 	var lintMax = parseInt(lobjE.getAttribute('markmax'));
@@ -488,13 +521,13 @@ function MoveMarker(){
 	//----
 	// if the event object exists move mark
 	//----
-	if(!isNaN(lintOffsetX) && (lintMin < lintNewX) && (lintNewX < lintMax)) {
+	if(!isNaN(lintOffsetX) && (lintMin < (lintNewX - gintMarkerOffset)) && (lintNewX < (lintMax + gintMarkerOffset))) {
 		//----
 		// move 'this' left or right with the mouse
 		//----
 		lobjE.style.left = lintNewX + 'px';
 	}
-    
+	
 	//----
 	// adjust gintMouseX and gintMouseY
 	//----
@@ -528,7 +561,7 @@ function SetColors() {
 	//----
 	// get references to tiles
 	//----
-	var lobjHueTile = document.getElementByID('hue');
+	var lobjHueTile = document.getElementById('hue');
 }
 
 
@@ -564,11 +597,90 @@ function UpdateScreen(vobjColors) {
 			//----
 			// set description data
 			//----
+			vobjColors[lintII].Display.querySelector('.web').innerHTML = vobjColors[lintII].GetColorWeb().string;
+			vobjColors[lintII].Display.querySelector('.rgb').innerHTML = vobjColors[lintII].GetColorRGB().string;
 			vobjColors[lintII].Display.querySelector('.hsl').innerHTML = vobjColors[lintII].GetColor().string;
 		}
 	}
 	
 	return;
+}
+
+
+//====
+/// @fn ValueAddMouseMove()
+/// @brief adds the mouse move event to input range fields
+/// @author Trevor Ratliff
+/// @date 2014-09-16
+/// @param 
+/// @return 
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-09-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function ValueAddMouseMove() {
+	this.addEventListener('mousemove', ValueMouseMove, true);
+}
+
+
+//====
+/// @fn ValueMouseMove()
+/// @brief updates items based on input ranges moving
+/// @author Trevor Ratliff
+/// @date 2014-09-16
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-09-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function ValueMouseMove() {
+	//----
+	// set objects
+	//----
+	var lobjColorHue = new ColorObject('hue');
+	var lobjColorShade = new ColorObject('shade');
+	var lobjColorTint = new ColorObject('tint');
+	var lobjColorTone = new ColorObject('tone');
+	var lobjContrast = new ColorObject('contrast');
+	var lobjContrastLeft = new ColorObject('contrastLeft');
+	var lobjContrastRight = new ColorObject('contrastRight');
+	
+	//----
+	// update the screen with the new offset values
+	//----
+	UpdateScreen([lobjColorHue, lobjColorShade, lobjColorTint, lobjColorTone, lobjContrast, lobjContrastLeft, lobjContrastRight]);
+	
+	return;
+}
+
+
+//====
+/// @fn ValueRemoveMouseMove
+/// @brief removes the mousemove event from input range fields
+/// @author Trevor Ratliff
+/// @date 
+/// @param 
+/// @return 
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2014-09-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function ValueRemoveMouseMove() {
+	this.removeEventListener('mousemove', ValueMouseMove, true);
 }
 
 
@@ -637,24 +749,63 @@ window.addEventListener('load', function () {
 	var lobjColorShade = null;
 	var lobjColorTint =  null;
 	var lobjColorTone =  null;
-	var arrMark = document.querySelectorAll('.mark');
+	var larrMark = document.querySelectorAll('.mark');
+	var larrValue = document.querySelectorAll('.value');
+    var larrTile = document.querySelectorAll('.tile');
 	
 	//----
 	// loop through markers
 	//----
-	for(var ii = 0; ii < arrMark.length; ii++) {
+	for (var ii = 0; ii < larrMark.length; ii++) {
 		//----
 		// mouse down/mouse over
 		//----
-		arrMark[ii].addEventListener('mousedown', MarkerAddMouseMove, true);
-		arrMark[ii].addEventListener('touchstart', MarkerAddMouseMove, true);
+		larrMark[ii].addEventListener('mousedown', MarkerAddMouseMove, true);
+		larrMark[ii].addEventListener('touchstart', MarkerAddMouseMove, true);
+		larrMark[ii].parentNode.addEventListener('touchstart', MarkerAddMouseMove, true);
 
 		//----
 		// mouse up/mouse out
 		//----
-		arrMark[ii].addEventListener('mouseup', MarkerRemoveMouseMove, true);
-		arrMark[ii].addEventListener('touchend', MarkerRemoveMouseMove, true);
+		larrMark[ii].addEventListener('mouseup', MarkerRemoveMouseMove, true);
+		larrMark[ii].addEventListener('touchend', MarkerRemoveMouseMove, true);
+		larrMark[ii].parentNode.addEventListener('touchend', MarkerRemoveMouseMove, true);
 	}
+	
+	//----
+	// loop through value ranges
+	//----
+	for (var ii = 0; ii < larrValue.length; ii++) {
+		//----
+		// set events for touchmove and to add/remove the mousemove
+		//----
+		larrValue[ii].addEventListener('touchmove', ValueMouseMove, true);
+		larrValue[ii].addEventListener('mousedown', ValueAddMouseMove, true);
+		larrValue[ii].addEventListener('mouseup', ValueRemoveMouseMove, true);
+	}
+    
+    //----
+    // loop through tiles attaching mouseover/touchstart & mouseout/touchend
+    //   to 'color' and 'display' elements
+    //----
+    for (var ii = 0; ii < larrTile.length; ii++) {
+        var lobjColor = larrTile[ii].querySelector('.color');
+        var lobjDisplay = larrTile[ii].querySelector('.display');
+        
+        //----
+        // add listeners to color
+        //----
+        lobjColor.addEventListener('click',  ColorClick, true);
+        lobjColor.addEventListener('touchstart', ColorTouchStart, true);
+        lobjColor.addEventListener('touchend',   ColorTouchEnd, true);
+        
+        //----
+        // add listeners to display
+        //----
+        lobjDisplay.addEventListener('click',   DisplayClick, true);
+        lobjDisplay.addEventListener('touchstart', DisplayTouchStart, true);
+        lobjDisplay.addEventListener('touchend',   DisplayTouchEnd, true);
+    }
 	
 	//----
 	// restore colors
@@ -664,40 +815,47 @@ window.addEventListener('load', function () {
 			//----
 			// parse data
 			//----
-			lobjHue = JSON.parse(localStorage.hue);
-			lobjShade = JSON.parse(localStorage.shade);
-			lobjTint = JSON.parse(localStorage.tint);
-			lobjTone = JSON.parse(localStorage.tone);
+			if (localStorage.hue) lobjHue = JSON.parse(localStorage.hue);
+			if (localStorage.shade) lobjShade = JSON.parse(localStorage.shade);
+			if (localStorage.tint) lobjTint = JSON.parse(localStorage.tint);
+			if (localStorage.tone) lobjTone = JSON.parse(localStorage.tone);
+
+			//----
+			// process data
+			//----
+			if (typeof lobjHue == "object") {
+				document.getElementById('hueMark').style.left = (lobjHue.h + gintMarkerOffset) + 'px';
+				document.getElementById('txtHueValue').value = lobjHue.h;
+			}
+			if (typeof lobjShade == "object") {
+				document.getElementById('shadeMark').style.left = (parseInt(lobjShade.l) + gintMarkerOffset) + 'px';
+				document.getElementById('txtShadeValue').value = parseInt(lobjShade.l);
+			}
+			if (typeof lobjTint == "object") {
+				document.getElementById('tintMark').style.left = (parseInt(lobjTint.l) - 50 + gintMarkerOffset) + 'px';
+				document.getElementById('txtTintValue').value = parseInt(lobjTint.l);
+			}
+			if (typeof lobjTone == "object") {
+				document.getElementById('toneMark').style.left = (parseInt(lobjTone.s) + gintMarkerOffset) + 'px';
+				document.getElementById('txtToneValue').value = parseInt(lobjTone.s);
+				document.getElementById('txtToneLevel').value = parseInt(lobjTone.l);
+			}
+
+			lobjColorHue =   new ColorObject('hue');
+			lobjColorShade = new ColorObject('shade');
+			lobjColorTint =  new ColorObject('tint');
+			lobjColorTone =  new ColorObject('tone');
+
+			//----
+			// refresh screen
+			//----
+			//~ UpdateScreen([lobjColorHue, lobjColorShade, lobjColorTint, lobjColorTone]);
+			ValueMouseMove();
+
 		} catch (err) {
 			alert('something went wrong with restoring your colors.\n\n' + err.toString());
 		}
-		
-		//----
-		// process data
-		//----
-		if (typeof lobjHue == "object") {
-			document.getElementById('hueMark').style.left = (lobjHue.h + gintMarkerOffset) + 'px';
-		}
-		if (typeof lobjShade == "object") {
-			document.getElementById('shadeMark').style.left = (parseInt(lobjShade.l) + gintMarkerOffset) + 'px';
-		}
-		if (typeof lobjTint == "object") {
-			document.getElementById('tintMark').style.left = (parseInt(lobjTint.l) - 50 + gintMarkerOffset) + 'px';
-		}
-		if (typeof lobjTone == "object") {
-			document.getElementById('toneMark').style.left = (parseInt(lobjTone.s) + gintMarkerOffset) + 'px';
-		}
-		
-		lobjColorHue =   new ColorObject('hue');
-		lobjColorShade = new ColorObject('shade');
-		lobjColorTint =  new ColorObject('tint');
-		lobjColorTone =  new ColorObject('tone');
-		
-		//----
-		// refresh screen
-		//----
-		UpdateScreen([lobjColorHue, lobjColorShade, lobjColorTint, lobjColorTone]);
 	}
-	
+
 	return;
 });
