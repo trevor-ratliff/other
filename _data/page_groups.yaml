@@ -31,7 +31,10 @@
   subpages: 
     - name: Fashion Palette Explorer
       url: 'web/ColorFinder/ColorFinder.html'
-      description: "Things I've created using Blender - a 3d creation suite"
+      description: "This is an application for exploring colors and their tints, tones and shades"
+    - name: Lexington Irish Dance
+      url: 'web/LexIrishDance/index.htm'
+      description: "This is a site redesign for an Irish Dance group in Lexington KY"
 #- name: Home
 #  url: ''
 - name: About
