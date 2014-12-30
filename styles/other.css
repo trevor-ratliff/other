@@ -6,9 +6,9 @@
 
 body {
 	background: 
-		linear-gradient(90deg, #2d2d2d 25%, #3f3f3f 50%, transparent 50%, transparent 75%, #191919 75%, #2d2d2d), 
-		linear-gradient( 90deg, #000000 25%, transparent 30%, transparent 50%, #000000), 
-		linear-gradient(180deg, #1d1d1d 25%, #1d1d1d 50%, transparent 50%, transparent 50%, #1d1d1d 75%, #1d1d1d);
+		linear-gradient(90deg, hsla(0, 0%, 8%, 1) 25%, hsla(0, 0%, 5%, 1) 50%, transparent 50%, transparent 75%, hsla(0, 0%, 10%, 1) 75%, hsla(0, 0%, 8%, 1)), 
+		linear-gradient(90deg, transparent 55%, hsla(0,0%,0%,0.8) 75%),
+		linear-gradient(180deg, hsla(0, 0%, 6%, 1) 25%, hsla(0, 0%, 3%, 1) 50%, transparent 50%, transparent 75%, hsla(0, 0%, 8%, 1) 75%, hsla(0, 0%, 6%, 1));
 	/* background: 
 		linear-gradient(90deg, #8d8d8d 25%, #bababa 50%, transparent 50%, transparent 75%, #797979 75%, #8d8d8d), 
 		linear-gradient( 90deg, #000000 25%, transparent 30%, transparent 50%, #000000), 
@@ -18,7 +18,7 @@ body {
 		linear-gradient( 90deg, #000000 25%, transparent 30%, transparent 50%, #000000),
 		linear-gradient(180deg, #8d8d8d 25%, #8d8d8d 50%, transparent 50%, transparent 75%, #8d8d8d 75%, #8d8d8d); */
 	background-color: #000000;
-	background-size: 40px 20px;
+	background-size: 50px 50px;
 	font-family: verdana, arial;
 	overflow: auto;
 	position: relative;
