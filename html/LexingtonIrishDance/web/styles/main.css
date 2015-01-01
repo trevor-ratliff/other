@@ -14,12 +14,13 @@ body {
 aside {
 	background-color: #ffffff;
 	border-radius: 40px 0px 0px 40px;
-	position: fixed;
-	top: 10%;
 	bottom: 10%;
-	left: 80%;
-	right: 0%;
+	left: calc(100% - 11em);
 	padding: 20px;
+	position: fixed;
+	right: 0%;
+	top: 10%;
+	z-index: 10;
 }
 
 aside > div {
@@ -34,7 +35,7 @@ aside > div {
 	border-radius: 40px;
 	/* min-height: 90%; */
 	/* left: 10%; */
-	margin: 3% 24% 3% 3%;
+	margin: 3% 12em 3% 3%;
 	overflow: visible;
 	position: relative;
 	/* top: 10%; */
@@ -49,6 +50,7 @@ aside > div {
 	color: rgba(224, 187, 116, 1.0);
 	list-style: none;
 	margin-bottom: 0.5em;
+	margin-left: -2em;
 	padding: 5px;
 }
 
@@ -211,13 +213,33 @@ aside > div {
 	}
 	
 	.area-c {
-		max-height: 110px;
+		max-height: 300px;
 	}
 }
 
 @media screen and (max-width: 640px) {
+	aside {
+		border-bottom: 10px solid #ffffff;
+		border-radius: 0px 0px 20px 20px;
+		bottom: initial;
+		float: none;
+		height: 1em;
+		left: 1em;
+		overflow: hidden;
+		padding-right: 5px;
+		right: 1em;
+		top: 0px;
+	}
+	
+	aside:hover {
+		height: 90%;
+		overflow: auto;
+	}
+	
 	#container {
-		width: 100%;
+		top: calc(2em + 10px);
+		width: calc(100% - 20px);
+		height: calc(100% - 2em - 10px);
 	}
 	
 	.area-clickable {
