@@ -40,3 +40,9 @@ Thumbs.db
 ######
 !*.ico
 !*.xcf
+
+
+######
+## jekyll ignore group
+######
+**/_site
