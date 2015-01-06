@@ -1,5 +1,6 @@
 html, body {
 	font-family: verdana;
+	font-size: 18px;
 	height: 100%;
 	margin: 0ex;
 	/* overflow: hidden; */
@@ -16,6 +17,7 @@ aside {
 	border-radius: 40px 0px 0px 40px;
 	bottom: 10%;
 	left: calc(100% - 11em);
+	overflow: auto;
 	padding: 20px;
 	position: fixed;
 	right: 0%;
@@ -53,6 +55,16 @@ aside > div {
 	margin-left: -2em;
 	padding: 5px;
 }
+
+
+#menu li:hover {
+	background-color: rgba(224, 187, 116, 1.0);
+	border-bottom: 2px solid rgba(31, 68, 139, 1.0);
+	border-radius: 9px;
+	color: rgba(31, 68, 139, 1.0);
+	cursor: pointer;
+}
+
 
 .area {
 	background-color: transparent /* #888888 */;
@@ -105,11 +117,29 @@ aside > div {
 	bottom: 0ex;
 	left: 60px;
 	margin-right: 120px;
-	max-height: 350px;
+	/* max-height: 350px */;
 	overflow: auto;
 	padding: 0px 2ex;
 	position: relative;
 	top: 0ex;
+}
+
+.area-c img {
+	width: 100%;
+}
+
+.area-c div.id-picture {
+	float: right;
+	width: 30%;
+}
+
+.area-c div.id {
+	clear: both;
+}
+
+.area-c img.logo {
+	width: 150px;
+	/* height: initial; */
 }
 
 .area-r {
@@ -209,17 +239,44 @@ aside > div {
 @media screen and (max-height: 480px) {
 	#container {
 		height: 100%;
+		width: 100%;
 		top: 0%;
 	}
 	
+	.area {
+		width: 108%;
+		margin-left: -4%;
+		font-size: 0.7em;
+	}
+	
 	.area-c {
-		max-height: 110px;
+		/* max-height: 300px; */
 	}
 }
 
 @media screen and (max-width: 640px) {
+	aside {
+		border-bottom: 10px solid #ffffff;
+		border-radius: 0px 0px 20px 20px;
+		bottom: initial;
+		float: none;
+		height: 1em;
+		left: 1em;
+		overflow: hidden;
+		padding-right: 5px;
+		right: 1em;
+		top: 0px;
+	}
+	
+	aside:hover {
+		height: 90%;
+		overflow: auto;
+	}
+	
 	#container {
-		width: 100%;
+		top: calc(2em + 10px);
+		width: calc(100% - 20px);
+		height: calc(100% - 2em - 10px);
 	}
 	
 	.area-clickable {
