@@ -1,0 +1,17 @@
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\bin\Debug\ChainReaction.dll
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\bin\Debug\ChainReaction.pdb
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\bin\Debug\ChainReaction.dll.mdb
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\bin\Debug\ChainReaction.ChainReaction.apk
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\bin\Debug\ChainReaction.ChainReaction-Signed.apk
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\ChainReaction.dll
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\ChainReaction.pdb
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\android\bin\ChainReaction.ChainReaction.apk
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\res\layout\main.xml
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\res\values\strings.xml
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\res\drawable-hdpi\icon.png
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\res\drawable-mdpi\icon.png
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\res\drawable-xhdpi\icon.png
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\res\drawable-xxhdpi\icon.png
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\res\drawable-xxxhdpi\icon.png
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\R.cs.flag
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\obj\Debug\uploadflags.txt
