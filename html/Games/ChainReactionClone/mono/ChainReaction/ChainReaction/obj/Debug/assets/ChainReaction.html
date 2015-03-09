@@ -45,6 +45,7 @@
                     <option value="10">10x10</option>
                 </select>
                 <button type="button" id="reset">Reset</button>
+                <button type="button" id="btnShowLog" onclick="Show('#log');">Show Log</button>
             </div>
             <hr>
             
@@ -86,6 +87,11 @@
         </div>
         
         <div id="board"></div>
-        
+
+        <div id="messages" class="no-show"></div>
+
+        <div id="log" class="no-show"><div class="close-pop-up" onclick="Hide(this.parentNode);">X</div></div>
+
+        <div id="debug"></div>
     </body>
 </html>

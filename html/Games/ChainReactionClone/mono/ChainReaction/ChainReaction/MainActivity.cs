@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace ChainReaction
 {
-	[Activity (Label = "ChainReaction", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Chain Reaction", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		protected override void OnCreate (Bundle bundle)
@@ -30,9 +30,11 @@ namespace ChainReaction
 			var model = new Model1 () { Text = "Text goes here" };
 			var template = new RazorView () { Model = model };
 			//var page = template.GenerateString ();
-			byte[] arrBytes;
-			var pageStream = Assets.Open ("ChainReaction.html");
-			string page = pageStream.Read(arrBytes, 0, pageStream.Length);
+			string page = null;
+			using (StreamReader sr = new StreamReader (Assets.Open ("ChainReaction.html")))
+			{
+				page = sr.ReadToEnd ();
+			}
 
 			// Load the rendered HTML into the view with a base URL 
 			// that points to the root of the bundled Assets folder

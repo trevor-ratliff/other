@@ -1,15 +1,18 @@
 ﻿<Properties StartupItem="ChainReaction\ChainReaction.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus_S" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ChainReaction\MainActivity.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.XT897S" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ChainReaction\Assets\scripts\ChainReaction.js">
     <Files>
-      <File FileName="ChainReaction\MainActivity.cs" Line="74" Column="74" />
+      <File FileName="ChainReaction\MainActivity.cs" Line="1" Column="1" />
       <File FileName="ChainReaction\Assets\AboutAssets.txt" Line="1" Column="1" />
       <File FileName="ChainReaction\Assets\style.css" Line="1" Column="1" />
       <File FileName="ChainReaction\Assets\ChainReaction.html" Line="1" Column="1" />
+      <File FileName="ChainReaction\Assets\scripts\ChainReaction.js" Line="9" Column="9" />
+      <File FileName="ChainReaction\Assets\styles\ChainReaction.css" Line="11" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.ChainReaction AndroidDeviceId-Debug="emulator-5554" />
 </Properties>

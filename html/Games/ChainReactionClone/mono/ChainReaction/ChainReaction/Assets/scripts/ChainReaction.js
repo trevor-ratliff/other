@@ -23,11 +23,12 @@
 //====
 
 var gblnCanPlay = true;
-var gblnDebug = false;
+var gblnDebug = true;
 var gblnFirstPlayersTurn = false;
-var gblnLog = false;
+var gblnLog = true;
 var gblnWon = false;
 var gintPlayCount = 0;
+var gstrClosePopup = '<div class="close-pop-up" onclick="Hide(this.parentNode);">X</div>';
 
 
 //====
@@ -138,7 +139,11 @@ function CellClick() {
         //----
         // process the error
         //----
-        alert(err.toString());
+        //~ alert(err.toString());
+        var lobjMessages = $('#messages')[0];
+        lobjMessages.innerHTML = gstrClosePopup + err.toString();
+        Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
+
     }
 }
 
@@ -226,6 +231,7 @@ function FixBoardSize() {
     //----
     lobjBoard.style.height = lstrDimension;     // 'calc(' + lintBoardSize + '*2em + 1ex)';
     lobjBoard.style.width = lstrDimension;      //'calc(' + lintBoardSize + '*2em + 1ex)';
+    Log('    ' + lstrDimension);
 }
 
 
@@ -399,22 +405,64 @@ function GameInit() {
 function GetReactingCells() {
     Log('GetReactingCells');
     
-    var lstrPlayer = gblnFirstPlayersTurn ? 'b' : 'a';
-    var larrReturn = [];
-    var larrCells = $(
-        '.cell[maxpieces="4"]>.player-' + lstrPlayer + ':nth-child(5),' +
-        '.cell[maxpieces="3"]>.player-' + lstrPlayer + ':nth-child(4),' +
-        '.cell[maxpieces="2"]>.player-' + lstrPlayer + ':nth-child(3)'
+    return $(
+        '.cell[pieces="7"][maxpieces="4"], ' + 
+        '.cell[pieces="6"][maxpieces="4"], ' + 
+        '.cell[pieces="5"][maxpieces="4"], ' + 
+        '.cell[pieces="4"][maxpieces="4"], ' + 
+    
+        '.cell[pieces="6"][maxpieces="3"], ' + 
+        '.cell[pieces="5"][maxpieces="3"], ' + 
+        '.cell[pieces="4"][maxpieces="3"], ' + 
+        '.cell[pieces="3"][maxpieces="3"], ' + 
+        
+        '.cell[pieces="5"][maxpieces="2"], ' + 
+        '.cell[pieces="4"][maxpieces="2"], ' + 
+        '.cell[pieces="3"][maxpieces="2"], ' + 
+        '.cell[pieces="2"][maxpieces="2"]'
     );
-    
-    //----
-    // get parent cells
-    //----
-    for (var lintII = 0; lintII < larrCells.length; lintII++) {
-        larrReturn.push(larrCells[lintII].parentNode);
+}
+
+
+//====
+/// @fn Hide(vobjElement)
+/// @brief adds the 'no-show' class so an element is hidden
+/// @author Trevor Ratliff
+/// @date 2015-03-02
+/// @param vobjElement -- the element to hide (it's id or the element itself)
+/// @return null
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2015-03-02  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function Hide(vobjElement) {
+    var lobjE = null;
+
+    try {
+        //----
+        // test for passed in string
+        //----
+        if (typeof vobjElement == 'string') {
+            lobjE = $(vobjElement)[0];
+        } else {
+            lobjE = vobjElement;
+        }
+
+        //----
+        // add 'no-show' class
+        //----
+        lobjE.className += ' no-show';
+        
+    } catch (err) {
+        Log(err.toString());
     }
-    
-    return larrReturn;
+
+    return;
 }
 
 
@@ -440,7 +488,9 @@ function Log(vstrMessage) {
     
     try {
         if (gblnLog && gblnDebug) {
-            console.log(vstrMessage + ': ' + new Date().toISOString());
+            var lstrDate = new Date().toISOString();
+            $('#log')[0].innerHTML += vstrMessage + ': ' + lstrDate + '<br>';
+            if (console && console.log) console.log(vstrMessage + ': ' + lstrDate);
         }
     } catch (err) {
         lblnReturn = false;
@@ -631,7 +681,10 @@ function PlacePiece(vobjCell) {
         // process the error
         //----
         lblnReturn = false;
-        alert(err.toString());
+        //~ alert(err.toString());
+        var lobjMessages = $('#messages')[0];
+        lobjMessages.innerHTML = gstrClosePopup + err.toString();
+        Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
     }
     
     return lblnReturn;
@@ -799,6 +852,48 @@ function Reaction() {
 
 
 //====
+/// @fn Show
+/// @brief removes the 'no-show' class so an element is shown
+/// @author Trevor Ratliff
+/// @date 2015-03-02
+/// @param vobjElement -- the element to show (it's id or the element itself)
+/// @return null
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2015-03-02  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function Show(vobjElement) {
+    var lobjE = null;
+
+    try {
+        //----
+        // test for passed in string
+        //----
+        if (typeof vobjElement == 'string') {
+            lobjE = $(vobjElement)[0];
+        } else {
+            lobjE = vobjElement;
+        }
+
+        //----
+        // remove 'no-show' class
+        //----
+        lobjE.className = lobjE.className.replace(/[ ]?no-show/g, '');
+        
+    } catch (err) {
+        Log(err.toString());
+    }
+
+    return;
+}
+
+
+//====
 /// @fn SwapPieces(vobjCell)
 /// @brief sets all the color's in a cell to the same one
 /// @author Trevor Ratliff
@@ -854,8 +949,11 @@ function SwapPieces(vobjCell) {
         //----
         // handle the error
         //----
-        alert(err.toString());
+        //~ alert(err.toString());
         lblnReturn = false;
+        var lobjMessages = $('#messages')[0];
+        lobjMessages.innerHTML = gstrClosePopup + err.toString();
+        Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
     }
     
     return lblnReturn;
@@ -890,7 +988,10 @@ function UpdateScores() {
             gblnWon = true;
             //~ throw 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
             window.setTimeout( function () {
-                alert('Player' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!');
+                //~ alert('Player' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!');
+                var lobjMessages = $('#messages')[0];
+                lobjMessages.innerHTML = gstrClosePopup + 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
+                Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
             }, 500);
         }
         

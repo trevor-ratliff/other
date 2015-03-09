@@ -23,11 +23,12 @@
 //====
 
 var gblnCanPlay = true;
-var gblnDebug = false;
+var gblnDebug = true;
 var gblnFirstPlayersTurn = false;
-var gblnLog = false;
+var gblnLog = true;
 var gblnWon = false;
 var gintPlayCount = 0;
+var gstrClosePopup = '<div class="close-pop-up" onclick="Hide(this.parentNode);">X</div>';
 
 
 //====
@@ -48,6 +49,35 @@ var gintPlayCount = 0;
 //====
 function $( vstrPath ) { 
     return document.querySelectorAll(vstrPath);
+}
+
+
+//====
+/// @fn AddPieces(vobjCell, vstrPlayer, vintCount)
+/// @brief adds the set number of pieces to the passed in cell for the selected player
+/// @author Trevor Ratliff
+/// @date 2015-02-26
+/// @param vobjCell -- passed in cell object to add pieces to
+/// @param vstrPlayer -- string of the player ['A','B']
+/// @param vintCount -- number of pieces to add
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2015-02-26  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function AddPieces (vobjCell, vstrPlayer, vintCount) { 
+    for (var lintII = 0; lintII < vintCount; lintII++) {
+        var lobjNewPiece = $('#svgPlayer' + vstrPlayer)[0].cloneNode(true);
+        lobjNewPiece.id = 'piece_' + gintPlayCount;
+        lobjNewPiece.className += ' player-' + vstrPlayer.toLowerCase();
+        vobjCell.appendChild(lobjNewPiece);
+        gintPlayCount += 1;
+    }
+    vobjCell.setAttribute('pieces', vobjCell.querySelectorAll('.piece').length);
 }
 
 
@@ -109,7 +139,11 @@ function CellClick() {
         //----
         // process the error
         //----
-        alert(err.toString());
+        //~ alert(err.toString());
+        var lobjMessages = $('#messages')[0];
+        lobjMessages.innerHTML = gstrClosePopup + err.toString();
+        Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
+
     }
 }
 
@@ -137,17 +171,13 @@ function ChainReaction() {
         //----
         // setup reaction 'animation'
         //----
-        window.setTimeout(PieceAnimateStart, 50);
-        //~ PieceAnimateStart();
+        window.setTimeout(PieceAnimateStart, 10);
         
         //----
         // set up reaction
         //----
         window.setTimeout(Reaction, 1500);
-        //~ Reaction();
         
-    } else {
-        //~ UpdateScores();
     }
 }
 
@@ -201,6 +231,7 @@ function FixBoardSize() {
     //----
     lobjBoard.style.height = lstrDimension;     // 'calc(' + lintBoardSize + '*2em + 1ex)';
     lobjBoard.style.width = lstrDimension;      //'calc(' + lintBoardSize + '*2em + 1ex)';
+    Log('    ' + lstrDimension);
 }
 
 
@@ -361,6 +392,9 @@ function GameInit() {
 /// @return a node list
 //  
 //  Definitions:
+//      lstrPlayer -- marker for current player so only their pieces are affected
+//      larrReturn -- array to return to calling code
+//      larrCells -- array of pieces that are the [max + 1] of their parent cell
 //  
 /// @verbatim
 /// History:  Date  |  Programmer  |  Contact  |  Description  |
@@ -370,6 +404,7 @@ function GameInit() {
 //====
 function GetReactingCells() {
     Log('GetReactingCells');
+    
     return $(
         '.cell[pieces="7"][maxpieces="4"], ' + 
         '.cell[pieces="6"][maxpieces="4"], ' + 
@@ -386,6 +421,48 @@ function GetReactingCells() {
         '.cell[pieces="3"][maxpieces="2"], ' + 
         '.cell[pieces="2"][maxpieces="2"]'
     );
+}
+
+
+//====
+/// @fn Hide(vobjElement)
+/// @brief adds the 'no-show' class so an element is hidden
+/// @author Trevor Ratliff
+/// @date 2015-03-02
+/// @param vobjElement -- the element to hide (it's id or the element itself)
+/// @return null
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2015-03-02  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function Hide(vobjElement) {
+    var lobjE = null;
+
+    try {
+        //----
+        // test for passed in string
+        //----
+        if (typeof vobjElement == 'string') {
+            lobjE = $(vobjElement)[0];
+        } else {
+            lobjE = vobjElement;
+        }
+
+        //----
+        // add 'no-show' class
+        //----
+        lobjE.className += ' no-show';
+        
+    } catch (err) {
+        Log(err.toString());
+    }
+
+    return;
 }
 
 
@@ -411,7 +488,9 @@ function Log(vstrMessage) {
     
     try {
         if (gblnLog && gblnDebug) {
-            console.log(vstrMessage + ': ' + new Date().toISOString());
+            var lstrDate = new Date().toISOString();
+            $('#log')[0].innerHTML += vstrMessage + ': ' + lstrDate + '<br>';
+            if (console && console.log) console.log(vstrMessage + ': ' + lstrDate);
         }
     } catch (err) {
         lblnReturn = false;
@@ -530,7 +609,6 @@ function PieceAnimateStart() {
             //----
             MoveDelay(larrPieces[lintNN], 10);
         }
-        //~ larrCells[lintII].className += ' reacting';
         larrCells[lintII].querySelector('.click-cover').className += ' reacting';
     }
 }
@@ -583,7 +661,7 @@ function PlacePiece(vobjCell) {
         //----
         // check for chain reaction
         //----
-        if (vobjCell.getAttribute('maxPieces') == lintPieces) {
+        if (vobjCell.getAttribute('maxPieces') <= lintPieces) {
             //----
             // start chain reaction
             //----
@@ -596,7 +674,6 @@ function PlacePiece(vobjCell) {
         //----
         // update scores and increment play count
         //----
-        //~ UpdateScores();
         gintPlayCount ++;
         
     } catch (err) {
@@ -604,7 +681,10 @@ function PlacePiece(vobjCell) {
         // process the error
         //----
         lblnReturn = false;
-        alert(err.toString());
+        //~ alert(err.toString());
+        var lobjMessages = $('#messages')[0];
+        lobjMessages.innerHTML = gstrClosePopup + err.toString();
+        Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
     }
     
     return lblnReturn;
@@ -655,8 +735,7 @@ function Reaction() {
     //----
     var larrCells = GetReactingCells();
     
-    for (var lintII = 0; lintII < 4; lintII++) {
-    //~ for (var lintII = 0; lintII < larrCells.length; lintII++) {
+    for (var lintII = 0; lintII < larrCells.length; lintII++) {
         var lintCount = 0;
         var lstrRow = larrCells[lintII].id.substring(0,2);
         var lstrCol = larrCells[lintII].id.substring(2);
@@ -747,26 +826,21 @@ function Reaction() {
         //----
         // reset cell
         //----
-        larrCells[lintII].setAttribute('pieces', 0);    // larrCells[lintII].querySelectorAll('.piece').length);
+        larrCells[lintII].setAttribute('pieces', larrCells[lintII].querySelectorAll('.piece').length);
         larrCells[lintII].setAttribute('player', '');
         
         //----
         // check to see if we need to run Reaction again
         //----
-        var larrCells = GetReactingCells();
+        var larrNewCells = GetReactingCells();
         
-        if (larrCells.length > 0 &&
+        if (larrNewCells.length > 0 &&
             $('.player-' + (gblnFirstPlayersTurn ? 'a' : 'b')).length > 0) 
         {
             //----
-            // test for pieces of opposite team (player has already switched ... I may need to adjust this)
+            // set up a call to ChainReaction to start process again
             //----
-            //~ if ($('.player-' + (gblnFirstPlayersTurn ? 'b' : 'a')).length > 0) {
-            //~ if ($('.player-' + (gblnFirstPlayersTurn ? 'a' : 'b')).length > 0) {
-                window.setTimeout(ChainReaction, 50);
-            //~ } else {
-                //~ gblnWon = true;
-            //~ }
+            window.setTimeout(ChainReaction, 50);
             
         } else {
             FixCells();
@@ -774,6 +848,48 @@ function Reaction() {
             gblnCanPlay = true;
         }
     }
+}
+
+
+//====
+/// @fn Show
+/// @brief removes the 'no-show' class so an element is shown
+/// @author Trevor Ratliff
+/// @date 2015-03-02
+/// @param vobjElement -- the element to show (it's id or the element itself)
+/// @return null
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2015-03-02  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///         function creation  |
+/// @endverbatim
+//====
+function Show(vobjElement) {
+    var lobjE = null;
+
+    try {
+        //----
+        // test for passed in string
+        //----
+        if (typeof vobjElement == 'string') {
+            lobjE = $(vobjElement)[0];
+        } else {
+            lobjE = vobjElement;
+        }
+
+        //----
+        // remove 'no-show' class
+        //----
+        lobjE.className = lobjE.className.replace(/[ ]?no-show/g, '');
+        
+    } catch (err) {
+        Log(err.toString());
+    }
+
+    return;
 }
 
 
@@ -829,17 +945,15 @@ function SwapPieces(vobjCell) {
             vobjCell.appendChild(lobjNew);
         }
         
-        //----
-        // update scores
-        //----
-        //~ UpdateScores();
-        
     } catch (err) {
         //----
         // handle the error
         //----
-        alert(err.toString());
+        //~ alert(err.toString());
         lblnReturn = false;
+        var lobjMessages = $('#messages')[0];
+        lobjMessages.innerHTML = gstrClosePopup + err.toString();
+        Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
     }
     
     return lblnReturn;
@@ -862,24 +976,28 @@ function SwapPieces(vobjCell) {
 //====
 function UpdateScores() {
     Log('UpdateScores');
-    if (!gblnWon)
-    var lobjPlayerA = $('.player-a');
-    var lobjPlayerB = $('.player-b');
-    
-    //----
-    // check to see if a player has a score of 0
-    //----
-    if ((lobjPlayerA.length < 1 || lobjPlayerB.length < 1) && gintPlayCount > 2) {
-        gblnCanPlay = false;
-        gblnWon = true;
-        //~ throw 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
-        window.setTimeout( function () {
-            alert('Player' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!');
-        }, 500);
+    if (!gblnWon) {
+        var lobjPlayerA = $('.player-a');
+        var lobjPlayerB = $('.player-b');
+        
+        //----
+        // check to see if a player has a score of 0
+        //----
+        if ((lobjPlayerA.length < 1 || lobjPlayerB.length < 1) && gintPlayCount > 2) {
+            gblnCanPlay = false;
+            gblnWon = true;
+            //~ throw 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
+            window.setTimeout( function () {
+                //~ alert('Player' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!');
+                var lobjMessages = $('#messages')[0];
+                lobjMessages.innerHTML = gstrClosePopup + 'Player ' + (lobjPlayerA.length < 1 ? 'B' : 'A') + ' Won!!';
+                Show(lobjMessages);     //.className = lobjMessages.className.replace(/no-show[ ]?/g, '');
+            }, 500);
+        }
+        
+        $('#playerScoreA')[0].innerHTML = lobjPlayerA.length;
+        $('#playerScoreB')[0].innerHTML = lobjPlayerB.length;
     }
-    
-    $('#playerScoreA')[0].innerHTML = lobjPlayerA.length;
-    $('#playerScoreB')[0].innerHTML = lobjPlayerB.length;
 }
 
 

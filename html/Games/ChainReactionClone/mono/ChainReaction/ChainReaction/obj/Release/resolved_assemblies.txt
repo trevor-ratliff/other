@@ -1,0 +1,7 @@
+C:\trevor.ratliff\work\myWork\gitWork\other\html\Games\ChainReactionClone\mono\ChainReaction\ChainReaction\bin\Release\ChainReaction.dll
+C:\Program Files\Reference Assemblies\Microsoft\Framework\MonoAndroid\v2.3\Mono.Android.dll
+C:\Program Files\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\mscorlib.dll
+C:\Program Files\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Core.dll
+C:\Program Files\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.dll
+C:\Program Files\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Web.Services.dll
+C:\Program Files\Reference Assemblies\Microsoft\Framework\MonoAndroid\v1.0\System.Xml.dll
