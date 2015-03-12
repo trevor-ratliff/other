@@ -1,0 +1,132 @@
+/****
+* @file 
+* @brief 
+* @author 
+* @date 
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+* @endverbatim
+****/
+
+/****
+* Elements
+****/
+
+body {
+    font-family: verdana;
+    background-color: #000000;
+}
+
+
+/****
+* Classes
+****/
+
+.clockwise {
+	top: 0ex;
+	left: 3ex;
+}
+
+
+.counterwise {
+	top: 7ex;
+	left: -4ex;
+}
+
+
+.holder {
+	position: absolute;
+	top: 0ex;
+	left: 0ex;
+}
+
+
+.quadrent {
+	position: relative;
+    width: 46ex;
+    height: 46ex;
+    margin: 2.5ex 0ex 0ex 2.5ex;
+    float: left;
+    clear: right;
+    border: 1px solid #009900;
+    background-color: #cccccc;
+}
+
+.rotate {
+    position: absolute;
+    width: 10ex;
+    height: 2ex;
+    z-index: 10;
+    border: 1px solid #999900;
+    background-color: #ffee00;
+    cursor: pointer;
+    text-align: center;
+}
+
+.piece {
+    width: 14ex;
+    height: 14ex;
+    margin: 0.8ex 0ex 0ex 0.8ex;
+    float: left;
+    clear: right;
+    border: 1px solid #990000;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.red {
+    background-color: #ff6666;
+}
+
+.blue {
+    background-color: #6666ff;
+}
+
+.rot0_90 {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-name: rot0_90;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+}
+
+.turned90 {
+    -webkit-transform: rotate(90deg);
+}
+
+.turned180 {
+    -webkit-transform: rotate(180deg);
+}
+
+.turned270 {
+    -webkit-transform: rotate(270deg);
+}
+
+
+/****
+* IDs
+****/
+
+#game_board {
+    position: relative;
+    left: 22ex;
+    width: 100ex;
+    height: 100ex;
+    border: 1px solid #000099;
+    background-color: #999999;
+}
+
+
+/****
+* animations
+****/
+
+@-webkit-keyframe rot0_90 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    
+    to {
+        -webkit-transform: rotate(90deg);
+    }
+}

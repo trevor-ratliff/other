@@ -1,0 +1,36 @@
+/* Put your custom CSS here */
+.pannel {
+	border: 1px solid #ff0000;
+	width: 156px;
+	height: 156px;
+	margin: 5px;
+}
+
+.pannel div {
+	background-color: #f0f0f0;
+}
+
+.ui-grid-b >:nth-child(n) {
+	border: 1px solid #000000;
+	border-top: 1px solid #d0d0d0;
+	border-left: 1px solid #d0d0d0;
+	width: 50px;
+	height: 50px;
+	margin: 1px;
+}
+
+
+#board >.ui-block-a, #board >.ui-block-b {
+	width: 164px;
+}
+
+
+#controls {
+	width: 329px;
+	text-align: center;
+}
+
+
+#lblRotate {
+	display: inline-block;
+}
