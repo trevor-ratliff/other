@@ -1,0 +1,58 @@
+"set up pathogen vim plugin manager
+"https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
+
+"import other settings
+source $HOME/vimfiles/vimrc_example.vim
+source $HOME/vimfiles/mswin.vim
+behave mswin
+
+"set variaous properties
+" a bunch of these are set in vimcr_example ... so I'm commenting them out
+"set nocompatible
+"set ruler
+"set history=50
+set showcmd
+set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8
+set nu!
+set background=dark
+colorscheme desert
+
+"turn things on
+set spl=en_us spell
+"syntax on
+"filetype plugin indent on
+
+"set size of window & font
+set lines=60 columns=87
+"set guifont=Consolas:h11:cANSI
+
+"set color column at 81
+"123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+let &colorcolumn="72,".join(range(81, 120), ",")
+
+"snippet support for UltiSnips
+"https://github.com/SirVer/ultisnips
+"	having issue with https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt#L370
+"	-- I think I fixed this by commenting out the simalt mappings from
+"	mswin.vim
+let g:UltiSnipsExpandTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-j>"
+"" if you want UltiSnipsEdit to split your window
+let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsRemoveSelectModeMappings = 1
+"let g:UltiSnipsMappingsToIgnore = [ '<Plug>snipMate', '<C-A>' ]
+
+"snippet support for snipmate
+"https://github.com/garbas/vim-snipmate
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['c'] = 'c,cpp,cs,c_custom'
+let g:snipMate.scope_aliases['java'] = 'java,c_custom'
+let g:snipMate.scope_aliases['javascript'] = 'javascript,c_custom'
+
+"string completion mapped more like SciTE
+map! <C-CR> <C-N>
+

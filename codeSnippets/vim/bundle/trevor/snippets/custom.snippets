@@ -1,0 +1,58 @@
+snippet comm
+	${1://}----
+	$1 ${0:Comment}
+	$1----
+snippet comm2
+	${1:/}${2:/}----
+	$2 ${0:Comment}
+	----$2$1
+snippet commfile
+	//====
+	/// @file ${1:FILENAME}
+	/// @brief ${2:BRIEF}
+	/// @author ${3:Trevor Ratliff}
+	/// @date `strftime("%Y-%m-%d")`
+	//
+	/// @verbatim
+	/// History:  Date  |  Programmer  |  Contact  |  Description  |
+	///     `strftime("%Y-%m-%d")`  |  $3  |  ${4:trevor.w.ratliff@gmail.com}  |  
+	///         file creation  |
+	/// @endverbatim
+	//====
+	${0}
+snippet commfn
+	//====
+	/// @fn ${1:FUNCTION} (${2:PARAMS})
+	/// @author ${3:Trevor Ratliff}
+	/// @date ${4:`strftime("%Y-%m-%d")`}
+	/// @param $2 -- ${5:_}
+	/// @return ${6:null} --${7}
+	//  
+	//  Definitions:
+	//      ${8:_} -- ${9:_}
+	//  
+	/// @verbatim
+	/// History:  Date  |  Programmer  |  Contact  |  Description  |
+	///     $4  |  $3  |  ${10:trevor.w.ratliff@gmail.com}  |
+	///         function creation  |
+	/// @endverbatim
+	//====
+	function $1 ($2) {	//returns $6
+		var $8 = null;
+
+		//----
+		// ${11:TODO -- add function body}
+		//----
+		${0}
+
+		return$7;
+	}
+snippet fn
+	function ${1} (${2}) {
+		var ${3:foo} = ${4:null};
+
+		${5}
+
+		return${0};
+	}
+
