@@ -46,3 +46,9 @@ Thumbs.db
 ## jekyll ignore group
 ######
 **/_site
+
+
+######
+## vim backups
+######
+*~
