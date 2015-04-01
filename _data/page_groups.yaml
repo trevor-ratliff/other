@@ -32,9 +32,11 @@
     - name: Fashion Palette Explorer
       url: 'web/ColorFinder/ColorFinder.html'
       description: "This is an application for exploring colors and their tints, tones and shades"
+      window: 'new'
     - name: Lexington Irish Dance
       url: 'web/LexIrishDance/index.htm'
       description: "This is a site redesign for an Irish Dance group in Lexington KY"
+      window: 'new'
 #- name: Home
 #  url: ''
 - name: About

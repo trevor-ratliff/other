@@ -13,7 +13,11 @@
         <div class="nav-subpages">
         {% for lobjSub in lobjNav.subpages %}
             <div class="nav-subpages-holder">
+			{% if lobjSub.window != 'new' %}
                 <a class="nav-subpages-link" href="{{ site.url }}{{ lobjSub.url }}">{{ lobjSub.name }}</a>
+			{% else %}
+                <a class="nav-subpages-link" target="_blank" href="{{ site.url }}{{ lobjSub.url }}">{{ lobjSub.name }}</a>
+			{% endif %}
             </div>
         <div class="nav-subpages-description">
             <p>{{ lobjSub.description }}</p>
