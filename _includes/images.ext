@@ -1,0 +1,4 @@
+{{page.url}}
+{% for lobjImg in site.static_files %}
+	<div class="img-holder"><img src="{{lobjImg.path}}" alt="image" /></div>
+{% endfor %}

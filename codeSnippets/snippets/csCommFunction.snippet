@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        Function comment code snippet
+      </Title>
+      <Author>
+        Trevor Ratliff
+      </Author>
+      <Shortcut>commfn</Shortcut>
+    </Header>
+
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Visibility</ID>
+          <Default>private</Default>
+        </Literal>
+
+        <Literal>
+          <ID>FunctionName</ID>
+          <Default>functionName</Default>
+        </Literal>
+
+        <Literal>
+          <ID>ParamType</ID>
+          <Default>int</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Param</ID>
+          <Default>param1</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Brief</ID>
+          <Default>Description of function</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Author</ID>
+          <Default>Author</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Date</ID>
+          <Default>_</Default>
+        </Literal>
+
+        <Literal>
+          <ID>ParamDescription</ID>
+          <Default>_</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Return</ID>
+          <Default>int</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Email</ID>
+          <Default>_</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="CSharp">
+        <![CDATA[//====
+        /// @fn $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
+        /// @brief $Brief$
+        /// @author $Author$
+        /// @date $Date$
+        /// @param $ParamType$ $Param$ -- $ParamDescription$
+        /// @return $Return$
+        //  
+        //  Definitions:
+        //    
+        //  
+        /// @verbatim
+        /// History:  Date  |  Programmer  |  Contact  |  Description  |
+        ///     $Date$  |  $Author$  |  $Email$  |
+        ///         function creation  |
+        /// @endverbatim
+        //====
+        $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
+        {
+            return $Return$;
+        }]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

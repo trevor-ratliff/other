@@ -187,3 +187,19 @@ html, body {
 	font-weight: 600;
 	text-decoration: none;
 }
+
+
+.nav-subpages-holder {
+	/* don't know if I need any */
+}
+
+
+.nav-subpages-link {
+	background-color: #e0e0e0;
+	border: 1px solid #005daa;
+	border-radius: 5px;
+	color: #005daa;
+	display: inline-block;
+	padding: 3px;
+	text-decoration: none;
+}

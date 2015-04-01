@@ -12,7 +12,35 @@
 - name: Code Snippets
   url: 'codeSnippets/'
   description: 'a bunch of code snippet files for Visual Studio and SciTE'
-  subpages: []
+  subpages:
+    - name: 'SciTE: Snippets'
+      url: 'codeSnippets/snippets/abbrev.properties'
+      description: Snippets for code comments in SciTE
+      window: 'new'
+    - name: 'VIM: C Comments'
+      url: 'codeSnippets/snippets/c_custom.snippets'
+      description: 'Snippets for c-style code comments in VIM using SnipMate'
+      window: 'new'
+    - name: 'VIM: Comments'
+      url: 'codeSnippets/snippets/c_custom.snippets'
+      description: 'Snippets for generic code comments in VIM using SnipMate'
+      window: 'new'
+    - name: 'VS Snippet: Comment'
+      url: 'codeSnippets/snippets/csComm.snippet'
+      description: Snippets for code comments in Visual Studio
+      window: 'new'
+    - name: 'VS Snippet: Class Comment'
+      url: 'codeSnippets/snippets/csCommClass.snippet'
+      description: Snippets for class code comments in Visual Studio
+      window: 'new'
+    - name: 'VS Snippet: File Comment'
+      url: 'codeSnippets/snippets/csCommFile.snippet'
+      description: Snippets for file code comments in Visual Studio
+      window: 'new'
+    - name: 'VS Snippet: Function Comment'
+      url: 'codeSnippets/snippets/csCommFunction.snippet'
+      description: Snippets for function code comments in Visual Studio
+      window: 'new'
 - name: Fonts
   url: 'fonts/'
   description: "some fonts I've created"
