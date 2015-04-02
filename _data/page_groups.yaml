@@ -5,10 +5,10 @@
   subpages: 
     - name: Blender
       url: 'art/blender/'
-      description: "Things I've created using Blender - a 3d creation suite"
+      description: "Things I've created using Blender - a 3D creation suite"
     - name: SVG
       url: 'art/svg/'
-      description: "Some svg art I've dabbled with"
+      description: "Some SVG art I've dabbled with"
 - name: Code Snippets
   url: 'codeSnippets/'
   description: 'a bunch of code snippet files for Visual Studio and SciTE'
@@ -44,7 +44,11 @@
 - name: Fonts
   url: 'fonts/'
   description: "some fonts I've created"
-  subpages: []
+  subpages: 
+    - name: Labingdaga Baybayin Bit
+      url: 'fonts/fonts/labingdagabaybayinBit.ttf'
+      description: a modification of the ancient Filipino script
+      window: 'new'
 - name: Knitting
   url: 'knitting/'
   description: 'a few knitting ideas that I have played with'
@@ -52,11 +56,23 @@
 - name: Programming
   url: 'programming/'
   description: 'some programming samples'
-  subpages: []
+  subpages: 
+    - name: Linked List
+      url: 'programming/LinkedList/example.html'
+      description: playing around with linked lists and music generation
+      window: 'new'
+    - name: Maze Generation
+      url: 'programming/MultiMazeGen/index.html'
+      description: "visualization of (eventually multiple) maze generating algorithms"
+      window: 'new'
 - name: Web
   url: 'web/'
   description: 'a few samples of my web code'
   subpages: 
+    - name: Chain Reaction Clone
+      url: 'web/ChainReactionClone/ChainReaction.html'
+      description: "This is a clone of a game I used to play on a TI Pegasus computer"
+      window: 'new'
     - name: Fashion Palette Explorer
       url: 'web/ColorFinder/ColorFinder.html'
       description: "This is an application for exploring colors and their tints, tones and shades"
@@ -65,10 +81,18 @@
       url: 'web/LexIrishDance/index.htm'
       description: "This is a site redesign for an Irish Dance group in Lexington KY"
       window: 'new'
+    - name: Spin Five
+      url: 'web/SpinFive/html/SpinFive.htm'
+      description: "This is a pentago clone"
+      window: 'new'
 #- name: Home
 #  url: ''
 - name: About
   url: 'about/'
-- name: Contact
-  url: 'contact/'
+  subpages:
+    - name: Resume
+      url: 'about/docs/Ratliff_Resume.pdf'
+      window: 'new'
+#- name: Contact
+#  url: 'contact/'
 ...

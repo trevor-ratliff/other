@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" viewBox="0 0 744.09 1052.4" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+	<title id="title5442">add journal entry</title>
+
+	<defs id="defs4"></defs>
+
+	<metadata id="metadata7">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title>add journal entry</dc:title>
+				<dc:creator>
+					<cc:Agent>
+						<dc:title>Trevor Ratliff</dc:title>
+					</cc:Agent>
+				</dc:creator>
+				<dc:date>2014-01-10</dc:date>
+				<cc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+			</cc:Work>
+			<cc:License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+				<cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+				<cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+			</cc:License>
+		</rdf:RDF>
+	</metadata>
+
+	<g id="layer1">
+
+		<path id="pathBook" stroke-linejoin="round" style="marker-end:none;" d="m51.429,193.51,0,742c0,51.143,57.429,51.143,57.429,51.143h391.71v-817.14h-393.71s-55.429-4-55.429-54c0-46,55.429-46,55.429-46h498.57v820h-62.857" stroke="#0000a3" stroke-linecap="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="35" fill="none"/>
+
+	</g>
+
+	<g id="layer2">
+
+		<path id="pathPlus" stroke-linejoin="miter" d="m434.61,470.91,91.477,0,0-89.866,55.374,0,0,89.866,91.92,0,0,61.408-91.92,0,0,91.364-55.374,0,0-91.364-91.477,0z" stroke="#FFF" stroke-linecap="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="11.429142" fill="#000078"/>
+
+	</g>
+
+</svg>
+

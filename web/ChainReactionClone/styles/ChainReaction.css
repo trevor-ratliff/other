@@ -1,0 +1,236 @@
+/****
+* @file ChainReaction.css
+* @brief css for Chain Reaction game clone
+* @author Trevor Ratliff
+* @date 2014-01-10
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+* @endverbatim
+****/
+
+/****
+* tags
+****/
+
+html, body {
+	border: 0px;
+	height: 100%;
+	margin: 0px;
+	overflow: auto;
+	padding: 0px;
+}
+
+
+body {
+	background-color: hsla(0, 0%, 15%, 1);
+	font-family: verdana;
+	font-size: 2rem;
+}
+
+
+/****
+* ids
+****/
+
+#board {
+	/* background-color: hsla(60, 100%, 50%, 1); */
+	/* border: 7px double hsla(120, 100%, 50%, 1); */
+	box-sizing: border-box;
+	left: calc(2rem + 225px);
+	margin: 0% auto;
+	position: relative;
+	top: 5%;
+}
+
+
+#controls {
+	/* font-size: 0.8rem; */
+	left: 5%;
+	max-height: 400px;
+	max-width: 20%;
+	min-width: 225px;
+	position: absolute;
+	top: 5%;
+	/* width: 30%; */
+}
+
+
+.controls h1, .controls h3 {
+	text-align: center;
+}
+
+
+.controls h1 {
+	font-size: 1.4rem;
+}
+
+.controls h3 {
+	font-size: 1.2rem;
+}
+
+#resources {
+	background-color: hsla(31, 100%, 95%, 1);
+	border: 1px solid hsla(360, 100%, 0%, 1);
+	left: -3px;
+	padding: 2px;
+	position: relative;
+	top: 3px;
+	width: calc(100% + 0px);
+}
+
+
+/****
+* classes
+****/
+
+.active {
+	display: block;
+}
+
+
+.cell {
+	background-color: hsla(31, 100%, 95%, 1);
+	background: 
+		linear-gradient(  0deg, hsla(31, 100%,  95%, 0.01) 85%, hsla(31, 100%, 100%, 1.0) ), 
+		linear-gradient( 90deg, hsla(31, 100%,  95%, 0.01) 85%, hsla(31,  70%,  60%, 1.0) ),
+		linear-gradient(180deg, hsla(31, 100%,  95%, 0.01) 85%, hsla(31,  60%,  45%, 1.0) ), 
+		linear-gradient(270deg, hsla(31, 100%,  95%, 1.00) 85%, hsla(31, 100%, 100%, 1.0) ); 
+	border: 1px solid hsla(240, 0%, 15%, 1);
+	border-radius: 9px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	height: 2rem;
+	float: left;
+	line-height: 5%;
+	position: relative;
+	width: 2rem;
+}
+
+
+.controls {
+	background-color: hsla(175, 100%, 80%, 1);
+	background: linear-gradient(hsla(175, 100%, 80%, 1) 45%, hsla(175, 100%, 60%, 1));
+	border: 7px double hsla(360, 100%, 0%, 1);
+	border-radius: 8px;
+	box-sizing: border-box;
+	box-shadow: 10px 10px 5px rgba(255,255,255,0.4);
+	/* float: left; */
+	font-size: 0.8rem;
+	font-weight: 600;
+	/* margin-top: -25%; */
+	overflow: auto;
+	padding: 5px;
+	z-index: 100;
+}
+
+
+.click-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+}
+
+
+.first-in-row {
+	clear: left;
+}
+
+
+.piece {
+	/* display: inline; */
+	float: left;
+	height: 45%;
+	position: relative;
+	width: 45%;
+	z-index: 10;
+}
+
+.player-b {
+	float: right;
+}
+
+
+div.reacting {
+	background-color: hsla(48, 100%, 65%, 0.5);
+	z-index: 0;
+}
+
+
+.s6 {
+	height: calc(100%/6);
+	width: calc(100%/6);
+}
+
+
+.s8 {
+	height: calc(100%/8);
+	width: calc(100%/8);
+}
+
+
+.s10 {
+	height: calc(100%/10);
+	width: calc(100%/10);
+}
+
+
+.score {
+	background-color: hsla(31, 100%, 95%, 1);
+	border: 1px solid hsla(360, 100%, 0%, 1);
+	display: inline-block;
+	left: 0px;
+	margin: 0px;
+	padding: 4px;
+	position: relative;
+	top: 0px;
+	width: calc(50% - 15px);
+}
+
+
+.score .piece {
+	float: none;
+	height: 2.5ex;
+	position: relative;
+	width: 2.5ex;
+}
+
+
+/****
+* Screen adjustments based on size
+****/
+
+/* @media all and (max-width: 480px) { */
+/* @media all and (orientation:portrait) { */
+/* @media all and (max-width: 599px) and (min-aspect-ratio: 4/3), (orientation: portrait) { */
+@media all and (max-aspect-ratio: 4/3), (max-width: 500px) {
+	html {
+		font-size: 0.75em;
+	}
+	
+	
+	#controls {
+		box-shadow: none;
+		/* font-size: 0.7rem; */
+		left: initial;
+		margin: 1ex auto 0px;
+		max-width: initial;
+		position: relative;
+		top: initial;
+		width: 90%;
+	}
+	
+	
+	#board {
+		left: initial;
+		margin: 1ex auto 0px;
+		top: initial;
+	}
+}
+
+/* @media all and (max-width: 500px) {
+	#controls {
+		font-size: 0.7rem;
+	}
+} */

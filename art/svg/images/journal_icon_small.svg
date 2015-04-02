@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" viewBox="0 0 100 100" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <title id="title5442">add journal button</title>
+ <defs id="defs4"></defs>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>add journal button</dc:title>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
+    <dc:contributor>
+     <cc:Agent>
+      <dc:title>Trevor Ratliff</dc:title>
+     </cc:Agent>
+    </dc:contributor>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" transform="translate(0,-952.36216)">
+  <path id="path3003" stroke-linejoin="round" style="marker-end:none;" d="m8.6952,981.7,0,56.368c0,7.3146,6.7237,6.5646,6.7237,6.5646h45.861v-72.932h-46.096s-6.6611-0.49471-6.4895-5.8196c0.17158-5.3249,14.49-5.1056,14.49-5.1056h48.05l-0.000346,70.187,0.000346,2.75" stroke="#0000a3" stroke-linecap="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="8" fill="none"/>
+ </g>
+ <g id="layer2" transform="translate(0,-952.36216)">
+  <path id="path5434" stroke-linejoin="miter" d="m53.197,1000.2,15.089,0,0-14.275,13.609,0,0,14.275,14.975,0,0,12.735-14.975,0,0,15.553-13.609,0,0-15.553-15.089,0z" stroke="#FFF" stroke-linecap="round" stroke-miterlimit="4" stroke-dasharray="none" stroke-width="3.57227421" fill="#000078"/>
+ </g>
+</svg>

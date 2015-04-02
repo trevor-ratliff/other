@@ -1,0 +1,211 @@
+setting a monospaced font and scrolling down will show the pattern better to the eye ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--v-v-----v-v-----v-v-----v-v---
+-v-v-v---v-v-v---v-v-v---v-v-v--
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+-vvvvv---vvvvv---vvvvv---vvvvv--
+--vvv-----vvv-----vvv-----vvv---
+v-----v-v-----v-v-----v-v-----v-
+-v---v-v-v---v-v-v---v-v-v---v-v
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vv---vvvvv---vvvvv---vvvvv---vvv
+v-----vvv-----vvv-----vvv-----vv
+--v-v-----v-v-----v-v-----v-v---
+-v-v-v---v-v-v---v-v-v---v-v-v--
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+-vvvvv---vvvvv---vvvvv---vvvvv--
+--vvv-----vvv-----vvv-----vvv---
+v-----v-v-----v-v-----v-v-----v-
+-v---v-v-v---v-v-v---v-v-v---v-v
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vv---vvvvv---vvvvv---vvvvv---vvv
+v-----vvv-----vvv-----vvv-----vv
+--v-v-----v-v-----v-v-----v-v---
+-v-v-v---v-v-v---v-v-v---v-v-v--
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+-vvvvv---vvvvv---vvvvv---vvvvv--
+--vvv--v--vvv--v--vvv--v--vvv--v
+v-----v-v-----v-v-----v-v-----v-
+-v---v-v-v---v-v-v---v-v-v---v-v
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vv---vvvvv---vvvvv---vvvvv---vvv
+v--v--vvv--v--vvv--v--vvv--v--vv
+--v-v--v--v-v--v--v-v--v--v-v--v
+-v-v-v---v-v-v---v-v-v---v-v-v--
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+-vvvvv---vvvvv---vvvvv---vvvvv--
+--vvv--v--vvv--v--vvv--v--vvv--v
+v--v--v-v--v--v-v--v--v-v--v--v-
+-v---v-v-v---v-v-v---v-v-v---v-v
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vv---vvvvv---vvvvv---vvvvv---vvv
+v--v--vvv--v--vvv--v--vvv--v--vv
+--v-v--v--v-v--v--v-v--v--v-v--v
+-v-v-v---v-v-v---v-v-v---v-v-v--
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+vvvvvvv-vvvvvvv-vvvvvvv-vvvvvvv-
+-vvvvv---vvvvv---vvvvv---vvvvv--
+--vvv--v--vvv--v--vvv--v--vvv--v
+v--v--v-v--v--v-v--v--v-v--v--v-
+-v---v-v-v---v-v-v---v-v-v---v-v
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vvv-vvvvvvv-vvvvvvv-vvvvvvv-vvvv
+vv---vvvvv---vvvvv---vvvvv---vvv
+v--v--vvv--v--vvv--v--vvv--v--vv
+
+
+
+  - -           - -         
+  - -           - -         
+ -   -         -   -        
+-     ---------     --------
+         - -           - -  
+         - -           - -  
+        -   -         -   - 
+--------     ---------     -
+  - -           - -         
+  - -           - -         
+ -   -         -   -        
+-     ---------     --------
+         - -           - -  
+         - -           - -  
+        -   -         -   - 
+--------     ---------     -
+  - -           - -         
+  - -           - -         
+ -   -         -   -        
+-     ---------     --------
+         - -           - -  
+         - -           - -  
+        -   -         -   - 
+--------     ---------     -
+
+
+
+vv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvv
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--vvv--vvvvvvv--vvv--vvvvvvv--vvv--vvvvvvv
+-vvvvv---------vvvvv---------vvvvv--------
+vvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--vvv--vvvvvvv--vvv--vvvvvvv--vvv--
+--------vvvvv---------vvvvv---------vvvvv-
+vv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvv
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--vvv--vvvvvvv--vvv--vvvvvvv--vvv--vvvvvvv
+-vvvvv---------vvvvv---------vvvvv--------
+vvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--vvv--vvvvvvv--vvv--vvvvvvv--vvv--
+--------vvvvv---------vvvvv---------vvvvv-
+vv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvv
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--vvv--vvvvvvv--vvv--vvvvvvv--vvv--vvvvvvv
+-vvvvv---------vvvvv---------vvvvv--------
+vvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--vvv--vvvvvvv--vvv--vvvvvvv--vvv--
+--------vvvvv---------vvvvv---------vvvvv-
+
+
+
+vv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvv
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--v-v--vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv
+-v-v-v---------v-v-v---------v-v-v--------
+vvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv--v-v--
+--------v-v-v---------v-v-v---------v-v-v-
+vv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvv
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--v-v--vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv
+-v-v-v---------v-v-v---------v-v-v--------
+vvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv--v-v--
+--------v-v-v---------v-v-v---------v-v-v-
+vv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvv
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--v-v--vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv
+-v-v-v---------v-v-v---------v-v-v--------
+vvvvvvvvv-v-vvvvvvvvvvv-v-vvvvvvvvvvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv--v-v--
+--------v-v-v---------v-v-v---------v-v-v-
+
+
+
+vv-v-vvv-v-v-vvv-v-vvv-v-v-vvv-v-vvv-v-v-v
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--v-v--vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv
+-v-v-v---------v-v-v---------v-v-v--------
+v-v-v-vvv-v-vvv-v-v-vvv-v-vvv-v-v-vvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv--v-v--
+--------v-v-v---------v-v-v---------v-v-v-
+vv-v-vvv-v-v-vvv-v-vvv-v-v-vvv-v-vvv-v-v-v
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--v-v--vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv
+-v-v-v---------v-v-v---------v-v-v--------
+v-v-v-vvv-v-vvv-v-v-vvv-v-vvv-v-v-vvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv--v-v--
+--------v-v-v---------v-v-v---------v-v-v-
+vv-v-vvv-v-v-vvv-v-vvv-v-v-vvv-v-vvv-v-v-v
+v--v--vvvvvvvvv--v--vvvvvvvvv--v--vvvvvvvv
+--v-v--vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv
+-v-v-v---------v-v-v---------v-v-v--------
+v-v-v-vvv-v-vvv-v-v-vvv-v-vvv-v-v-vvv-v-vv
+vvvvvvvv--v--vvvvvvvvv--v--vvvvvvvvv--v--v
+vvvvvvv--v-v--vvvvvvv--v-v--vvvvvvv--v-v--
+--------v-v-v---------v-v-v---------v-v-v-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

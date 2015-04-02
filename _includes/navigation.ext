@@ -1,7 +1,7 @@
 {% for lobjNav in site.data.page_groups %}
 	{% if page.title == 'Home' or page.title == lobjNav.name %}
-		<div class="nav-holder">
-			<a class="nav-link" href="{{ site.url }}{{ lobjNav.url }}">{{ lobjNav.name }}</a>
+		<div class="">
+			<a class="nav-holder nav-link" href="{{ site.url }}{{ lobjNav.url }}">{{ lobjNav.name }}</a>
 		</div>
 		{% if lobjNav.description %}
 			<div class="nav-description">

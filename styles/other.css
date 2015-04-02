@@ -160,6 +160,30 @@ html, body {
 }
 
 
+.img-holder {
+	border: 1px solid #808080;
+	border-radius: 7px;
+	box-shadow: 8px 10px 10px hsla(90, 10%, 10%, 0.6);
+	color: #303030;
+	display: inline-block;
+	height: 10ex;
+	margin: 0px 15px 20px 0px;
+	overflow: hidden;
+	width: 10ex;
+}
+
+
+.img-holder:hover {
+	box-shadow: 8px 10px 10px hsla(30, 100%, 55%, 0.4);
+}
+
+
+.img-holder img {
+	height: 100%;
+	cursor: pointer;
+}
+
+
 .nav-holder {
 	background-color: #e0e0e0;
 	border: 1px solid #005daa;
@@ -177,7 +201,7 @@ html, body {
 }
 
 
-.nav-holder:hover .nav-link {
+.nav-link:hover {
 	color: #e0e0e0;
 }
 
@@ -195,11 +219,18 @@ html, body {
 
 
 .nav-subpages-link {
-	background-color: #e0e0e0;
-	border: 1px solid #005daa;
+	background-color: hsla(207, 100%, 80%, 1);
+	border: 1px solid hsla(207, 100%, 33%, 1);
 	border-radius: 5px;
-	color: #005daa;
+	color: hsla(207, 100%, 20%, 1);
 	display: inline-block;
 	padding: 3px;
 	text-decoration: none;
+}
+
+
+.nav-subpages-link:hover {
+	background-color: hsla(207, 0%, 95%, 1);
+	border: 1px solid hsl(30, 100%, 45%);
+	color: hsl(30, 100%, 30%);
 }

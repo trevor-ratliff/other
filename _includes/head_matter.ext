@@ -1,5 +1,6 @@
+<meta charset="utf-8">
 <link rel="alternate stylesheet" type="text/css" href="{{ site.url }}styles/alt1.css" title="alternate" />
-<link rel="stylesheet" type="text/css" href="{{ site.url }}styles/other.css" title="main" />
+<link rel="stylesheet" type="text/css" href="{{ site.url }}styles/other.css" />
 
 <!--[if lte IE 9]>
 <style type="text/css">
