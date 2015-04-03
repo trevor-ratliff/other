@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="topLeft" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<metadata id="metadata7">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+				<dc:title/>
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<g id="gBackground" transform="matrix(0.87804878,0,0,0.87804878,7.8658537,7.8658537)">
+		<rect id="rBlackBack" stroke-dasharray="none" height="39.931" width="39.931" stroke="#000" stroke-linecap="square" stroke-miterlimit="4" y="64.431" x="64.431" stroke-width="0.99994" fill="#000"/>
+		<rect id="rWhiteBack" height="39.931" width="39.931" y="65" x="65" fill="#FFF"/>
+	</g>
+	<g id="gCurls" stroke-miterlimit="4" stroke="#000" stroke-dasharray="none">
+		<path id="pCornerYellow" stroke-linejoin="miter" d="M5,20c0-5,10-15,15-15l5,10c10-5,30,5,25,20l15,5c-15,5-20,10-25,25l-5-15c-15,5-25-15-20-25z" stroke-linecap="butt" stroke-width="0.5" fill="#f6d100"/>
+		<path id="pCornerBlack" stroke-linejoin="miter" d="m11.808,20.056c0-3.8814,4.3665-8.2479,8.2479-8.2479l2.911,5.822c7.7627-3.8814,24.258,5.822,20.377,17.466l11.644,3.8814c-11.644,3.8814-12.129,4.3665-16.011,16.011l-3.881-11.644c-11.644,3.881-21.348-12.615-17.466-20.377z" stroke-linecap="butt" stroke-width="0.38813522" fill="#000"/>
+		<path id="pCornerPurple" stroke-linejoin="miter" d="m20.494,26.044c0-2.6119,2.9383-5.5502,5.5502-5.5502l1.9589,3.9178c5.2237-2.6119,14.324,1.9178,11.712,9.7534l5.285,2.112c-7.836,2.612-5.861,0.887-8.473,8.723l-2.362-5.284c-7.835,2.611-12.365-6.489-9.753-11.713z" stroke-linecap="butt" stroke-width="0.26118645" fill="#8722a0"/>
+		<path id="pCurlCenter" stroke-linejoin="miter" d="M50,50,55,65,65,55z" stroke-linecap="butt" stroke-width="0.5" fill="#f6ca00"/>
+		<rect id="rCurlCenterDecor" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" height="3.6935" width="14.774" stroke-linecap="square" y="78.41" x="-7.5637" stroke-width="0.5" fill="#f6ca00"/>
+	</g>
+</svg>

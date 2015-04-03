@@ -1,0 +1,59 @@
+---
+title: Home
+---
+<!DOCTYPE html>
+<!--
+//====
+/// @file index.html
+/// @brief this file is the root site for the github pages for my other repository
+/// @author Trevor Ratliff
+/// @date 2013-12-04
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///		2013-12-04  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///			page creation for http://trevor-ratliff.github.io/other/
+/// @endverbatim
+//====
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Home</title>
+		{% include head_matter.ext %}
+		
+		<noscript>
+			Turning JavaScript on in your browser makes for a much better experience!
+		</noscript>
+	</head>
+	
+	<body>
+		<nav id="breadcrumbs"></nav>
+		<div id="welcome">
+			<h1>Welcome to my 'other' repository!</h1>
+		</div>
+		<!-- <nav id="nav">{-% include navigation.ext %-}</nav> -->
+		<section id="content-container">
+			<h3>Here you will find a bunch of stuff I've created</h3>
+			<article id="variables" style="display: none;">
+				site.url: {{ site.url }}<br>
+				site.time: {{ site.time }}<br>
+				site.pages: <br>
+				{% for lobjPage in site.pages %}
+					&nbsp; &nbsp; {{ lobjPage.title }}<br>
+				{% endfor %}<br>
+				
+				page.id: {{ page.id }}<br>
+				page.title: {{ page.title }}<br>
+				page.url: {{ page.url }}<br>
+				page.path: {{ page.path }}<br>
+			</article>
+			<article id="content">
+				{% include navigation.ext %}
+			</article>
+		</section>
+	</body>
+</html>

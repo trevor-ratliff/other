@@ -1,0 +1,285 @@
+html, body {
+	font-family: verdana;
+	font-size: 18px;
+	height: 100%;
+	margin: 0ex;
+	/* overflow: hidden; */
+	padding: 0ex;
+	width: 100%;
+}
+
+body {
+	background-color: rgba(31, 68, 139, 1.0);
+}
+
+aside {
+	background-color: #ffffff;
+	border-radius: 40px 0px 0px 40px;
+	bottom: 10%;
+	left: calc(100% - 11em);
+	overflow: auto;
+	padding: 20px;
+	position: fixed;
+	right: 0%;
+	top: 10%;
+	z-index: 10;
+}
+
+aside > div {
+	border-bottom: 2px solid rgba(31, 68, 139, 1.0);
+	border-radius: 9px;
+	margin-bottom: 3em;
+	padding: 5px;
+}
+
+#container {
+	background-color: rgba(31, 68, 139, 1.0);
+	border-radius: 40px;
+	/* min-height: 90%; */
+	/* left: 10%; */
+	margin: 3% 12em 3% 3%;
+	overflow: visible;
+	position: relative;
+	/* top: 10%; */
+	/* width: 80%; */
+}
+
+
+#menu li {
+	background-color: rgba(31, 68, 139, 1.0);
+	border-bottom: 2px solid rgba(224, 187, 116, 1.0);
+	border-radius: 9px;
+	color: rgba(224, 187, 116, 1.0);
+	list-style: none;
+	margin-bottom: 0.5em;
+	margin-left: -2em;
+	padding: 5px;
+}
+
+
+#menu li:hover {
+	background-color: rgba(224, 187, 116, 1.0);
+	border-bottom: 2px solid rgba(31, 68, 139, 1.0);
+	border-radius: 9px;
+	color: rgba(31, 68, 139, 1.0);
+	cursor: pointer;
+}
+
+
+.area {
+	background-color: transparent /* #888888 */;
+	border-radius: 20px;
+	margin: 0ex auto 3ex;
+	/* max-height: 390px; */
+	position: relative;
+	top: 3ex;
+	width: 90%;
+}
+
+.area-clickable {
+	background-color: #888888;
+	border-radius: 20px;
+	cursor: pointer;
+	float: left;
+	margin: 0ex 0% 3ex 5%;
+	/* max-height: 390px; */
+	position: relative;
+	top: 3ex;
+	width: 42.5%;
+}
+
+.area-clickable:hover {
+	background-color: #ffffff;
+	padding: 3px;
+}
+
+.area-l {
+	background-image: url(../images/LeftCurls_new.svg);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	background-size: 60px;
+	background-color: transparent /* rgba(255, 175, 0, 0.2) */;
+	border: 0px solid #609060;
+	bottom: 0ex;
+	position: absolute;
+	top: 0ex;
+	width: 60px;
+}
+
+.area-c {
+	background-image: url(../images/backgroundTemp.jpg);
+	background-position: 2px 2px;
+	background-repeat: repeat;
+	background-size: calc(33% - 2px); /* 80px; */
+	background-position: 0px 0px;
+	background-color: transparent /* rgba(175, 0, 255, 0.2) */;
+	border: 0px solid #906060;
+	bottom: 0ex;
+	left: 60px;
+	margin-right: 120px;
+	/* max-height: 350px */;
+	overflow: auto;
+	padding: 0px 2ex;
+	position: relative;
+	top: 0ex;
+}
+
+.area-c img {
+	width: 100%;
+}
+
+.area-c div.id-picture {
+	float: right;
+	width: 30%;
+}
+
+.area-c div.id {
+	clear: both;
+}
+
+.area-c img.logo {
+	width: 150px;
+	/* height: initial; */
+}
+
+.area-r {
+	background-image: url(../images/RightCurls_new.svg);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	background-size: 60px auto;
+	background-color: transparent /* rgba(0, 255, 175, 0.2) */;
+	border: 0px solid #606090;
+	bottom: 0ex;
+	left: auto;
+	position: absolute;
+	right: 0px;
+	top: 0ex;
+	width: 60px;
+}
+
+.area-top {
+	background-color: transparent /* rgba(255, 0, 0, 0.2) */;
+	border: 0px solid #306030;
+	border-radius: 20px 20px 0px 0px;
+	border-top-left-radius: 20px;
+	bottom: auto;
+	height: 60px;
+	position: relative;
+	top: 0ex;
+	width: 100%;
+}
+
+.area-top .area-l {
+	background-image: url(../images/TopLeft_new.svg);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	background-size: 60px;
+	border-radius: 20px 0px 0px 0px;
+	border-top-left-radius: 20px;
+}
+
+.area-top .area-c {
+	background-image: url(../images/TopCurls_new2.svg);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	background-size: 60px;
+	height: 60px;
+}
+
+.area-top .area-r {
+	background-image: url(../images/TopRight_new.svg);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	background-size: 60px;
+	border-radius: 0px 20px 0px 0px;
+}
+
+.area-middle {
+	background-color: transparent /* rgba(0, 255, 0, 0.2) */;
+	border: 0px solid #603030;
+	bottom: auto;
+	position: relative;
+	top: 0ex;
+	width: 100%;
+}
+
+.area-bottom {
+	background-color: transparent /* rgba(0, 0, 255, 0.2) */;
+	border: 0px solid #303060;
+	border-radius: 0px 0px 20px 20px;
+	bottom: 0ex;
+	height: 60px;
+	position: relative;
+	top: auto;
+	width: 100%;
+}
+
+.area-bottom .area-l {
+	background-image: url(../images/BottomLeft_new.svg);
+	background-position: 0px 0px;
+	background-size: 60px;
+	border-radius: 0px 0px 0px 20px;
+}
+
+.area-bottom .area-c {
+	background-image: url(../images/BottomCurls_new.svg);
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	background-size: 60px auto;
+	height: 60px;
+}
+
+.area-bottom .area-r {
+	background-image: url(../images/BottomRight_new.svg);
+	background-position: 0px 0px;
+	background-size: 60px;
+	border-radius: 0px 0px 20px 0px;
+}
+
+@media screen and (max-height: 480px) {
+	#container {
+		height: 100%;
+		width: 100%;
+		top: 0%;
+	}
+	
+	.area {
+		width: 108%;
+		margin-left: -4%;
+		font-size: 0.7em;
+	}
+	
+	.area-c {
+		/* max-height: 300px; */
+	}
+}
+
+@media screen and (max-width: 640px) {
+	aside {
+		border-bottom: 10px solid #ffffff;
+		border-radius: 0px 0px 20px 20px;
+		bottom: initial;
+		float: none;
+		height: 1em;
+		left: 1em;
+		overflow: hidden;
+		padding-right: 5px;
+		right: 1em;
+		top: 0px;
+	}
+	
+	aside:hover {
+		height: 90%;
+		overflow: auto;
+	}
+	
+	#container {
+		top: calc(2em + 10px);
+		width: calc(100% - 20px);
+		height: calc(100% - 2em - 10px);
+	}
+	
+	.area-clickable {
+		width: 90%;
+	}
+}

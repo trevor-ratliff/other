@@ -1,0 +1,45 @@
+---
+title: Art
+---
+<!DOCTYPE html>
+<!--
+//====
+/// @file index.html
+/// @brief this file is a subject page for the github pages for my other repository
+/// @author Trevor Ratliff
+/// @date 2013-12-04
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///		2013-12-04  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+///			page creation for http://trevor-ratliff.github.io/other/art/
+/// @endverbatim
+//====
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{{ page.title }}</title>
+		{% include head_matter.ext %}
+		
+		<noscript>
+			Turning JavaScript on in your browser makes for a much better experience!
+		</noscript>
+	</head>
+	
+	<body>
+		<nav id="breadcrumbs"></nav>
+		<div id="welcome">
+			<h2>{{ page.title }}</h2>
+		</div>
+		<!-- <nav id="nav">{% include navigation.ext %}</nav> -->
+		<section id="content-container">
+			<article id="content">
+			{% include navigation.ext %}
+			</article>
+		</section>
+	</body>
+</html>

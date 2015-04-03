@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style> 
+        .red
+        {
+        width:100px;
+        height:75px;
+        background-color: red;
+        border:1px solid black;
+        z-index: 100;
+        }
+        
+        div#div2
+        {
+        transform:rotate(30deg);
+        -ms-transform:rotate(30deg); /* IE 9 */
+        -moz-transform:rotate(30deg); /* Firefox */
+        -webkit-transform:rotate(30deg); /* Safari and Chrome */
+        -o-transform:rotate(30deg); /* Opera */
+        }
+    </style>
+    <script type="text/javascript">
+        //<--
+        function setRotation() {
+            el = document.getElementById("div2");
+            rot = document.getElementById("txtRotation").value;
+
+            /* el.setAttribute("transform", "rotate(" + rot +"deg)");
+            el.setAttribute("-ms-transform", "rotate(" + rot +"deg)");
+            el.setAttribute("-moz-transform", "rotate(" + rot +"deg)");
+            el.setAttribute("-webkit-transform", "rotate(" + rot +"deg)");
+            el.setAttribute("-o-transform", "rotate(" + rot +"deg)"); */
+
+            el.style.Transform = "rotate(" + rot + "deg)";
+            el.style.msTransform = "rotate(" + rot + "deg)";
+            el.style.MozTransform = "rotate(" + rot + "deg)";
+            el.style.webkitTransform = "rotate(" + rot + "deg)";
+            el.style.oTransform = "rotate(" + rot + "deg)";
+        }
+        
+        function StartSlider(e) {
+            el = document.getElementById("sliderArrow");
+            if(document.all)e = event;
+            var st = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+            var sl = Math.max(document.body.scrollLeft,document.documentElement.scrollLeft);
+            
+            //dragTimer = 0;
+            el.style.left = e.clientX + sl + 'px';
+            //dragContentObj.style.top = e.clientY + st + 'px';
+            
+            return false;
+        }
+        
+        function StopSlider(e) {
+            return;
+        }
+        
+        function MoveSlider(e) {
+            return;
+        }
+        
+        function CancelEvent() {
+            return false;
+        }
+        
+        function Init() {
+            /* el = document.getElementById("sliderArrow");
+            el.onmousedown = StartSlider;
+            el.onmouseup = StopSlider;
+            el.onselectstart = CancelEvent;
+            el.onmousemove = MoveSlider; */
+            document.getElementById("sliderArrow").onchange = 
+                function (){
+                    document.getElementById("txtRotation").value = 
+                    this.value;
+                    setRotation();
+                };
+        }
+        //-->
+    </script>
+</head>
+<body onload="Init();">
+
+<div class="red">Hello. This is a DIV element.</div>
+
+<div id="div2" class="red">Hello. This is a DIV element.</div>
+
+<div id="slider" style="width: 18ex;">
+    <div id="sliderNumber" style="float: left;width: 3ex;">
+        <input id="txtRotation" type="text" value="30" onchange="setRotation();" style="width: 3ex;">
+    </div>
+    <div id="sliderControlBox" style="float: right;width: 100px; margin-top: 0.4ex;">
+        <!-- <hr>
+        <div id="sliderArrow" 
+            style="position: relative; top: -2.4ex; left: 0ex; width: 2ex; height: 2ex; background-color: #909090; z-index: 100;"> -->
+        <input id="sliderArrow" type="range" min="0" max="359" step="5" value="30" />
+    </div>
+</div>
+
+</body>
+</html>
