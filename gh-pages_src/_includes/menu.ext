@@ -1,27 +1,23 @@
 {% for lobjNav in site.data.page_groups %}
-	{% if page.title == 'Home' or page.title == lobjNav.name %}
 		<div class="nav-holder">
 			<a class="nav-link" href="{{ site.url }}{{ lobjNav.url }}">{{ lobjNav.name }}</a>
-			{% if lobjNav.description %}
+			<!-- {% if lobjNav.description %}
 				<div class="nav-description">
 					<p>{{ lobjNav.description }}</p>
 				</div>
-			{% endif %}
+			{% endif %} -->
 		</div>
-	{% endif %}
 	{% if page.title == lobjNav.name and lobjNav.subpages != '' %}
-		<div class="nav-subpages">
+		<div class="nav-subpages" style="margin-left: 1ex;">
 		{% for lobjSub in lobjNav.subpages %}
 			<div class="nav-subpages-holder">
 			{% if lobjSub.window != 'new' %}
 				<a class="nav-subpages-link" href="{{ site.url }}{{ lobjSub.url }}">{{ lobjSub.name }}</a>
-			{% else %}
-				<a class="nav-subpages-link" target="_blank" href="{{ site.url }}{{ lobjSub.url }}">{{ lobjSub.name }}</a>
 			{% endif %}
 			</div>
-		<div class="nav-subpages-description">
+		<!-- <div class="nav-subpages-description">
 			<p>{{ lobjSub.description }}</p>
-		</div>
+		</div> -->
 		{% endfor %}
 		</div>
 	{% endif %}

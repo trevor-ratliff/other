@@ -123,6 +123,12 @@ html, body {
 }
 
 
+#welcome h3 {
+	position: relative;
+	top: -1em;
+}
+
+
 /*****
 * classes
 *****/
@@ -184,32 +190,46 @@ html, body {
 }
 
 
+.nav-description {
+	/* font-size: 1.5em; */
+}
+
+
 .nav-holder {
-	background-color: #e0e0e0;
+	/* background-color: #e0e0e0;
 	border: 1px solid #005daa;
 	border-radius: 5px;
 	display: block;
 	margin-bottom: 0.5ex;
 	padding: 3px;
-	width: 9em;
+	width: 9em; */
 }
 
 
 .nav-holder:hover {
-	background-color: #005daa;
-	border: 1px solid #e0e0e0;
+	/* background-color: #005daa;
+	border: 1px solid #e0e0e0; */
 }
 
 
 .nav-link:hover {
+	background-color: #005daa;
+	border: 1px solid #e0e0e0;
 	color: #e0e0e0;
 }
 
 
 .nav-link {
+	background-color: #e0e0e0;
+	border: 1px solid #005daa;
+	border-radius: 5px;
 	color: #005daa;
+	display: inline-block;
 	font-weight: 600;
+	margin-bottom: 0.5ex;
+	padding: 3px;
 	text-decoration: none;
+	width: 9em;
 }
 
 

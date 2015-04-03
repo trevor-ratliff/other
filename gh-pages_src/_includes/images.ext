@@ -2,8 +2,9 @@
 {% for lobjImg in site.static_files %}
 	{% assign test = lobjImg.path | contains: baseUrl %}
 	{% if test == 'true' %}
+	{% assign imgUrl = lobjImg.path | remove_first: "/" %}
 	<div class="img-holder">
-		<img src="{{ lobjImg.path }}" alt="{{baseUrl}}" onclick="window.open('{{lobjImg.path}}');" />
+		<img src="{{ site.url | append: imgUrl }}" alt="{{baseUrl}}" onclick="window.open('{{ site.url | append: imgUrl }}');" />
 	</div>
 	{% endif %}
 {% endfor %}
