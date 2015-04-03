@@ -1,5 +1,5 @@
 ---
-destination: ../_site
+#destination: ../_site
 encoding: utf-8
 exclude: [Gemfile, Gemfile.lock]
 highlighter: pygments
