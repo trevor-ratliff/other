@@ -1,9 +1,0 @@
-{% assign baseUrl = page.url | remove: 'index.html' | append: 'images/' %}
-{% for lobjImg in site.static_files %}
-	{% assign test = lobjImg.path | contains: baseUrl %}
-	{% if test == 'true' %}
-	<div class="img-holder">
-		<img src="{{ lobjImg.path }}" alt="{{baseUrl}}" onclick="window.open('{{lobjImg.path}}');" />
-	</div>
-	{% endif %}
-{% endfor %}
