@@ -73,7 +73,7 @@
       url: 'web/ChainReactionClone/ChainReaction.html'
       description: "This is a clone of a game I used to play on a TI Pegasus computer"
       window: 'new'
-    - name: Fashion Palette Explorer
+    - name: Color Palette Explorer
       url: 'web/ColorFinder/ColorFinder.html'
       description: "This is an application for exploring colors and their tints, tones and shades"
       window: 'new'

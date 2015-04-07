@@ -14,8 +14,8 @@
 ****/
 
 body {
-    font-family: verdana;
-    background-color: #000000;
+	font-family: verdana;
+	background-color: #000000;
 }
 
 
@@ -44,83 +44,86 @@ body {
 
 .quadrent {
 	position: relative;
-    width: 46ex;
-    height: 46ex;
-    margin: 2.5ex 0ex 0ex 2.5ex;
-    float: left;
-    clear: right;
-    border: 1px solid #009900;
-    background-color: #cccccc;
+	width: 46ex;
+	height: 46ex;
+	margin: 2.5ex 0ex 0ex 2.5ex;
+	float: left;
+	clear: right;
+	border: 1px solid #009900;
+	border-radius: 50%;
+	border-top-right-radius: 10%;
+	background-color: #cccccc;
 }
 
 .rotate {
-    position: absolute;
-    width: 10ex;
-    height: 2ex;
-    z-index: 10;
-    border: 1px solid #999900;
-    background-color: #ffee00;
-    cursor: pointer;
-    text-align: center;
+	position: absolute;
+	width: 10ex;
+	height: 2ex;
+	z-index: 10;
+	border: 1px solid #999900;
+	background-color: #ffee00;
+	cursor: pointer;
+	text-align: center;
 }
 
 .piece {
-    width: 14ex;
-    height: 14ex;
-    margin: 0.8ex 0ex 0ex 0.8ex;
-    float: left;
-    clear: right;
-    border: 1px solid #990000;
-    background-color: #ffffff;
-    cursor: pointer;
+	width: 14ex;
+	height: 14ex;
+	margin: 0.8ex 0ex 0ex 0.8ex;
+	float: left;
+	clear: right;
+	border: 1px solid #990000;
+	border-radius: 35%;
+	background-color: #ffffff;
+	cursor: pointer;
 }
 
 .red {
-    background-color: #ff6666;
+	background-color: #ff6666;
 }
 
 .blue {
-    background-color: #6666ff;
+	background-color: #6666ff;
 }
 
 .rot0_90 {
-    -webkit-animation-duration: 2s;
-    -webkit-animation-name: rot0_90;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-direction: alternate;
-    -moz-animation-duration: 2s;
-    -moz-animation-name: rot0_90;
-    -moz-animation-iteration-count: infinite;
-    -moz-animation-direction: alternate;
-    -ms-animation-duration: 2s;
-    -ms-animation-name: rot0_90;
-    -ms-animation-iteration-count: infinite;
-    -ms-animation-direction: alternate;
-    animation-duration: 2s;
-    animation-name: rot0_90;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-name: rot0_90;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	-moz-animation-duration: 2s;
+	-moz-animation-name: rot0_90;
+	-moz-animation-iteration-count: infinite;
+	-moz-animation-direction: alternate;
+	-ms-animation-duration: 2s;
+	-ms-animation-name: rot0_90;
+	-ms-animation-iteration-count: infinite;
+	-ms-animation-direction: alternate;
+	animation-duration: 2s;
+	animation-name: rot0_90;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 .turned90 {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 .turned180 {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
 }
 
 .turned270 {
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
 }
 
 
@@ -129,12 +132,13 @@ body {
 ****/
 
 #game_board {
-    position: relative;
-    left: 22ex;
-    width: 100ex;
-    height: 100ex;
-    border: 1px solid #000099;
-    background-color: #999999;
+	position: relative;
+	left: 22ex;
+	width: 100ex;
+	height: 100ex;
+	border: 1px solid #000099;
+	border-radius: 1%;
+	background-color: #999999;
 }
 
 
@@ -143,22 +147,22 @@ body {
 ****/
 
 @-webkit-keyframe rot0_90 {
-    from {
-        -webkit-transform: rotate(0deg);
-    }
-    
-    to {
-        -webkit-transform: rotate(90deg);
-    }
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	
+	to {
+		-webkit-transform: rotate(90deg);
+	}
 }
 
 
 @keyframe rot0_90 {
-    from {
-        transform: rotate(0deg);
-    }
-    
-    to {
-        transform: rotate(90deg);
-    }
+	from {
+		transform: rotate(0deg);
+	}
+	
+	to {
+		transform: rotate(90deg);
+	}
 }
