@@ -1,0 +1,49 @@
+/****
+* \file QrCodePainter.css
+* \brief Styles for the QrCodePainter application
+* \author Trevor Ratliff
+* \date 2012-03-13
+* 
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+*       2012-03-13  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  file 
+*           creation  |
+****/
+
+body {
+    font-family: verdana;
+    font-size: 1ex;
+}
+
+label, input {
+    font: inherit;
+    font-size: 3ex;
+}
+
+#content {
+    width: 43ex;
+    margin: 20ex;
+    border: 1px solid #000000;
+    /*border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;*/
+}
+
+.inline {
+    display: inline-block;
+}
+
+.module {
+    width: 2ex;
+    height: 2ex;
+    float: left;
+    /*border-top: 1px solid #000000;
+    border-left: 1px solid #000000;*/
+}
+
+.on {
+    background-color: #000000;
+}
+
+.spacer {
+    display: inline-block;
+    width: 5ex;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<!--
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+-->
+
+<!--
+//====
+///
+/// \file 
+/// \brief 
+/// \author 
+/// \date 
+//  
+//  History:  Date  |  Programmer  |  Contact  |  Description  |
+//====
+-->
+
+<html>
+    <head>
+        <!--link rel="alternate stylesheet" type="text/css" href="styles/QrCodePainter.css" title="alternate" /-->
+        <link rel="stylesheet" type="text/css" href="styles/QrCodePainter.css" title="main" />
+        
+        <script type="text/javascript" src="scripts/QrCodePainter.js"></script>
+        
+        <script type="text/javascript">
+            <!--
+            //----
+            // PUT SCRIPT HERE
+            //----
+            
+            //-->
+        </script>
+        
+        <noscript>
+            Turning JavaScript on in your browser makes for a much better experience!
+        </noscript>
+    </head>
+    
+    <body onload="GenerateQrTemplate(document.getElementById('txtVersion').value);">
+        <div id="controls">
+            <div>
+                <div class="inline">
+                    <label id="lblVersion" for="txtVersion">Version:</label>
+                    <input type="text" id="txtVersion" value="3" onblur="ValidateInt(this, 1, 40);" />
+                </div>
+                <div class="spacer"></div>
+                <div class="inline">
+                    <label id="lblModuleSize" for="txtModuleSize">Module Size:</label>
+                    <input type="text" id="txtModuleSize" value="5" onblur="ValidateInt(this, 1, 20);" />
+                    <input type="button" id="btnSubmit" value="Submit" onclick="UpdateForm();" />
+                </div>
+            </div>
+        </div>
+        <div id="content"></div>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+Retrieved from:
+    http://opengameart.org/content/lpc-male-sheets
+
+Retrieval Date: 2013-06-07
+
+Attribution: 
+    Walkcycle, Hurt, Slash, and Spellcast animations by Stephen Challener (AKA Redshrike), 
+    Shooting and Thrusting animations by Johannes Sjölund, 
+    Male and female orc heads by MadMarcel and based on Stephen Challener's Sinbad, 
+    Tanned, Tanned2, and Dark colors by MadMarcel, other credit to Matthew Krohn.
+
+    Sinbad was originally designed by Zi Ye, then modified by Stephen Challener.
+
+External URL:
+    https://github.com/makrohn/Universal-LPC-spritesheet
+    http://gaurav0.koding.com/Universal-LPC-Spritesheet-Character-Generator/
+    

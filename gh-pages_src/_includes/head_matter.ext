@@ -1,6 +1,7 @@
 <meta charset="utf-8">
 <link rel="alternate stylesheet" type="text/css" href="{{ site.url }}styles/alt1.css" title="alternate" />
 <link rel="stylesheet" type="text/css" href="{{ site.url }}styles/other.css" />
+<link rel="icon" type="image/x-icon" href="{{ site.url }}trevor_monogram.ico" />
 
 <!--[if lte IE 9]>
 <style type="text/css">
