@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Time Budgetter</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="Important">Important</string>
+    <string name="NotImportant">Not Important</string>
+    <string name="Urgent">\n\nU\nr\ng\ne\nn\nt</string>
+    <string name="NotUrgent">N\no\nt\n\nU\nr\ng\ne\nn\nt\n\n</string>
+    <string name="action_settings">Settings</string>
+</resources>
