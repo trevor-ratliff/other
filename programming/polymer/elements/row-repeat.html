@@ -1,0 +1,39 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="row-repeate">
+	<style>
+		/* CSS rules for your element */
+	:host {
+	}
+	</style>
+	<template>
+		<!-- local DOM for your element -->
+
+		<div class="repeater">
+			{{id}} has {{count}} rows<br>
+			<content></content>
+		</div> <!-- data bindings in local DOM -->
+	</template>
+</dom-module>
+
+<script>
+	// element registration
+	Polymer({
+		is: "row-repeate",
+
+		// add properties and methods on the element's prototype
+
+		properties: {
+			// declare properties for the element's public API
+			count: {
+				type: Int,
+				value: 0
+			},
+		
+			current: {
+				type: Int,
+				value: 0
+			}
+		}
+	});
+</script>
