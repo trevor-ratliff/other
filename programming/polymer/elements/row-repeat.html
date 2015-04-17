@@ -1,39 +1,259 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<dom-module id="row-repeate">
+<dom-module id="row-repeat">
 	<style>
 		/* CSS rules for your element */
 	:host {
+		font-family: verdana, arial, sans-serif;
+	}
+	.no-show {
+		display: none;
+	}
+	.repeater {
+		background-color: #000088;
+		display: block;
+		left: 1.5em;
+		padding: 1ex;
+		position: relative;
+		width: calc(100% - 4em);
+	}
+	#controls {
+		line-height: 0px;
+		float: right;
+	}
+	#controls button {
+		font-size: 0.75em;
+		font-weight: 700;
+		line-height: 0.9em;
+		letter-spacing: 0em;
+		padding: 0.2em;
+		width: 1.5em;
+		word-spacing: 0em;
 	}
 	</style>
 	<template>
-		<!-- local DOM for your element -->
-
-		<div class="repeater">
-			{{id}} has {{count}} rows<br>
-			<content></content>
-		</div> <!-- data bindings in local DOM -->
+		<div id="container">
+			<div class="no-show">
+				Repeater <span>{{id}}</span> has <span>{{count}}</span> rows
+			</div>
+			<div id="controls">
+				<button id="btnAdd" type="button">+</button><br>
+				<button id="btnSub" type="button">-</button>
+			</div>
+			<div id="repeater" class="re-peater">
+				<content id$="{{contentid}}"></content>
+			</div>
+			<div id="row_source" class="no-show"></div>
+		</div>
 	</template>
 </dom-module>
 
-<script>
+<script type="text/javascript">
 	// element registration
 	Polymer({
-		is: "row-repeate",
+		is: "row-repeat",
 
 		// add properties and methods on the element's prototype
 
+		//hostAttributes: {
 		properties: {
 			// declare properties for the element's public API
 			count: {
-				type: Int,
-				value: 0
+				type: Number,
+				value: 0,
+				notify: true,
+				observer: 'countChanged'
 			},
 		
-			current: {
-				type: Int,
-				value: 0
+			contentid: {
+				type: String,
+				value: "content"
+			},
+
+			id: String,
+		},
+
+		ready: function () {
+			//----
+			// set element references
+			//----
+			var lintCount = this.getAttribute('count').value;
+			var row = Polymer.dom(this).children[0];
+			var repeater = this.$.repeater;
+			var source = this.$.row_source;
+			
+			if (!!console && !!console.log) console.log(row);
+			if (!!console && !!console.log) console.log(repeater);
+			if (!!console && !!console.log) console.log(source);
+        
+			//----
+			// remove the original row and append it to the shadow dom
+			//   so it can be retrieved later
+			//----
+			Polymer.dom(this).removeChild(row)
+			source.appendChild(row);
+
+			//----
+			// loop through and make new rows unless count == 1
+			//----
+			//if (this.count !== 1) {
+				for (var lintII = 0; lintII < this.count; lintII++) {
+            		var lobjNew = source.children[0].cloneNode(true);
+            		lobjNew.id += "_" + lintII;
+
+					/*//----
+					// get all child elements with ids and names
+					//----
+					var larrIds = lobjNew.querySelectorAll('*[id], *[name]');
+
+					for (var lintNN = 0; lintNN < larrIds.length; lintNN++) {
+						if (typeof larrIds[lintNN].id !== "undefined") {
+							larrIds[lintNN].id += "_" + lintII;
+						}
+
+						if (typeof larrIds[lintNN].name !== "undefined") {
+							larrIds[lintNN].name += "_" + lintII;
+						}
+					}*/
+					this.fixId(lobjNew, lintII);
+
+            		Polymer.dom(this).appendChild(lobjNew);
+            		lobjNew = null;
+          		}
+        	//}
+
+			//----
+			// flush changes
+			//----
+			Polymer.dom.flush();
+
+			//----
+			// add events to buttons
+			//----
+			this.$.btnAdd.target = this.id;
+			this.$.btnAdd.addEventListener('click', this.addOne, true);
+
+			this.$.btnSub.target = this.id;
+			this.$.btnSub.addEventListener('click', this.subOne, true);
+        
+	        return;
+		},
+
+		countChanged: function (vstrNew, vstrOld) {
+        	if (!!console && !!console.log) console.log('countChanged: '+ 
+					vstrNew +', '+ vstrOld +' -- '+ this.count);
+        
+        	//----
+        	// test for adding or subtracting
+        	//----
+			if (typeof vstrOld !== "undefined") {
+				if (vstrOld < vstrNew) {
+		          	//----
+					// add a row
+		          	//----
+					try {
+						var lintCount = (parseInt(this.count) - 1);
+						var lobjAdd = this.$.row_source.children[0].cloneNode(true);
+						lobjAdd.id += '_' + lintCount.toString();
+						this.fixId(lobjAdd, lintCount);
+						Polymer.dom(this).appendChild(lobjAdd);
+						lobjNew = null;
+					} catch (err) {
+						if (!!console && !!console.log) console.log(
+							'Could not add the row.\n' + err.toString());
+					}
+          
+	        	} else {
+	          		//----
+					// remove a row
+	          		//----
+					try {
+						var lobjRemove = Polymer.dom(this).children[Polymer.dom(this).children.length-1];
+						Polymer.dom(this).removeChild(lobjRemove);
+						lobjRemove = null;
+					} catch (err) {
+						if (!!console && !!console.log) console.log(
+							'Could not subtract the row.\n' + err.toString());
+					}
+	        	}
 			}
+        
+        	return;
+		},
+
+		
+		//====
+		/// @fn addOne(e)
+		/// @brief adds a row to the specified element
+		/// @author Trevor Ratliff
+		/// @param e -- event arguments
+		/// @return int -- new count of rows
+		//====
+		addOne: function (e) {
+			if(!!console && !!console.log) console.log('add a row to ' + 
+				this.target);
+			var lobjElm = Polymer.dom(document).querySelector('#' + this.target);
+			lobjElm.count++;
+			return lobjElm.count;
+		},
+
+
+		//====
+		/// @fn subOne(e)
+		/// @brief subtracts a row of the specified element
+		/// @author Trevor Ratliff
+		/// @param e -- event arguments
+		/// @return int -- new count of rows
+		//====
+		subOne: function (e) {
+			if(!!console && !!console.log) console.log('subtract a row from ' + 
+				this.target);
+			var lobjElm = Polymer.dom(document).querySelector('#' + this.target);
+ 				if (lobjElm.count >= 1) {
+		 			lobjElm.count--;
+				}
+			return lobjElm.count;
+		},
+
+
+		//====
+		/// @fn fixId (vobjParent, vintCount)
+		/// @brief appends the row identifier to child elements of vobjParent
+		/// @author Trevor Ratliff
+		/// @date 2015-04-17
+		/// @param vobjParent -- parent element
+		/// @return null
+		//  
+		//  Definitions:
+		//      larrIds -- a node array of child elements with id or name 
+		//			attributes
+		//  
+		/// @verbatim
+		/// History:  Date  |  Programmer  |  Contact  |  Description  |
+		///     2015-04-17  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
+		///         function creation  |
+		/// @endverbatim
+		//====
+		fixId: function (vobjParent, vintCount) {	//returns null
+			var larrIds = null;
+
+			//----
+			// get all child elements with ids and names
+			//----
+			larrIds = vobjParent.querySelectorAll('*[id], *[name]');
+
+			for (var lintNN = 0; lintNN < larrIds.length; lintNN++) {
+				if (typeof larrIds[lintNN].id !== "undefined") {
+					larrIds[lintNN].id += "_" + vintCount;
+				}
+
+				if (typeof larrIds[lintNN].name !== "undefined") {
+					larrIds[lintNN].name += "_" + vintCount;
+				}
+			}
+
+			return;
 		}
+
 	});
 </script>
