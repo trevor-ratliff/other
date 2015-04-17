@@ -1,0 +1,65 @@
+/****
+* @file 
+* @brief 
+* @author 
+* @date 
+* 
+* @verbatim
+* History:  Date  |  Programmer  |  Contact  |  Description  |
+* @endverbatim
+****/
+
+body {
+	font-family: verdana, arial, sans-serif;
+	font-size: 15px;
+    padding: 2em;
+}
+
+body p {
+	font-size: 1.4em;
+}
+
+body>ul {
+	font-size: 1.2em;
+}
+
+row-repeat {
+	background-color: #000080;
+	color: #f0f080;
+	display: block;
+	padding: 1em;
+	margin-bottom: 4em;
+}
+
+textarea {
+	height: 1em;
+	width: 15em;
+}
+
+.r-row {
+	background-color: #880000;
+	display: block;
+	left: 1.5em;
+	margin-bottom: 1em;
+	position: relative;
+	padding: 1ex;
+	width: calc(100% - 4em);
+}
+
+.r-cell {
+	border-radius: 5px;
+	padding: 2px;
+	display: inline-block;
+	background-color: #808080;
+}
+
+.w50 {
+	margin: 0em 0em 0em 1.2em;
+	width: calc(50% - 2em);
+}
+
+.w25 {
+	margin: 0em 0em 0em 1.2em;
+	width: calc(25% - 2em);
+}
+

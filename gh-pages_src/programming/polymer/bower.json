@@ -1,0 +1,30 @@
+{
+  "name": "polymerLearning",
+  "version": "0.0.0",
+  "homepage": "https://github.com/trevor-ratliff/other/programming/polymer",
+  "authors": [
+    "Trevor Ratliff <trevor.w.ratliff@gmail.com>"
+  ],
+  "description": "learning web components with polymer",
+  "main": "polymerLearning.html",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "polymer",
+    "learning",
+    "web",
+    "components"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#0.8.0-rc.2"
+  }
+}

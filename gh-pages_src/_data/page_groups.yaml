@@ -65,6 +65,10 @@
       url: 'programming/MultiMazeGen/index.html'
       description: "visualization of (eventually multiple) maze generating algorithms"
       window: 'new'
+    - name: WebComponents
+      url: 'programming/polymer/learningPolymer.html'
+      description: "a test web component via polymer.js"
+      window: 'new'
 - name: Web
   url: 'web/'
   description: 'a few samples of my web code'
