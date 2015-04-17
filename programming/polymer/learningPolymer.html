@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<!--
+//====
+/// @file learningPolymer.html
+/// @brief a learning excersize for web components via polymer
+/// @author Trevor Ratliff
+/// @date 2015-04-15
+//  
+//  Definitions:
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+/// 	2015-04-15  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |  
+/// 		file creation  |
+/// @endverbatim
+//====
+-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="styles/learningPolymer.css" />
+		
+		<script type="text/javascript" src="scripts/learningPolymer.js"></script>
+		
+		<!--  Web Components stuff  -->
+		<!-- <script type="text/javascript">Polymer = {dom: 'shadow'};</script> -->
+		<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		<link rel="import" href="elements/row-repeat.html">
+	</head>
+	
+	<body>
+		<p>
+			This is a test of web components using the polymer.js library. &nbsp;
+			The custom element is a row repeater - it will allow you to duplicate whatever content is placed inside updating any ids with a row reference.
+			<br><br>
+			The row-repeat tag can be configured with 3 attributes:
+		</p>
+		<ul>
+			<li>contentid -- allows you to set the id of the elements content tag in the shadow dom</li>
+			<li>count -- sets the initial number of rows for the element</li>
+			<li>id -- sets the id for the element (important for internal references)</li>
+		</ul>
+		<br>
+		<br>
+		<row-repeat id="rrp" contentid="test" count=3>
+			<div class="r-row">
+				<div class="r-cell w25">
+					wee: <input type="text" id="txtfirst">
+				</div>
+				<div class="r-cell w25">
+					hoo: 
+					<input type="radio" id="rdoHoo" name="rdoTest">
+					no hoo:
+					<input type="radio" id="rdoWork" name="rdoTest">
+				</div>
+				<div class="r-cell w25">
+					hee: <input type="text" id="txtSecond">
+				</div>
+				<div class="r-cell w25">
+					<textarea id="txtLong">woo</textarea>
+				</div>
+			</div>
+		</row-repeat>
+		<!-- <button type="button" onclick="addOne('rrp');">+</button>
+		<button type="button" onclick="subOne('rrp');">-</button> -->
+		
+		<row-repeat id="rrp2" contentid="song" count="1">
+			<p>
+				Tong tong tong tong<br>
+				Alimango sa dagat<br>
+				Mataba at masarap<br>
+				Mahirap huliin<br>
+				Sapakat nanganganggat ... ulit
+			</p>
+		</row-repeat>
+	</body>
+</html>
