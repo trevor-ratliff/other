@@ -1,0 +1,103 @@
+<!-- modified from http://www.html5rocks.com/en/tutorials/webcomponents/customelements/ -->
+<template id="__test_template">
+	<style>
+		p { 
+			background-color: hsl(207, 100%, 33%);
+			border: 5px solid #000000;
+			border-radius: 10px;
+			color: hsl(27, 100%, 66%);
+			display: block;
+			font-weight: 800;
+			padding: 1ex;
+			/* width: calc(50% - 4em); */
+		}
+		.bob {
+			background-color: hsl(27, 100%, 66%);
+			color: hsl(207, 100%, 33%);
+		}
+		.tab {
+			display: inline-block;
+			width: 5em;
+		}
+	</style>
+	<p>
+	id: <span id="myId"></span><span class="tab"> </span>
+	type: <span id="myType"></span><!-- <span class="tab"> </span> -->
+	</p>
+</template>
+
+<script>
+var proto = Object.create(HTMLElement.prototype, {
+	createdCallback: {
+		value: function() {
+			var t = document.querySelector(
+				'link[href$="web_component_by_hand.html"]').import
+				.querySelector('#__test_template');
+			var clone = document.importNode(t.content, true);
+			var myId = clone.querySelector('#myId');
+			var myType = clone.querySelector('#myType');
+
+			myId.innerText = this.id;
+			myType.innerText = this.tagName;
+
+			this.createShadowRoot().appendChild(clone);
+
+			this.addEventListener('mouseover', this.myMouse);
+			this.addEventListener('mouseout', this.myMouse);
+		}
+	},
+	attachedCallback: {
+		value: function () {
+			if (!!console && !!console.log) console.log(
+				'an element of type "' + this.tagName + 
+				'" was attached {id: "' + this.id + '"}.');
+		}
+	},
+	detachedCallback: {
+		value: function () {
+			if (!!console && !!console.log) console.log(
+				'an element of type "' + this.tagName + 
+				'" was detached {id: "' + this.id + '"}.');
+		}
+	},
+	attributeChangedCallback: {
+		value: function (vstrAttribute, vstrOld, vstrNew) {
+			if (!!console && !!console.log) console.log(
+				'an element of type "' + this.tagName + 
+				'" had the attribute "' + vstrAttribute + 
+				'" changed from "' + vstrOld + 
+				'" to "' + vstrNew + 
+				'" {id: "' + this.id + '"}.');
+
+			//----
+			// do various things based on changed attribute
+			//----
+			switch (vstrAttribute) {
+				case 'id':
+					var lobjId = this.shadowRoot.querySelector('#myId');
+					lobjId.innerText = vstrNew;
+					break;
+
+				default:
+					break;
+			}
+		}
+	},
+	myMouse: {
+		value: function (e) {
+			var larrP = this.shadowRoot.querySelectorAll('p');
+
+			for (var lintII = 0; lintII < larrP.length; lintII++) {
+				if (larrP[lintII].className === "") {
+					larrP[lintII].className = "bob";
+				} else {
+					larrP[lintII].className = "";
+				}
+			}
+		}
+	}
+});
+
+document.registerElement('web-component-by-hand', {prototype: proto});
+</script>
+
