@@ -28,6 +28,7 @@
 		<!-- <script type="text/javascript">Polymer = {dom: 'shadow'};</script> -->
 		<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 		<link rel="import" href="elements/row-repeat.html">
+		<link rel="import" href="elements/web_component_by_hand.html">
 	</head>
 	
 	<body>
@@ -44,20 +45,21 @@
 		</ul>
 		<br>
 		<br>
-		<row-repeat id="rrp" contentid="test" count=3>
-			<div class="r-row">
+		<row-repeat id="rrp" contentid="test" count=3 class="round-corners">
+			<div class="r-row round-corners">
 				<div class="r-cell w25">
 					wee: <input type="text" id="txtfirst">
 				</div>
-				<div class="r-cell w25">
+				<div class="r-cell w50">
 					hoo: 
 					<input type="radio" id="rdoHoo" name="rdoTest">
 					no hoo:
 					<input type="radio" id="rdoWork" name="rdoTest">
+					<web-component-by-hand id="wchTest"></web-component-by-hand>
 				</div>
-				<div class="r-cell w25">
+				<!-- <div class="r-cell w25">
 					hee: <input type="text" id="txtSecond">
-				</div>
+					</div> -->
 				<div class="r-cell w25">
 					<textarea id="txtLong">woo</textarea>
 				</div>
@@ -66,14 +68,20 @@
 		<!-- <button type="button" onclick="addOne('rrp');">+</button>
 		<button type="button" onclick="subOne('rrp');">-</button> -->
 		
-		<row-repeat id="rrp2" contentid="song" count="1">
+		<row-repeat id="rrp2" contentid="song" count="1" class="round-corners">
 			<p>
 				Tong tong tong tong<br>
+				Pakitong-kitong<br>
 				Alimango sa dagat<br>
 				Mataba at masarap<br>
-				Mahirap huliin<br>
-				Sapakat nanganganggat ... ulit
+				Mahirap hulihin<br>
+				Sapagkat nangangagat ... ulit
 			</p>
 		</row-repeat>
+
+		<h2>Hand built element</h2>
+
+		<web-component-by-hand id="test"></web-component-by-hand>
+		<web-component-by-hand id="test2"></web-component-by-hand>
 	</body>
 </html>

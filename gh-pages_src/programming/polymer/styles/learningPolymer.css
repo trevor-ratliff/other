@@ -36,6 +36,13 @@ textarea {
 	width: 15em;
 }
 
+web-component-by-hand {
+	box-sizing: border-box;
+	display: inline-block;
+	margin-left: 2em;
+	width: calc(50% - 4em);
+}
+
 .r-row {
 	background-color: #880000;
 	display: block;
@@ -51,6 +58,14 @@ textarea {
 	padding: 2px;
 	display: inline-block;
 	background-color: #808080;
+}
+
+.r-cell>web-component-by-hand {
+	width: initial;
+}
+
+.round-corners {
+	border-radius: 9px;
 }
 
 .w50 {
