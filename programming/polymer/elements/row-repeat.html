@@ -82,9 +82,9 @@ Polymer({
 		var repeater = this.$.repeater;
 		var source = this.$.row_source;
 
-		if (!!console && !!console.log) console.log(row);
+		/* if (!!console && !!console.log) console.log(row);
 		if (!!console && !!console.log) console.log(repeater);
-		if (!!console && !!console.log) console.log(source);
+		if (!!console && !!console.log) console.log(source); */
 
 		//----
 		// remove the original row and append it to the shadow dom
@@ -101,20 +101,9 @@ Polymer({
 			var lobjNew = source.children[0].cloneNode(true);
 			lobjNew.id += "_" + lintII;
 
-			/*//----
-			// get all child elements with ids and names
 			//----
-			var larrIds = lobjNew.querySelectorAll('*[id], *[name]');
-
-			for (var lintNN = 0; lintNN < larrIds.length; lintNN++) {
-			if (typeof larrIds[lintNN].id !== "undefined") {
-			larrIds[lintNN].id += "_" + lintII;
-			}
-
-			if (typeof larrIds[lintNN].name !== "undefined") {
-			larrIds[lintNN].name += "_" + lintII;
-			}
-			}*/
+			// fix all child element's ids and names
+			//----
 			this.fixId(lobjNew, lintII);
 
 			Polymer.dom(this).appendChild(lobjNew);

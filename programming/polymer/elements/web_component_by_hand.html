@@ -1,6 +1,6 @@
 <!-- modified from http://www.html5rocks.com/en/tutorials/webcomponents/customelements/ -->
 <template id="__test_template">
-	<style>
+	<style scope="web-component-by-hand">
 		p { 
 			background-color: hsl(207, 100%, 33%);
 			border: 5px solid #000000;
@@ -20,7 +20,7 @@
 			width: 5em;
 		}
 	</style>
-	<p>
+	<p style-scope="web-component-by-hand">
 	id: <span id="myId"></span><span class="tab"> </span>
 	type: <span id="myType"></span><!-- <span class="tab"> </span> -->
 	</p>
@@ -37,8 +37,8 @@ var proto = Object.create(HTMLElement.prototype, {
 			var myId = clone.querySelector('#myId');
 			var myType = clone.querySelector('#myType');
 
-			myId.innerText = this.id;
-			myType.innerText = this.tagName;
+			myId.innerHTML = this.id;
+			myType.innerHTML = this.tagName;
 
 			this.createShadowRoot().appendChild(clone);
 
@@ -75,7 +75,7 @@ var proto = Object.create(HTMLElement.prototype, {
 			switch (vstrAttribute) {
 				case 'id':
 					var lobjId = this.shadowRoot.querySelector('#myId');
-					lobjId.innerText = vstrNew;
+					lobjId.innerHTML = vstrNew;
 					break;
 
 				default:
