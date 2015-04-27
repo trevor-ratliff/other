@@ -7,7 +7,7 @@
 			font-family: verdana, arial, sans-serif;
 		}
 		.no-show {
-			display: none;
+			display: none !important;
 		}
 		.repeater {
 			background-color: #000088;
@@ -82,10 +82,6 @@ Polymer({
 		var repeater = this.$.repeater;
 		var source = this.$.row_source;
 
-		if (!!console && !!console.log) console.log(row);
-		if (!!console && !!console.log) console.log(repeater);
-		if (!!console && !!console.log) console.log(source);
-
 		//----
 		// remove the original row and append it to the shadow dom
 		//   so it can be retrieved later
@@ -94,33 +90,20 @@ Polymer({
 			source.appendChild(row);
 
 		//----
-		// loop through and make new rows unless count == 1
+		// loop through and make new rows
 		//----
-		//if (this.count !== 1) {
 		for (var lintII = 0; lintII < this.count; lintII++) {
 			var lobjNew = source.children[0].cloneNode(true);
 			lobjNew.id += "_" + lintII;
 
-			/*//----
-			// get all child elements with ids and names
 			//----
-			var larrIds = lobjNew.querySelectorAll('*[id], *[name]');
-
-			for (var lintNN = 0; lintNN < larrIds.length; lintNN++) {
-			if (typeof larrIds[lintNN].id !== "undefined") {
-			larrIds[lintNN].id += "_" + lintII;
-			}
-
-			if (typeof larrIds[lintNN].name !== "undefined") {
-			larrIds[lintNN].name += "_" + lintII;
-			}
-			}*/
+			// fix all child element's ids and names
+			//----
 			this.fixId(lobjNew, lintII);
 
 			Polymer.dom(this).appendChild(lobjNew);
 			lobjNew = null;
 		}
-		//}
 
 		//----
 		// flush changes
@@ -193,6 +176,14 @@ Polymer({
 		if(!!console && !!console.log) console.log('add a row to ' + 
 				this.target);
 		var lobjElm = Polymer.dom(document).querySelector('#' + this.target);
+		//----
+		// if count = 0 show btnSub
+		//----
+		if (lobjElm.count < 1) {
+			var lobjSub = lobjElm.$.btnSub;
+			lobjSub.className = lobjSub.className.replace(' no-show', '');
+		}
+
 		lobjElm.count++;
 		return lobjElm.count;
 	},
@@ -212,6 +203,15 @@ Polymer({
 		if (lobjElm.count >= 1) {
 			lobjElm.count--;
 		}
+
+		//----
+		// hide btnSub
+		//----
+		if (lobjElm.count < 1) {
+			var lobjSub = lobjElm.$.btnSub;
+			lobjSub.className += ' no-show';
+		}
+
 		return lobjElm.count;
 	},
 

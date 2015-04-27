@@ -14,6 +14,9 @@
 ///			file creation  |
 ///		2015-04-17  |  Trevor Ratliff  | trevor.w.ratliff@gmail.com  |
 ///			adding addOne and subOne functions  |
+///		2015-04-27  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
+///			these functions aren't used since I put the add/sub buttons in the 
+///			row-repeat element  |
 /// @endverbatim
 //====
 

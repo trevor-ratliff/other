@@ -1,7 +1,31 @@
 <!-- modified from http://www.html5rocks.com/en/tutorials/webcomponents/customelements/ -->
+<!-- this style element is a backup to the one in the template ...
+		that one doesn't seem to work in some browsers -->
+<style scope="web-component-by-hand">
+	web-component-by-hand p { 
+		background-color: hsl(207, 100%, 33%);
+		border: 5px solid #000000;
+		border-radius: 10px;
+		color: hsl(27, 100%, 66%);
+		display: block;
+		font-weight: 800;
+		padding: 1ex;
+		/* width: calc(50% - 4em); */
+	}
+	web-component-by-hand .bob {
+		background-color: hsl(27, 100%, 66%);
+		color: hsl(207, 100%, 33%);
+	}
+	web-component-by-hand .tab {
+		display: inline-block;
+		width: 5em;
+	}
+</style>
+
 <template id="__test_template">
+	<!-- I'm not sure if :host is a polymer thing or a web component thing -->
 	<style>
-		p { 
+		:host p { 
 			background-color: hsl(207, 100%, 33%);
 			border: 5px solid #000000;
 			border-radius: 10px;
@@ -11,22 +35,23 @@
 			padding: 1ex;
 			/* width: calc(50% - 4em); */
 		}
-		.bob {
+		:host .bob {
 			background-color: hsl(27, 100%, 66%);
 			color: hsl(207, 100%, 33%);
 		}
-		.tab {
+		:host .tab {
 			display: inline-block;
 			width: 5em;
 		}
 	</style>
-	<p>
+	<p style-scope="web-component-by-hand">
 	id: <span id="myId"></span><span class="tab"> </span>
 	type: <span id="myType"></span><!-- <span class="tab"> </span> -->
 	</p>
 </template>
 
 <script>
+var importDoc = document.currentScript.ownerDocument; // imported document ref
 var proto = Object.create(HTMLElement.prototype, {
 	createdCallback: {
 		value: function() {
@@ -37,8 +62,8 @@ var proto = Object.create(HTMLElement.prototype, {
 			var myId = clone.querySelector('#myId');
 			var myType = clone.querySelector('#myType');
 
-			myId.innerText = this.id;
-			myType.innerText = this.tagName;
+			myId.innerHTML = this.id;
+			myType.innerHTML = this.tagName;
 
 			this.createShadowRoot().appendChild(clone);
 
@@ -75,7 +100,7 @@ var proto = Object.create(HTMLElement.prototype, {
 			switch (vstrAttribute) {
 				case 'id':
 					var lobjId = this.shadowRoot.querySelector('#myId');
-					lobjId.innerText = vstrNew;
+					lobjId.innerHTML = vstrNew;
 					break;
 
 				default:
