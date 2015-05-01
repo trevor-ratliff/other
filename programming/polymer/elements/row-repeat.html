@@ -135,12 +135,33 @@ Polymer({
 				// add a row
 				//----
 				try {
+					//----
+					// set 0 based id
+					//----
 					var lintCount = (parseInt(this.count) - 1);
+
+					//----
+					// clone row_source
+					//----
 					var lobjAdd = this.$.row_source.children[0].cloneNode(true);
+
+					//----
+					// fix ids
+					//----
 					lobjAdd.id += '_' + lintCount.toString();
 					this.fixId(lobjAdd, lintCount);
+
+					//----
+					// append row
+					//----
 					Polymer.dom(this).appendChild(lobjAdd);
 					lobjNew = null;
+
+					//----
+					// set elements count attribute to new count
+					//----
+					this.setAttribute('count', this.count);
+
 				} catch (err) {
 					if (!!console && !!console.log) console.log(
 							'Could not add the row.\n' + err.toString());
@@ -151,9 +172,22 @@ Polymer({
 				// remove a row
 				//----
 				try {
+					//----
+					// get the last row
+					//----
 					var lobjRemove = Polymer.dom(this).children[Polymer.dom(this).children.length-1];
+
+					//----
+					// remove it
+					//----
 					Polymer.dom(this).removeChild(lobjRemove);
 					lobjRemove = null;
+
+					//----
+					// set elements count attribute to new count
+					//----
+					this.setAttribute('count', this.count);
+
 				} catch (err) {
 					if (!!console && !!console.log) console.log(
 							'Could not subtract the row.\n' + err.toString());
@@ -171,11 +205,35 @@ Polymer({
 	/// @author Trevor Ratliff
 	/// @param e -- event arguments
 	/// @return int -- new count of rows
+	//  
+	//  Definitions:
+	//      lobjElm -- reference to the parent row-repeat element
+	//  
+	/// @verbatim
+	/// History:  Date  |  Programmer  |  Contact  |  Description  |
+	///     2015-04-17  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
+	///         function creation  |
+	/// @endverbatim
 	//====
 	addOne: function (e) {
+		var lobjElm = document.querySelector('#' + this.target);
+
+		//----
+		// if the object wasn't found try another way
+		//----
+		if (!lobjElm) {
+			lobjElm = this;
+			while (lobjElm != null || lobjElm.nodeName !== "ROW-REPEAT") { 
+				lobjElm = lobjElm.parentNode; 
+			}
+		}
+
+		//----
+		// debugging stuff
+		//----
 		if(!!console && !!console.log) console.log('add a row to ' + 
-				this.target);
-		var lobjElm = Polymer.dom(document).querySelector('#' + this.target);
+				lobjElm.id + ' -- (target = "' + this.target + '")');
+
 		//----
 		// if count = 0 show btnSub
 		//----
@@ -184,6 +242,9 @@ Polymer({
 			lobjSub.className = lobjSub.className.replace(' no-show', '');
 		}
 
+		//----
+		// increment the row-repeat count
+		//----
 		lobjElm.count++;
 		return lobjElm.count;
 	},
@@ -195,15 +256,42 @@ Polymer({
 	/// @author Trevor Ratliff
 	/// @param e -- event arguments
 	/// @return int -- new count of rows
+	//  
+	//  Definitions:
+	//      lobjElm -- reference to the parent row-repeat element
+	//  
+	/// @verbatim
+	/// History:  Date  |  Programmer  |  Contact  |  Description  |
+	///     2015-04-17  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
+	///         function creation  |
+	/// @endverbatim
 	//====
 	subOne: function (e) {
+		var lobjElm = document.querySelector('#' + this.target);
+
+		//----
+		// if the row-repeat element wasn't found try another way
+		//----
+		if (!lobjElm) {
+			lobjElm = this;
+			while (lobjElm != null || lobjElm.nodeName !== "ROW-REPEAT") { 
+				lobjElm = lobjElm.parentNode; 
+			}
+		}
+
+		//----
+		// debugging stuff
+		//----
 		if(!!console && !!console.log) console.log('subtract a row from ' + 
-				this.target);
-		var lobjElm = Polymer.dom(document).querySelector('#' + this.target);
+				lobjElm.id);
+
+		//----
+		// decrement the row-repeat count if the count is >= 1
+		//----
 		if (lobjElm.count >= 1) {
 			lobjElm.count--;
 		}
-
+		
 		//----
 		// hide btnSub
 		//----
