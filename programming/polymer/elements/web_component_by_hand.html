@@ -51,13 +51,14 @@
 </template>
 
 <script>
-var importDoc = document.currentScript.ownerDocument; // imported document ref
+//~ var importDoc = document.currentScript.ownerDocument; // imported document ref
 var proto = Object.create(HTMLElement.prototype, {
 	createdCallback: {
 		value: function() {
 			var t = document.querySelector(
 				'link[href$="web_component_by_hand.html"]').import
 				.querySelector('#__test_template');
+			//~ var t = importDoc.querySelector('#__test_template');	// didn't work
 			var clone = document.importNode(t.content, true);
 			var myId = clone.querySelector('#myId');
 			var myType = clone.querySelector('#myType');
