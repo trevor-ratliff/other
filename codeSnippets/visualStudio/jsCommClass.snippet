@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        Class comment code snippet
+      </Title>
+      <Author>
+        Trevor Ratliff
+      </Author>
+      <Shortcut>commclass</Shortcut>
+    </Header>
+
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ClassName</ID>
+          <Default>className</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Brief</ID>
+          <Default>Description of class</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Author</ID>
+          <Default>Author</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Date</ID>
+          <Default>_</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Email</ID>
+          <Default>_</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JScript">
+        <![CDATA[//====
+        /// @class $ClassName$
+        /// @brief $Brief$
+        /// @author $Author$
+        /// @date $Date$
+        //  
+        //  Properties:
+        //    
+        //
+        //  Methods:
+        //    
+        //  
+        //  Events:
+        //    
+        //  
+        /// @verbatim
+        /// History:  Date  |  Programmer  |  Contact  |  Description  |
+        ///     $Date$  |  $Author$  |  $Email$  |
+        ///         class creation  |
+        /// @endverbatim
+        //====
+        var $ClassName$ = {
+            
+        };]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

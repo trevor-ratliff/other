@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>
+        File comment code snippet
+      </Title>
+      <Author>
+        Trevor Ratliff
+      </Author>
+      <Shortcut>commfile</Shortcut>
+    </Header>
+
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>FileName</ID>
+          <Default>FileName</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Brief</ID>
+          <Default>Description of file</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Author</ID>
+          <Default>Author</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Date</ID>
+          <Default>_</Default>
+        </Literal>
+
+        <Literal>
+          <ID>Email</ID>
+          <Default>_</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="JScript">
+        <![CDATA[//====
+        /// @file $FileName$
+        /// @brief $Brief$
+        /// @author $Author$
+        /// @date $Date$
+        //  
+        //  Definitions:
+        //    
+        //  
+        /// @verbatim
+        /// History:  Date  |  Programmer  |  Contact  |  Description  |
+        ///     $Date$  |  $Author$  |  $Email$  |
+        ///         file creation  |
+        /// @endverbatim
+        //====
+        ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
