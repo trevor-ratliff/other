@@ -22,12 +22,13 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="styles/learningPolymer.css" />
 		
-		<script type="text/javascript" src="scripts/learningPolymer.js"></script>
-		
 		<!--  Web Components stuff  -->
 		<!-- <script type="text/javascript">Polymer = {dom: 'shadow'};</script> -->
-		<!-- <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script> -->
-		<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.min.js"></script><!-- I need shadow dom -->
+		<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+		<!-- <script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.min.js"></script> --><!-- I need shadow dom -->
+
+		<script type="text/javascript" src="scripts/learningPolymer.js"></script>
+		
 		<link rel="import" href="elements/row-repeat.html">
 		<link rel="import" href="elements/web_component_by_hand.html">
 		<title>Learning Web Components via Polymer.js</title>
@@ -47,7 +48,7 @@
 		</ul>
 		<br>
 		<br>
-		<row-repeat id="rrp" contentid="test" count=3 class="round-corners">
+		<row-repeat id="rrp" contentid="test" count=3 class="round-corners no-controls">
 			<div class="r-row round-corners">
 				<div class="r-cell w25">
 					wee: <input type="text" id="txtfirst">
@@ -67,8 +68,10 @@
 				</div>
 			</div>
 		</row-repeat>
-		<!-- <button type="button" onclick="addOne('rrp');">+</button>
-		<button type="button" onclick="subOne('rrp');">-</button> -->
+		<div id="rrp_controls">
+			<button type="button" onclick="addOne('rrp');">+</button>
+			<button type="button" onclick="subOne('rrp');">-</button>
+		</div>
 		
 		<row-repeat id="rrp2" contentid="song" count="1" class="round-corners">
 			<p>

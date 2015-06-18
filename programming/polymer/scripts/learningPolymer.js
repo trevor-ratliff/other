@@ -20,6 +20,8 @@
 /// @endverbatim
 //====
 
+window.Polymer = window.Polymer || {};
+window.Polymer.dom = 'shadow';
 
 //====
 /// @fn addOne (vstrId)
@@ -76,4 +78,43 @@ function subOne (vstrId) {	//returns int
 
 	return lobjRowRepeater.count;
 }
+
+
+//====
+/// @fn window.addEventListener ('load', function ())
+/// @author Trevor Ratliff
+/// @date 2015-06-16
+/// @param 'load', function () -- sets event listeners for the row-repeats
+/// @return null --	
+//  
+//  Definitions:
+//      _ -- _
+//  
+/// @verbatim
+/// History:  Date  |  Programmer  |  Contact  |  Description  |
+///     2015-06-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
+///         function creation  |
+/// @endverbatim
+//====
+window.addEventListener('load', function (e) {
+	var lobjRrp = document.getElementById('rrp');
+	var lobjRrp2 = document.getElementById('rrp2');
+
+	lobjRrp.addEventListener('rpt-loaded', function (e) {
+		if (!!console && !!console.log) console.log('rrp load event');
+	}, false);
+	
+	lobjRrp.addEventListener('rpt-changed', function (e) {
+		if (!!console && !!console.log) console.log('rrp change event');
+	}, false);
+
+	lobjRrp2.addEventListener('rpt-loaded', function (e) {
+		if (!!console && !!console.log) console.log('rrp2 load event');
+	}, false);
+
+	lobjRrp2.addEventListener('rpt-changed', function (e) {
+		if (!!console && !!console.log) console.log('rrp2 change event');
+	}, false);
+	
+}, false);
 

@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".TimeBudgetItemListActivity"
+            android:label="@string/title_timebudgetitem_list"
+            android:parentActivityName=".OverviewActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.studioratliff.www.timebudgetter.OverviewActivity" />
+        </activity>
+        <activity
+            android:name=".TimeBudgetItemDetailActivity"
+            android:label="@string/title_timebudgetitem_detail"
+            android:parentActivityName=".TimeBudgetItemListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.studioratliff.www.timebudgetter.TimeBudgetItemListActivity" />
+        </activity>
     </application>
 
 </manifest>

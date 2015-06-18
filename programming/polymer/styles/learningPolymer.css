@@ -78,3 +78,8 @@ web-component-by-hand {
 	width: calc(25% - 2em);
 }
 
+#rrp_controls {
+	position: relative;
+	top: -4em;
+}
+

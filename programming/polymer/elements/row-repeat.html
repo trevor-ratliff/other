@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<dom-module id="row-repeat">
+<dom-module id="row-repeat" on-load="onload" on-change="onchange">
 	<style>
 		/* CSS rules for your element */
 		:host {
@@ -30,6 +30,10 @@
 			width: 1.5em;
 			word-spacing: 0em;
 		}
+
+		.no-controls #controls {
+			display: none !important;
+		}
 	</style>
 	<template>
 		<div id="container">
@@ -49,13 +53,22 @@
 </dom-module>
 
 <script type="text/javascript">
+var console = console || {};
+
 // element registration
 Polymer({
 	is: "row-repeat",
 
 	// add properties and methods on the element's prototype
 
-	//hostAttributes: {
+	/*hostAttributes: {
+		count: {
+			type: String,
+			notify: true,
+			observer: 'attCountChanged'
+		}
+	},*/
+
 	properties: {
 		// declare properties for the element's public API
 		count: {
@@ -106,6 +119,13 @@ Polymer({
 		}
 
 		//----
+		// test for 'no-controls' class on parent object
+		//----
+		if (this.className.indexOf('no-controls') >= 0) {
+			this.$.container.className += " no-controls";
+		}
+
+		//----
 		// flush changes
 		//----
 		Polymer.dom.flush();
@@ -119,8 +139,25 @@ Polymer({
 		this.$.btnSub.target = this.id;
 		this.$.btnSub.addEventListener('click', this.subOne, true);
 
+		//----
+		// dispatch onload
+		//----
+		this.onload({status: 'complete'});
 		return;
 	},
+
+	/*attCountChanged: function (vstrNew, vstrOld) {
+		if (!!console && !!console.log) {
+			console.log('html attribute changed from "' + vstrOld + '" to "' + 
+				vstrNew + '".');
+		}
+
+		if (vstrNew !== vstrOld && isFinite(vstrNew)) {
+			this.count = parseInt(vstrNew);
+		}
+
+		return;
+	},*/
 
 	countChanged: function (vstrNew, vstrOld) {
 		if (!!console && !!console.log) console.log('countChanged: '+ 
@@ -143,7 +180,9 @@ Polymer({
 					//----
 					// clone row_source
 					//----
-					var lobjAdd = this.$.row_source.children[0].cloneNode(true);
+					var lobjRowSourceChildren = this.$.row_source._lightChildren || this.$.row_source.children;
+					var lobjAdd = lobjRowSourceChildren[0].cloneNode(true);
+					if (!!!lobjAdd) throw ('could not find valid row source children');
 
 					//----
 					// fix ids
@@ -195,6 +234,11 @@ Polymer({
 			}
 		}
 
+		//----
+		// dispatch onchange
+		//----
+		this.onchange();
+		
 		return;
 	},
 
@@ -341,6 +385,30 @@ Polymer({
 		}
 
 		return;
+	},
+
+	//====
+	/// @fn onload ()
+	/// @author Trevor Ratliff
+	/// @date 2015-06-16
+	//  
+	//  Definitions:
+	//      _ -- _
+	//  
+	/// @verbatim
+	/// History:  Date  |  Programmer  |  Contact  |  Description  |
+	///     2015-06-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
+	///         function creation  |
+	/// @endverbatim
+	//====
+	onload: function (vobjDetails) {
+		var lobjDetails = (typeof vobjDetails !== 'undefined') ? vobjDetails : { status: 'loaded' };
+		this.fire('rpt-loaded', lobjDetails);
+	},
+
+
+	onchange: function () {
+		this.fire('rpt-changed', { status: 'changed' });
 	}
 
 });

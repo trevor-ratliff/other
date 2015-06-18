@@ -7,4 +7,6 @@
     <string name="Urgent">\n\nU\nr\ng\ne\nn\nt</string>
     <string name="NotUrgent">N\no\nt\n\nU\nr\ng\ne\nn\nt\n\n</string>
     <string name="action_settings">Settings</string>
+    <string name="title_timebudgetitem_list">TimeBudgetItems</string>
+    <string name="title_timebudgetitem_detail">TimeBudgetItem Detail</string>
 </resources>

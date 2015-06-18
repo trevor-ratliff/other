@@ -66,7 +66,11 @@ var proto = Object.create(HTMLElement.prototype, {
 			myId.innerHTML = this.id;
 			myType.innerHTML = this.tagName;
 
-			this.createShadowRoot().appendChild(clone);
+			if (!!this.createShadowRoot) {
+				this.createShadowRoot().appendChild(clone);
+			} else {
+				this.appendChild(clone);
+			}
 
 			this.addEventListener('mouseover', this.myMouse);
 			this.addEventListener('mouseout', this.myMouse);
@@ -100,7 +104,13 @@ var proto = Object.create(HTMLElement.prototype, {
 			//----
 			switch (vstrAttribute) {
 				case 'id':
-					var lobjId = this.shadowRoot.querySelector('#myId');
+					var lobjId = null;
+					if (!!this.shadowRoot) {
+						lobjId = this.shadowRoot.querySelector('#myId');
+					} else {
+						lobjId = this.querySelector('#myId');
+					}
+					
 					lobjId.innerHTML = vstrNew;
 					break;
 
@@ -111,7 +121,12 @@ var proto = Object.create(HTMLElement.prototype, {
 	},
 	myMouse: {
 		value: function (e) {
-			var larrP = this.shadowRoot.querySelectorAll('p');
+			var larrP = null;
+			if (!!this.shadowRoot) {
+				larrP = this.shadowRoot.querySelectorAll('p');
+			} else {
+				larrP = this.querySelectorAll('p');
+			}
 
 			for (var lintII = 0; lintII < larrP.length; lintII++) {
 				if (larrP[lintII].className === "") {
