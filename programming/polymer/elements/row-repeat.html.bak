@@ -30,6 +30,7 @@
 			width: 1.5em;
 			word-spacing: 0em;
 		}
+
 		.no-controls #controls {
 			display: none !important;
 		}
@@ -53,7 +54,6 @@
 
 <script type="text/javascript">
 var console = console || {};
-console.debug = window.location.search.indexOf('debug') >= 0;
 
 // element registration
 Polymer({
@@ -86,21 +86,6 @@ Polymer({
 		id: String,
 	},
 
-	//====
-	/// @fn ready ()
-	/// @brief removes user supplied template to a hidden location, clones any rows needed
-	/// @author Trevor Ratliff
-	/// @date 2015-04-17
-	/// @return null
-	//  
-	//  Definitions:
-	//  
-	/// @verbatim
-	/// History:  Date  |  Programmer  |  Contact  |  Description  |
-	///     2015-04-17  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
-	///         function creation  |
-	/// @endverbatim
-	//====
 	ready: function () {
 		//----
 		// set element references
@@ -157,7 +142,7 @@ Polymer({
 		//----
 		// dispatch onload
 		//----
-		this.onload({status: 'loaded'});
+		this.onload({status: 'complete'});
 		return;
 	},
 
@@ -174,25 +159,8 @@ Polymer({
 		return;
 	},*/
 
-	//====
-	/// @fn countChanged (vstrNew, vstrOld)
-	/// @brief handles adding or subtracting rows when count changes
-	/// @author Trevor Ratliff
-	/// @date 2015-04-17
-	/// @param vstrNew -- the new value of count
-	/// @param vstrOld -- the old value of count
-	/// @return null
-	//  
-	//  Definitions:
-	//  
-	/// @verbatim
-	/// History:  Date  |  Programmer  |  Contact  |  Description  |
-	///     2015-04-17  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
-	///         function creation  |
-	/// @endverbatim
-	//====
 	countChanged: function (vstrNew, vstrOld) {
-		if (!!console.debug && !!console.log) console.log(this.attributes['id'].nodeValue +' countChanged: '+ 
+		if (!!console && !!console.log) console.log('countChanged: '+ 
 				vstrNew +', '+ vstrOld +' -- '+ this.count);
 
 		//----
@@ -234,8 +202,8 @@ Polymer({
 					this.setAttribute('count', this.count);
 
 				} catch (err) {
-					if (!!console.debug && !!console.log) console.log(
-						'Could not add the row.\n' + err.toString());
+					if (!!console && !!console.log) console.log(
+							'Could not add the row.\n' + err.toString());
 				}
 
 			} else {
@@ -260,25 +228,16 @@ Polymer({
 					this.setAttribute('count', this.count);
 
 				} catch (err) {
-					if (!!console.debug && !!console.log) console.log(
-						'Could not subtract the row.\n' + err.toString());
+					if (!!console && !!console.log) console.log(
+							'Could not subtract the row.\n' + err.toString());
 				}
 			}
 		}
 
 		//----
-		// flush changes
-		//----
-		Polymer.dom.flush();
-
-		//----
 		// dispatch onchange
 		//----
-		this.onchange({
-			status: 'changed', 
-			new_val: vstrNew, 
-			old_val: vstrOld 
-		});
+		this.onchange();
 		
 		return;
 	},
@@ -316,7 +275,7 @@ Polymer({
 		//----
 		// debugging stuff
 		//----
-		if(!!console.debug && !!console.log) console.log('add a row to ' + 
+		if(!!console && !!console.log) console.log('add a row to ' + 
 				lobjElm.id + ' -- (target = "' + this.target + '")');
 
 		//----
@@ -367,7 +326,7 @@ Polymer({
 		//----
 		// debugging stuff
 		//----
-		if(!!console.debug && !!console.log) console.log('subtract a row from ' + 
+		if(!!console && !!console.log) console.log('subtract a row from ' + 
 				lobjElm.id);
 
 		//----
@@ -430,13 +389,11 @@ Polymer({
 
 	//====
 	/// @fn onload ()
-	/// @brief fires the 'rpt-loaded' event with the passed in details
 	/// @author Trevor Ratliff
 	/// @date 2015-06-16
-	/// @param vobjDetails -- the details of the change
-	/// @return null
 	//  
 	//  Definitions:
+	//      _ -- _
 	//  
 	/// @verbatim
 	/// History:  Date  |  Programmer  |  Contact  |  Description  |
@@ -445,38 +402,13 @@ Polymer({
 	/// @endverbatim
 	//====
 	onload: function (vobjDetails) {
-		if (!!console.debug && !!console.log) console.log(
-			this.attributes['id'].nodeValue + ' fired rpt-loaded');
-		var lobjDetails = (typeof vobjDetails !== 'undefined') ? 
-			vobjDetails : { status: 'loaded' };
+		var lobjDetails = (typeof vobjDetails !== 'undefined') ? vobjDetails : { status: 'loaded' };
 		this.fire('rpt-loaded', lobjDetails);
-		return;
 	},
 
 
-	//====
-	/// @fn onchange (vobjDetails)
-	/// @brief fires the 'rpt-changed' event with the passed in details
-	/// @author Trevor Ratliff
-	/// @date 2015-06-16
-	/// @param vobjDetails -- the details of the change
-	/// @return null
-	//  
-	//  Definitions:
-	//  
-	/// @verbatim
-	/// History:  Date  |  Programmer  |  Contact  |  Description  |
-	///     2015-06-16  |  Trevor Ratliff  |  trevor.w.ratliff@gmail.com  |
-	///         function creation  |
-	/// @endverbatim
-	//====
-	onchange: function (vobjDetails) {
-		if (!!console.debug && !!console.log) console.log(
-			this.attributes['id'].nodeValue + ' fired rpt-changed');
-		var lobjDetails = (typeof vobjDetails !== 'undefined') ? 
-			vobjDetails : { status: 'changed' };
-		this.fire('rpt-changed', lobjDetails);
-		return;
+	onchange: function () {
+		this.fire('rpt-changed', { status: 'changed' });
 	}
 
 });
