@@ -413,7 +413,7 @@ Polymer({
 		//----
 		// get all child elements with ids and names
 		//----
-		larrIds = vobjParent.querySelectorAll('*[id], *[name]');
+		larrIds = vobjParent.querySelectorAll('*[id], *[name], *[for]');
 
 		for (var lintNN = 0; lintNN < larrIds.length; lintNN++) {
 			if (typeof larrIds[lintNN].id !== "undefined") {
@@ -422,6 +422,11 @@ Polymer({
 
 			if (typeof larrIds[lintNN].name !== "undefined") {
 				larrIds[lintNN].name += "_" + vintCount;
+			}
+
+			var lstrFor = larrIds[lintNN].getAttribute('for');
+			if (lstrFor !== null) {
+				larrIds[lintNN].setAttribute('for', lstrFor + "_" + vintCount);
 			}
 		}
 
