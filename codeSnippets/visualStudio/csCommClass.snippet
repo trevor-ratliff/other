@@ -3,12 +3,16 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>
-        Class comment code snippet
+        CSharp Class comment code snippet
       </Title>
       <Author>
         Trevor Ratliff
       </Author>
       <Shortcut>commclass</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
     </Header>
 
     <Snippet>
@@ -43,32 +47,32 @@
           <Default>_</Default>
         </Literal>
       </Declarations>
-      <Code Language="CSharp">
-        <![CDATA[//====
-        /// @class $Visibility$ $ClassName$
-        /// @brief $Brief$
-        /// @author $Author$
-        /// @date $Date$
-        //  
-        //  Properties:
-        //    
-        //
-        //  Methods:
-        //    
-        //  
-        //  Events:
-        //    
-        //  
-        /// @verbatim
-        /// History:  Date  |  Programmer  |  Contact  |  Description  |
-        ///     $Date$  |  $Author$  |  $Email$  |
-        ///         class creation  |
-        /// @endverbatim
-        //====
-        $Visibility$ class $ClassName$
-        {
-            
-        }]]>
+      <Code Language="CSharp"><![CDATA[//====
+      /// @class $Visibility$ $ClassName$
+      /// @brief $Brief$
+      /// @author $Author$
+      /// @date $Date$
+      //  
+      //  Properties:
+      //    
+      //
+      //  Methods:
+      //    
+      //  
+      //  Events:
+      //    
+      //  
+      /// @verbatim
+      /// History:  Date  |  Programmer  |  Contact  |  Description  |
+      ///     $Date$  |  $Author$  |  $Email$  |
+      ///         class creation  |
+      /// @endverbatim
+      //====
+      $Visibility$ class $ClassName$
+      {
+          $selected$$end$
+      }
+      ]]>
       </Code>
     </Snippet>
   </CodeSnippet>

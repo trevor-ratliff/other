@@ -3,8 +3,8 @@
 execute pathogen#infect()
 
 "import other settings
-source $HOME/vimfiles/vimrc_example.vim
-source $HOME/vimfiles/mswin.vim
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
 behave mswin
 
 "set variaous properties
@@ -16,7 +16,9 @@ set showcmd
 set encoding=utf-8 fileencoding=utf-8 termencoding=utf-8
 set nu!
 set background=dark
-colorscheme desert
+colorscheme solarized
+"let g:solarized_italic=0
+set guifont=Consolas
 
 "turn things on
 set spl=en_us spell

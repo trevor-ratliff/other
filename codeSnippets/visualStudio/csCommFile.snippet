@@ -3,12 +3,15 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>
-        File comment code snippet
+        CSharp File comment code snippet
       </Title>
       <Author>
         Trevor Ratliff
       </Author>
       <Shortcut>commfile</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
     </Header>
 
     <Snippet>
@@ -38,23 +41,22 @@
           <Default>_</Default>
         </Literal>
       </Declarations>
-      <Code Language="CSharp">
-        <![CDATA[//====
-        /// @file $FileName$
-        /// @brief $Brief$
-        /// @author $Author$
-        /// @date $Date$
-        //  
-        //  Definitions:
-        //    
-        //  
-        /// @verbatim
-        /// History:  Date  |  Programmer  |  Contact  |  Description  |
-        ///     $Date$  |  $Author$  |  $Email$  |
-        ///         file creation  |
-        /// @endverbatim
-        //====
-        ]]>
+      <Code Language="CSharp"><![CDATA[//====
+      /// @file $FileName$
+      /// @brief $Brief$
+      /// @author $Author$
+      /// @date $Date$
+      //  
+      //  Definitions:
+      //    
+      //  
+      /// @verbatim
+      /// History:  Date  |  Programmer  |  Contact  |  Description  |
+      ///     $Date$  |  $Author$  |  $Email$  |
+      ///         file creation  |
+      /// @endverbatim
+      //====
+      $end$]]>
       </Code>
     </Snippet>
   </CodeSnippet>

@@ -5,6 +5,10 @@
       <Title>CSharp Comment Snippet</Title>
       <Author>Trevor Ratliff</Author>
       <Shortcut>comm</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
     </Header>
     
     <Snippet>
@@ -15,10 +19,9 @@
         </Literal>
       </Declarations>
       
-      <Code Language="CSharp">
-        <![CDATA[//----
-        // $Comment$
-        //----]]>
+      <Code Language="CSharp"><![CDATA[//----
+      // $Comment$ $selected$$end$
+      //----]]>
       </Code>
     </Snippet>
   </CodeSnippet>

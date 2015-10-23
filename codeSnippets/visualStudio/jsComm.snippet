@@ -2,9 +2,13 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>JScript Comment Snippet</Title>
+      <Title>JavaScript Comment Snippet</Title>
       <Author>Trevor Ratliff</Author>
       <Shortcut>comm</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
     </Header>
     
     <Snippet>
@@ -15,10 +19,9 @@
         </Literal>
       </Declarations>
       
-      <Code Language="JScript">
-        <![CDATA[//----
-        // $Comment$
-        //----]]>
+      <Code Language="JavaScript"><![CDATA[//----
+      // $Comment$ $selected$$end$
+      //----]]>
       </Code>
     </Snippet>
   </CodeSnippet>

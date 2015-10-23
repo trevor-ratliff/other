@@ -3,12 +3,16 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>
-        Function comment code snippet
+        CSharp Function comment code snippet
       </Title>
       <Author>
         Trevor Ratliff
       </Author>
       <Shortcut>commfn</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
     </Header>
 
     <Snippet>
@@ -63,28 +67,29 @@
           <Default>_</Default>
         </Literal>
       </Declarations>
-      <Code Language="CSharp">
-        <![CDATA[//====
-        /// @fn $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
-        /// @brief $Brief$
-        /// @author $Author$
-        /// @date $Date$
-        /// @param $ParamType$ $Param$ -- $ParamDescription$
-        /// @return $Return$
-        //  
-        //  Definitions:
-        //    
-        //  
-        /// @verbatim
-        /// History:  Date  |  Programmer  |  Contact  |  Description  |
-        ///     $Date$  |  $Author$  |  $Email$  |
-        ///         function creation  |
-        /// @endverbatim
-        //====
-        $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
-        {
-            return $Return$;
-        }]]>
+      <Code Language="CSharp"><![CDATA[//====
+      /// @fn $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
+      /// @brief $Brief$
+      /// @author $Author$
+      /// @date $Date$
+      /// @param $ParamType$ $Param$ -- $ParamDescription$
+      /// @return $Return$
+      //  
+      //  Definitions:
+      //    
+      //  
+      /// @verbatim
+      /// History:  Date  |  Programmer  |  Contact  |  Description  |
+      ///     $Date$  |  $Author$  |  $Email$  |
+      ///         function creation  |
+      /// @endverbatim
+      //====
+      $Visibility$ $Return$ $FunctionName$($ParamType$ $Param$)
+      {
+          $selected$$end$
+          return $Return$;
+      }
+      ]]>
       </Code>
     </Snippet>
   </CodeSnippet>

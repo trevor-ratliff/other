@@ -3,12 +3,16 @@
   <CodeSnippet Format="1.0.0">
     <Header>
       <Title>
-        Function comment code snippet
+        Javascript Function comment code snippet
       </Title>
       <Author>
         Trevor Ratliff
       </Author>
       <Shortcut>commfn</Shortcut>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
     </Header>
 
     <Snippet>
@@ -53,27 +57,28 @@
           <Default>_</Default>
         </Literal>
       </Declarations>
-      <Code Language="JScript">
-        <![CDATA[//====
-        /// @fn $FunctionName$($Param$)
-        /// @brief $Brief$
-        /// @author $Author$
-        /// @date $Date$
-        /// @param $Param$ -- $ParamDescription$
-        /// @return $Return$
-        //  
-        //  Definitions:
-        //    
-        //  
-        /// @verbatim
-        /// History:  Date  |  Programmer  |  Contact  |  Description  |
-        ///     $Date$  |  $Author$  |  $Email$  |
-        ///         function creation  |
-        /// @endverbatim
-        //====
-        function $FunctionName$($Param$) {
-            return $Return$;
-        }]]>
+      <Code Language="JavaScript"><![CDATA[//====
+      /// @fn $FunctionName$($Param$)
+      /// @brief $Brief$
+      /// @author $Author$
+      /// @date $Date$
+      /// @param $Param$ -- $ParamDescription$
+      /// @return $Return$
+      //  
+      //  Definitions:
+      //    
+      //  
+      /// @verbatim
+      /// History:  Date  |  Programmer  |  Contact  |  Description  |
+      ///     $Date$  |  $Author$  |  $Email$  |
+      ///         function creation  |
+      /// @endverbatim
+      //====
+      function $FunctionName$($Param$) {
+          $selected$$end$
+          return $Return$;
+      }
+      ]]>
       </Code>
     </Snippet>
   </CodeSnippet>
