@@ -19,6 +19,10 @@ set background=dark
 colorscheme solarized
 "let g:solarized_italic=0
 set guifont=Consolas
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
+set noexpandtab
 
 "turn things on
 set spl=en_us spell
@@ -57,4 +61,22 @@ let g:snipMate.scope_aliases['javascript'] = 'javascript,c_custom'
 
 "string completion mapped more like SciTE
 map! <C-CR> <C-N>
+
+
+"set some autocommands to set shiftwidth and softtabstop
+if has("autocmd")
+  augroup myTabs
+    au!
+    ":autocmd BufReadPost * set shiftwidth=4
+    ":autocmd BufReadPost * set softtabstop=4
+    ":autocmd BufReadPost * set tabstop=4
+    ":autocmd BufReadPost * set expandtab
+    :autocmd FileWritePre * set shiftwidth=4 softtabstop=4 tabstop=8
+    ":autocmd FileWritePre * set softtabstop=4
+    ":autocmd FileWritePre * set tabstop=8
+    :autocmd FileWritePre * set noexpandtab
+    :autocmd FileReadPre,BufReadPre,FileWritePost * set tabstop=4
+
+  augroup END
+endif
 
