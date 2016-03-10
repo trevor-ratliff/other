@@ -1,15 +1,19 @@
-<map version="0.9.0">
+<map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node COLOR="#000000" CREATED="1300979789108" ID="ID_1368903640" MODIFIED="1303838955269" STYLE="bubble" TEXT="Life Cycle Standards" VGAP="81">
 <edge COLOR="#808080" STYLE="bezier" WIDTH="4"/>
 <font NAME="SansSerif" SIZE="20"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties"/>
-<node BACKGROUND_COLOR="#99ff99" COLOR="#0033ff" CREATED="1301076675136" HGAP="-121" ID="ID_1820964415" MODIFIED="1303913608747" POSITION="right" TEXT="Requirement Gathering Standards" VSHIFT="-95">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_380288252" ENDARROW="Default" ENDINCLINATION="44;0;" ID="Arrow_ID_1630381404" STARTARROW="None" STARTINCLINATION="146;0;"/>
+<node BACKGROUND_COLOR="#99ff99" COLOR="#0033ff" CREATED="1301076675136" HGAP="-104" ID="ID_1820964415" MODIFIED="1456849276022" POSITION="right" TEXT="Requirement Gathering Standards" VSHIFT="-23">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_380288252" ENDARROW="Default" ENDINCLINATION="78;-31;" ID="Arrow_ID_1630381404" STARTARROW="None" STARTINCLINATION="105;15;"/>
+<linktarget COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-8;121;" ID="Arrow_ID_81686370" SOURCE="ID_380288252" STARTARROW="None" STARTINCLINATION="-57;-29;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-112;-136;" ID="Arrow_ID_1508011310" SOURCE="ID_229507528" STARTARROW="None" STARTINCLINATION="60;-15;"/>
+<linktarget COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-96;38;" ID="Arrow_ID_1968420003" SOURCE="ID_1858141248" STARTARROW="None" STARTINCLINATION="-202;-151;"/>
+<linktarget COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-111;97;" ID="Arrow_ID_1012443417" SOURCE="ID_1602146436" STARTARROW="None" STARTINCLINATION="-124;-72;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301583676634" ID="ID_346418506" MODIFIED="1303840701365" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301583676634" HGAP="23" ID="ID_346418506" MODIFIED="1456848862814" TEXT="Process" VSHIFT="-24">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301513288095" FOLDED="true" ID="ID_1710718259" MODIFIED="1303849588692" TEXT="initializes process with web form">
 <edge STYLE="bezier"/>
@@ -24,13 +28,13 @@
       this gathers:
     </p>
     <p>
-      &#160;&#160;- requestor
+      &#xa0;&#xa0;- requestor
     </p>
     <p>
-      &#160;&#160;- what they want
+      &#xa0;&#xa0;- what they want
     </p>
     <p>
-      &#160;&#160;- what they think they need
+      &#xa0;&#xa0;- what they think they need
     </p>
   </body>
 </html></richcontent>
@@ -87,8 +91,8 @@
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301595539962" ID="ID_551343569" MODIFIED="1303840701370" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301595539962" HGAP="141" ID="ID_551343569" MODIFIED="1456848857150" TEXT="Produces" VSHIFT="1">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301583684201" ID="ID_1410531720" MODIFIED="1303836726177" TEXT="Customer Requirements">
 <edge STYLE="bezier"/>
@@ -108,13 +112,14 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076668112" HGAP="216" ID="ID_380288252" MODIFIED="1303840700676" POSITION="right" TEXT="Design Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_285148440" ENDARROW="Default" ENDINCLINATION="178;-4;" ID="Arrow_ID_1003329851" STARTARROW="None" STARTINCLINATION="48;1;"/>
+<node COLOR="#0033ff" CREATED="1301076668112" HGAP="218" ID="ID_380288252" MODIFIED="1456849294038" POSITION="right" TEXT="Design Standards" VSHIFT="-3">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_285148440" ENDARROW="Default" ENDINCLINATION="167;-49;" ID="Arrow_ID_1003329851" STARTARROW="None" STARTINCLINATION="113;51;"/>
 <arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-8;121;" ID="Arrow_ID_81686370" STARTARROW="None" STARTINCLINATION="-57;-29;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_380288252" ENDARROW="Default" ENDINCLINATION="78;-31;" ID="Arrow_ID_1630381404" SOURCE="ID_1820964415" STARTARROW="None" STARTINCLINATION="105;15;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301598208421" ID="ID_735420058" MODIFIED="1303840701370" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301598208421" ID="ID_735420058" MODIFIED="1456848625358" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301603745321" ID="ID_1155430921" MODIFIED="1303849595627" TEXT="iterate">
 <edge STYLE="bezier"/>
@@ -178,8 +183,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301598212165" ID="ID_1592984559" MODIFIED="1303840701372" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301598212165" ID="ID_1592984559" MODIFIED="1456848625358" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301603655754" ID="ID_144368035" MODIFIED="1303836726173" TEXT="Customer Requirments">
 <edge STYLE="bezier"/>
@@ -213,8 +218,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301603762083" ID="ID_1118671501" MODIFIED="1303840701374" TEXT="Notes">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301603762083" ID="ID_1118671501" MODIFIED="1456848625358" TEXT="Notes">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301318309578" FOLDED="true" ID="ID_788591922" MODIFIED="1303849588693" TEXT="use uml tool">
 <edge STYLE="bezier"/>
@@ -306,12 +311,13 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1300979789108" HGAP="24" ID="ID_285148440" MODIFIED="1303840700678" POSITION="right" TEXT="Code Standards" VSHIFT="94">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_481010017" ENDARROW="Default" ENDINCLINATION="-47;80;" ID="Arrow_ID_1428091921" STARTARROW="None" STARTINCLINATION="-79;96;"/>
+<node COLOR="#0033ff" CREATED="1300979789108" HGAP="24" ID="ID_285148440" MODIFIED="1456849294038" POSITION="right" TEXT="Code Standards" VSHIFT="94">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_481010017" ENDARROW="Default" ENDINCLINATION="108;24;" ID="Arrow_ID_1428091921" STARTARROW="None" STARTINCLINATION="-99;137;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_285148440" ENDARROW="Default" ENDINCLINATION="167;-49;" ID="Arrow_ID_1003329851" SOURCE="ID_380288252" STARTARROW="None" STARTINCLINATION="113;51;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301678794133" ID="ID_1639622099" MODIFIED="1303840701375" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301678794133" HGAP="125" ID="ID_1639622099" MODIFIED="1456848880749" TEXT="Process" VSHIFT="-15">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301678815077" ID="ID_1179509686" MODIFIED="1303849598269" TEXT="iterate">
 <edge STYLE="bezier"/>
@@ -340,16 +346,16 @@
       Developer should work on tickets
     </p>
     <p>
-      &#160;&#160;- that block further development
+      &#xa0;&#xa0;- that block further development
     </p>
     <p>
-      &#160;&#160;- that prevent another developer
+      &#xa0;&#xa0;- that prevent another developer
     </p>
     <p>
-      &#160;&#160;&#160;&#160;from completeing a task
+      &#xa0;&#xa0;&#xa0;&#xa0;from completeing a task
     </p>
     <p>
-      &#160;&#160;- that have the most risk
+      &#xa0;&#xa0;- that have the most risk
     </p>
   </body>
 </html></richcontent>
@@ -409,8 +415,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301605545107" ID="ID_1584733087" MODIFIED="1303840701376" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301605545107" HGAP="44" ID="ID_1584733087" MODIFIED="1456848895861" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301605559835" ID="ID_469015070" MODIFIED="1303836726166" TEXT="code that meets the requiremens">
 <edge STYLE="bezier"/>
@@ -431,8 +437,8 @@
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301605535124" ID="ID_1818853641" MODIFIED="1303851337998" TEXT="Conventions">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301605535124" HGAP="21" ID="ID_1818853641" MODIFIED="1456848891063" TEXT="Conventions" VSHIFT="31">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1300979807383" FOLDED="true" ID="ID_190081722" MODIFIED="1303851347543" TEXT="Naming">
 <edge COLOR="#3333ff" STYLE="bezier"/>
@@ -538,7 +544,7 @@
       i.e. lintCounter
     </p>
     <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;gstrUserName
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;gstrUserName
     </p>
   </body>
 </html></richcontent>
@@ -609,7 +615,7 @@
       //
     </p>
     <p>
-      // History:&#160;&#160;Date&#160;&#160;|&#160;&#160;Programmer&#160;&#160;|&#160;&#160;Contact&#160;&#160;|&#160;&#160;Description&#160;&#160;|
+      // History:&#xa0;&#xa0;Date&#xa0;&#xa0;|&#xa0;&#xa0;Programmer&#xa0;&#xa0;|&#xa0;&#xa0;Contact&#xa0;&#xa0;|&#xa0;&#xa0;Description&#xa0;&#xa0;|
     </p>
     <p>
       ====*/
@@ -650,22 +656,22 @@
       // Members:
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;MainConsole() -- constructor
+      //&#xa0;&#xa0;&#xa0;&#xa0;MainConsole() -- constructor
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;InitConsole() -- further initialization
+      //&#xa0;&#xa0;&#xa0;&#xa0;InitConsole() -- further initialization
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;DoMyStuff() -- does my stuff for me
+      //&#xa0;&#xa0;&#xa0;&#xa0;DoMyStuff() -- does my stuff for me
     </p>
     <p>
       //
     </p>
     <p>
-      // History:&#160;&#160;Date&#160;&#160;|&#160;&#160;Programmer&#160;&#160;|&#160;&#160;Contact&#160;&#160;|&#160;&#160;Description&#160;&#160;|
+      // History:&#xa0;&#xa0;Date&#xa0;&#xa0;|&#xa0;&#xa0;Programmer&#xa0;&#xa0;|&#xa0;&#xa0;Contact&#xa0;&#xa0;|&#xa0;&#xa0;Description&#xa0;&#xa0;|
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;2011-1-20&#160;&#160;|&#160;&#160;Edna Zegreate&#160;&#160;|&#160;&#160;ezegreate@gmail.com&#160;&#160;|&#160;&#160;fixed the constructor&#160;&#160;|
+      //&#xa0;&#xa0;&#xa0;&#xa0;2011-1-20&#xa0;&#xa0;|&#xa0;&#xa0;Edna Zegreate&#xa0;&#xa0;|&#xa0;&#xa0;ezegreate@gmail.com&#xa0;&#xa0;|&#xa0;&#xa0;fixed the constructor&#xa0;&#xa0;|
     </p>
     <p>
       ====*/
@@ -703,22 +709,22 @@
       //
     </p>
     <p>
-      //&#160;&#160;Parameters:
+      //&#xa0;&#xa0;Parameters:
     </p>
     <p>
-      ///&#160;&#160;&#160;&#160;@param vdteDate -- start date of billing
+      ///&#xa0;&#xa0;&#xa0;&#xa0;@param vdteDate -- start date of billing
     </p>
     <p>
-      ///&#160;&#160;&#160;&#160;@param vintClientId -- id of client to run billing for
+      ///&#xa0;&#xa0;&#xa0;&#xa0;@param vintClientId -- id of client to run billing for
     </p>
     <p>
       //
     </p>
     <p>
-      //&#160;&#160;History:&#160;&#160;Date&#160;&#160;|&#160;&#160;Programmer&#160;&#160;|&#160;&#160;Contact&#160;&#160;|&#160;&#160;Description&#160;&#160;|
+      //&#xa0;&#xa0;History:&#xa0;&#xa0;Date&#xa0;&#xa0;|&#xa0;&#xa0;Programmer&#xa0;&#xa0;|&#xa0;&#xa0;Contact&#xa0;&#xa0;|&#xa0;&#xa0;Description&#xa0;&#xa0;|
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;2011-1-20&#160;&#160;|&#160;&#160;Edna Zegreate&#160;&#160;|&#160;&#160;ezegreate@gmail.com&#160;&#160;|&#160;&#160;fixed the billing calculation&#160;&#160;|
+      //&#xa0;&#xa0;&#xa0;&#xa0;2011-1-20&#xa0;&#xa0;|&#xa0;&#xa0;Edna Zegreate&#xa0;&#xa0;|&#xa0;&#xa0;ezegreate@gmail.com&#xa0;&#xa0;|&#xa0;&#xa0;fixed the billing calculation&#xa0;&#xa0;|
     </p>
     <p>
       ====*/
@@ -849,12 +855,13 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301077744574" HGAP="-36" ID="ID_229507528" MODIFIED="1303913608747" POSITION="left" TEXT="Maintenance Standards" VSHIFT="1">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-20;-94;" ID="Arrow_ID_1508011310" STARTARROW="None" STARTINCLINATION="28;-95;"/>
+<node COLOR="#0033ff" CREATED="1301077744574" HGAP="-36" ID="ID_229507528" MODIFIED="1456849244221" POSITION="left" TEXT="Maintenance Standards" VSHIFT="1">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-112;-136;" ID="Arrow_ID_1508011310" STARTARROW="None" STARTINCLINATION="60;-15;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_229507528" ENDARROW="Default" ENDINCLINATION="102;26;" ID="Arrow_ID_1043456425" SOURCE="ID_1858141248" STARTARROW="None" STARTINCLINATION="79;-20;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301677488609" ID="ID_1589829166" MODIFIED="1303840701377" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677488609" ID="ID_1589829166" MODIFIED="1456848625359" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301678241212" ID="ID_1764225902" MODIFIED="1303849604716" TEXT="iterate">
 <edge STYLE="bezier"/>
@@ -896,8 +903,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301677490929" ID="ID_6280647" MODIFIED="1303840701378" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677490929" HGAP="83" ID="ID_6280647" MODIFIED="1456848934350" TEXT="Produces" VSHIFT="16">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301585928878" FOLDED="true" ID="ID_1874736020" MODIFIED="1303849588696" TEXT="Maintenence Document">
 <edge STYLE="bezier"/>
@@ -920,13 +927,14 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076694553" HGAP="111" ID="ID_1858141248" MODIFIED="1303850419378" POSITION="left" TEXT="Deployment Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_229507528" ENDARROW="Default" ENDINCLINATION="37;0;" ID="Arrow_ID_1043456425" STARTARROW="None" STARTINCLINATION="36;-1;"/>
+<node COLOR="#0033ff" CREATED="1301076694553" HGAP="113" ID="ID_1858141248" MODIFIED="1456849239959" POSITION="left" TEXT="Deployment Standards" VSHIFT="-1">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_229507528" ENDARROW="Default" ENDINCLINATION="102;26;" ID="Arrow_ID_1043456425" STARTARROW="None" STARTINCLINATION="79;-20;"/>
 <arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-96;38;" ID="Arrow_ID_1968420003" STARTARROW="None" STARTINCLINATION="-202;-151;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_1858141248" ENDARROW="Default" ENDINCLINATION="91;22;" ID="Arrow_ID_92363677" SOURCE="ID_1602146436" STARTARROW="None" STARTINCLINATION="79;-19;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301677333522" ID="ID_770106517" MODIFIED="1303840701378" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677333522" ID="ID_770106517" MODIFIED="1456848625359" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301678302721" ID="ID_1634962777" MODIFIED="1303849602941" TEXT="iterate">
 <edge STYLE="bezier"/>
@@ -969,8 +977,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301678295041" ID="ID_209994941" MODIFIED="1303840701378" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301678295041" HGAP="47" ID="ID_209994941" MODIFIED="1456848923357" TEXT="Produces" VSHIFT="21">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301678444001" FOLDED="true" ID="ID_12911508" MODIFIED="1303849588696" TEXT="UML Deployment Diagram">
 <edge STYLE="bezier"/>
@@ -983,8 +991,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301677481473" ID="ID_456863605" MODIFIED="1303840701380" TEXT="Notes">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677481473" HGAP="44" ID="ID_456863605" MODIFIED="1456848927077" TEXT="Notes" VSHIFT="22">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301502607151" ID="ID_1512918554" MODIFIED="1303836726142">
 <richcontent TYPE="NODE"><html>
@@ -1013,10 +1021,10 @@
       installation folder will be:
     </p>
     <p>
-      &#160;&#160;- Programs Files\UKY\AuxServices\PROGRAM
+      &#xa0;&#xa0;- Programs Files\UKY\AuxServices\PROGRAM
     </p>
     <p>
-      &#160;&#160;- InetPub\wwwroot\UKY\AuxServices\WEB_APP
+      &#xa0;&#xa0;- InetPub\wwwroot\UKY\AuxServices\WEB_APP
     </p>
   </body>
 </html></richcontent>
@@ -1025,13 +1033,14 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076683776" HGAP="146" ID="ID_1602146436" MODIFIED="1303850355088" POSITION="left" TEXT="Testing Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_1858141248" ENDARROW="Default" ENDINCLINATION="35;0;" ID="Arrow_ID_92363677" STARTARROW="None" STARTINCLINATION="36;0;"/>
+<node COLOR="#0033ff" CREATED="1301076683776" HGAP="146" ID="ID_1602146436" MODIFIED="1456849221975" POSITION="left" TEXT="Testing Standards">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_1858141248" ENDARROW="Default" ENDINCLINATION="91;22;" ID="Arrow_ID_92363677" STARTARROW="None" STARTINCLINATION="79;-19;"/>
 <arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-111;97;" ID="Arrow_ID_1012443417" STARTARROW="None" STARTINCLINATION="-124;-72;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_1602146436" ENDARROW="Default" ENDINCLINATION="59;19;" ID="Arrow_ID_1800792688" SOURCE="ID_481010017" STARTARROW="None" STARTINCLINATION="84;-13;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301675851968" ID="ID_1867956274" MODIFIED="1303840701382" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301675851968" HGAP="31" ID="ID_1867956274" MODIFIED="1456848912039" TEXT="Process" VSHIFT="1">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301676782003" ID="ID_737164741" MODIFIED="1303836726149" TEXT="Create Test Strategy during RG and Design">
 <edge STYLE="bezier"/>
@@ -1156,8 +1165,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301675856223" ID="ID_207541612" MODIFIED="1303840701383" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301675856223" ID="ID_207541612" MODIFIED="1456848625360" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301676438596" FOLDED="true" ID="ID_1804994496" MODIFIED="1303849588697" TEXT="Test Strategy">
 <edge STYLE="bezier"/>
@@ -1193,7 +1202,7 @@
   </head>
   <body>
     <p>
-      tools like NUnit, CxxTest, Rake&#160;
+      tools like NUnit, CxxTest, Rake&#xa0;
     </p>
     <p>
       generate test reports for you
@@ -1206,12 +1215,13 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076688521" HGAP="-43" ID="ID_481010017" MODIFIED="1303840700682" POSITION="left" TEXT="Peer Reviews Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_1602146436" ENDARROW="Default" ENDINCLINATION="37;0;" ID="Arrow_ID_1800792688" STARTARROW="None" STARTINCLINATION="36;0;"/>
+<node COLOR="#0033ff" CREATED="1301076688521" HGAP="-43" ID="ID_481010017" MODIFIED="1456849221975" POSITION="left" TEXT="Peer Reviews Standards">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_1602146436" ENDARROW="Default" ENDINCLINATION="59;19;" ID="Arrow_ID_1800792688" STARTARROW="None" STARTINCLINATION="84;-13;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_481010017" ENDARROW="Default" ENDINCLINATION="108;24;" ID="Arrow_ID_1428091921" SOURCE="ID_285148440" STARTARROW="None" STARTINCLINATION="-99;137;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301674629855" ID="ID_277265086" MODIFIED="1303840701383" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301674629855" HGAP="32" ID="ID_277265086" MODIFIED="1456848901183" TEXT="Process" VSHIFT="2">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301084825309" FOLDED="true" ID="ID_1950702466" MODIFIED="1303849588697" TEXT="Developer creates a new Peer Review">
 <edge STYLE="bezier"/>
@@ -1286,8 +1296,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301675087023" ID="ID_1278467676" MODIFIED="1303840701384" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301675087023" HGAP="19" ID="ID_1278467676" MODIFIED="1456848906742" TEXT="Produces" VSHIFT="16">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301675092791" FOLDED="true" ID="ID_202803069" MODIFIED="1303849588697" TEXT="Peer Review in Trac">
 <edge STYLE="bezier"/>

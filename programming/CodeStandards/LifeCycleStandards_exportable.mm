@@ -1,17 +1,21 @@
-<map version="0.9.0">
+<map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node COLOR="#000000" CREATED="1300979789108" ID="ID_1368903640" MODIFIED="1303850787869" STYLE="bubble" TEXT="Life Cycle Standards" VGAP="55">
+<node COLOR="#000000" CREATED="1300979789108" ID="ID_1368903640" MODIFIED="1456847118437" STYLE="bubble" TEXT="Life Cycle Standards" VGAP="45">
 <edge COLOR="#808080" STYLE="bezier" WIDTH="4"/>
 <font NAME="SansSerif" SIZE="20"/>
 <hook NAME="accessories/plugins/AutomaticLayout.properties"/>
-<node BACKGROUND_COLOR="#99ff99" COLOR="#0033ff" CREATED="1301076675136" FOLDED="true" ID="ID_1820964415" MODIFIED="1303851004148" POSITION="right" TEXT="Requirement Gathering Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_380288252" ENDARROW="Default" ENDINCLINATION="39;0;" ID="Arrow_ID_1630381404" STARTARROW="None" STARTINCLINATION="33;0;"/>
+<node BACKGROUND_COLOR="#99ff99" COLOR="#0033ff" CREATED="1301076675136" FOLDED="true" HGAP="19" ID="ID_1820964415" MODIFIED="1456847941701" POSITION="right" TEXT="Requirement Gathering Standards" VSHIFT="96">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_380288252" ENDARROW="Default" ENDINCLINATION="35;-4;" ID="Arrow_ID_1630381404" STARTARROW="None" STARTINCLINATION="29;2;"/>
+<linktarget COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-53;20;" ID="Arrow_ID_1192132314" SOURCE="ID_380288252" STARTARROW="None" STARTINCLINATION="-57;-2;"/>
+<linktarget COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-83;17;" ID="Arrow_ID_929457352" SOURCE="ID_1602146436" STARTARROW="None" STARTINCLINATION="-153;-16;"/>
+<linktarget COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-98;15;" ID="Arrow_ID_754092341" SOURCE="ID_1858141248" STARTARROW="None" STARTINCLINATION="-159;-35;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-331;0;" ID="Arrow_ID_1508011310" SOURCE="ID_229507528" STARTARROW="None" STARTINCLINATION="-435;0;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301583676634" FOLDED="true" ID="ID_346418506" MODIFIED="1303850787843" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301583676634" FOLDED="true" ID="ID_346418506" MODIFIED="1456842675891" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301513288095" FOLDED="true" ID="ID_1710718259" MODIFIED="1303850787843" TEXT="initializes process with web form">
+<node COLOR="#990000" CREATED="1301513288095" FOLDED="true" ID="ID_1710718259" MODIFIED="1456842675890" TEXT="initializes process with web form">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301513299432" ID="ID_282039482" MODIFIED="1303836726179">
@@ -24,13 +28,13 @@
       this gathers:
     </p>
     <p>
-      &#160;&#160;- requestor
+      &#xa0;&#xa0;- requestor
     </p>
     <p>
-      &#160;&#160;- what they want
+      &#xa0;&#xa0;- what they want
     </p>
     <p>
-      &#160;&#160;- what they think they need
+      &#xa0;&#xa0;- what they think they need
     </p>
   </body>
 </html></richcontent>
@@ -38,7 +42,7 @@
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#990000" CREATED="1301513009107" FOLDED="true" ID="ID_189225531" MODIFIED="1303850787843" TEXT="iterate">
+<node COLOR="#990000" CREATED="1301513009107" FOLDED="true" ID="ID_189225531" MODIFIED="1456842675890" TEXT="iterate">
 <edge STYLE="bezier"/>
 <cloud/>
 <font NAME="SansSerif" SIZE="14"/>
@@ -57,10 +61,10 @@
 <node COLOR="#111111" CREATED="1301679556781" ID="ID_1867728697" MODIFIED="1303836726178" TEXT="set up iteration plan if applicable">
 <edge STYLE="bezier"/>
 </node>
-<node COLOR="#111111" CREATED="1301515539335" FOLDED="true" ID="ID_1075099368" MODIFIED="1303850787843" TEXT="Customer signs off on Requirements">
+<node COLOR="#111111" CREATED="1301515539335" FOLDED="true" ID="ID_1075099368" MODIFIED="1456842675890" TEXT="Customer signs off on Requirements">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1301515781438" FOLDED="true" ID="ID_465455157" MODIFIED="1303850787843" TEXT="produces">
+<node COLOR="#111111" CREATED="1301515781438" FOLDED="true" ID="ID_465455157" MODIFIED="1456842675890" TEXT="produces">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301512884559" ID="ID_1912451770" MODIFIED="1303850853758" TEXT="user requirements">
@@ -87,8 +91,8 @@
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301595539962" FOLDED="true" ID="ID_551343569" MODIFIED="1303850787844" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301595539962" FOLDED="true" ID="ID_551343569" MODIFIED="1456842675891" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301583684201" ID="ID_1410531720" MODIFIED="1303836726177" TEXT="Customer Requirements">
 <edge STYLE="bezier"/>
@@ -108,19 +112,20 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076668112" FOLDED="true" HGAP="150" ID="ID_380288252" MODIFIED="1303850900807" POSITION="right" TEXT="Design Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_285148440" ENDARROW="Default" ENDINCLINATION="33;0;" ID="Arrow_ID_1003329851" STARTARROW="None" STARTINCLINATION="38;0;"/>
-<arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-4;27;" ID="Arrow_ID_1192132314" STARTARROW="None" STARTINCLINATION="-33;-20;"/>
+<node COLOR="#0033ff" CREATED="1301076668112" FOLDED="true" HGAP="149" ID="ID_380288252" MODIFIED="1456847941701" POSITION="right" TEXT="Design Standards">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_285148440" ENDARROW="Default" ENDINCLINATION="33;-4;" ID="Arrow_ID_1003329851" STARTARROW="None" STARTINCLINATION="33;4;"/>
+<arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-53;20;" ID="Arrow_ID_1192132314" STARTARROW="None" STARTINCLINATION="-57;-2;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_380288252" ENDARROW="Default" ENDINCLINATION="35;-4;" ID="Arrow_ID_1630381404" SOURCE="ID_1820964415" STARTARROW="None" STARTINCLINATION="29;2;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301598208421" FOLDED="true" ID="ID_735420058" MODIFIED="1303850787845" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301598208421" FOLDED="true" ID="ID_735420058" MODIFIED="1456842675892" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301603745321" FOLDED="true" ID="ID_1155430921" MODIFIED="1303850787845" TEXT="iterate">
+<node COLOR="#990000" CREATED="1301603745321" FOLDED="true" ID="ID_1155430921" MODIFIED="1456842675892" TEXT="iterate">
 <edge STYLE="bezier"/>
 <cloud/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1301603025210" FOLDED="true" ID="ID_558972762" MODIFIED="1303850787844" TEXT="during RG">
+<node COLOR="#111111" CREATED="1301603025210" FOLDED="true" ID="ID_558972762" MODIFIED="1456842675891" TEXT="during RG">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301602888488" ID="ID_1407475339" MODIFIED="1303836726175" TEXT="Analyst starts breaking customer requirements out into system requirements">
@@ -135,10 +140,10 @@
 <node COLOR="#111111" CREATED="1301679419945" ID="ID_767685854" MODIFIED="1303836726175" TEXT="Analyst breaks Requirements into interations">
 <edge STYLE="bezier"/>
 </node>
-<node COLOR="#111111" CREATED="1301603081709" FOLDED="true" ID="ID_261902115" MODIFIED="1303850787845" TEXT="after iteration planning">
+<node COLOR="#111111" CREATED="1301603081709" FOLDED="true" ID="ID_261902115" MODIFIED="1456842675891" TEXT="after iteration planning">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1301603098347" FOLDED="true" ID="ID_1806082366" MODIFIED="1303850787844" TEXT="analyst formalizes the customer requirements for iteration">
+<node COLOR="#111111" CREATED="1301603098347" FOLDED="true" ID="ID_1806082366" MODIFIED="1456842675891" TEXT="analyst formalizes the customer requirements for iteration">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301603259307" ID="ID_46599209" MODIFIED="1303836726174" TEXT="Overview diagram">
 <edge STYLE="bezier"/>
@@ -147,7 +152,7 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301603125397" FOLDED="true" ID="ID_673969106" MODIFIED="1303850787845" TEXT="analyst generates system requirements for iteration">
+<node COLOR="#111111" CREATED="1301603125397" FOLDED="true" ID="ID_673969106" MODIFIED="1456842675891" TEXT="analyst generates system requirements for iteration">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301603293004" ID="ID_526710739" MODIFIED="1303836726174" TEXT="UML sequence diagrams">
 <edge STYLE="bezier"/>
@@ -156,7 +161,7 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301603147388" FOLDED="true" ID="ID_576994306" MODIFIED="1303850787845" TEXT="analyst and developer generates code requirements">
+<node COLOR="#111111" CREATED="1301603147388" FOLDED="true" ID="ID_576994306" MODIFIED="1456842675891" TEXT="analyst and developer generates code requirements">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301603348116" ID="ID_942286872" MODIFIED="1303836726174" TEXT="UML class diagrams">
 <edge STYLE="bezier"/>
@@ -165,8 +170,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301598212165" FOLDED="true" ID="ID_1592984559" MODIFIED="1303850787846" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301598212165" FOLDED="true" ID="ID_1592984559" MODIFIED="1456842675892" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301603655754" ID="ID_144368035" MODIFIED="1303836726173" TEXT="Customer Requirments">
 <edge STYLE="bezier"/>
@@ -180,7 +185,7 @@
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 </node>
-<node COLOR="#990000" CREATED="1301603691627" FOLDED="true" ID="ID_393264312" MODIFIED="1303850787846" TEXT="UML Diagrams">
+<node COLOR="#990000" CREATED="1301603691627" FOLDED="true" ID="ID_393264312" MODIFIED="1456842675892" TEXT="UML Diagrams">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301603702211" ID="ID_1863630809" MODIFIED="1303836726173" TEXT="Overview">
@@ -200,10 +205,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301603762083" FOLDED="true" ID="ID_1118671501" MODIFIED="1303850787847" TEXT="Notes">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301603762083" FOLDED="true" ID="ID_1118671501" MODIFIED="1456842675892" TEXT="Notes">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301318309578" FOLDED="true" ID="ID_788591922" MODIFIED="1303850787846" TEXT="use uml tool">
+<node COLOR="#990000" CREATED="1301318309578" FOLDED="true" ID="ID_788591922" MODIFIED="1456842675892" TEXT="use uml tool">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301334265852" ID="ID_1660329434" MODIFIED="1303836726172" TEXT="overview diagram">
@@ -250,7 +255,7 @@
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#990000" CREATED="1301318544456" FOLDED="true" ID="ID_1081655555" MODIFIED="1303850787846" TEXT="use uml methodology">
+<node COLOR="#990000" CREATED="1301318544456" FOLDED="true" ID="ID_1081655555" MODIFIED="1456842675892" TEXT="use uml methodology">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301318720808" ID="ID_821658481" MODIFIED="1303836726171" TEXT="standard uml definitions">
@@ -293,21 +298,22 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1300979789108" FOLDED="true" HGAP="163" ID="ID_285148440" MODIFIED="1303851373268" POSITION="right" TEXT="Code Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_481010017" ENDARROW="Default" ENDINCLINATION="36;0;" ID="Arrow_ID_1428091921" STARTARROW="None" STARTINCLINATION="36;0;"/>
+<node COLOR="#0033ff" CREATED="1300979789108" FOLDED="true" HGAP="162" ID="ID_285148440" MODIFIED="1456847926688" POSITION="right" TEXT="Code Standards">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_481010017" ENDARROW="Default" ENDINCLINATION="40;-4;" ID="Arrow_ID_1428091921" STARTARROW="None" STARTINCLINATION="30;3;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_285148440" ENDARROW="Default" ENDINCLINATION="33;-4;" ID="Arrow_ID_1003329851" SOURCE="ID_380288252" STARTARROW="None" STARTINCLINATION="33;4;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301678794133" FOLDED="true" ID="ID_1639622099" MODIFIED="1303850787848" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301678794133" FOLDED="true" ID="ID_1639622099" MODIFIED="1456842675893" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301678815077" FOLDED="true" ID="ID_1179509686" MODIFIED="1303850787848" TEXT="iterate">
+<node COLOR="#990000" CREATED="1301678815077" FOLDED="true" ID="ID_1179509686" MODIFIED="1456842675893" TEXT="iterate">
 <edge STYLE="bezier"/>
 <cloud/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301678869776" ID="ID_310360627" MODIFIED="1303836726168" TEXT="Developer reviews assigned tickets">
 <edge STYLE="bezier"/>
 </node>
-<node COLOR="#111111" CREATED="1301678930123" FOLDED="true" ID="ID_918221683" MODIFIED="1303850787848" TEXT="Developer selects a ticket to work on based on:">
+<node COLOR="#111111" CREATED="1301678930123" FOLDED="true" ID="ID_918221683" MODIFIED="1456842675893" TEXT="Developer selects a ticket to work on based on:">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301678953756" ID="ID_1572739077" MODIFIED="1303836726167" TEXT="Priority">
 <edge STYLE="bezier"/>
@@ -315,7 +321,7 @@
 <node COLOR="#111111" CREATED="1301678961740" ID="ID_170710379" MODIFIED="1303836726167" TEXT="Schedule">
 <edge STYLE="bezier"/>
 </node>
-<node COLOR="#111111" CREATED="1301678966524" FOLDED="true" ID="ID_1572860791" MODIFIED="1303850787848" TEXT="Need">
+<node COLOR="#111111" CREATED="1301678966524" FOLDED="true" ID="ID_1572860791" MODIFIED="1456842675893" TEXT="Need">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301678989334" ID="ID_1337925639" MODIFIED="1303836726167">
 <richcontent TYPE="NODE"><html>
@@ -327,16 +333,16 @@
       Developer should work on tickets
     </p>
     <p>
-      &#160;&#160;- that block further development
+      &#xa0;&#xa0;- that block further development
     </p>
     <p>
-      &#160;&#160;- that prevent another developer
+      &#xa0;&#xa0;- that prevent another developer
     </p>
     <p>
-      &#160;&#160;&#160;&#160;from completeing a task
+      &#xa0;&#xa0;&#xa0;&#xa0;from completeing a task
     </p>
     <p>
-      &#160;&#160;- that have the most risk
+      &#xa0;&#xa0;- that have the most risk
     </p>
   </body>
 </html></richcontent>
@@ -383,14 +389,14 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301605545107" FOLDED="true" ID="ID_1584733087" MODIFIED="1303850787849" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301605545107" FOLDED="true" ID="ID_1584733087" MODIFIED="1456842675893" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301605559835" ID="ID_469015070" MODIFIED="1303836726166" TEXT="code that meets the requiremens">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 </node>
-<node COLOR="#990000" CREATED="1301605567667" FOLDED="true" ID="ID_336588696" MODIFIED="1303850787849" TEXT="code documentation">
+<node COLOR="#990000" CREATED="1301605567667" FOLDED="true" ID="ID_336588696" MODIFIED="1456842675893" TEXT="code documentation">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301666247927" ID="ID_469635819" MODIFIED="1303836726166" TEXT="create/update wiki pages">
@@ -405,13 +411,13 @@
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301605535124" FOLDED="true" ID="ID_1818853641" MODIFIED="1303851372340" TEXT="Conventions">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301605535124" FOLDED="true" ID="ID_1818853641" MODIFIED="1456842675896" TEXT="Conventions">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1300979807383" FOLDED="true" ID="ID_190081722" MODIFIED="1303851370244" TEXT="Naming">
+<node COLOR="#990000" CREATED="1300979807383" FOLDED="true" ID="ID_190081722" MODIFIED="1456842675894" TEXT="Naming">
 <edge COLOR="#3333ff" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1300979818970" FOLDED="true" ID="ID_1402365972" MODIFIED="1303850787849" TEXT="file names">
+<node COLOR="#111111" CREATED="1300979818970" FOLDED="true" ID="ID_1402365972" MODIFIED="1456842675893" TEXT="file names">
 <edge COLOR="#990000" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1300979829026" ID="ID_489856060" MODIFIED="1303836726163" TEXT="camel case (UUU)">
@@ -423,7 +429,7 @@
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1300979872179" FOLDED="true" ID="ID_1360468831" MODIFIED="1303850787849" TEXT="Class">
+<node COLOR="#111111" CREATED="1300979872179" FOLDED="true" ID="ID_1360468831" MODIFIED="1456842675893" TEXT="Class">
 <edge COLOR="#990000" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1300979950903" ID="ID_1149032965" MODIFIED="1303836726163" TEXT="camel case (UUU)">
@@ -435,7 +441,7 @@
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1300979990343" FOLDED="true" ID="ID_226986458" MODIFIED="1303850787849" TEXT="functions / methods">
+<node COLOR="#111111" CREATED="1300979990343" FOLDED="true" ID="ID_226986458" MODIFIED="1456842675894" TEXT="functions / methods">
 <edge COLOR="#990000" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1300980005058" ID="ID_662230212" MODIFIED="1303836726163" TEXT="camel case (uUU)">
@@ -447,13 +453,13 @@
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1300980092412" FOLDED="true" ID="ID_1847028506" MODIFIED="1303850787850" TEXT="Variables">
+<node COLOR="#111111" CREATED="1300980092412" FOLDED="true" ID="ID_1847028506" MODIFIED="1456842675894" TEXT="Variables">
 <edge COLOR="#990000" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1300980137648" FOLDED="true" ID="ID_463533678" MODIFIED="1303850787850" TEXT="scope + type + Name (UUU)">
+<node COLOR="#111111" CREATED="1300980137648" FOLDED="true" ID="ID_463533678" MODIFIED="1456842675894" TEXT="scope + type + Name (UUU)">
 <edge COLOR="#111111" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1300980240650" FOLDED="true" ID="ID_1067603955" MODIFIED="1303850787850" TEXT="scopes">
+<node COLOR="#111111" CREATED="1300980240650" FOLDED="true" ID="ID_1067603955" MODIFIED="1456842675894" TEXT="scopes">
 <edge COLOR="#111111" STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1300980250818" ID="ID_788958247" MODIFIED="1303836726162" TEXT="g = global">
 <edge COLOR="#111111" STYLE="bezier"/>
@@ -468,7 +474,7 @@
 <edge COLOR="#111111" STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1300980301099" FOLDED="true" ID="ID_529945941" MODIFIED="1303850787850" TEXT="types">
+<node COLOR="#111111" CREATED="1300980301099" FOLDED="true" ID="ID_529945941" MODIFIED="1456842675894" TEXT="types">
 <edge COLOR="#111111" STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1300980410742" ID="ID_565047157" MODIFIED="1303836726161" TEXT="arr = array">
 <edge COLOR="#111111" STYLE="bezier"/>
@@ -512,7 +518,7 @@
       i.e. lintCounter
     </p>
     <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;gstrUserName
+      &#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;gstrUserName
     </p>
   </body>
 </html></richcontent>
@@ -521,10 +527,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#990000" CREATED="1300980435305" FOLDED="true" ID="ID_690282856" MODIFIED="1303850787852" TEXT="Comments">
+<node COLOR="#990000" CREATED="1300980435305" FOLDED="true" ID="ID_690282856" MODIFIED="1456842675895" TEXT="Comments">
 <edge COLOR="#3333ff" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1300980441083" FOLDED="true" ID="ID_1356880356" MODIFIED="1303850787852">
+<node COLOR="#111111" CREATED="1300980441083" FOLDED="true" ID="ID_1356880356" MODIFIED="1456842675895">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -555,7 +561,7 @@
 </html></richcontent>
 <edge COLOR="#990000" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1300980540925" FOLDED="true" ID="ID_1042952371" MODIFIED="1303850787852" TEXT="file comments">
+<node COLOR="#111111" CREATED="1300980540925" FOLDED="true" ID="ID_1042952371" MODIFIED="1456842675894" TEXT="file comments">
 <edge COLOR="#111111" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1300980551421" ID="ID_542579058" MODIFIED="1303836726159">
@@ -583,7 +589,7 @@
       //
     </p>
     <p>
-      // History:&#160;&#160;Date&#160;&#160;|&#160;&#160;Programmer&#160;&#160;|&#160;&#160;Contact&#160;&#160;|&#160;&#160;Description&#160;&#160;|
+      // History:&#xa0;&#xa0;Date&#xa0;&#xa0;|&#xa0;&#xa0;Programmer&#xa0;&#xa0;|&#xa0;&#xa0;Contact&#xa0;&#xa0;|&#xa0;&#xa0;Description&#xa0;&#xa0;|
     </p>
     <p>
       ====*/
@@ -593,7 +599,7 @@
 <edge COLOR="#111111" STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1300980940261" FOLDED="true" ID="ID_1706721600" MODIFIED="1303850787852" TEXT="class comments">
+<node COLOR="#111111" CREATED="1300980940261" FOLDED="true" ID="ID_1706721600" MODIFIED="1456842675894" TEXT="class comments">
 <edge COLOR="#111111" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1300980949846" ID="ID_216758306" MODIFIED="1303836726159">
@@ -624,22 +630,22 @@
       // Members:
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;MainConsole() -- constructor
+      //&#xa0;&#xa0;&#xa0;&#xa0;MainConsole() -- constructor
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;InitConsole() -- further initialization
+      //&#xa0;&#xa0;&#xa0;&#xa0;InitConsole() -- further initialization
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;DoMyStuff() -- does my stuff for me
+      //&#xa0;&#xa0;&#xa0;&#xa0;DoMyStuff() -- does my stuff for me
     </p>
     <p>
       //
     </p>
     <p>
-      // History:&#160;&#160;Date&#160;&#160;|&#160;&#160;Programmer&#160;&#160;|&#160;&#160;Contact&#160;&#160;|&#160;&#160;Description&#160;&#160;|
+      // History:&#xa0;&#xa0;Date&#xa0;&#xa0;|&#xa0;&#xa0;Programmer&#xa0;&#xa0;|&#xa0;&#xa0;Contact&#xa0;&#xa0;|&#xa0;&#xa0;Description&#xa0;&#xa0;|
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;2011-1-20&#160;&#160;|&#160;&#160;Edna Zegreate&#160;&#160;|&#160;&#160;ezegreate@gmail.com&#160;&#160;|&#160;&#160;fixed the constructor&#160;&#160;|
+      //&#xa0;&#xa0;&#xa0;&#xa0;2011-1-20&#xa0;&#xa0;|&#xa0;&#xa0;Edna Zegreate&#xa0;&#xa0;|&#xa0;&#xa0;ezegreate@gmail.com&#xa0;&#xa0;|&#xa0;&#xa0;fixed the constructor&#xa0;&#xa0;|
     </p>
     <p>
       ====*/
@@ -649,7 +655,7 @@
 <edge COLOR="#111111" STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1300981436189" FOLDED="true" ID="ID_587032882" MODIFIED="1303850787852" TEXT="function/method comments">
+<node COLOR="#111111" CREATED="1300981436189" FOLDED="true" ID="ID_587032882" MODIFIED="1456842675894" TEXT="function/method comments">
 <edge COLOR="#111111" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1300980949846" ID="ID_1742522461" MODIFIED="1303836726158">
@@ -677,22 +683,22 @@
       //
     </p>
     <p>
-      //&#160;&#160;Parameters:
+      //&#xa0;&#xa0;Parameters:
     </p>
     <p>
-      ///&#160;&#160;&#160;&#160;@param vdteDate -- start date of billing
+      ///&#xa0;&#xa0;&#xa0;&#xa0;@param vdteDate -- start date of billing
     </p>
     <p>
-      ///&#160;&#160;&#160;&#160;@param vintClientId -- id of client to run billing for
+      ///&#xa0;&#xa0;&#xa0;&#xa0;@param vintClientId -- id of client to run billing for
     </p>
     <p>
       //
     </p>
     <p>
-      //&#160;&#160;History:&#160;&#160;Date&#160;&#160;|&#160;&#160;Programmer&#160;&#160;|&#160;&#160;Contact&#160;&#160;|&#160;&#160;Description&#160;&#160;|
+      //&#xa0;&#xa0;History:&#xa0;&#xa0;Date&#xa0;&#xa0;|&#xa0;&#xa0;Programmer&#xa0;&#xa0;|&#xa0;&#xa0;Contact&#xa0;&#xa0;|&#xa0;&#xa0;Description&#xa0;&#xa0;|
     </p>
     <p>
-      //&#160;&#160;&#160;&#160;2011-1-20&#160;&#160;|&#160;&#160;Edna Zegreate&#160;&#160;|&#160;&#160;ezegreate@gmail.com&#160;&#160;|&#160;&#160;fixed the billing calculation&#160;&#160;|
+      //&#xa0;&#xa0;&#xa0;&#xa0;2011-1-20&#xa0;&#xa0;|&#xa0;&#xa0;Edna Zegreate&#xa0;&#xa0;|&#xa0;&#xa0;ezegreate@gmail.com&#xa0;&#xa0;|&#xa0;&#xa0;fixed the billing calculation&#xa0;&#xa0;|
     </p>
     <p>
       ====*/
@@ -702,7 +708,7 @@
 <edge COLOR="#111111" STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301076023949" FOLDED="true" ID="ID_54625545" MODIFIED="1303850787852" TEXT="code block">
+<node COLOR="#111111" CREATED="1301076023949" FOLDED="true" ID="ID_54625545" MODIFIED="1456842675895" TEXT="code block">
 <edge COLOR="#111111" STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301076031140" ID="ID_1815613611" MODIFIED="1303836726158">
@@ -746,10 +752,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#990000" CREATED="1301078166553" FOLDED="true" ID="ID_557412593" MODIFIED="1303850787854" TEXT="Documentation">
+<node COLOR="#990000" CREATED="1301078166553" FOLDED="true" ID="ID_557412593" MODIFIED="1456842675896" TEXT="Documentation">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1301078172680" FOLDED="true" ID="ID_413607529" MODIFIED="1303850787853">
+<node COLOR="#111111" CREATED="1301078172680" FOLDED="true" ID="ID_413607529" MODIFIED="1456842675895">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -772,7 +778,7 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301078620644" FOLDED="true" ID="ID_1019438605" MODIFIED="1303850787853">
+<node COLOR="#111111" CREATED="1301078620644" FOLDED="true" ID="ID_1019438605" MODIFIED="1456842675895">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -798,10 +804,10 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301078311886" FOLDED="true" ID="ID_748959953" MODIFIED="1303850787853" TEXT="a wiki home/hub page">
+<node COLOR="#111111" CREATED="1301078311886" FOLDED="true" ID="ID_748959953" MODIFIED="1456842675895" TEXT="a wiki home/hub page">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1301078361816" FOLDED="true" ID="ID_566791513" MODIFIED="1303850787853" TEXT="contain pages/links for">
+<node COLOR="#111111" CREATED="1301078361816" FOLDED="true" ID="ID_566791513" MODIFIED="1456842675895" TEXT="contain pages/links for">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301078449852" ID="ID_261688208" MODIFIED="1303836726156" TEXT="Code Documentation">
 <edge STYLE="bezier"/>
@@ -823,17 +829,18 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076688521" FOLDED="true" HGAP="95" ID="ID_481010017" MODIFIED="1303850787859" POSITION="right" TEXT="Peer Reviews Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_1602146436" ENDARROW="Default" ENDINCLINATION="37;0;" ID="Arrow_ID_1800792688" STARTARROW="None" STARTINCLINATION="36;0;"/>
+<node COLOR="#0033ff" CREATED="1301076688521" FOLDED="true" HGAP="94" ID="ID_481010017" MODIFIED="1456847950134" POSITION="right" TEXT="Peer Reviews Standards" VSHIFT="1">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_1602146436" ENDARROW="Default" ENDINCLINATION="34;-4;" ID="Arrow_ID_1800792688" STARTARROW="None" STARTINCLINATION="30;2;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_481010017" ENDARROW="Default" ENDINCLINATION="40;-4;" ID="Arrow_ID_1428091921" SOURCE="ID_285148440" STARTARROW="None" STARTINCLINATION="30;3;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301674629855" FOLDED="true" ID="ID_277265086" MODIFIED="1303850787859" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301674629855" FOLDED="true" ID="ID_277265086" MODIFIED="1456842675897" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301084825309" FOLDED="true" ID="ID_1950702466" MODIFIED="1303850787858" TEXT="Developer creates a new Peer Review">
+<node COLOR="#990000" CREATED="1301084825309" FOLDED="true" ID="ID_1950702466" MODIFIED="1456842675896" TEXT="Developer creates a new Peer Review">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1301675387026" FOLDED="true" ID="ID_186596023" MODIFIED="1303850787857" TEXT="Times to generate peer review">
+<node COLOR="#111111" CREATED="1301675387026" FOLDED="true" ID="ID_186596023" MODIFIED="1456842675896" TEXT="Times to generate peer review">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301675402617" ID="ID_620491596" MODIFIED="1303836726154" TEXT="completion of requirement">
 <edge STYLE="bezier"/>
@@ -841,7 +848,7 @@
 <node COLOR="#111111" CREATED="1301675424096" ID="ID_1416729086" MODIFIED="1303836726154" TEXT="completion of ticket">
 <edge STYLE="bezier"/>
 </node>
-<node COLOR="#111111" CREATED="1301675490636" FOLDED="true" ID="ID_369325091" MODIFIED="1303850787857" TEXT="on major changes">
+<node COLOR="#111111" CREATED="1301675490636" FOLDED="true" ID="ID_369325091" MODIFIED="1456842675896" TEXT="on major changes">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301675430016" ID="ID_1654761538" MODIFIED="1303836726154" TEXT="completion of module">
 <edge STYLE="bezier"/>
@@ -861,11 +868,11 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#990000" CREATED="1301679767943" FOLDED="true" ID="ID_1370489142" MODIFIED="1303850787858" TEXT="iterate">
+<node COLOR="#990000" CREATED="1301679767943" FOLDED="true" ID="ID_1370489142" MODIFIED="1456842675897" TEXT="iterate">
 <edge STYLE="bezier"/>
 <cloud/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1301084771763" FOLDED="true" ID="ID_1452882821" MODIFIED="1303850787858" TEXT="2 reviewers review code for:">
+<node COLOR="#111111" CREATED="1301084771763" FOLDED="true" ID="ID_1452882821" MODIFIED="1456842675896" TEXT="2 reviewers review code for:">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301084792414" ID="ID_193249722" MODIFIED="1303836726153" TEXT="compliance to standards">
@@ -885,10 +892,10 @@
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301675567296" FOLDED="true" ID="ID_1230858757" MODIFIED="1303850787858" TEXT="Peer Review Manager (PRM)">
+<node COLOR="#111111" CREATED="1301675567296" FOLDED="true" ID="ID_1230858757" MODIFIED="1456842675896" TEXT="Peer Review Manager (PRM)">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1301675667162" FOLDED="true" ID="ID_145147515" MODIFIED="1303850787858" TEXT="marks code for:">
+<node COLOR="#111111" CREATED="1301675667162" FOLDED="true" ID="ID_145147515" MODIFIED="1456842675896" TEXT="marks code for:">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301675591295" ID="ID_406633495" MODIFIED="1303836726152" TEXT="integration">
 <edge STYLE="bezier"/>
@@ -903,10 +910,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301675087023" FOLDED="true" ID="ID_1278467676" MODIFIED="1303850787859" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301675087023" FOLDED="true" ID="ID_1278467676" MODIFIED="1456842675897" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301675092791" FOLDED="true" ID="ID_202803069" MODIFIED="1303850787859" TEXT="Peer Review in Trac">
+<node COLOR="#990000" CREATED="1301675092791" FOLDED="true" ID="ID_202803069" MODIFIED="1456842675897" TEXT="Peer Review in Trac">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301675723727" ID="ID_1753908811" MODIFIED="1303836726152" TEXT="with history and reviewer comments">
@@ -915,13 +922,14 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076683776" FOLDED="true" HGAP="146" ID="ID_1602146436" MODIFIED="1303850941641" POSITION="right" TEXT="Testing Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_1858141248" ENDARROW="Default" ENDINCLINATION="35;0;" ID="Arrow_ID_92363677" STARTARROW="None" STARTINCLINATION="36;0;"/>
-<arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-41;36;" ID="Arrow_ID_929457352" STARTARROW="None" STARTINCLINATION="-198;-42;"/>
+<node COLOR="#0033ff" CREATED="1301076683776" FOLDED="true" HGAP="145" ID="ID_1602146436" MODIFIED="1456847957285" POSITION="right" TEXT="Testing Standards" VSHIFT="-2">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-83;17;" ID="Arrow_ID_929457352" STARTARROW="None" STARTINCLINATION="-153;-16;"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_1858141248" ENDARROW="Default" ENDINCLINATION="36;-4;" ID="Arrow_ID_92363677" STARTARROW="None" STARTINCLINATION="27;4;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_1602146436" ENDARROW="Default" ENDINCLINATION="34;-4;" ID="Arrow_ID_1800792688" SOURCE="ID_481010017" STARTARROW="None" STARTINCLINATION="30;2;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301675851968" FOLDED="true" ID="ID_1867956274" MODIFIED="1303850787863" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301675851968" FOLDED="true" ID="ID_1867956274" MODIFIED="1456842675899" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301676782003" ID="ID_737164741" MODIFIED="1303836726149" TEXT="Create Test Strategy during RG and Design">
 <edge STYLE="bezier"/>
@@ -944,14 +952,14 @@
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 </node>
-<node COLOR="#990000" CREATED="1301677455023" FOLDED="true" ID="ID_902372313" MODIFIED="1303850787862" TEXT="iterate">
+<node COLOR="#990000" CREATED="1301677455023" FOLDED="true" ID="ID_902372313" MODIFIED="1456842675899" TEXT="iterate">
 <edge STYLE="bezier"/>
 <cloud/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1301676771098" FOLDED="true" ID="ID_1276701775" MODIFIED="1303850787862" TEXT="Testers test">
+<node COLOR="#111111" CREATED="1301676771098" FOLDED="true" ID="ID_1276701775" MODIFIED="1456842675899" TEXT="Testers test">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1301084881696" FOLDED="true" ID="ID_1876124210" MODIFIED="1303850787860" TEXT="use various methods (at least 2)">
+<node COLOR="#111111" CREATED="1301084881696" FOLDED="true" ID="ID_1876124210" MODIFIED="1456842675898" TEXT="use various methods (at least 2)">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301084901209" ID="ID_1019143257" MODIFIED="1303836726147" TEXT="unit tests">
@@ -983,10 +991,10 @@
 <font NAME="SansSerif" SIZE="12"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301084966676" FOLDED="true" ID="ID_204283704" MODIFIED="1303850787861" TEXT="times to test">
+<node COLOR="#111111" CREATED="1301084966676" FOLDED="true" ID="ID_204283704" MODIFIED="1456842675899" TEXT="times to test">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
-<node COLOR="#111111" CREATED="1301085057048" FOLDED="true" ID="ID_432697738" MODIFIED="1303850787860" TEXT="during coding">
+<node COLOR="#111111" CREATED="1301085057048" FOLDED="true" ID="ID_432697738" MODIFIED="1456842675899" TEXT="during coding">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301085081240" ID="ID_600725673" MODIFIED="1303836726146" TEXT="unit tests">
@@ -996,7 +1004,7 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301085100346" FOLDED="true" ID="ID_1870346894" MODIFIED="1303850787861" TEXT="after peer review">
+<node COLOR="#111111" CREATED="1301085100346" FOLDED="true" ID="ID_1870346894" MODIFIED="1456842675899" TEXT="after peer review">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301085113573" ID="ID_188199595" MODIFIED="1303836726146" TEXT="unit tests">
@@ -1009,7 +1017,7 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301085176088" FOLDED="true" ID="ID_1996375412" MODIFIED="1303850787861" TEXT="during integration">
+<node COLOR="#111111" CREATED="1301085176088" FOLDED="true" ID="ID_1996375412" MODIFIED="1456842675899" TEXT="during integration">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301085183773" ID="ID_735358398" MODIFIED="1303836726146" TEXT="unit tests">
@@ -1022,7 +1030,7 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301085206226" FOLDED="true" ID="ID_290151287" MODIFIED="1303850787861" TEXT="prior to release">
+<node COLOR="#111111" CREATED="1301085206226" FOLDED="true" ID="ID_290151287" MODIFIED="1456842675899" TEXT="prior to release">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="12"/>
 <node COLOR="#111111" CREATED="1301085212911" ID="ID_1985114816" MODIFIED="1303836726145" TEXT="unit tests">
@@ -1046,10 +1054,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301675856223" FOLDED="true" ID="ID_207541612" MODIFIED="1303850787865" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301675856223" FOLDED="true" ID="ID_207541612" MODIFIED="1456842675900" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301676438596" FOLDED="true" ID="ID_1804994496" MODIFIED="1303850787864" TEXT="Test Strategy">
+<node COLOR="#990000" CREATED="1301676438596" FOLDED="true" ID="ID_1804994496" MODIFIED="1456842675899" TEXT="Test Strategy">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301679812184" ID="ID_1201244261" MODIFIED="1303836726145" TEXT="level of testing required for system">
@@ -1059,10 +1067,10 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#990000" CREATED="1301676492550" FOLDED="true" ID="ID_1711435196" MODIFIED="1303850787864" TEXT="Test Reports">
+<node COLOR="#990000" CREATED="1301676492550" FOLDED="true" ID="ID_1711435196" MODIFIED="1456842675900" TEXT="Test Reports">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1301679881459" FOLDED="true" ID="ID_846580815" MODIFIED="1303850787864" TEXT="type">
+<node COLOR="#111111" CREATED="1301679881459" FOLDED="true" ID="ID_846580815" MODIFIED="1456842675899" TEXT="type">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301676738521" ID="ID_227915374" MODIFIED="1303836726144" TEXT="file">
 <edge STYLE="bezier"/>
@@ -1074,7 +1082,7 @@
 <edge STYLE="bezier"/>
 </node>
 </node>
-<node COLOR="#111111" CREATED="1301679884139" FOLDED="true" ID="ID_1796461482" MODIFIED="1303850787864" TEXT="notes">
+<node COLOR="#111111" CREATED="1301679884139" FOLDED="true" ID="ID_1796461482" MODIFIED="1456842675900" TEXT="notes">
 <edge STYLE="bezier"/>
 <node COLOR="#111111" CREATED="1301679891668" ID="ID_373705521" MODIFIED="1303836726144">
 <richcontent TYPE="NODE"><html>
@@ -1083,7 +1091,7 @@
   </head>
   <body>
     <p>
-      tools like NUnit, CxxTest, Rake&#160;
+      tools like NUnit, CxxTest, Rake&#xa0;
     </p>
     <p>
       generate test reports for you
@@ -1096,15 +1104,16 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301076694553" FOLDED="true" HGAP="111" ID="ID_1858141248" MODIFIED="1303851004148" POSITION="right" TEXT="Deployment Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_229507528" ENDARROW="Default" ENDINCLINATION="37;0;" ID="Arrow_ID_1043456425" STARTARROW="None" STARTINCLINATION="36;-1;"/>
-<arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-67;28;" ID="Arrow_ID_754092341" STARTARROW="None" STARTINCLINATION="-244;-114;"/>
+<node COLOR="#0033ff" CREATED="1301076694553" FOLDED="true" HGAP="110" ID="ID_1858141248" MODIFIED="1456847957285" POSITION="right" TEXT="Deployment Standards" VSHIFT="-1">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#ff3333" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-98;15;" ID="Arrow_ID_754092341" STARTARROW="None" STARTINCLINATION="-159;-35;"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_229507528" ENDARROW="Default" ENDINCLINATION="31;-3;" ID="Arrow_ID_1043456425" STARTARROW="None" STARTINCLINATION="39;4;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_1858141248" ENDARROW="Default" ENDINCLINATION="36;-4;" ID="Arrow_ID_92363677" SOURCE="ID_1602146436" STARTARROW="None" STARTINCLINATION="27;4;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301677333522" FOLDED="true" ID="ID_770106517" MODIFIED="1303850787866" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677333522" FOLDED="true" ID="ID_770106517" MODIFIED="1456842675898" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301678302721" FOLDED="true" ID="ID_1634962777" MODIFIED="1303850787866" TEXT="iterate">
+<node COLOR="#990000" CREATED="1301678302721" FOLDED="true" ID="ID_1634962777" MODIFIED="1456842675898" TEXT="iterate">
 <edge STYLE="bezier"/>
 <cloud/>
 <font NAME="SansSerif" SIZE="14"/>
@@ -1145,10 +1154,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301678295041" FOLDED="true" ID="ID_209994941" MODIFIED="1303850787867" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301678295041" FOLDED="true" ID="ID_209994941" MODIFIED="1456842675898" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301678444001" FOLDED="true" ID="ID_12911508" MODIFIED="1303850787866" TEXT="UML Deployment Diagram">
+<node COLOR="#990000" CREATED="1301678444001" FOLDED="true" ID="ID_12911508" MODIFIED="1456842675898" TEXT="UML Deployment Diagram">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301678501069" ID="ID_1221331198" MODIFIED="1303836726143" TEXT="Actual Deployment Diagram">
@@ -1159,8 +1168,8 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301677481473" FOLDED="true" ID="ID_456863605" MODIFIED="1303850787867" TEXT="Notes">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677481473" FOLDED="true" ID="ID_456863605" MODIFIED="1456842675898" TEXT="Notes">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
 <node COLOR="#990000" CREATED="1301502607151" ID="ID_1512918554" MODIFIED="1303836726142">
 <richcontent TYPE="NODE"><html>
@@ -1179,7 +1188,7 @@
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 </node>
-<node COLOR="#990000" CREATED="1301502659391" ID="ID_1797361921" MODIFIED="1303836726142">
+<node COLOR="#990000" CREATED="1301502659391" ID="ID_1797361921" MODIFIED="1456841706151">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -1189,10 +1198,7 @@
       installation folder will be:
     </p>
     <p>
-      &#160;&#160;- Programs Files\UKY\AuxServices\PROGRAM
-    </p>
-    <p>
-      &#160;&#160;- InetPub\wwwroot\UKY\AuxServices\WEB_APP
+      &#160;&#160;- ...
     </p>
   </body>
 </html></richcontent>
@@ -1201,18 +1207,19 @@
 </node>
 </node>
 </node>
-<node COLOR="#0033ff" CREATED="1301077744574" FOLDED="true" HGAP="103" ID="ID_229507528" MODIFIED="1303850787868" POSITION="right" TEXT="Maintenance Standards">
-<edge COLOR="#0033ff" STYLE="bezier" WIDTH="4"/>
-<arrowlink COLOR="#009900" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-301;0;" ID="Arrow_ID_1508011310" STARTARROW="None" STARTINCLINATION="-462;0;"/>
+<node COLOR="#0033ff" CREATED="1301077744574" FOLDED="true" HGAP="102" ID="ID_229507528" MODIFIED="1456847882994" POSITION="right" TEXT="Maintenance Standards" VSHIFT="-95">
+<edge COLOR="#0033ff" STYLE="sharp_bezier" WIDTH="8"/>
+<arrowlink COLOR="#009900" DESTINATION="ID_1820964415" ENDARROW="Default" ENDINCLINATION="-331;0;" ID="Arrow_ID_1508011310" STARTARROW="None" STARTINCLINATION="-435;0;"/>
+<linktarget COLOR="#009900" DESTINATION="ID_229507528" ENDARROW="Default" ENDINCLINATION="31;-3;" ID="Arrow_ID_1043456425" SOURCE="ID_1858141248" STARTARROW="None" STARTINCLINATION="39;4;"/>
 <font NAME="SansSerif" SIZE="18"/>
-<node COLOR="#00b439" CREATED="1301677488609" FOLDED="true" ID="ID_1589829166" MODIFIED="1303850787868" TEXT="Process">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677488609" FOLDED="true" ID="ID_1589829166" MODIFIED="1456842675897" TEXT="Process">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301678241212" FOLDED="true" ID="ID_1764225902" MODIFIED="1303850787868" TEXT="iterate">
+<node COLOR="#990000" CREATED="1301678241212" FOLDED="true" ID="ID_1764225902" MODIFIED="1456842675897" TEXT="iterate">
 <edge STYLE="bezier"/>
 <cloud/>
 <font NAME="SansSerif" SIZE="14"/>
-<node COLOR="#111111" CREATED="1301677518723" FOLDED="true" ID="ID_607145626" MODIFIED="1303850787867">
+<node COLOR="#111111" CREATED="1301677518723" FOLDED="true" ID="ID_607145626" MODIFIED="1456842675897">
 <richcontent TYPE="NODE"><html>
   <head>
     
@@ -1248,10 +1255,10 @@
 </node>
 </node>
 </node>
-<node COLOR="#00b439" CREATED="1301677490929" FOLDED="true" ID="ID_6280647" MODIFIED="1303850787868" TEXT="Produces">
-<edge STYLE="bezier" WIDTH="2"/>
+<node COLOR="#00b439" CREATED="1301677490929" FOLDED="true" ID="ID_6280647" MODIFIED="1456842675897" TEXT="Produces">
+<edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1301585928878" FOLDED="true" ID="ID_1874736020" MODIFIED="1303850787868" TEXT="Maintenence Document">
+<node COLOR="#990000" CREATED="1301585928878" FOLDED="true" ID="ID_1874736020" MODIFIED="1456842675897" TEXT="Maintenence Document">
 <edge STYLE="bezier"/>
 <font NAME="SansSerif" SIZE="14"/>
 <node COLOR="#111111" CREATED="1301677746331" ID="ID_893888184" MODIFIED="1303836726141" TEXT="Maintenance Requirements">
