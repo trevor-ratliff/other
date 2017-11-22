@@ -1,0 +1,23 @@
+{
+  "name": "eslint",
+  "version": "1.0.0",
+  "description": "my eslint style learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trevor-ratliff/other.git"
+  },
+  "keywords": [
+    "eslint",
+    "javascript"
+  ],
+  "author": "Trevor Ratliff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trevor-ratliff/other/issues"
+  },
+  "homepage": "https://github.com/trevor-ratliff/other#readme"
+}
