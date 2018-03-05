@@ -1,0 +1,71 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.App .App-page {
+  margin: 0.25ex;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 {
+  display: inline-block;
+  padding-left: 0.25em;
+  position: relative;
+  vertical-align: top;
+}
+
+.col-1 {
+  width: calc(100% - 0.5em)!important;
+}
+
+.col-2 {
+  width: calc((100% - (0.25em * 3))/2)!important;
+}
+
+.col-3 {
+  width: calc((100% - (0.25em * 4))/3)!important;
+}
+
+.col-4 {
+  width: calc((100% - (0.25em * 5))/4)!important;
+}
+
+.col-5 {
+  width: calc((100% - (0.25em * 6))/5)!important;
+}
+
+.col-6 {
+  width: calc((100% - (0.25em * 7))/6)!important;
+}
+
+.col-7 {
+  width: calc((100% - (0.25em * 8))/7)!important;
+}
+
+.col-8 {
+  width: calc((100% - (0.25em * 9))/8)!important;
+}
