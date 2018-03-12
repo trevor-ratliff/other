@@ -1,0 +1,35 @@
+.contact-card {
+	position: relative;
+	padding: 5px 5px 0px 5px;
+	cursor: pointer;
+}
+
+.contact-card .container {
+	border: 1px solid hsla(30, 75%, 25%, 1);
+	border-radius: 3px;
+	box-sizing: border-box;
+	width: calc(100% - 10px);
+}
+
+.contact-card .container:hover {
+	background-color: hsla(200, 100%, 75%, 0.6);
+}
+
+.contact-card .contact-gravitar {
+	/*float: left;*/
+	position: absolute;
+	top: 0ex;
+	left: 0ex;
+}
+
+.contact-card .contact-gravitar img {
+	position: relative;
+	border-radius: 3px;
+}
+
+.contact-card .field {
+	float: right;
+	height: 50%;
+	text-align: left;
+	width: 50%;
+}

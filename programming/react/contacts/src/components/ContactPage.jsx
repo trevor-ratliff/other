@@ -32,7 +32,9 @@ class ContactPage extends Component {
   }
 
   closeCard(e, index) {
-    let _openContacts = this.state.openContacts.splice(index, 1);
+    if (!!console && !!console.log) console.log(e, index, this.state.openContacts.indexOf(index));
+    let _openContacts = this.state.openContacts.slice();
+    _openContacts.splice(this.state.openContacts.indexOf(index), 1);
     this.setState({ openContacts: _openContacts });
     return;
   }
@@ -52,7 +54,7 @@ class ContactPage extends Component {
             itemSize={this.state.listItemHeight} // Also supports variable heights (array or function getter)
             renderItem={({index, style}) =>
               <ContactListItem
-                key={"cli_" + index + "_" + this.state.contacts[index].number}
+                key={"cli_" + this.state.contacts[index].number}
                 index={index}
                 style={style}
                 contact={this.state.contacts[index]}
@@ -71,12 +73,12 @@ class ContactPage extends Component {
             itemSize={this.state.cardHeight} // Also supports variable heights (array or function getter)
             renderItem={({index, style}) =>
               <ContactCard
-                key={"crd_"+ index + "_" + this.state.openContacts[index].number}
+                key={"crd_" + this.state.openContacts[index].contact.number}
                 index={index}
                 style={style}
-                contact={this.state.openContacts[index]}
+                contact={this.state.openContacts[index].contact}
                 gravitarHeight={this.state.cardHeight}
-                onClick={(e) => {this.closeCard(e, index)}}
+                onClick={(e) => {this.closeCard(e, this.state.openContacts[index])}}
               />
             }
             onItemsRendered={({startIndex, stopIndex}) => {
