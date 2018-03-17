@@ -6,12 +6,12 @@ class ContactCard extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			"contact": {
+			//"contact": {
 				number: props.contact.number,
 				name: props.contact.name,
 				context: props.contact.context,
 				email: props.contact.email
-			}
+			//}
 		};
 
 		this.props = props;
@@ -36,6 +36,24 @@ class ContactCard extends Component {
 				</div>
 			);
 		}
+
+		this.handleChangeInput = this.handleChangeInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+	}
+
+	handleChangeInput(event) {
+		//debugger;
+		const target = event.target || null;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+
+		if (!!target)
+			this.setState({[name]: target.value});
+	}
+
+	handleSubmit(event) {
+		alert('A name was submitted: ' + this.state.value);
+		event.preventDefault();
 	}
 
 	render() {
@@ -46,19 +64,19 @@ class ContactCard extends Component {
 					<div className="fields" style={this.fieldsStyle}>
 						<div className="field contact-number">
 							<label>Phone: </label><br />
-							<input type="phone" value={this.state.contact.number} />
+							<input type="phone" name="number" value={this.state.number} onChange={this.handleChangeInput} />
 						</div>
 						<div className="field contact-name">
 							<label>Name: </label><br />
-							<input type="text" value={this.state.contact.name} />
+							<input type="text" name="name" value={this.state.name} onChange={this.handleChangeInput} />
 						</div>
 						<div className="field contact-context">
 							<label>Context: </label><br />
-							<input type="text" value={this.state.contact.context} />
+							<input type="text" name="context" value={this.state.context} onChange={this.handleChangeInput} />
 						</div>
 						<div className="field contact-email">
 							<label>Email: </label><br />
-							<input type="email" value={this.state.contact.email} />
+							<input type="email" name="email" value={this.state.email} onChange={this.handleChangeInput} />
 						</div>
 					</div>
 					<div className="close" onClick={this.props.onClick}>x</div>
