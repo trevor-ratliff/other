@@ -20,6 +20,9 @@ class ContactPage extends Component {
       cardHeight: 150
     };
     this.addCard = this.addCard.bind(this);
+    this.closeCard = this.closeCard.bind(this);
+    this.saveCard = this.saveCard.bind(this);
+
     if (!!console && !!console.log) console.log("ContactPage Constructor", props)
   }
 
@@ -37,6 +40,14 @@ class ContactPage extends Component {
     _openContacts.splice(this.state.openContacts.indexOf(index), 1);
     this.setState({ openContacts: _openContacts });
     return;
+  }
+
+  saveCard(e, oldContact, newContact) {
+    //debugger;
+    let _contacts = this.state.contacts.slice();
+    let _old = _contacts.indexOf(oldContact);
+    _contacts.splice(_old, 1, newContact);
+    this.setState({contacts: _contacts});
   }
 
   render() {
@@ -79,6 +90,7 @@ class ContactPage extends Component {
                 contact={this.state.openContacts[index].contact}
                 gravitarHeight={this.state.cardHeight}
                 onClick={(e) => {this.closeCard(e, this.state.openContacts[index])}}
+                onSave={this.saveCard}
               />
             }
             onItemsRendered={({startIndex, stopIndex}) => {

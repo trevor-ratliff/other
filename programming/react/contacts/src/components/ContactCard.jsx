@@ -52,8 +52,10 @@ class ContactCard extends Component {
 	}
 
 	handleSubmit(event) {
-		alert('A name was submitted: ' + this.state.value);
+		//alert('A name was submitted: ' + this.state.value);
 		event.preventDefault();
+		this.props.onSave(event, this.props.contact, this.state);
+		//this.props.onClick(event);
 	}
 
 	render() {
@@ -80,7 +82,7 @@ class ContactCard extends Component {
 						</div>
 					</div>
 					<div className="close" onClick={this.props.onClick}>x</div>
-					<div className="save" onClick={this.props.onSave}>save</div>
+					<div className="save" onClick={this.handleSubmit}>save</div>
 				</div>
 			</div>
 		);
