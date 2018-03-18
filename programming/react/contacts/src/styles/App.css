@@ -31,6 +31,42 @@
   margin: 0.25ex;
 }
 
+.btn-primary {
+  border: 1px solid hsla(185, 35%, 50%, 1);
+  border-radius: 3px;
+  color: hsla(185, 35%, 50%, 1);
+  display: inline-block;
+  font-weight: 700;
+  max-width: 10em;
+  min-height: 1.5ex;
+  padding: 1ex 2ex;
+}
+
+.btn-primary:hover {
+  background-color: hsla(185, 85%, 50%, 1);
+  color: hsla(5, 75%, 50%, 1);
+}
+
+.btn-secondary {
+  border: 1px solid hsla(5, 35%, 50%, 1);
+	border-radius: 3px;
+  color: hsla(5,35%, 50%, 1);
+  display: inline-block;
+  font-weight: 700;
+  max-width: 10em;
+  min-height: 1.5ex;
+	padding: 1ex 1.5ex;
+}
+
+.btn-secondary:hover {
+  background-color: hsla(5, 85%, 50%, 1);
+	color: hsla(185, 75%, 50%, 1);
+}
+
+.btn-holder {
+  margin-bottom: 3px;
+}
+
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 {
   display: inline-block;
   padding-left: 0.25em;

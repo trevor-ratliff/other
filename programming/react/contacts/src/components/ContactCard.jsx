@@ -81,8 +81,10 @@ class ContactCard extends Component {
 							<input type="email" name="email" value={this.state.email} onChange={this.handleChangeInput} />
 						</div>
 					</div>
-					<div className="close" onClick={this.props.onClick}>x</div>
-					<div className="save" onClick={this.handleSubmit}>save</div>
+					<div className="btn-holder">
+						<div className="save btn-primary" onClick={this.handleSubmit}>Save</div>&nbsp;
+						<div className="close btn-secondary" onClick={this.props.onClick}>Close</div>
+					</div>
 				</div>
 			</div>
 		);
