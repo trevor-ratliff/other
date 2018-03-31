@@ -53,6 +53,11 @@ Thumbs.db
 ######
 *~
 *.swp
+
+
+######
+# other
+######
 programming/CodeStandards/LifeCycleStandards.zip
 programming/CodeStandards/LifeCycleStandards_exportable.mm.html
 programming/CodeStandards/LifeCycleStandards_exportable_flash.html
@@ -65,3 +70,4 @@ programming/CodeStandards/LifeCycleStandards_imagemap.html_files/*
 programming/CodeStandards/LifeCycleStandards_exportable_imagemap.html
 programming/CodeStandards/LifeCycleStandards_exportable_javascript.html
 programming/CodeStandards/LifeCycleStandards_imagemap.html
+jobLogBackups/ConduentLog2017.html_backup/*
