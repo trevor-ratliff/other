@@ -2,9 +2,35 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './styles/App.css';
 import ContactPage from './components/ContactPage.jsx'
+import ContactsApi from './components/ContactsApi.js'
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      "contacts": []
+    };
+
+    this.capi = new ContactsApi("http://localhost:3001");
+    this.componentWillMount = this.componentWillMount.bind(this);
+
+  }
+
+  componentWillMount() {
+    let that = this;
+    that.capi.getContacts().then((res) => {
+      debugger;
+      console.log(`res = `, res);
+
+      that.setState({"contacts": res.contacts.slice()});
+
+    }).catch((err) => {
+      console.log(`err getting contacts: ${err}`);
+    });
+  };
+
   render() {
+    /*
     let contacts = [];
     contacts.push({ number: "100-100-1000", name: "bob n ferrapples", context: "work", email: 'bob.n.ferrapples@gmail.com'});
     contacts.push({ number: "100-100-1001", name: "trevor w ratliff", context: "work", email: 'trevor.w.ratliff@gmail.com'});
@@ -27,6 +53,9 @@ class App extends Component {
     contacts.push({ number: "100-100-1018", name: "bob n ferrapples", context: "work" });
     contacts.push({ number: "100-100-1019", name: "bob n ferrapples", context: "work" });
     contacts.push({ number: "100-100-1020", name: "bob n ferrapples", context: "work" });
+    */
+    //let contacts = this.state.contacts.slice();
+    console.log("contacts:", this.state.contacts);
 
     let startPage = (
       <div>
@@ -43,7 +72,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-page">
-          <ContactPage contacts={ contacts }></ContactPage><br />
+          <ContactPage contacts={ this.state.contacts }></ContactPage><br />
         </div>
       </div>
     );
