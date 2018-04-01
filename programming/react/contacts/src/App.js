@@ -11,15 +11,41 @@ class App extends Component {
       "contacts": []
     };
 
+    this.contacts = [];
+    /*
+    let contacts = [];
+    */
+    this.contacts.push({ number: "100-100-1000", name: "bob n ferrapples", context: "work", email: 'bob.n.ferrapples@gmail.com'});
+    this.contacts.push({ number: "100-100-1001", name: "trevor w ratliff", context: "work", email: 'trevor.w.ratliff@gmail.com'});
+    this.contacts.push({ number: "100-100-1002", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1003", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1004", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1005", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1006", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1007", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1008", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1009", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1010", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1011", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1012", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1013", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1014", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1015", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1016", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1017", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1018", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1019", name: "bob n ferrapples", context: "work" });
+    this.contacts.push({ number: "100-100-1020", name: "bob n ferrapples", context: "work" });
+
     this.capi = new ContactsApi("http://localhost:3001");
-    this.componentWillMount = this.componentWillMount.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
     let that = this;
     that.capi.getContacts().then((res) => {
-      debugger;
+      //debugger;
       console.log(`res = `, res);
 
       that.setState({"contacts": res.contacts.slice()});
@@ -30,32 +56,11 @@ class App extends Component {
   };
 
   render() {
-    /*
-    let contacts = [];
-    contacts.push({ number: "100-100-1000", name: "bob n ferrapples", context: "work", email: 'bob.n.ferrapples@gmail.com'});
-    contacts.push({ number: "100-100-1001", name: "trevor w ratliff", context: "work", email: 'trevor.w.ratliff@gmail.com'});
-    contacts.push({ number: "100-100-1002", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1003", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1004", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1005", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1006", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1007", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1008", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1009", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1010", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1011", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1012", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1013", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1014", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1015", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1016", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1017", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1018", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1019", name: "bob n ferrapples", context: "work" });
-    contacts.push({ number: "100-100-1020", name: "bob n ferrapples", context: "work" });
-    */
     //let contacts = this.state.contacts.slice();
     console.log("contacts:", this.state.contacts);
+    if(this.state.contacts.length === 0){
+     return false //return false or a <Loader/> when you don't have anything in your message[]
+    }
 
     let startPage = (
       <div>
@@ -69,10 +74,18 @@ class App extends Component {
       </div>
     );
 
+    let appHeader = (<div className="header">RoloContacts</div>);
+
+    let contactPage = (
+      <ContactPage contacts={this.state.contacts}></ContactPage>
+    );
+
     return (
       <div className="App">
+        {appHeader}
         <div className="App-page">
-          <ContactPage contacts={ this.state.contacts }></ContactPage><br />
+          {contactPage}
+          <br />
         </div>
       </div>
     );

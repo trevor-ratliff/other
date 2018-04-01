@@ -54,7 +54,7 @@ class ContactPage extends Component {
     return (
       <div id="contact-page">
         <div id="menuPane">
-          Contact Page here .{this.state.sort}.{this.state.contacts}.
+          Contact Page here .{this.state.sort}.
         </div>
         <div id="workPane">
           <VirtualList
