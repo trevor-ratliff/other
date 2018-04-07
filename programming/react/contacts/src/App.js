@@ -40,7 +40,8 @@ class App extends Component {
 
     this.capi = new ContactsApi("http://localhost:3001");
     this.componentDidMount = this.componentDidMount.bind(this);
-
+    this.handle_onAddContact = this.handle_onAddContact.bind(this);
+    this.handle_onSaveContact = this.handle_onSaveContact.bind(this);
   }
 
   componentDidMount() {
@@ -55,6 +56,14 @@ class App extends Component {
       console.log(`err getting contacts: ${err}`);
     });
   };
+
+  handle_onAddContact(e, contact) {
+    console.log(`adding contact:`, contact);
+  }
+
+  handle_onSaveContact(e, oldContact, newContact) {
+    console.log(`saving contact:`, oldContact, newContact);
+  }
 
   render() {
     //let contacts = this.state.contacts.slice();
@@ -87,7 +96,11 @@ class App extends Component {
     );
 
     let contactPage = (
-      <ContactPage contacts={this.state.contacts}></ContactPage>
+      <ContactPage
+        contacts={this.state.contacts}
+        onSaveContact={(e, oldContact, newContact) => { this.handle_onSaveContact(e, oldContact, newContact); }}
+        onAddContact={(e, contact) => { this.handle_onAddContact(e, contact); }}
+      />
     );
 
     return (

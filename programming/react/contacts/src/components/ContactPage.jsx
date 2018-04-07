@@ -20,6 +20,7 @@ class ContactPage extends Component {
       cardHeight: 150
     };
     this.addCard = this.addCard.bind(this);
+    this.addContact = this.addContact.bind(this);
     this.closeCard = this.closeCard.bind(this);
     this.saveCard = this.saveCard.bind(this);
 
@@ -32,6 +33,21 @@ class ContactPage extends Component {
     _openContacts.push({ index: index, contact: this.state.contacts[index] });
     this.setState({ openContacts: _openContacts });
     return;
+  }
+
+  addContact(e, index) {
+    if (!!console && !!console.log) console.log(e, index, 'adding new contact');
+    let _openContacts = this.state.openContacts.slice();
+    let contact = {
+      "email": "",
+      "name": "",
+      "number": "",
+      "context": "RoloContacts"
+    };
+
+    _openContacts.push({index: _openContacts.length, contact: contact});
+    this.setState({openContacts: _openContacts});
+    this.props.onAddContact(e, contact);
   }
 
   closeCard(e, index) {
@@ -48,13 +64,16 @@ class ContactPage extends Component {
     let _old = _contacts.indexOf(oldContact);
     _contacts.splice(_old, 1, newContact);
     this.setState({contacts: _contacts});
+    this.props.onSaveContact(e, oldContact, newContact);
   }
 
   render() {
     return (
       <div id="contact-page">
         <div id="menuPane">
-          Contact Page here .{this.state.sort}.
+          <div className="controls">
+    				<button type="button" onClick={(e) => { this.addContact(e,this.state.openContacts.length); }}>Add Contact</button>
+    			</div>
         </div>
         <div id="workPane">
           <VirtualList
@@ -65,7 +84,7 @@ class ContactPage extends Component {
             itemSize={this.state.listItemHeight} // Also supports variable heights (array or function getter)
             renderItem={({index, style}) =>
               <ContactListItem
-                key={"cli_" + this.state.contacts[index].number}
+                key={"cli_" + this.state.contacts[index].number + "_" + this.state.contacts[index].name.replace(" ", "")}
                 index={index}
                 style={style}
                 contact={this.state.contacts[index]}
