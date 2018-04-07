@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 10vh;
   padding: 20px;
   color: white;
 }
@@ -29,6 +29,18 @@
 
 .App .App-page {
   margin: 0.25ex;
+}
+
+.contacts-logo {
+  height: 10vh;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
 }
 
 .btn-primary {

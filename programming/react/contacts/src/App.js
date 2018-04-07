@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import RoloContacts from './content/RoloContacts.svg'
 import './styles/App.css';
 import ContactPage from './components/ContactPage.jsx'
 import ContactsApi from './components/ContactsApi.js'
@@ -74,7 +75,16 @@ class App extends Component {
       </div>
     );
 
-    let appHeader = (<div className="header">RoloContacts</div>);
+    let appHeader = (
+      <div className="App-header">
+        <div className="col-2 align-right">
+          <img src={RoloContacts} className="contacts-logo" alt="Rolo Contacts" />
+        </div>
+        <div className="col-2 align-left">
+          <h1>RoloContacts</h1>
+        </div>
+      </div>
+    );
 
     let contactPage = (
       <ContactPage contacts={this.state.contacts}></ContactPage>
