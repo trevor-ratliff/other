@@ -3,7 +3,7 @@
 ####
 
 cd .\api
-Start-Process -FilePath json-server -ArgumentList "-p","3001","--watch",".\db.json"
+Start-Process -FilePath json-server -ArgumentList "-p","3001","--id","number","--watch",".\db.json"
 
 cd ..
 Start-Process -FilePath npm -ArgumentList "start"

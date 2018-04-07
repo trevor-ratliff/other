@@ -36,10 +36,99 @@ class ContactsApi {
 		let that = this;
 
 		let res = new Promise(function(resolve, reject) {
-			fetch(`${that._apiUrl}/Contacts`,
+			fetch(`${that._apiUrl}/Contacts?_sort=name`,
 				{
 					credentials: 'same-origin',
 					method: 'GET' //optional for get
+			  })
+				.then(that.checkStatus)
+				.then(that.parseJSON)
+				.then((data) => {
+					ret.contacts = data;
+					resolve(ret);
+				})
+				.catch((err) => {
+					debugger;
+					console.log(err);
+					reject(err);
+				});
+		});
+
+		return res;
+	}
+
+	getContactsSortedPaged(sort, page, pageSize) {
+		//http://localhost:3001/contacts?_sort=name&_start=11&_limit=10
+		let ret = {"contacts": []};
+		let that = this;
+
+		let res = new Promise(function(resolve, reject) {
+			fetch(`${that._apiUrl}/Contacts?_sort=${sort}&_start=${page}&_limit=${pageSize}`,
+				{
+					credentials: 'same-origin',
+					method: 'GET' //optional for get
+			  })
+				.then(that.checkStatus)
+				.then(that.parseJSON)
+				.then((data) => {
+					ret.contacts = data;
+					resolve(ret);
+				})
+				.catch((err) => {
+					debugger;
+					console.log(err);
+					reject(err);
+				});
+		});
+
+		return res;
+	}
+
+	addContact(contact) {
+		//debugger;
+		let ret = {"contacts": []};
+		let that = this;
+
+		let res = new Promise(function(resolve, reject) {
+			fetch(`${that._apiUrl}/Contacts`,
+				{
+					credentials: 'same-origin',
+					method: 'POST', //optional for get
+					headers: {
+				    'Content-Type': 'application/json'
+				  },
+				  body: JSON.stringify(contact)
+			  })
+				.then(that.checkStatus)
+				.then(that.parseJSON)
+				.then((data) => {
+					ret.contacts = data;
+					resolve(ret);
+				})
+				.catch((err) => {
+					debugger;
+					console.log(err);
+					reject(err);
+				});
+		});
+
+		return res;
+	}
+
+	saveContact(oldContact, newContact) {
+		//debugger;
+		let ret = {"contacts": []};
+		let that = this;
+
+		let res = new Promise(function(resolve, reject) {
+			fetch(`${that._apiUrl}/Contacts/${oldContact.number}`,
+				{
+					credentials: 'same-origin',
+					method: 'PUT', //optional for get
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(newContact)
 			  })
 				.then(that.checkStatus)
 				.then(that.parseJSON)

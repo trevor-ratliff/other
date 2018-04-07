@@ -42,12 +42,13 @@ class ContactPage extends Component {
       "email": "",
       "name": "",
       "number": "",
-      "context": "RoloContacts"
+      "context": "RoloContacts",
+      "new": true
     };
 
     _openContacts.push({index: _openContacts.length, contact: contact});
     this.setState({openContacts: _openContacts});
-    this.props.onAddContact(e, contact);
+    //this.props.onAddContact(e, contact);
   }
 
   closeCard(e, index) {
@@ -64,7 +65,11 @@ class ContactPage extends Component {
     let _old = _contacts.indexOf(oldContact);
     _contacts.splice(_old, 1, newContact);
     this.setState({contacts: _contacts});
-    this.props.onSaveContact(e, oldContact, newContact);
+    if (oldContact.new) {
+      this.props.onAddContact(e, newContact);
+    } else {
+      this.props.onSaveContact(e, oldContact, newContact);
+    }
   }
 
   render() {

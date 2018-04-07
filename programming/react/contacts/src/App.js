@@ -58,11 +58,26 @@ class App extends Component {
   };
 
   handle_onAddContact(e, contact) {
+    let that = this;
     console.log(`adding contact:`, contact);
+
+    that.capi.addContact(contact).then((res) => {
+      console.log(`add contact res: `, res);
+
+    }).catch((err) => {
+      console.log(`err adding contact: ${err}`);
+    });
   }
 
   handle_onSaveContact(e, oldContact, newContact) {
+    let that = this;
     console.log(`saving contact:`, oldContact, newContact);
+
+    that.capi.saveContact(oldContact, newContact).then((res) => {
+      console.log(`saving contact res: `, res);
+    }).catch((err) => {
+      console.log(`err saving contact: ${err}`);
+    });
   }
 
   render() {
