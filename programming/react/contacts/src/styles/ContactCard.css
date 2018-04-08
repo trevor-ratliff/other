@@ -28,10 +28,14 @@
 }
 
 .contact-card .field {
-	float: right;
+	/* float: right; */
 	height: 50%;
 	text-align: left;
-	width: 50%;
+	width: 100%;
+}
+
+.contact-card .fields {
+	padding: 0.25ex;
 }
 
 /* .contact-card .close {

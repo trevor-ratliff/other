@@ -17,8 +17,9 @@
     },
     {
       "number": "+13175564791",
+      "name": "Backus Ferniehirst",
       "context": "enemies",
-      "name": "Backus Ferniehirst"
+      "email": "bad.man@gmail.com"
     },
     {
       "number": "+17818907216",
@@ -120,6 +121,12 @@
       "name": "Bob N Ferrapples",
       "context": "RoloContacts",
       "email": "bob.n.ferrapples@gmail.com"
+    },
+    {
+      "number": "+118593960770",
+      "name": "trevor ratliff",
+      "context": "RoloContacts",
+      "email": "trevor.w.ratliff@gmail.com"
     }
   ]
 }

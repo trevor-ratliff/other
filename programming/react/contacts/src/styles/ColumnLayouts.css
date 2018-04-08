@@ -1,0 +1,158 @@
+/****
+* layouts for 1 - 8 columns
+****/
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 {
+  display: inline-block;
+  padding-left: 0.25em;
+  position: relative;
+  vertical-align: top;
+}
+
+
+/****
+* 1 column layout
+****/
+.col-1 {
+  width: calc(100% - 0.5em)!important;
+}
+
+
+/****
+* 2 column layout
+****/
+.col-2 {
+  width: calc((100% - (0.25em * 3))/2)!important;
+}
+
+
+/****
+* 3 column layout
+****/
+.col-3 {
+  width: calc((100% - (0.25em * 4))/3)!important;
+}
+
+.col-2of3 {
+  width: calc(((100% - (0.25em * 4))/3) * 2)!important;
+}
+
+
+/****
+* 4 column layout
+****/
+.col-4 {
+  width: calc((100% - (0.25em * 5))/4)!important;
+}
+
+.col-2of4 {
+  width: calc(((100% - (0.25em * 5))/4) * 2)!important;
+}
+
+.col-3of4 {
+  width: calc(((100% - (0.25em * 5))/4) * 3)!important;
+}
+
+
+/****
+* 5 column layout
+****/
+.col-5 {
+  width: calc((100% - (0.25em * 6))/5)!important;
+}
+
+.col-2of5 {
+  width: calc(((100% - (0.25em * 6))/5) * 2)!important;
+}
+
+.col-3of5 {
+  width: calc(((100% - (0.25em * 6))/5) * 3)!important;
+}
+
+.col-4of5 {
+  width: calc(((100% - (0.25em * 6))/5) * 4)!important;
+}
+
+
+/****
+* 6 column layout
+****/
+.col-6 {
+  width: calc((100% - (0.25em * 7))/6)!important;
+}
+
+.col-2of6 {
+  width: calc(((100% - (0.25em * 7))/6) * 2)!important;
+}
+
+.col-3of6 {
+  width: calc(((100% - (0.25em * 7))/6) * 3)!important;
+}
+
+.col-4of6 {
+  width: calc(((100% - (0.25em * 7))/6) * 4)!important;
+}
+
+.col-5of6 {
+  width: calc(((100% - (0.25em * 7))/6) * 5)!important;
+}
+
+
+/****
+* 7 column layout
+****/
+.col-7 {
+  width: calc((100% - (0.25em * 8))/7)!important;
+}
+
+.col-2of7 {
+  width: calc(((100% - (0.25em * 8))/7) * 2)!important;
+}
+
+.col-3of7 {
+  width: calc(((100% - (0.25em * 8))/7) * 3)!important;
+}
+
+.col-4of7 {
+  width: calc(((100% - (0.25em * 8))/7) * 4)!important;
+}
+
+.col-5of7 {
+  width: calc(((100% - (0.25em * 8))/7) * 5)!important;
+}
+
+.col-6of7 {
+  width: calc(((100% - (0.25em * 8))/7) * 6)!important;
+}
+
+
+/****
+* 8 column layout
+****/
+.col-8 {
+  width: calc((100% - (0.25em * 9))/8)!important;
+}
+
+.col-2of8 {
+  width: calc(((100% - (0.25em * 9))/8) * 2)!important;
+}
+
+.col-3of8 {
+  width: calc(((100% - (0.25em * 9))/8) * 3)!important;
+}
+
+.col-4of8 {
+  width: calc(((100% - (0.25em * 9))/8) * 4)!important;
+}
+
+.col-5of8 {
+  width: calc(((100% - (0.25em * 9))/8) * 5)!important;
+}
+
+.col-6of8 {
+  width: calc(((100% - (0.25em * 9))/8) * 6)!important;
+}
+
+.col-7of8 {
+  width: calc(((100% - (0.25em * 9))/8) * 7)!important;
+}

@@ -15,7 +15,7 @@ class ContactCard extends Component {
 		};
 
 		this.props = props;
-		this.grav = null;
+		this.grav = (<div className="col-5">&nbsp;</div>);
 
 		this.gravStyle = {
 			width: (props.gravitarHeight - 10),
@@ -23,15 +23,13 @@ class ContactCard extends Component {
 		};
 
 		this.fieldsStyle = {
-			width: "calc(100% - " + (props.gravitarHeight - 15) + "px - 0.25ex)",
-			display: "inline-block",
 			position: "relative",
-			left: "calc("+ (props.gravitarHeight - 15) +"px + 0.25ex)"
+			left: "calc(1px + 0.25ex)"
 		};
 
 		if (!!props.contact && !!props.contact.email) {
 			this.grav = (
-				<div className="contact-gravitar" style={this.gravStyle}>
+				<div className="col-5">
 					<img src={gravatarUrl(props.contact.email, {size: (props.gravitarHeight - 10)})} alt="gravitar" />
 				</div>
 			);
@@ -63,27 +61,27 @@ class ContactCard extends Component {
 			<div className="contact-card" style={this.props.style}>
 				<div className="container">
 					{this.grav}
-					<div className="fields" style={this.fieldsStyle}>
-						<div className="field contact-number">
-							<label>Phone: </label><br />
-							<input type="phone" name="number" value={this.state.number} onChange={this.handleChangeInput} />
-						</div>
-						<div className="field contact-name">
+					<div className="fields col-4of5" style={this.fieldsStyle}>
+						<div className="field contact-name col-2">
 							<label>Name: </label><br />
 							<input type="text" name="name" value={this.state.name} onChange={this.handleChangeInput} />
 						</div>
-						<div className="field contact-context">
-							<label>Context: </label><br />
-							<input type="text" name="context" value={this.state.context} onChange={this.handleChangeInput} />
+						<div className="field contact-number col-2">
+							<label>Phone: </label><br />
+							<input type="phone" name="number" value={this.state.number} onChange={this.handleChangeInput} />
 						</div>
-						<div className="field contact-email">
+						<div className="field contact-email col-2">
 							<label>Email: </label><br />
 							<input type="email" name="email" value={this.state.email} onChange={this.handleChangeInput} />
 						</div>
+						<div className="field contact-context col-2">
+							<label>Context: </label><br />
+							<input type="text" name="context" value={this.state.context} onChange={this.handleChangeInput} />
+						</div>
 					</div>
 					<div className="btn-holder">
-						<div className="save btn-primary" onClick={this.handleSubmit}>Save</div>&nbsp;
-						<div className="close btn-secondary" onClick={this.props.onClick}>Close</div>
+						<button type="button" className="save btn-primary" onClick={this.handleSubmit}>Save</button>&nbsp;
+						<button type="button" className="close btn-secondary" onClick={this.props.onClick}>Close</button>
 					</div>
 				</div>
 			</div>
