@@ -15,7 +15,7 @@ class ContactCard extends Component {
 		};
 
 		this.props = props;
-		this.grav = (<div className="col-5">&nbsp;</div>);
+		this.grav = (<span>&nbsp;</span>);
 
 		this.gravStyle = {
 			width: (props.gravitarHeight - 10),
@@ -29,9 +29,7 @@ class ContactCard extends Component {
 
 		if (!!props.contact && !!props.contact.email) {
 			this.grav = (
-				<div className="col-5">
-					<img src={gravatarUrl(props.contact.email, {size: (props.gravitarHeight - 10)})} alt="gravitar" />
-				</div>
+				<img src={gravatarUrl(props.contact.email, {size: (props.gravitarHeight - 10)})} alt="gravitar" />
 			);
 		}
 
@@ -59,8 +57,10 @@ class ContactCard extends Component {
 	render() {
 		return (
 			<div className="contact-card" style={this.props.style}>
-				<div className="container">
-					{this.grav}
+				<div className="container align-right">
+					<div className="contact-gravitar col-5">
+						{this.grav}
+					</div>
 					<div className="fields col-4of5" style={this.fieldsStyle}>
 						<div className="field contact-name col-2">
 							<label>Name: </label><br />
@@ -69,7 +69,7 @@ class ContactCard extends Component {
 						<div className="field contact-number col-2">
 							<label>Phone: </label><br />
 							<input type="phone" name="number" value={this.state.number} onChange={this.handleChangeInput} />
-						</div>
+						</div><br />
 						<div className="field contact-email col-2">
 							<label>Email: </label><br />
 							<input type="email" name="email" value={this.state.email} onChange={this.handleChangeInput} />
@@ -79,7 +79,7 @@ class ContactCard extends Component {
 							<input type="text" name="context" value={this.state.context} onChange={this.handleChangeInput} />
 						</div>
 					</div>
-					<div className="btn-holder">
+					<div className="btn-holder align-center">
 						<button type="button" className="save btn-primary" onClick={this.handleSubmit}>Save</button>&nbsp;
 						<button type="button" className="close btn-secondary" onClick={this.props.onClick}>Close</button>
 					</div>

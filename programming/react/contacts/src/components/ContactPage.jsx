@@ -149,6 +149,10 @@ class ContactPage extends Component {
             <div className="col-5" style={{"backgroundColor": 'hsla(180, 60%, 60%, 1)'}}>&nbsp;</div>
           </div>
           <div>
+            <div className="col-5" style={{"backgroundColor": 'hsla(200, 100%, 100%, 1)'}}>&nbsp;</div>
+            <div className="col-4of5" style={{"backgroundColor": 'hsla(200, 90%, 90%, 1)'}}>&nbsp;</div>
+          </div>
+          <div>
             <div className="col-6" style={{"backgroundColor": 'hsla(225, 100%, 100%, 1)'}}>&nbsp;</div>
             <div className="col-6" style={{"backgroundColor": 'hsla(225, 90%, 90%, 1)'}}>&nbsp;</div>
             <div className="col-6" style={{"backgroundColor": 'hsla(225, 80%, 80%, 1)'}}>&nbsp;</div>
