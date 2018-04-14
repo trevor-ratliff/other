@@ -11,8 +11,9 @@
 .col-2of8, .col-3of8, .col-4of8, .col-5of8, .col-6of8, .col-7of8 {
   box-sizing: border-box;
   display: inline-block;
-  margin: 0.12em;
-  padding: 0.24em;
+  margin: 0.0em 0.12em;
+  overflow: hidden;
+  padding: 0.0em;
   position: relative;
   vertical-align: top;
 }

@@ -41,6 +41,7 @@ class App extends Component {
     this.capi = new ContactsApi("http://localhost:3001");
     this.componentDidMount = this.componentDidMount.bind(this);
     this.handle_onAddContact = this.handle_onAddContact.bind(this);
+    this.handle_onFilterChanged = this.handle_onFilterChanged.bind(this);
     this.handle_onSaveContact = this.handle_onSaveContact.bind(this);
   }
 
@@ -67,6 +68,17 @@ class App extends Component {
     }).catch((err) => {
       console.log(`err adding contact: ${err}`);
     });
+  }
+
+  handle_onFilterChanged(e, filterType, filterValue) {
+    let that = this;
+    if (!!console && !!console.log) console.log(`changing filter:`, filterType, filterValue);
+
+    that.capi.getContactsFiltered(filterType, filterValue)
+      .then((res) => {
+        if (!!console && !!console.log) console.log(`filter change results:`, res);
+        that.setState({ "contacts": res.contacts.slice() });
+      });
   }
 
   handle_onSaveContact(e, oldContact, newContact) {

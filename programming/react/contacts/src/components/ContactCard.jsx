@@ -37,6 +37,17 @@ class ContactCard extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	getInitialState() {
+		let ret = {
+			number: '',
+			name: '',
+			context: '',
+			email: ''
+		}
+
+		return ret;
+	}
+
 	handleChangeInput(event) {
 		//debugger;
 		const target = event.target || null;
@@ -54,7 +65,22 @@ class ContactCard extends Component {
 		//this.props.onClick(event);
 	}
 
+	validateEmail(value) {
+    // regex from http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
+		if (!value) return true;
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(value);
+  }
+
 	render() {
+		let emailError = "";
+		let isFormValid = true;
+
+		if (!this.validateEmail(this.state.email)) {
+			emailError = "Invalid email address";
+			isFormValid = false;
+		}
+
 		return (
 			<div className="contact-card" style={this.props.style}>
 				<div className="container align-right">
@@ -64,24 +90,24 @@ class ContactCard extends Component {
 					<div className="fields col-4of5" style={this.fieldsStyle}>
 						<div className="field contact-name col-2">
 							<label>Name: </label><br />
-							<input type="text" name="name" value={this.state.name} onChange={this.handleChangeInput} />
+							<input type="text" className="name" name="name" value={this.state.name} onChange={this.handleChangeInput} />
 						</div>
 						<div className="field contact-number col-2">
 							<label>Phone: </label><br />
-							<input type="phone" name="number" value={this.state.number} onChange={this.handleChangeInput} />
+							<input type="text" className="number" name="number" value={this.state.number} onChange={this.handleChangeInput} />
 						</div><br />
 						<div className="field contact-email col-2">
-							<label>Email: </label><br />
-							<input type="email" name="email" value={this.state.email} onChange={this.handleChangeInput} />
+							<label>Email: </label><span className="error">{emailError}</span><br />
+							<input type="text" className="email" name="email" value={this.state.email} onChange={this.handleChangeInput} />
 						</div>
 						<div className="field contact-context col-2">
 							<label>Context: </label><br />
-							<input type="text" name="context" value={this.state.context} onChange={this.handleChangeInput} />
+							<input type="text" className="context" name="context" value={this.state.context} onChange={this.handleChangeInput} />
 						</div>
-					</div>
-					<div className="btn-holder align-center">
-						<button type="button" className="save btn-primary" onClick={this.handleSubmit}>Save</button>&nbsp;
-						<button type="button" className="close btn-secondary" onClick={this.props.onClick}>Close</button>
+						<div className="btn-holder align-center">
+							<button type="button" className="save btn-primary" onClick={this.handleSubmit} disabled={!isFormValid}>Save</button>&nbsp;
+							<button type="button" className="close btn-secondary" onClick={this.props.onClick}>Close</button>
+						</div>
 					</div>
 				</div>
 			</div>

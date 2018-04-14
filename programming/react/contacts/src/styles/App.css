@@ -63,6 +63,11 @@
   color: hsla(5, 75%, 50%, 1);
 }
 
+.btn-primary:disabled {
+  background-color: transparent;
+  color: hsla(5, 25%, 20%, 1);
+}
+
 .btn-secondary {
   border: 1px solid hsla(5, 35%, 50%, 1);
 	border-radius: 3px;
@@ -79,8 +84,19 @@
 	color: hsla(185, 75%, 50%, 1);
 }
 
+.btn-secondary:disabled {
+  background-color: transparent;
+  color: hsla(185, 25%, 20%, 1);
+}
+
 .btn-holder {
+  height: 2em;
   margin-bottom: 3px;
+  padding: 0.24em;
+}
+
+.error {
+  color: hsla(5, 50%, 50%, 1);
 }
 
 @import "ColumnLayouts.css";

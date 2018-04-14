@@ -10,15 +10,17 @@ class ContactPage extends Component {
     this.state = {
       contacts: props.contacts,
       openContacts: [],
-      filter: null,
+      filterType: null,
+      filterValue: null,
       pageSize: 10,
       sort: "name",
-      listHeight: 500,
+      listHeight: 700,
       listWidth: 'calc(50% - 0.25ex)',
       listItemHeight: 60,
-      cardPaneHeight: 500,
+      cardPaneHeight: 700,
       cardPaneWidth: 'calc(50% - 0.25ex)',
-      cardHeight: 150
+      cardHeight: 150,
+      showTest: false
     };
     this.addCard = this.addCard.bind(this);
     this.addContact = this.addContact.bind(this);
@@ -54,9 +56,11 @@ class ContactPage extends Component {
 
   closeCard(e, index) {
     if (!!console && !!console.log) console.log(e, index, this.state.openContacts.indexOf(index));
+
     let _openContacts = this.state.openContacts.slice();
     _openContacts.splice(this.state.openContacts.indexOf(index), 1);
     this.setState({ openContacts: _openContacts });
+
     return;
   }
 
@@ -66,6 +70,7 @@ class ContactPage extends Component {
     let _old = _contacts.indexOf(oldContact);
     _contacts.splice(_old, 1, newContact);
     this.setState({contacts: _contacts});
+
     if (oldContact.new) {
       this.props.onAddContact(e, newContact);
     } else {
@@ -74,11 +79,30 @@ class ContactPage extends Component {
   }
 
   render() {
+    let colTest = "";
+    let colTestLabel = this.state.showTest ? "Hide" : "Show";
+
+    if (this.state.showTest) {
+      colTest = (<ColumnTest />);
+    }
+
     return (
       <div id="contact-page">
         <div id="menuPane">
-          <div className="controls">
-    				<button type="button" className="btn-primary" onClick={(e) => { this.addContact(e,this.state.openContacts.length); }}>Add Contact</button>
+          <div className="controls btn-holder">
+            <select className="filterType" onChange={this.props.filterChange_handler}>
+              <option value="name">Name</option>
+              <option value="number">Number</option>
+              <option value="email">Email</option>
+              <option value="context">Context</option>
+            </select>
+            <input type="text" className="filterValue" />
+    				<button type="button" className="btn-primary" onClick={(e) => {
+              this.addContact(e,this.state.openContacts.length);
+            }}>Add Contact</button>&nbsp;&nbsp;
+            <button type="button" className="btn-primary" onClick={(e) => {
+              this.setState({showTest: (!this.state.showTest)});
+            }}>{colTestLabel}&nbsp;Column&nbsp;Test</button>
     			</div>
         </div>
         <div id="workPane">
@@ -94,7 +118,7 @@ class ContactPage extends Component {
                 index={index}
                 style={style}
                 contact={this.state.contacts[index]}
-                gravitarHeight={this.state.listItemHeight}
+                gravitarHeight={this.state.listItemHeight - 4}
                 onClick={(e) => {this.addCard(e, index)}}
               />
             }
@@ -113,7 +137,7 @@ class ContactPage extends Component {
                 index={index}
                 style={style}
                 contact={this.state.openContacts[index].contact}
-                gravitarHeight={this.state.cardHeight}
+                gravitarHeight={this.state.cardHeight - 4}
                 onClick={(e) => {this.closeCard(e, this.state.openContacts[index])}}
                 onSave={this.saveCard}
               />
@@ -123,7 +147,7 @@ class ContactPage extends Component {
             }}
           />
         </div>
-        <ColumnTest />
+        {colTest}
       </div>
     );
   }

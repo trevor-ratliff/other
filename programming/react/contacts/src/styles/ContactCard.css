@@ -8,6 +8,7 @@
 	border: 1px solid hsla(30, 75%, 25%, 1);
 	border-radius: 3px;
 	box-sizing: border-box;
+	height: calc(100% - 1.75em);
 	width: calc(100% - 10px);
 }
 
@@ -17,9 +18,10 @@
 
 .contact-card .contact-gravitar {
 	/*float: left;*/
-	position: absolute;
-	top: 0ex;
-	left: 0ex;
+	left: -1ex;
+	overflow: visible;
+	position: relative;
+	top: -1ex;
 }
 
 .contact-card .contact-gravitar img {
@@ -32,6 +34,11 @@
 	height: 50%;
 	text-align: left;
 	width: 100%;
+}
+
+
+.contact-card .field input[type=text] {
+	width: calc(100% - 0.3em);
 }
 
 .contact-card .fields {
