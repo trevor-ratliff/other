@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/ContactListItem.css'
+import PhoneNumber from './PhoneNumber.jsx'
 const gravatarUrl = require('gravatar-url');
 
 function ContactListItem(props) {
@@ -10,12 +11,12 @@ function ContactListItem(props) {
 		height: (props.gravitarHeight)
 	};
 
-	const fieldsStyle = {
+	/*const fieldsStyle = {
 		width: "calc(100% - " + (props.gravitarHeight - 15) + "px - 0.25ex)",
 		display: "inline-block",
 		position: "relative",
 		left: "calc("+ (props.gravitarHeight - 15) +"px + 0.25ex)"
-	};
+	};*/
 
 	if (!!props.contact && !!props.contact.email) {
 		grav = (
@@ -36,7 +37,7 @@ function ContactListItem(props) {
 					</div>
 					<div className="field contact-number col-2">
 						<label className="col-4">Phone: </label>
-						<span className="col-3of4">{props.contact.number}</span>
+						<PhoneNumber key={"phn_" + props.key} number={props.contact.number} />
 					</div><br />
 					<div className="field contact-email col-2">
 						<label className="col-4">Email: </label>

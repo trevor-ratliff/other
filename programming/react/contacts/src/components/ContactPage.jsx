@@ -22,15 +22,18 @@ class ContactPage extends Component {
       cardHeight: 150,
       showTest: false
     };
-    this.addCard = this.addCard.bind(this);
-    this.addContact = this.addContact.bind(this);
-    this.closeCard = this.closeCard.bind(this);
-    this.saveCard = this.saveCard.bind(this);
+
+    this.handle_addCard = this.handle_addCard.bind(this);
+    this.handle_addContact = this.handle_addContact.bind(this);
+    this.handle_closeCard = this.handle_closeCard.bind(this);
+    this.handle_saveCard = this.handle_saveCard.bind(this);
+    //this.handle_ChangeInput = this.handle_ChangeInput.bind(this);
+    this.handle_filterChanged = this.handle_filterChanged.bind(this);
 
     if (!!console && !!console.log) console.log("ContactPage Constructor", props)
   }
 
-  addCard(e, index) {
+  handle_addCard(e, index) {
     if (!!console && !!console.log) console.log(e, index, this.state.contacts[index]);
     let _openContacts = this.state.openContacts.slice();
     _openContacts.push({ index: index, contact: this.state.contacts[index] });
@@ -38,7 +41,7 @@ class ContactPage extends Component {
     return;
   }
 
-  addContact(e, index) {
+  handle_addContact(e, index) {
     if (!!console && !!console.log) console.log(e, index, 'adding new contact');
     let _openContacts = this.state.openContacts.slice();
     let contact = {
@@ -54,7 +57,7 @@ class ContactPage extends Component {
     //this.props.onAddContact(e, contact);
   }
 
-  closeCard(e, index) {
+  handle_closeCard(e, index) {
     if (!!console && !!console.log) console.log(e, index, this.state.openContacts.indexOf(index));
 
     let _openContacts = this.state.openContacts.slice();
@@ -64,7 +67,38 @@ class ContactPage extends Component {
     return;
   }
 
-  saveCard(e, oldContact, newContact) {
+	/*handle_ChangeInput(event) {
+		//debugger;
+		const target = event.target || null;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+
+		if (!!target)
+			this.setState({[name]: target.value});
+	}*/
+
+  handle_filterChanged(e, filterType, filterValue) {
+    let that = this;
+    const target = e.target || null;
+		const value = target.type === 'checkbox' ? target.checked : target.value;
+		const name = target.name;
+    //that.handle_ChangeInput(e);
+    e.preventDefault();
+
+    if (!!target)
+			that.setState({[name]: value}, () => {
+        if (!!console && !!console.log) console.log("handle_filterChanged: ", e, filterType, filterValue, that.state.filterType, that.state.filterValue);
+
+        if (!!that.state.filterType && !!that.state.filterValue) {
+          //debugger;
+          that.props.onFilterChanged(e, that.state.filterType, that.state.filterValue);
+        }
+      });
+
+    return;
+  }
+
+  handle_saveCard(e, oldContact, newContact) {
     //debugger;
     let _contacts = this.state.contacts.slice();
     let _old = _contacts.indexOf(oldContact);
@@ -81,7 +115,9 @@ class ContactPage extends Component {
   render() {
     let colTest = "";
     let colTestLabel = this.state.showTest ? "Hide" : "Show";
+    if (!!console && !!console.log) console.log("ContactPage.js->render() contacts:", this.state.contacts);
 
+    //if (this.state.contacts.length < 1) return false;
     if (this.state.showTest) {
       colTest = (<ColumnTest />);
     }
@@ -90,15 +126,16 @@ class ContactPage extends Component {
       <div id="contact-page">
         <div id="menuPane">
           <div className="controls btn-holder">
-            <select className="filterType" onChange={this.props.filterChange_handler}>
+            <select className="filterType" name="filterType" onChange={this.handle_filterChanged}>
+              <option value="">select a filter field</option>
               <option value="name">Name</option>
               <option value="number">Number</option>
               <option value="email">Email</option>
               <option value="context">Context</option>
             </select>
-            <input type="text" className="filterValue" />
+            <input type="text" className="filterValue" name="filterValue" onChange={this.handle_filterChanged} />
     				<button type="button" className="btn-primary" onClick={(e) => {
-              this.addContact(e,this.state.openContacts.length);
+              this.handle_addContact(e,this.state.openContacts.length);
             }}>Add Contact</button>&nbsp;&nbsp;
             <button type="button" className="btn-primary" onClick={(e) => {
               this.setState({showTest: (!this.state.showTest)});
@@ -119,7 +156,7 @@ class ContactPage extends Component {
                 style={style}
                 contact={this.state.contacts[index]}
                 gravitarHeight={this.state.listItemHeight - 4}
-                onClick={(e) => {this.addCard(e, index)}}
+                onClick={(e) => {this.handle_addCard(e, index)}}
               />
             }
             onItemsRendered={({startIndex, stopIndex}) => {
@@ -138,8 +175,8 @@ class ContactPage extends Component {
                 style={style}
                 contact={this.state.openContacts[index].contact}
                 gravitarHeight={this.state.cardHeight - 4}
-                onClick={(e) => {this.closeCard(e, this.state.openContacts[index])}}
-                onSave={this.saveCard}
+                onClick={(e) => {this.handle_closeCard(e, this.state.openContacts[index])}}
+                onSave={this.handle_saveCard}
               />
             }
             onItemsRendered={({startIndex, stopIndex}) => {

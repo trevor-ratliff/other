@@ -53,9 +53,10 @@ class ContactCard extends Component {
 		const target = event.target || null;
 		const value = target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
+		event.preventDefault();
 
 		if (!!target)
-			this.setState({[name]: target.value});
+			this.setState({[name]: value});
 	}
 
 	handleSubmit(event) {
@@ -68,7 +69,7 @@ class ContactCard extends Component {
 	validateEmail(value) {
     // regex from http://stackoverflow.com/questions/46155/validate-email-address-in-javascript
 		if (!value) return true;
-    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(value);
   }
 

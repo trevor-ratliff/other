@@ -49,29 +49,30 @@ class App extends Component {
     let that = this;
     that.capi.getContacts().then((res) => {
       //debugger;
-      console.log(`res = `, res);
+      if (!!console && !!console.log) console.log(`res = `, res);
 
       that.setState({"contacts": res.contacts.slice()});
 
     }).catch((err) => {
-      console.log(`err getting contacts: ${err}`);
+      if (!!console && !!console.log) console.log(`err getting contacts: ${err}`);
     });
   };
 
   handle_onAddContact(e, contact) {
     let that = this;
-    console.log(`adding contact:`, contact);
+    if (!!console && !!console.log) console.log(`adding contact:`, contact);
 
     that.capi.addContact(contact).then((res) => {
-      console.log(`add contact res: `, res);
+      if (!!console && !!console.log) console.log(`add contact res: `, res);
 
     }).catch((err) => {
-      console.log(`err adding contact: ${err}`);
+      if (!!console && !!console.log) console.log(`err adding contact: ${err}`);
     });
   }
 
   handle_onFilterChanged(e, filterType, filterValue) {
     let that = this;
+    //debugger;
     if (!!console && !!console.log) console.log(`changing filter:`, filterType, filterValue);
 
     that.capi.getContactsFiltered(filterType, filterValue)
@@ -83,19 +84,19 @@ class App extends Component {
 
   handle_onSaveContact(e, oldContact, newContact) {
     let that = this;
-    console.log(`saving contact:`, oldContact, newContact);
+    if (!!console && !!console.log) console.log(`saving contact:`, oldContact, newContact);
 
     that.capi.saveContact(oldContact, newContact).then((res) => {
-      console.log(`saving contact res: `, res);
+      if (!!console && !!console.log) console.log(`saving contact res: `, res);
     }).catch((err) => {
-      console.log(`err saving contact: ${err}`);
+      if (!!console && !!console.log) console.log(`err saving contact: ${err}`);
     });
   }
 
   render() {
     //let contacts = this.state.contacts.slice();
-    console.log("contacts:", this.state.contacts);
-    if(this.state.contacts.length === 0){
+    if (!!console && !!console.log) console.log("app.js->render() contacts:", this.state.contacts);
+    if(this.state.contacts.length < 1){
      return false //return false or a <Loader/> when you don't have anything in your message[]
     }
 
@@ -110,6 +111,7 @@ class App extends Component {
         </p>
       </div>
     );
+    if (!this.state.showStart) startPage = "";
 
     let appHeader = (
       <div className="App-header">
@@ -127,11 +129,15 @@ class App extends Component {
         contacts={this.state.contacts}
         onSaveContact={(e, oldContact, newContact) => { this.handle_onSaveContact(e, oldContact, newContact); }}
         onAddContact={(e, contact) => { this.handle_onAddContact(e, contact); }}
+        onFilterChanged={(e, filterType, filterValue) => {
+          this.handle_onFilterChanged(e, filterType, filterValue);
+        }}
       />
     );
 
     return (
       <div className="App">
+        {startPage}
         {appHeader}
         <div className="App-page">
           {contactPage}
