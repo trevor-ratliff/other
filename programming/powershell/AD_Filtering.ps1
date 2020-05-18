@@ -1,25 +1,16 @@
 ﻿[CmdletBinding()]
 Param(
-  [Parameter(Mandatory=$false, Position=1, HelpMessage={"Please enter an installation parameters file path [" + $parametersPath + "]"})]
-  [string]$ParameterFilePath, #= ".\installationParameters.xml",
+  [Parameter(Mandatory=$false, Position=1, HelpMessage={"Please enter a parameters file path [" + $parametersPath + "]"})]
+  [string]$ParameterFilePath=((Read-Host -Prompt "Parameter File Path [.\parameters.xml]") -replace "^$", ".\parameters.xml"),
   [Parameter(Mandatory=$false, HelpMessage={"Please enter an LDAP path"})]
   [string]$LdapPath,
   [Parameter(Mandatory=$false, HelpMessage={"Please enter an LDAP filter"})]
   #TODO fix the rest of the prameters
   [string]$LdapFilter,
-  [switch]$InstallAPI,
-  [switch]$InstallDB,
-  [switch]$InstallDocGenMicroService,
-  [switch]$InstallHelp,
-  [switch]$InstallMicroServices,
-  [switch]$InstallReports,
-  [switch]$InstallWebUI
+  [switch]$Interactive
 )
 
-#TODO not sure if we need a parameters file
-[string]$parametersPath = ".\installationParameters.xml"
-
-Write-Verbose ("$ParameterFilePath, $InstallAPI, $InstallWebUI, $InstallMicroServices`n")
+Write-Verbose ("$ParameterFilePath, $LdapPath, $LdapFilter, $Interactive`n") -Verbose
 
 Write-Host "`nWelcome to the AD filter test suite, where you can test various filters to find what works.`n"
 
@@ -32,11 +23,6 @@ $params = @{"parameters" = @()}
 if (1 -eq 2) {
     if ($ParameterFilePath -eq "") {
         Write-Host "Please fill in the required information before we continue."
-        Write-Host "  using the name of a defined value later in the list will replace the current"
-        Write-Host "    items value with the previously defined value."
-        Write-Host ""
-        Write-Host "  For example you define __Value1__ to be 'val1', then later you define"
-        Write-Host "    __Value5__ as '__Value1__AndThis' the resultant value would be 'val1AndThis'`n`n"
 
         $params.parameters += @{"replace" = "__ENV__"; "with" = (Read-Host -Prompt "__ENV__: the environment indicator for this AgileCourt instance") -replace "^$", "__ENV__"}
         $params.parameters += @{"replace" = "__YOUR_DOMAIN__"; "with" = (Read-Host -Prompt "__YOUR_DOMAIN__: the domain for use in things like email addresses") -replace "^$", "__YOUR_DOMAIN__"}
