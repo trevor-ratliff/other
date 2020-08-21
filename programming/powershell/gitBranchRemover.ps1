@@ -2,11 +2,11 @@
 ####
 # A script for quickly going through and removing remote branches of a GIT repository
 #
-# Parameter: numCharToRemove - will let you customize the number of characters to remove; defaults to 9
+# Parameter: numCharToRemove - will let you customize the number of characters to remove; defaults to 7
 ####
 
 Param (
-  [int]$numCharToRemove=((Read-Host -Prompt "String to remove from branch name string [7]") -replace "^$", 7),
+  [int]$numCharToRemove=((Read-Host -Prompt "Number of characters to remove from the beginning of the branch name string [7]") -replace "^$", 7),
   [switch]$test
 )
 
