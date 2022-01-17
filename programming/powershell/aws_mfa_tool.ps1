@@ -1,7 +1,7 @@
 [CmdletBinding()]
 Param (
   [Parameter(Mandatory=$false, HelpMessage="The AWS Account ID for the group")]
-  [string]$accountId=((Read-Host -Prompt "Please enter the AWS Account ID [964160303629]") -replace '^$', '964160303629'),
+  [string]$accountId=((Read-Host -Prompt "Please enter the AWS Account ID []") -replace '^$', ''),
 
   [Parameter(Mandatory=$false, HelpMessage="The profile to use for generating the session token")]
   [string]$useProfile=((Read-Host -Prompt 'AWS Profile Name [default]') -replace '^$', 'default'),
@@ -23,29 +23,26 @@ Param (
   [string]$tokenCode=(Read-Host -Prompt 'MFA Token Code'),
 
   [string]$region="us-east-1",
-  [string]$version="20220111.1",
   [switch]$showResults,
   [switch]$noProfileUpdate,
+  [switch]$version,
   [switch]$whatIf
 )
+[string]$scriptVersion="20220111.2"
 
-Write-Host ("`nWelcome to the QSR AWS Multifactor Session Tool (version $version).`n`n"+
-            "    This tool will generate a temporary session token for AWS services when"+
-            " multi-factor authentication is enabled.  It will put the temporary token"+
-            " in environment variables as well as your AWS CLI credentials file.`n`n")
+Write-Host ("`n`nWelcome to the QSR AWS Multifactor Session Tool (version $scriptVersion).`n`n"+
+            "    This tool will generate a temporary session token for AWS services when `n"+
+            "multi-factor authentication is enabled.  It will put the temporary token `n"+
+            "in environment variables as well as your AWS CLI credentials file. `n`n")
 
-Write-Verbose ("`nVerifying parameters`n`n")
+Write-Verbose ("`nVerifying parameters`n")
 
+if ($tokenLifetimeHours -eq 0) { $tokenLifetimeHours = 12; }
 if ($tokenLifetimeHours -lt 12.00 -or $tokenLifetimeHours -gt 36.00) {
-    Write-Warning ("`nA token lifetime of $tokenLifetimeHours hours is out of the range of 12 - 36 hours.  12 hours will be used.`n`n")
+    Write-Warning ("`nA token lifetime of $tokenLifetimeHours hours is out of the range of 12 - 36 hours.  12 hours will be used.`n")
     $tokenLifetimeHours = 12
 }
 [int]$tokenLifetime = $tokenLifetimeHours * 60 * 60
-
-#$accountId = (Read-Host -Prompt 'AWS Account ID: [964160303629]') -replace '^$', '964160303629'
-#$useProfile = (Read-Host -Prompt 'AWS Profile Name: [default]') -replace '^$', 'default'
-#$iamUser = (Read-Host -Prompt 'IAM User: [tratliff]') -replace '^$', 'tratliff'
-#$tokenCode = Read-Host -Prompt 'MFA Token Code'
 
 Write-Verbose ("`nThe following values were provided:`n"+
                "  Account ID = [$accountId]`n"+
@@ -55,19 +52,26 @@ Write-Verbose ("`nThe following values were provided:`n"+
                "  Token Lifetime Hours = [$tokenLifetimeHours]`n"+
                "  Token Lifetime = [$tokenLifetime]`n"+
                "  Update Profile = [$updateProfile]`n"+
-               "  MFA Token Code = [$tokenCode]`n")
+               "  MFA Token Code = [$tokenCode]`n"+
+               "  Region = [$region]`n"+
+               "  Show Results = [$showResults]`n"+
+               "  No Profile Update = [$noProfileUpdate]`n"+
+               "  Version = [$version]`n"+
+               "  What If = [$whatIf]`n")
+
+if ($version) { exit 0 }
 
 if ($tokenCode -eq "" -or $tokenCode -eq $null) {
     Write-Error "No MFA token was given"
     exit 1
 }
 
-Write-Verbose ("`nFormatting the aws serial-number`n`n")
 $serial = [string]::Format("arn:aws:iam::{0}:mfa/{1}",$accountId,$iamUser)
+Write-Verbose ("`nFormatting the aws serial-number as [$serial]`n")
 
-Write-Verbose ("`nGetting the credentials from AWS`n`n")
+Write-Verbose ("`nGetting the credentials from AWS`n")
 $credentialJSON = $(aws sts get-session-token --serial-number $serial --profile $useProfile --region $region --duration-seconds $tokenLifetime --token-code $tokenCode)
-Write-Debug ("`nRaw AWS return`n$credentialJSON`n`n")
+Write-Debug ("`nRaw AWS return`n$credentialJSON`n")
 
 if ($credentialJSON -eq $null) {
     Write-Error ("AWS did NOT return a session token")
@@ -75,7 +79,7 @@ if ($credentialJSON -eq $null) {
 }
 
 $credentials = echo $credentialJSON | ConvertFrom-Json
-Write-Debug ("`nParsed AWS return`n{0}`n`n" -f $credentials.Credentials.ToString())
+Write-Debug ("`nParsed AWS return`n{0}`n`n" -f $credentials.Credentials)
 
 if ($showResults) {
     Write-Host ("Your AWS temporary session credentials are:`n`n")
@@ -83,17 +87,16 @@ if ($showResults) {
     Write-Host "`n`n"
 }
 
-Write-Verbose ("`nSetting environment variables`n`n")
-# $env:AWS_ACCESS_KEY_ID=(echo $credentials | ConvertFrom-Json).Credentials.AccessKeyId
-# $env:AWS_SECRET_ACCESS_KEY=(echo $credentials | ConvertFrom-Json).Credentials.SecretAccessKey
-# $env:AWS_SESSION_TOKEN=(echo $credentials | ConvertFrom-Json).Credentials.SessionToken
-$env:AWS_ACCESS_KEY_ID = $credentials.Credentials.AccessKeyId
-$env:AWS_SECRET_ACCESS_KEY = $credentials.Credentials.SecretAccessKey
-$env:AWS_SESSION_TOKEN = $credentials.Credentials.SessionToken
-$env:AWS_SESSION_EXPIRATION = $credentials.Credentials.Expiration
+if ($whatIf -ne $true) {
+    Write-Verbose ("`nSetting environment variables`n")
+    $env:AWS_ACCESS_KEY_ID = $credentials.Credentials.AccessKeyId
+    $env:AWS_SECRET_ACCESS_KEY = $credentials.Credentials.SecretAccessKey
+    $env:AWS_SESSION_TOKEN = $credentials.Credentials.SessionToken
+    $env:AWS_SESSION_EXPIRATION = $credentials.Credentials.Expiration
+}
 
 if ($noProfileUpdate -ne $true) {
-    Write-Verbose ("`nSetting the credentials in [$credentialFilePath]`n`n")
+    Write-Verbose ("`nSetting the credentials in [$credentialFilePath]`n")
     ## [PROFILE_NAME]
     ## aws_access_key_id= ACCESS_KEY_ID
     ## aws_secret_access_key= SECRET_ACCESS_KEY
@@ -104,7 +107,7 @@ if ($noProfileUpdate -ne $true) {
         "aws_secret_access_key={2}¦" +
         "aws_session_token={3}¦" +
         "region={4}¦" +
-        "# this token will expire at {5}") -f
+        "# this token will expire at {5}¦") -f
         $updateProfile,
         $credentials.Credentials.AccessKeyId,
         $credentials.Credentials.SecretAccessKey,
@@ -122,13 +125,13 @@ if ($noProfileUpdate -ne $true) {
 
     $credGroups = $oldCredsFile -split "\["
 
-    Write-Verbose ("`nUpdating profile [$updateProfile]`n`n")
+    Write-Verbose ("`nUpdating profile [$updateProfile]`n")
     [bool]$foundProfile = $false
     for ($ii=0; $ii -lt $credGroups.Length; $ii++){
         Write-Debug ("  Comparing <[{0}]>" -f $credGroups[$ii])
         Write-Debug ("    contains $updateProfile = [{0}]" -f $credGroups[$ii].Contains($updateProfile))
         if ($credGroups[$ii].Contains($updateProfile)) {
-            Write-Debug ("    replacing old value")
+            Write-Debug ("    replacing old value`n")
             $credGroups[$ii] = $newCreds
             $foundProfile = $true
         }
