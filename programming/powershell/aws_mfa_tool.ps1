@@ -30,7 +30,7 @@ Param (
   [switch]$whatIf
 )
 $PSDefaultParameterValues['*:Encoding'] = 'utf8'
-[string]$scriptVersion="20220222.0"
+[string]$scriptVersion="20220222.02202"
 
 Write-Host ("`n`nWelcome to the QSR AWS Multifactor Session Tool (version $scriptVersion).`n`n"+
             "    This tool will generate a temporary session token for AWS services when `n"+
@@ -40,7 +40,7 @@ Write-Host ("`n`nWelcome to the QSR AWS Multifactor Session Tool (version $scrip
 # test for default parameter: if present set smart defaults and only ask for pin
 #----
 if ($default -or $d) {
-    $accountId = '964160303629'
+    $accountId = '000000000000'
     $useProfile = 'userdev'
     $iamUser = $env:UserName
     $credentialFilePath = "$home\.aws\credentials"
@@ -48,7 +48,7 @@ if ($default -or $d) {
     $updateProfile = 'default'
 } else {
     if ($accountId -eq $null -or $accountId -eq '') {
-        $accountId=((Read-Host -Prompt "Please enter the AWS Account ID`n  QSR Dev = `n  QSR QA = `n  QSR Prod = `nDefaults to QSR Dev []") -replace '^$', '')
+        $accountId=((Read-Host -Prompt "Please enter the AWS Account ID") -replace '^$', '000000000000')
     }
 
     if ($useProfile -eq $null -or $useProfile -eq '') {
@@ -194,5 +194,66 @@ if ($noProfileUpdate -ne $true) {
     }
 }
 
-Write-Warning ("`nThe AWS session token will expire at {0}`n" -f $credentials.Credentials.Expiration)
+Write-Host -f Yellow ("`nThe AWS session token will expire at {0}`n" -f $credentials.Credentials.Expiration)
 exit 0
+
+<#
+.SYNOPSIS
+This program will use a valid aws user credential profile to create a temporary session token.
+
+.DESCRIPTION
+The AWS MFA Tool will ask for the information it needs to create temporary AWS session tokens from a valid user profile.
+The needed information is defined in the parameter list, but it includes things like the AWS acconut, user profile, and multi-factor authentication (MFA) token.
+The session token will be stored in enviroment variables, and be added to a specified profile in the AWS credentials file.  The following environment variables are created.
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_SESSION_TOKEN
+- AWS_SESSION_EXPIRATION
+
+.PARAMETER accountId
+The AWS account to use for generating the session tokens.  This defaults to QSR's dev account.
+.PARAMETER useProfile
+The AWS profile to use to create the session tokens, this needs to be a valid user of the AWS Account specified in acconutId.  This defaults to "userdev".
+.PARAMETER iamUser
+The AWS user name indicated in the userProfile.  The default value is the user name of the person running the script.
+.PARAMETER credentialFilePath
+The path to the AWS credential file.  Defaults to "$home\.aws\credentials".
+.PARAMETER tokenLifetimeHours
+The length of time the session token should be valid.  Defaults to "12" hours, and can be up to 36 hours.
+.PARAMETER updateProfile
+This is the profile that will accept the temporary session token data.  A non-existing profile will get create and appended to the credentials file.  Defaults to "default".
+.PARAMETER tokenCode
+The multi-foctor authentication token
+.PARAMETER region
+Allows passing a different region in from the command line.  Defaults to "us-east-1".
+.PARAMETER showResults
+This flag will cause the new temporary session token to be displayed.
+.PARAMETER noProfileUpdate
+This flag causes the program to skip updating the credentials file profile update.
+.PARAMETER version
+This flag will cause the system to print the welcome message with the version and quit.
+.PARAMETER defaults
+This flag will cause the program to take the default value for the parameters and only ask for the MFA token.
+.PARAMETER d
+An alias flag for defaults
+.PARAMETER whatIf
+The whatIf flag causes the program to run through the code without affecting any permanent changes.
+
+.EXAMPLE
+PS> .\aws_mfa_tool.ps1
+- will allow the tool to ask for all information it needs and print out a welcome message and at a minimum the expiration time for the session token.  Some parameters will affect the output, such as "-version", "-Verbose", "-showResults".
+.EXAMPLE
+PS> .\aws_mfa_tool.ps1 -defaults
+OR
+PS> .\aws_mfa_tool.ps1 -d
+- will take all the defualts, and ask for the MFA token
+.EXAMPLE
+PS> .\aws_mfa_tool.ps1 -d -tokenCode 123456
+- will take all the defualts, and use the passed in mfa token so no further input is needed
+.EXAMPLE
+PS> .\aws_mfa_tool.ps1 -d -updateProfile qsrqa
+- will take all the defualts except for the "updateProfile" parameter which will use the passed in value (the same pattern happens with the other parameters)
+.EXAMPLE
+PS> .\aws_mfa_tool.ps1 -version
+- will display the welcome message with the version info
+#>
