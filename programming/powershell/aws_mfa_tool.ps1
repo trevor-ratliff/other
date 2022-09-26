@@ -21,31 +21,66 @@ Param (
   [Parameter(Mandatory=$false, HelpMessage="The multi-factor authentication token")]
   [string]$tokenCode,
 
+  [Parameter(Mandatory=$false, HelpMessage="The AWS account user name for which you want to change the password")]
+  [string]$passwordUserName,
+
+  [Parameter(Mandatory=$false, HelpMessage="The password you want to use for your AWS account password")]
+  [string]$password,
+
   [string]$region="us-east-1",
   [switch]$showResults,
   [switch]$noProfileUpdate,
   [switch]$version,
   [switch]$defaults,
   [switch]$d,
+  [switch]$changePassword,
   [switch]$whatIf
 )
-$PSDefaultParameterValues['*:Encoding'] = 'utf8'
-[string]$scriptVersion="20220222.02202"
+$PSDefaultParameterValues['*:Encoding'] = 'utf8NoBOM'
+[string]$scriptVersion="20220926.0"
 
 Write-Host ("`n`nWelcome to the QSR AWS Multifactor Session Tool (version $scriptVersion).`n`n"+
             "    This tool will generate a temporary session token for AWS services when `n"+
             "multi-factor authentication is enabled.  It will put the temporary token `n"+
-            "in environment variables as well as your AWS CLI credentials file. `n`n")
+            "in environment variables as well as your AWS CLI credentials file. `n"+
+            "    It can also change your AWS IAM account passwords after you have `n"+
+            "generated a temporary MFA token for that account.`n`n")
 #----
 # test for default parameter: if present set smart defaults and only ask for pin
 #----
-if ($default -or $d) {
+if ($default -or $d -or $version) {
     $accountId = '000000000000'
     $useProfile = 'userdev'
     $iamUser = $env:UserName
     $credentialFilePath = "$home\.aws\credentials"
     $tokenLifetimeHours = 12
     $updateProfile = 'default'
+} elseif ($changePassword -eq $true) {
+    if ($passwordUserName -eq $null -or $passwordUserName -eq '') {
+        $passwordUserName=((Read-Host -Prompt "AWS IAM User Name [$env:UserName]") -replace '^$',  $env:UserName)
+    }
+
+    while ($password -eq $null -or $password -eq '' -or $password -match '[`"]') {
+        $password=((Read-Host -Prompt "Enter your desired password for [$passwordUserName]; please don't use the characters in the brackets [```"]" -MaskInput))
+    }
+
+    Write-Host "About to run the following command:"
+    Write-Host "  aws iam update-login-profile --user-name $passwordUserName --password `"****`"`n"
+
+    [string]$continue=((Read-Host -Prompt "Continue [No]|Yes|Verify") -replace '^$', 'No')
+
+    if ($continue -eq 'verify' -or $continue -eq 'v') {
+        Write-Host "The password you entered was`n$password`n"
+        $continue=((Read-Host -Prompt "Continue [No]|Yes") -replace '^$', 'No')
+    }
+
+    if (($continue -eq 'yes' -or $continue -eq 'y') -and $whatIf -eq $false) {
+        aws iam update-login-profile --user-name $passwordUserName --password "$password"
+    } else {
+        Write-Host "No action taken.`n"
+    }
+
+    exit 0
 } else {
     if ($accountId -eq $null -or $accountId -eq '') {
         $accountId=((Read-Host -Prompt "Please enter the AWS Account ID") -replace '^$', '000000000000')
@@ -72,7 +107,7 @@ if ($default -or $d) {
     }
 }
 if ($tokenCode -eq $null -or $tokenCode -eq '' -and $version -ne $true) {
-    $tokenCode=(Read-Host -Prompt 'MFA Token Code')
+    $tokenCode=(Read-Host -Prompt 'MFA Token Code' -MaskInput)
 }
 
 Write-Verbose ("`nVerifying parameters`n")
@@ -161,7 +196,7 @@ if ($noProfileUpdate -ne $true) {
     Copy-Item -Path $credentialFilePath -Destination "${credentialFilePath}.bak"
 
 
-    $oldCredsFile = (Get-Content $credentialFilePath) -Join("¦")
+    $oldCredsFile = (Get-Content $credentialFilePath  -Encoding utf8NoBOM) -Join("¦")
     Write-Debug ("`noldCredsFile.Length = [{0}]`n{1}`n`n" -f $oldCredsFile.Length, $oldCredsFile)
 
     $credGroups = $oldCredsFile -split "\["
@@ -190,7 +225,7 @@ if ($noProfileUpdate -ne $true) {
     [string]$newCredentialFile = ($credGroups -Join("[")) -Replace "¦",[ENVIRONMENT]::NewLine
     Write-Debug ("`nFinal file update (length [{0}])`n{1}`n" -f $newCredentialFile.Length, $newCredentialFile)
     if ($whatIf -ne $true) {
-        Set-Content -Path $credentialFilePath -Value $newCredentialFile
+        Set-Content -Path $credentialFilePath -Value $newCredentialFile -Encoding utf8NoBOM
     }
 }
 
@@ -200,6 +235,8 @@ exit 0
 <#
 .SYNOPSIS
 This program will use a valid aws user credential profile to create a temporary session token.
+
+The program can also use to change/reset an AWS IAM account's password after generating a valid MFA token.
 
 .DESCRIPTION
 The AWS MFA Tool will ask for the information it needs to create temporary AWS session tokens from a valid user profile.
@@ -223,7 +260,11 @@ The length of time the session token should be valid.  Defaults to "12" hours, a
 .PARAMETER updateProfile
 This is the profile that will accept the temporary session token data.  A non-existing profile will get create and appended to the credentials file.  Defaults to "default".
 .PARAMETER tokenCode
-The multi-foctor authentication token
+The multi-foctor authentication token.
+.PARAMETER passwordUserName
+The AWS IAM user name for which the password will be changed.  Defaults to the currently logged in user name.
+.Parameter password
+The password that will be set for the specified user name.
 .PARAMETER region
 Allows passing a different region in from the command line.  Defaults to "us-east-1".
 .PARAMETER showResults
@@ -236,6 +277,8 @@ This flag will cause the system to print the welcome message with the version an
 This flag will cause the program to take the default value for the parameters and only ask for the MFA token.
 .PARAMETER d
 An alias flag for defaults
+.PARAMETER changePassword
+This flag switches to the change password mode, this mode will not generate a token.
 .PARAMETER whatIf
 The whatIf flag causes the program to run through the code without affecting any permanent changes.
 
@@ -256,4 +299,10 @@ PS> .\aws_mfa_tool.ps1 -d -updateProfile qsrqa
 .EXAMPLE
 PS> .\aws_mfa_tool.ps1 -version
 - will display the welcome message with the version info
+.EXAMPLE
+PS> .\aws_mfa_tool.ps1 -changePassword
+- will ask for the needed information to change the AWS IAM account password.
+.EXAMPLE
+PS> .\aws_mfa_tool.ps1 -changePassword -passwordUserName bferrapples -password Test1234
+- will allow you to verify the password and confirm the change for the passed in account and password.
 #>
