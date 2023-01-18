@@ -3,7 +3,7 @@ GEM
   specs:
     RedCloth (4.2.9)
     RedCloth (4.2.9-x86-mingw32)
-    activesupport (7.0.1)
+    activesupport (7.0.4.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
@@ -18,7 +18,7 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     colorator (0.1)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     execjs (2.4.0)
     fast-stemmer (1.0.2)
     ffi (1.11.1)
@@ -51,7 +51,7 @@ GEM
     html-pipeline (1.9.0)
       activesupport (>= 2)
       nokogiri (~> 1.4)
-    i18n (1.8.11)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     jekyll (2.4.0)
       classifier-reborn (~> 2.0)
@@ -95,7 +95,7 @@ GEM
     maruku (0.7.0)
     mercenary (0.3.5)
     mini_portile2 (2.7.1)
-    minitest (5.15.0)
+    minitest (5.17.0)
     net-dns (0.8.0)
     nokogiri (1.13.1)
       mini_portile2 (~> 2.7.0)
@@ -124,7 +124,7 @@ GEM
       hitimes
     toml (0.1.2)
       parslet (~> 1.5.0)
-    tzinfo (2.0.4)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     yajl-ruby (1.2.1)
 
