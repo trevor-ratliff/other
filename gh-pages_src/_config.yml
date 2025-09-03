@@ -4,6 +4,6 @@ encoding: utf-8
 exclude: [Gemfile, Gemfile.lock]
 highlighter: pygments
 timezone: America/New_York
-url: http://trevor-ratliff.github.io/other/
+url: https://trevor-ratliff.github.io/other/
 #~ url: http://localhost:4000/
 ...
